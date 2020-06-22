@@ -1,0 +1,12 @@
+
+
+-------------------------------------------------------------------------------
+The following changes are being recorded with respect to the CSP alpha release for ecm3532. This release notes starts 2020 April 29.
+
+2020 April 29: FS-41 HOTFIX on DEV by DB 
+	added additional warning switches per Inder to csp make file for gcc
+        Warning on warnings, you will -fno-strict-aliasing added to your warning set.
+
+2020 April 29: FS-42 HOTFIX on DEV by DB 
+	updated fence functions in EtaCspRtcTmrTimedRun.
+

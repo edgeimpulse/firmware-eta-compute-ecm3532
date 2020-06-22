@@ -1,0 +1,47 @@
+<!DOCTYPE CrossStudio_Session_File>
+<session>
+ <Bookmarks/>
+ <Breakpoints groups="" active_group="Breakpoints">
+  <Exceptions set="MemManage;UsageFault_Coprocessor;UsageFault_CheckingError;UsageFault_StateError;BusFault;ExceptionEntryReturnFault;HardFault"/>
+ </Breakpoints>
+ <ExecutionProfileWindow/>
+ <FrameBufferWindow>
+  <FrameBufferWindow bufferHeight="-1" addressSpace="" addressText="" bufferWidth="-1"/>
+ </FrameBufferWindow>
+ <Memory1/>
+ <Memory2/>
+ <Memory3/>
+ <Memory4/>
+ <Project>
+  <ProjectSessionItem path="eta_csp_m3"/>
+  <ProjectSessionItem path="eta_csp_m3;eta_csp_m3"/>
+  <ProjectSessionItem path="eta_csp_m3;eta_csp_m3;Source"/>
+  <SourceCodeControlLogin password="F9BB6682F5D56822" user=""/>
+ </Project>
+ <Register1/>
+ <Register2/>
+ <Register3/>
+ <Register4/>
+ <Threads>
+  <ThreadsWindow showLists=""/>
+ </Threads>
+ <TraceWindow>
+  <Trace enabled="Yes"/>
+ </TraceWindow>
+ <Watch1>
+  <Watches active="1" update="Never"/>
+ </Watch1>
+ <Watch2>
+  <Watches active="0" update="Never"/>
+ </Watch2>
+ <Watch3>
+  <Watches active="0" update="Never"/>
+ </Watch3>
+ <Watch4>
+  <Watches active="0" update="Never"/>
+ </Watch4>
+ <Files>
+  <SessionOpenFile windowGroup="DockEditLeft" x="20" y="17" useTextEdit="1" useBinaryEdit="0" left="0" path="../../src/eta_csp_adc.c" selected="0" top="2" codecName="Default"/>
+ </Files>
+ <ARMCrossStudioWindow activeProject="eta_csp_m3" fileDialogDefaultFilter="*.c" autoConnectTarget="J-Link" buildConfiguration="Release" sessionSettings="" debugSearchFileMap="" fileDialogInitialDirectory="" debugSearchPath="/Users/david/sandbox/firmware/soc/ecm3532/m3/csp/lib/gcc&#xa;/Users/david/sandbox/firmware/soc/ecm3532/m3/csp/inc&#xa;/Users/david/sandbox/firmware/soc/ecm3532/m3/csp/src" autoConnectCapabilities="3199"/>
+</session>

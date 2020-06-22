@@ -1,0 +1,70 @@
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+*.bin
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+
+3rd_party/edge_impulse/edge-impulse-sdk/
+doc/
+iar_support/
+soc/ecm3532/boards/eta_ai_sensor/examples/m3/gru_keyword/
+soc/ecm3532/boards/eta_ai_sensor/examples/m3/sleep/
+soc/ecm3532/boards/eta_evb+um2121/
+soc/ecm3532/boards/eta_evb/
+cmsis-packs/
+3rd_party/CMSIS/
+soc/ecm3532/boards/eta_ai_sensor/examples/m3/edge-impulse-ingestion/gcc/flash/bin/
+soc/ecm3532/boards/eta_ai_sensor/examples/m3/edge-impulse-ingestion/gcc/flash_boot_sram/bin/
+soc/ecm3532/boards/eta_ai_sensor/examples/m3/edge-impulse-ingestion/gcc/flash_bootloader/bin/
+soc/ecm3532/boards/eta_ai_sensor/examples/m3/edge-impulse-ingestion/gcc/flash/build.sh
+soc/ecm3532/boards/eta_ai_sensor/examples/m3/edge-impulse-ingestion/gcc/flash/CommandFile.jlink
+soc/ecm3532/boards/eta_ai_sensor/examples/m3/raw_audio/
+bin/

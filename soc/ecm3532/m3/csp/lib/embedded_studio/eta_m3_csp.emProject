@@ -1,0 +1,94 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="eta_csp_m3" target="8" version="2">
+  <project Name="eta_csp_m3">
+    <folder Name="Source">
+      <configuration Name="Common" filter="c;cpp;cxx;cc;h;s;asm;inc" />
+      <file file_name="../../src/eta_csp_adc.c" />
+      <file file_name="../../src/eta_csp_buck.c" />
+      <file file_name="../../src/eta_csp_dsp.c" />
+      <file file_name="../../src/eta_csp_flash.c" />
+      <file file_name="../../src/eta_csp_gpio.c" />
+      <file file_name="../../src/eta_csp_hfo.c" />
+      <file file_name="../../src/eta_csp_lfo.c" />
+      <file file_name="../../src/eta_csp_i2c.c" />
+      <file file_name="../../src/eta_csp_i2s.c" />
+      <file file_name="../../src/eta_csp_io.c" />
+      <file file_name="../../src/eta_csp_isr.c" />
+      <file file_name="../../src/eta_csp_m3.c" />
+      <file file_name="../../src/eta_csp_nvic.c" />
+      <file file_name="../../src/eta_csp_pdm.c" />
+      <file file_name="../../src/eta_csp_pwm.c" />
+      <file file_name="../../src/eta_csp_pwr.c" />
+      <file file_name="../../src/eta_csp_rtc.c" />
+      <file file_name="../../src/eta_csp_socctrl.c" />
+      <file file_name="../../src/eta_csp_spi.c" />
+      <file file_name="../../src/eta_csp_sys_clock.c" />
+      <file file_name="../../src/eta_csp_timer.c" />
+      <file file_name="../../src/eta_csp_tsense.c" />
+      <file file_name="../../src/eta_csp_uart.c" />
+      <file file_name="../../src/eta_csp_vhfo.c" />
+      <file file_name="../../src/eta_csp.c" />
+    </folder>
+    <configuration
+      Name="Common"
+      build_treat_warnings_as_errors="Yes"
+      gdb_server_autostart_server="No"
+      gdb_server_command_line="" />
+    <configuration
+      Name="Release"
+      gcc_entry_point=""
+      gdb_server_autostart_server="Yes"
+      gdb_server_command_line="/usr/local/bin/openocd --file board/eta_ecm35xx.cfg"
+      link_linker_script_file=""
+      project_type="Library" />
+  </project>
+  <configuration
+    Connection="USB 600101552"
+    Name="Release"
+    arm_architecture="v7M"
+    arm_compiler_variant="gcc"
+    arm_core_type="Cortex-M3"
+    arm_endian="Little"
+    arm_fp_abi="None"
+    arm_fpu_type=""
+    arm_linker_heap_size="0"
+    arm_linker_process_stack_size="0"
+    arm_linker_stack_size="4096"
+    arm_linker_variant="GNU"
+    arm_simulator_memory_simulation_parameter="RX 0x01000000,0x80000,FFFFFFFF;RWX 0x10000000,0x40000,CDCDCDCD"
+    arm_target_device_name="ECM3531"
+    arm_target_interface_type="SWD"
+    asm_generate_listing_file="Yes"
+    build_intermediate_directory="bin"
+    build_output_directory="bin"
+    build_treat_warnings_as_errors="Yes"
+    c_additional_options=""
+    c_preprocessor_definitions=""
+    c_user_include_directories="..//..//inc;..//..//..//reg//inc;..//..//..//..//common//csp//inc;..//..//..//..//..//common//inc"
+    debug_RTTCB=""
+    debug_enable_RTT="No"
+    debug_register_definition_file="CMSIS/SVD/ECM3532.svd"
+    debug_target_connection="J-Link"
+    gcc_c_language_standard="gnu11"
+    gcc_cplusplus_language_standard="c++11"
+    gcc_debugging_level="Level 3"
+    gcc_entry_point="Reset_Handler"
+    gcc_optimization_level="Level 0"
+    gdb_server_allow_memory_access_during_execution="Yes"
+    gdb_server_autostart_server="Yes"
+    gdb_server_command_line="/usr/local/bin/openocd --file board/eta_ecm35xx.cfg"
+    gdb_server_ignore_checksum_errors="No"
+    gdb_server_port="3333"
+    gdb_server_type="OpenOCD"
+    link_keep_lto_files="Yes"
+    link_linker_script_file="Setup/ecm3532.ld"
+    link_time_optimization="No"
+    link_use_linker_script_file="Yes"
+    linker_additional_files="../../../../../../../m3/csp/lib/gcc/eta_m3_csp.a"
+    linker_additional_options="-nostartfiles;--print-memory-usage"
+    linker_output_format="bin"
+    linker_section_placements_segments="FLASH1 RX 0x01000000 0x80000;RAM1 RWX 0x10000000 0x40000"
+    project_directory=""
+    project_type="Executable" />
+</solution>
+
