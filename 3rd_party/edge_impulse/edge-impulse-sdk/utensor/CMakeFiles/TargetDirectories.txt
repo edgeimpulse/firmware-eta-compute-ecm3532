@@ -1,0 +1,4 @@
+/Users/janjongboom/repos/edgeimpulse/selenium-tests/sanity-check-utensor/edge-impulse-sdk/utensor/CMakeFiles/rebuild_cache.dir
+/Users/janjongboom/repos/edgeimpulse/selenium-tests/sanity-check-utensor/edge-impulse-sdk/utensor/CMakeFiles/edit_cache.dir
+/Users/janjongboom/repos/edgeimpulse/selenium-tests/sanity-check-utensor/edge-impulse-sdk/utensor/CMakeFiles/test.dir
+/Users/janjongboom/repos/edgeimpulse/selenium-tests/sanity-check-utensor/edge-impulse-sdk/utensor/CMakeFiles/utensor.dir
