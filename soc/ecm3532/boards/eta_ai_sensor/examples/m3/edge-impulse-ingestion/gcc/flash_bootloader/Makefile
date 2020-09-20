@@ -190,6 +190,7 @@ SRC+= fast-dct-fft.cpp
 SRC+= arm_q15_to_float.c
 SRC+= $(shell find ../../../../../../../../../3rd_party/edge_impulse/mbedtls_hmac_sha256_sw/mbedtls/src -name "*.c" | rev | cut -d"/" -f1 | rev)
 SRC+= $(shell find ../../../../../../../../../3rd_party/edge_impulse/edge-impulse-sdk/tensorflow -name "*.c*" | rev | cut -d"/" -f1 | rev)
+SRC+= $(shell find ../../../../../../../../../3rd_party/edge_impulse/tflite-model/ -name "*.cpp" | rev | cut -d"/" -f1 | rev)
 
 C_SRC = $(filter %.c,$(SRC))
 CPP_SRC = $(filter %.cpp,$(SRC))
