@@ -27,6 +27,9 @@
 #include "ei_microphone.h"
 #include "ei_inertialsensor.h"
 
+#if defined(EI_CLASSIFIER_COMPILED) && EI_CLASSIFIER_COMPILED == 1
+    #error "This platform does not support the EON compiler. Export with EON compiler disabled."
+#endif
 
 #if defined(EI_CLASSIFIER_SENSOR) && EI_CLASSIFIER_SENSOR == EI_CLASSIFIER_SENSOR_ACCELEROMETER
 
