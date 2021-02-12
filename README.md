@@ -37,7 +37,7 @@ Edge Impulse enables developers to create the next generation of intelligent dev
 
     ```
     $ cd soc/ecm3532/boards/eta_ai_sensor/examples/m3/edge-impulse-ingestion/gcc/flash_bootloader
-    $ make
+    $ make -j
     ```
 
 1. Flash the application:
