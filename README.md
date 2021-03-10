@@ -15,9 +15,9 @@ Edge Impulse enables developers to create the next generation of intelligent dev
 
 * [Node.js 12](https://nodejs.org/en/download/) or higher.
 * [Python 3](https://www.python.org/download/releases/3.0/).
-* [CMake](https://cmake.org).
+* [CMake](https://cmake.org) version 3.12.1 or higher.
 * [GNU Make](https://www.gnu.org/software/make/).
-* [GNU ARM Embedded Toolchain 9-2019-q4-major](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads) - make sure `arm-none-eabi-gcc` is in your PATH.
+* [GNU ARM Embedded Toolchain 8-2018-q4-major](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads) - make sure `arm-none-eabi-gcc` is in your PATH.
 * [Edge Impulse CLI](https://docs.edgeimpulse.com/docs/cli-installation).
 
     You can install this via npm:
