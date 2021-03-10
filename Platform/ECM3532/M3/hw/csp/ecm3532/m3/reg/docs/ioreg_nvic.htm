@@ -1,0 +1,3646 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>IOREG FILE: NGC18 NVIC ARM STANDARD NVIC REGISTERS
+</TITLE>
+</HEAD>
+<BODY>
+<H1 align="center">On-Line Documentation for NGC18  :  NVIC <BR>  Bus Type: APB</H1>
+<FONT size="+2"><B><P align="center">ARM STANDARD NVIC REGISTERS</P></B><B</FONT><BR><HR>
+<FONT face="Helvetica" size="-1"><P align="center"><B> Put banner announcement here. </B></P></FONT><HR>
+<BR><B>The Nested Vectored interrupt Controller</B><BR><BR><HR>
+<FONT face="Helvetica" size="-1"><P align="left"><B> Source File Name: ./src/ioreg_nvic.src <BR> Source File Modification Date Mon Jul 22 15:35:33 2019 <BR> html creation date July 22, 2019</B></P></FONT>
+<H2 id="index"> NVIC Register Index</H2>
+<B> <CODE>ADDRESS</CODE></B><BR>
+<B><CODE>0xe000e100: </CODE></B><A id = "EISER0index" href="#EISER0"><B>IO_NVIC_EISER0</A></B><BR>
+<B><CODE>0xe000e180: </CODE></B><A id = "EICER0index" href="#EICER0"><B>IO_NVIC_EICER0</A></B><BR>
+<B><CODE>0xe000e200: </CODE></B><A id = "EISPR0index" href="#EISPR0"><B>IO_NVIC_EISPR0</A></B><BR>
+<B><CODE>0xe000e280: </CODE></B><A id = "EICPR0index" href="#EICPR0"><B>IO_NVIC_EICPR0</A></B><BR>
+<B><CODE>0xe000e300: </CODE></B><A id = "EIABR0index" href="#EIABR0"><B>IO_NVIC_EIABR0</A></B><BR>
+<B><CODE>0xe000e400: </CODE></B><A id = "EIPLR0index" href="#EIPLR0"><B>IO_NVIC_EIPLR0</A></B><BR>
+<B><CODE>0xe000e404: </CODE></B><A id = "EIPLR1index" href="#EIPLR1"><B>IO_NVIC_EIPLR1</A></B><BR>
+<B><CODE>0xe000e408: </CODE></B><A id = "EIPLR2index" href="#EIPLR2"><B>IO_NVIC_EIPLR2</A></B><BR>
+<B><CODE>0xe000e40c: </CODE></B><A id = "EIPLR3index" href="#EIPLR3"><B>IO_NVIC_EIPLR3</A></B><BR>
+<B><CODE>0xe000e410: </CODE></B><A id = "EIPLR4index" href="#EIPLR4"><B>IO_NVIC_EIPLR4</A></B><BR>
+<B><CODE>0xe000e414: </CODE></B><A id = "EIPLR5index" href="#EIPLR5"><B>IO_NVIC_EIPLR5</A></B><BR>
+<B><CODE>0xe000e418: </CODE></B><A id = "EIPLR6index" href="#EIPLR6"><B>IO_NVIC_EIPLR6</A></B><BR>
+<B><CODE>0xe000e41c: </CODE></B><A id = "EIPLR7index" href="#EIPLR7"><B>IO_NVIC_EIPLR7</A></B><BR>
+<B><CODE>0xe000ed04: </CODE></B><A id = "ICSRindex" href="#ICSR"><B>IO_NVIC_ICSR</A></B><BR>
+<B><CODE>0xe000ed0c: </CODE></B><A id = "AIRCRindex" href="#AIRCR"><B>IO_NVIC_AIRCR</A></B><BR>
+<B><CODE>0xe000ed10: </CODE></B><A id = "SCRindex" href="#SCR"><B>IO_NVIC_SCR</A></B><BR>
+<B><CODE>0xe000ed14: </CODE></B><A id = "CCRindex" href="#CCR"><B>IO_NVIC_CCR</A></B><BR>
+<B><CODE>0xe000ed18: </CODE></B><A id = "SEPLR0index" href="#SEPLR0"><B>IO_NVIC_SEPLR0</A></B><BR>
+<B><CODE>0xe000ed1c: </CODE></B><A id = "SEPLR1index" href="#SEPLR1"><B>IO_NVIC_SEPLR1</A></B><BR>
+<B><CODE>0xe000ed20: </CODE></B><A id = "SEPLR2index" href="#SEPLR2"><B>IO_NVIC_SEPLR2</A></B><BR>
+<B><CODE>0xe000ed24: </CODE></B><A id = "SHCSRindex" href="#SHCSR"><B>IO_NVIC_SHCSR</A></B><BR>
+<B><CODE>0xe000ed28: </CODE></B><A id = "CFSRindex" href="#CFSR"><B>IO_NVIC_CFSR</A></B><BR>
+<B><CODE>0xe000ed2c: </CODE></B><A id = "HFSRindex" href="#HFSR"><B>IO_NVIC_HFSR</A></B><BR>
+<B><CODE>0xe000ed30: </CODE></B><A id = "DFSRindex" href="#DFSR"><B>IO_NVIC_DFSR</A></B><BR>
+<B><CODE>0xe000ed34: </CODE></B><A id = "MMARindex" href="#MMAR"><B>IO_NVIC_MMAR</A></B><BR>
+<B><CODE>0xe000ed38: </CODE></B><A id = "BFARindex" href="#BFAR"><B>IO_NVIC_BFAR</A></B><BR>
+<B><CODE>0xe000ef00: </CODE></B><A id = "STIRindex" href="#STIR"><B>IO_NVIC_STIR</A></B><BR>
+<BR><HR>
+<H2 id="EISER0"><A href="#index">
+IO_NVIC_EISER0</A></H2>
+<P><FONT size="+1"><B>EXTERNAL INTERRUPT SET ENABLE REGISTER BITS 0</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_NVIC_EISER0 ADDRESS:</B></TD>
+<TD><CODE>0xe000e100</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="10">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SW3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SW2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SW1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SW0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">AO_BOD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RTC_TMR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">WDT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">PWM<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">ADC<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DSP<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RTC1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RTC0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">I2C1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">I2C0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SPI1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SPI0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">UART1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">UART0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TIMER1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TIMER0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">GPIO1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">GPIO0<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:22</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RSVD</TD>
+<TD>RSVD
+<TR align="left">
+<TD nowrap>21:21</TD>
+<TD nowrap>SW3</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SW3</TD>
+<TD>Enable for external Interrupt
+<TR align="left">
+<TD nowrap>20:20</TD>
+<TD nowrap>SW2</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SW2</TD>
+<TD>Enable for external Interrupt
+<TR align="left">
+<TD nowrap>19:19</TD>
+<TD nowrap>SW1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SW1</TD>
+<TD>Enable for external Interrupt
+<TR align="left">
+<TD nowrap>18:18</TD>
+<TD nowrap>SW0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SW0</TD>
+<TD>Enable for external Interrupt
+<TR align="left">
+<TD nowrap>17:17</TD>
+<TD nowrap>AO_BOD</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>AO_BOD</TD>
+<TD>Enable for external Interrupt
+<TR align="left">
+<TD nowrap>16:16</TD>
+<TD nowrap>RTC_TMR</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RTC_TMR</TD>
+<TD>Enable for external Interrupt
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>WDT</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>WDT</TD>
+<TD>Enable for external Interrupt
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>PWM</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>PWM</TD>
+<TD>Enable for external Interrupt
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>ADC</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>ADC</TD>
+<TD>Enable for external Interrupt
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>DSP</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>DSP</TD>
+<TD>Enable for external Interrupt
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>RTC1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RTC1</TD>
+<TD>Enable for external Interrupt
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>RTC0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RTC0</TD>
+<TD>Enable for external Interrupt
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>I2C1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>I2C1</TD>
+<TD>Enable for external Interrupt
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>I2C0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>I2C0</TD>
+<TD>Enable for external Interrupt
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>SPI1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SPI1</TD>
+<TD>Enable for external Interrupt
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>SPI0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SPI0</TD>
+<TD>Enable for external Interrupt
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>UART1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>UART1</TD>
+<TD>Enable for external Interrupt
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>UART0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>UART0</TD>
+<TD>Enable for external Interrupt
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>TIMER1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>TIMER1</TD>
+<TD>Enable for external Interrupt
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>TIMER0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>TIMER0</TD>
+<TD>Enable for external Interrupt
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>GPIO1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO1</TD>
+<TD>Enable for external Interrupt
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>GPIO0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO0</TD>
+<TD>Enable for external Interrupt
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Set Interrupt Enable Bits [31:0]</P>
+<BR><HR>
+<H2 id="EICER0"><A href="#index">
+IO_NVIC_EICER0</A></H2>
+<P><FONT size="+1"><B>EXTERNAL INTERRUPT CLEAR ENABLE REGISTER BITS 0</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_NVIC_EICER0 ADDRESS:</B></TD>
+<TD><CODE>0xe000e180</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="10">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SW3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SW2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SW1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SW0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">AO_BOD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RTC_TMR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">WDT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">PWM<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">ADC<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DSP<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RTC1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RTC0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">I2C1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">I2C0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SPI1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SPI0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">UART1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">UART0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TIMER1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TIMER0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">GPIO1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">GPIO0<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:22</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RSVD</TD>
+<TD>RSVD
+<TR align="left">
+<TD nowrap>21:21</TD>
+<TD nowrap>SW3</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SW3</TD>
+<TD>Clear enable for external Interrupt
+<TR align="left">
+<TD nowrap>20:20</TD>
+<TD nowrap>SW2</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SW2</TD>
+<TD>Clear enable for external Interrupt
+<TR align="left">
+<TD nowrap>19:19</TD>
+<TD nowrap>SW1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SW1</TD>
+<TD>Clear enable for external Interrupt
+<TR align="left">
+<TD nowrap>18:18</TD>
+<TD nowrap>SW0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SW0</TD>
+<TD>Clear enable for external Interrupt
+<TR align="left">
+<TD nowrap>17:17</TD>
+<TD nowrap>AO_BOD</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>AO_BOD</TD>
+<TD>Clear enable for external Interrupt
+<TR align="left">
+<TD nowrap>16:16</TD>
+<TD nowrap>RTC_TMR</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RTC_TMR</TD>
+<TD>Clear enable for external Interrupt
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>WDT</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>WDT</TD>
+<TD>Clear enable for external Interrupt
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>PWM</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>PWM</TD>
+<TD>Clear enable for external Interrupt
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>ADC</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>ADC</TD>
+<TD>Clear enable for external Interrupt
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>DSP</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>DSP</TD>
+<TD>Clear enable for external Interrupt
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>RTC1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RTC1</TD>
+<TD>Clear enable for external Interrupt
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>RTC0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RTC0</TD>
+<TD>Clear enable for external Interrupt
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>I2C1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>I2C1</TD>
+<TD>Clear enable for external Interrupt
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>I2C0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>I2C0</TD>
+<TD>Clear enable for external Interrupt
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>SPI1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SPI1</TD>
+<TD>Clear enable for external Interrupt
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>SPI0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SPI0</TD>
+<TD>Clear enable for external Interrupt
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>UART1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>UART1</TD>
+<TD>Clear enable for external Interrupt
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>UART0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>UART0</TD>
+<TD>Clear enable for external Interrupt
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>TIMER1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>TIMER1</TD>
+<TD>Clear enable for external Interrupt
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>TIMER0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>TIMER0</TD>
+<TD>Clear enable for external Interrupt
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>GPIO1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO1</TD>
+<TD>Clear enable for external Interrupt
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>GPIO0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO0</TD>
+<TD>Clear enable for external Interrupt
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Clear Interrupt Enable Bits [31:0]</P>
+<BR><HR>
+<H2 id="EISPR0"><A href="#index">
+IO_NVIC_EISPR0</A></H2>
+<P><FONT size="+1"><B>EXTERNAL INTERRUPT SET PENDING 0</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_NVIC_EISPR0 ADDRESS:</B></TD>
+<TD><CODE>0xe000e200</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="10">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SW3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SW2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SW1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SW0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">AO_BOD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RTC_TMR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">WDT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">PWM<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">ADC<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DSP<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RTC1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RTC0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">I2C1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">I2C0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SPI1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SPI0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">UART1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">UART0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TIMER1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TIMER0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">GPIO1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">GPIO0<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:22</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RSVD</TD>
+<TD>RSVD
+<TR align="left">
+<TD nowrap>21:21</TD>
+<TD nowrap>SW3</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SW3</TD>
+<TD>Set interrupt pending bit
+<TR align="left">
+<TD nowrap>20:20</TD>
+<TD nowrap>SW2</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SW2</TD>
+<TD>Set interrupt pending bit
+<TR align="left">
+<TD nowrap>19:19</TD>
+<TD nowrap>SW1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SW1</TD>
+<TD>Set interrupt pending bit
+<TR align="left">
+<TD nowrap>18:18</TD>
+<TD nowrap>SW0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SW0</TD>
+<TD>Set interrupt pending bit
+<TR align="left">
+<TD nowrap>17:17</TD>
+<TD nowrap>AO_BOD</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>AO_BOD</TD>
+<TD>Set interrupt pending bit
+<TR align="left">
+<TD nowrap>16:16</TD>
+<TD nowrap>RTC_TMR</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RTC_TMR</TD>
+<TD>Set interrupt pending bit
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>WDT</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>WDT</TD>
+<TD>Set interrupt pending bit
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>PWM</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>PWM</TD>
+<TD>Set interrupt pending bit
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>ADC</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>ADC</TD>
+<TD>Set interrupt pending bit
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>DSP</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>DSP</TD>
+<TD>Set interrupt pending bit
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>RTC1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RTC1</TD>
+<TD>Set interrupt pending bit
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>RTC0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RTC0</TD>
+<TD>Set interrupt pending bit
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>I2C1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>I2C1</TD>
+<TD>Set interrupt pending bit
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>I2C0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>I2C0</TD>
+<TD>Set interrupt pending bit
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>SPI1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SPI1</TD>
+<TD>Set interrupt pending bit
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>SPI0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SPI0</TD>
+<TD>Set interrupt pending bit
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>UART1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>UART1</TD>
+<TD>Set interrupt pending bit
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>UART0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>UART0</TD>
+<TD>Set interrupt pending bit
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>TIMER1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>TIMER1</TD>
+<TD>Set interrupt pending bit
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>TIMER0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>TIMER0</TD>
+<TD>Set interrupt pending bit
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>GPIO1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO1</TD>
+<TD>Set interrupt pending bit
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>GPIO0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO0</TD>
+<TD>Set interrupt pending bit
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Interrupt Set Pending Register 0 Bits [31:0]</P>
+<BR><HR>
+<H2 id="EICPR0"><A href="#index">
+IO_NVIC_EICPR0</A></H2>
+<P><FONT size="+1"><B>EXTERNAL INTERRUPT CLEAR PENDING 0</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_NVIC_EICPR0 ADDRESS:</B></TD>
+<TD><CODE>0xe000e280</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="10">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SW3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SW2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SW1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SW0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">AO_BOD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RTC_TMR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">WDT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">PWM<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">ADC<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DSP<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RTC1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RTC0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">I2C1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">I2C0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SPI1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SPI0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">UART1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">UART0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TIMER1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TIMER0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">GPIO1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">GPIO0<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:22</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RSVD</TD>
+<TD>RSVD
+<TR align="left">
+<TD nowrap>21:21</TD>
+<TD nowrap>SW3</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SW3</TD>
+<TD>Clear interrupt pending bit
+<TR align="left">
+<TD nowrap>20:20</TD>
+<TD nowrap>SW2</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SW2</TD>
+<TD>Clear interrupt pending bit
+<TR align="left">
+<TD nowrap>19:19</TD>
+<TD nowrap>SW1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SW1</TD>
+<TD>Clear interrupt pending bit
+<TR align="left">
+<TD nowrap>18:18</TD>
+<TD nowrap>SW0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SW0</TD>
+<TD>Clear interrupt pending bit
+<TR align="left">
+<TD nowrap>17:17</TD>
+<TD nowrap>AO_BOD</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>AO_BOD</TD>
+<TD>Clear interrupt pending bit
+<TR align="left">
+<TD nowrap>16:16</TD>
+<TD nowrap>RTC_TMR</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RTC_TMR</TD>
+<TD>Clear interrupt pending bit
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>WDT</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>WDT</TD>
+<TD>Clear interrupt pending bit
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>PWM</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>PWM</TD>
+<TD>Clear interrupt pending bit
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>ADC</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>ADC</TD>
+<TD>Clear interrupt pending bit
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>DSP</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>DSP</TD>
+<TD>Clear interrupt pending bit
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>RTC1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RTC1</TD>
+<TD>Clear interrupt pending bit
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>RTC0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RTC0</TD>
+<TD>Clear interrupt pending bit
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>I2C1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>I2C1</TD>
+<TD>Clear interrupt pending bit
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>I2C0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>I2C0</TD>
+<TD>Clear interrupt pending bit
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>SPI1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SPI1</TD>
+<TD>Clear interrupt pending bit
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>SPI0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SPI0</TD>
+<TD>Clear interrupt pending bit
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>UART1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>UART1</TD>
+<TD>Clear interrupt pending bit
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>UART0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>UART0</TD>
+<TD>Clear interrupt pending bit
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>TIMER1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>TIMER1</TD>
+<TD>Clear interrupt pending bit
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>TIMER0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>TIMER0</TD>
+<TD>Clear interrupt pending bit
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>GPIO1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO1</TD>
+<TD>Clear interrupt pending bit
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>GPIO0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO0</TD>
+<TD>Clear interrupt pending bit
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Interrupt Clear Pending Register 0 Bits [31:0]</P>
+<BR><HR>
+<H2 id="EIABR0"><A href="#index">
+IO_NVIC_EIABR0</A></H2>
+<P><FONT size="+1"><B>EXTERNAL INTERRUPT ACTIVE BITS 0</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_NVIC_EIABR0 ADDRESS:</B></TD>
+<TD><CODE>0xe000e300</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="10">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SW3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SW2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SW1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SW0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">AO_BOD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RTC_TMR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">WDT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">PWM<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">ADC<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DSP<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RTC1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RTC0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">I2C1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">I2C0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SPI1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SPI0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">UART1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">UART0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TIMER1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TIMER0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">GPIO1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">GPIO0<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:22</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RSVD</TD>
+<TD>RSVD
+<TR align="left">
+<TD nowrap>21:21</TD>
+<TD nowrap>SW3</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SW3</TD>
+<TD>Interrupt active status bit
+<TR align="left">
+<TD nowrap>20:20</TD>
+<TD nowrap>SW2</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SW2</TD>
+<TD>Interrupt active status bit
+<TR align="left">
+<TD nowrap>19:19</TD>
+<TD nowrap>SW1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SW1</TD>
+<TD>Interrupt active status bit
+<TR align="left">
+<TD nowrap>18:18</TD>
+<TD nowrap>SW0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SW0</TD>
+<TD>Interrupt active status bit
+<TR align="left">
+<TD nowrap>17:17</TD>
+<TD nowrap>AO_BOD</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>AO_BOD</TD>
+<TD>Interrupt active status bit
+<TR align="left">
+<TD nowrap>16:16</TD>
+<TD nowrap>RTC_TMR</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RTC_TMR</TD>
+<TD>Interrupt active status bit
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>WDT</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>WDT</TD>
+<TD>Interrupt active status bit
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>PWM</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>PWM</TD>
+<TD>Interrupt active status bit
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>ADC</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>ADC</TD>
+<TD>Interrupt active status bit
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>DSP</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>DSP</TD>
+<TD>Interrupt active status bit
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>RTC1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RTC1</TD>
+<TD>Interrupt active status bit
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>RTC0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RTC0</TD>
+<TD>Interrupt active status bit
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>I2C1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>I2C1</TD>
+<TD>Interrupt active status bit
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>I2C0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>I2C0</TD>
+<TD>Interrupt active status bit
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>SPI1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SPI1</TD>
+<TD>Interrupt active status bit
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>SPI0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SPI0</TD>
+<TD>Interrupt active status bit
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>UART1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>UART1</TD>
+<TD>Interrupt active status bit
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>UART0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>UART0</TD>
+<TD>Interrupt active status bit
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>TIMER1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>TIMER1</TD>
+<TD>Interrupt active status bit
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>TIMER0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>TIMER0</TD>
+<TD>Interrupt active status bit
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>GPIO1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO1</TD>
+<TD>Interrupt active status bit
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>GPIO0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO0</TD>
+<TD>Interrupt active status bit
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Interrupt Active Bits Register 0 Bits [31:0]. These bits indicate which vectors are active.</P>
+<BR><HR>
+<H2 id="EIPLR0"><A href="#index">
+IO_NVIC_EIPLR0</A></H2>
+<P><FONT size="+1"><B>EXTERNAL INTERRUPT PRIORTY LEVEL REGISTER 0</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_NVIC_EIPLR0 ADDRESS:</B></TD>
+<TD><CODE>0xe000e400</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V0<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:24</TD>
+<TD nowrap>PRI_V3</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 3. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+<TR align="left">
+<TD nowrap>23:16</TD>
+<TD nowrap>PRI_V2</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 2. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+<TR align="left">
+<TD nowrap>15:8</TD>
+<TD nowrap>PRI_V1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 1. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+<TR align="left">
+<TD nowrap>7:0</TD>
+<TD nowrap>PRI_V0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 0. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Interrupt Priority Setting Register  for vectors [3:0]</P>
+<BR><HR>
+<H2 id="EIPLR1"><A href="#index">
+IO_NVIC_EIPLR1</A></H2>
+<P><FONT size="+1"><B>EXTERNAL INTERRUPT PRIORTY LEVEL REGISTER 1</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_NVIC_EIPLR1 ADDRESS:</B></TD>
+<TD><CODE>0xe000e404</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V7<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V6<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V5<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V4<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:24</TD>
+<TD nowrap>PRI_V7</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 7. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+<TR align="left">
+<TD nowrap>23:16</TD>
+<TD nowrap>PRI_V6</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 6. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+<TR align="left">
+<TD nowrap>15:8</TD>
+<TD nowrap>PRI_V5</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 5. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+<TR align="left">
+<TD nowrap>7:0</TD>
+<TD nowrap>PRI_V4</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 4. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Interrupt Priority Setting Register  for vectors [7:4]</P>
+<BR><HR>
+<H2 id="EIPLR2"><A href="#index">
+IO_NVIC_EIPLR2</A></H2>
+<P><FONT size="+1"><B>EXTERNAL INTERRUPT PRIORTY LEVEL REGISTER 2</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_NVIC_EIPLR2 ADDRESS:</B></TD>
+<TD><CODE>0xe000e408</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V11<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V10<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V9<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V8<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:24</TD>
+<TD nowrap>PRI_V11</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 11. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+<TR align="left">
+<TD nowrap>23:16</TD>
+<TD nowrap>PRI_V10</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 10. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+<TR align="left">
+<TD nowrap>15:8</TD>
+<TD nowrap>PRI_V9</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 9. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+<TR align="left">
+<TD nowrap>7:0</TD>
+<TD nowrap>PRI_V8</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 8. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Interrupt Priority Setting Register for vectors [11:8]</P>
+<BR><HR>
+<H2 id="EIPLR3"><A href="#index">
+IO_NVIC_EIPLR3</A></H2>
+<P><FONT size="+1"><B>EXTERNAL INTERRUPT PRIORTY LEVEL REGISTER 3</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_NVIC_EIPLR3 ADDRESS:</B></TD>
+<TD><CODE>0xe000e40c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V15<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V14<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V13<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V12<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:24</TD>
+<TD nowrap>PRI_V15</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 15. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+<TR align="left">
+<TD nowrap>23:16</TD>
+<TD nowrap>PRI_V14</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 14. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+<TR align="left">
+<TD nowrap>15:8</TD>
+<TD nowrap>PRI_V13</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 13. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+<TR align="left">
+<TD nowrap>7:0</TD>
+<TD nowrap>PRI_V12</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 12. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Interrupt Priority Setting Register for vectors [15:12]</P>
+<BR><HR>
+<H2 id="EIPLR4"><A href="#index">
+IO_NVIC_EIPLR4</A></H2>
+<P><FONT size="+1"><B>EXTERNAL INTERRUPT PRIORTY LEVEL REGISTER 4</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_NVIC_EIPLR4 ADDRESS:</B></TD>
+<TD><CODE>0xe000e410</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V19<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V18<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V17<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V16<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:24</TD>
+<TD nowrap>PRI_V19</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 19. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+<TR align="left">
+<TD nowrap>23:16</TD>
+<TD nowrap>PRI_V18</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 18. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+<TR align="left">
+<TD nowrap>15:8</TD>
+<TD nowrap>PRI_V17</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 17. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+<TR align="left">
+<TD nowrap>7:0</TD>
+<TD nowrap>PRI_V16</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 16. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Interrupt Priority Setting Register for vectors [19:16]</P>
+<BR><HR>
+<H2 id="EIPLR5"><A href="#index">
+IO_NVIC_EIPLR5</A></H2>
+<P><FONT size="+1"><B>EXTERNAL INTERRUPT PRIORTY LEVEL REGISTER 5</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_NVIC_EIPLR5 ADDRESS:</B></TD>
+<TD><CODE>0xe000e414</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V23<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V22<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V21<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V20<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:24</TD>
+<TD nowrap>PRI_V23</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 23. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+<TR align="left">
+<TD nowrap>23:16</TD>
+<TD nowrap>PRI_V22</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 22. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+<TR align="left">
+<TD nowrap>15:8</TD>
+<TD nowrap>PRI_V21</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 21. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+<TR align="left">
+<TD nowrap>7:0</TD>
+<TD nowrap>PRI_V20</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 20. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Interrupt Priority Setting Register for vectors [23:20]</P>
+<BR><HR>
+<H2 id="EIPLR6"><A href="#index">
+IO_NVIC_EIPLR6</A></H2>
+<P><FONT size="+1"><B>EXTERNAL INTERRUPT PRIORTY LEVEL REGISTER 6</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_NVIC_EIPLR6 ADDRESS:</B></TD>
+<TD><CODE>0xe000e418</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V27<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V26<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V25<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V24<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:24</TD>
+<TD nowrap>PRI_V27</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 27. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+<TR align="left">
+<TD nowrap>23:16</TD>
+<TD nowrap>PRI_V26</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 26. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+<TR align="left">
+<TD nowrap>15:8</TD>
+<TD nowrap>PRI_V25</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 25. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+<TR align="left">
+<TD nowrap>7:0</TD>
+<TD nowrap>PRI_V24</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 24. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Interrupt Priority Setting Register for vectors [27:24]</P>
+<BR><HR>
+<H2 id="EIPLR7"><A href="#index">
+IO_NVIC_EIPLR7</A></H2>
+<P><FONT size="+1"><B>EXTERNAL INTERRUPT PRIORTY LEVEL REGISTER 7</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_NVIC_EIPLR7 ADDRESS:</B></TD>
+<TD><CODE>0xe000e41c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V31<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V30<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V29<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_V28<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:24</TD>
+<TD nowrap>PRI_V31</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 31. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+<TR align="left">
+<TD nowrap>23:16</TD>
+<TD nowrap>PRI_V30</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 30. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+<TR align="left">
+<TD nowrap>15:8</TD>
+<TD nowrap>PRI_V29</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 29. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+<TR align="left">
+<TD nowrap>7:0</TD>
+<TD nowrap>PRI_V28</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty assignment for vector 28. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Interrupt Priority Setting Register for vectors [31:28]</P>
+<BR><HR>
+<H2 id="ICSR"><A href="#index">
+IO_NVIC_ICSR</A></H2>
+<P><FONT size="+1"><B>Interrupt Control and State Register</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_NVIC_ICSR ADDRESS:</B></TD>
+<TD><CODE>0xe000ed04</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="1">NMIPENDSET<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">PENDSVSET<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">PENDSVCLR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">PENDSTSET<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">PENDSTCLR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">ISRPREEMPT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">ISRPENDING<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="10">VECTPENDING<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RETTOBASE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="9">VECTACTIVE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:31</TD>
+<TD nowrap>NMIPENDSET</TD>
+<TD nowrap>RW</TD>
+<TD nowrap></TD>
+<TD>NMI Pended
+<TR align="left">
+<TD nowrap>30:29</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>28:28</TD>
+<TD nowrap>PENDSVSET</TD>
+<TD nowrap>RW</TD>
+<TD nowrap></TD>
+<TD>Write 1 to pend system call; Read value indicates pending status
+<TR align="left">
+<TD nowrap>27:27</TD>
+<TD nowrap>PENDSVCLR</TD>
+<TD nowrap>W</TD>
+<TD nowrap></TD>
+<TD>Write 1 to clear PendSV pending status
+<TR align="left">
+<TD nowrap>26:26</TD>
+<TD nowrap>PENDSTSET</TD>
+<TD nowrap>RW</TD>
+<TD nowrap></TD>
+<TD>Write 1 to pend systick exception; Read value indicates pending status
+<TR align="left">
+<TD nowrap>25:25</TD>
+<TD nowrap>PENDSTCLR</TD>
+<TD nowrap>W</TD>
+<TD nowrap></TD>
+<TD>Write 1 to clear Systick pending status
+<TR align="left">
+<TD nowrap>24:24</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>23:23</TD>
+<TD nowrap>ISRPREEMPT</TD>
+<TD nowrap>R</TD>
+<TD nowrap></TD>
+<TD>Indicate that a pending interrupt is going to be active in next step (for debug)
+<TR align="left">
+<TD nowrap>22:22</TD>
+<TD nowrap>ISRPENDING</TD>
+<TD nowrap>R</TD>
+<TD nowrap></TD>
+<TD>external interrupt pending (excluding system exceptions like NMI for fault)
+<TR align="left">
+<TD nowrap>21:12</TD>
+<TD nowrap>VECTPENDING</TD>
+<TD nowrap>R</TD>
+<TD nowrap></TD>
+<TD>Pending ISR number
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>RETTOBASE</TD>
+<TD nowrap>R</TD>
+<TD nowrap></TD>
+<TD>Set to 1 when the processor is running an exception handler and will return to thread level if interrupt return and no other exceptions pending
+<TR align="left">
+<TD nowrap>10:9</TD>
+<TD nowrap>RSVD3</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>8:0</TD>
+<TD nowrap>VECTACTIVE</TD>
+<TD nowrap>R</TD>
+<TD nowrap></TD>
+<TD>Current running interrupt service routine
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Interrupt Control and State</P>
+<BR><HR>
+<H2 id="AIRCR"><A href="#index">
+IO_NVIC_AIRCR</A></H2>
+<P><FONT size="+1"><B>Application Interrupt and Reset Control Register</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_NVIC_AIRCR ADDRESS:</B></TD>
+<TD><CODE>0xe000ed0c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="16">VECTKEY<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">ENDIANESS<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="4">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="3">PRIGROUP<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="5">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SYSRESETREQ<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">VECTCLRACTIVE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">VECTRESET<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:16</TD>
+<TD nowrap>VECTKEY</TD>
+<TD nowrap>RW</TD>
+<TD nowrap></TD>
+<TD>Access key; 0x05FA must be written to this field to write to this register; the read back value is 0xFA05.
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>ENDIANESS</TD>
+<TD nowrap>R</TD>
+<TD nowrap></TD>
+<TD>endianness for data; 1 for big, 0 for little.
+<TR align="left">
+<TD nowrap>14:11</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>10:8</TD>
+<TD nowrap>PRIGROUP</TD>
+<TD nowrap>RW</TD>
+<TD nowrap></TD>
+<TD>Priority group
+<TR align="left">
+<TD nowrap>7:3</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>SYSRESETREQ</TD>
+<TD nowrap>W</TD>
+<TD nowrap></TD>
+<TD>Request chip control logic to generate a reset
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>VECTCLRACTIVE</TD>
+<TD nowrap>W</TD>
+<TD nowrap></TD>
+<TD>Clear all active state information for exceptions; typically used in debug or OS to allow system to recover from system error (Reset is safer)
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>VECTRESET</TD>
+<TD nowrap>W</TD>
+<TD nowrap></TD>
+<TD>Reset CortexM3 (except debug logic); will not reset circuits outside the processor
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Application Interrupt and Reset Control</P>
+<BR><HR>
+<H2 id="SCR"><A href="#index">
+IO_NVIC_SCR</A></H2>
+<P><FONT size="+1"><B>System Control Register</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_NVIC_SCR ADDRESS:</B></TD>
+<TD><CODE>0xe000ed10</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="27">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SEVONPEND<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SLEEPDEEP<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SLEEPONEXIT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD3<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:5</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>SEVONPEND</TD>
+<TD nowrap>RW</TD>
+<TD nowrap></TD>
+<TD>Send Event on Pending.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>SLEEPDEEP</TD>
+<TD nowrap>RW</TD>
+<TD nowrap></TD>
+<TD>Enable SLEEPDEEP output signal when entering sleep mode.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>SLEEPONEXIT</TD>
+<TD nowrap>RW</TD>
+<TD nowrap></TD>
+<TD>Enable SLEEPDEEP on exit feature
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>RSVD3</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>System Control</P>
+<BR><HR>
+<H2 id="CCR"><A href="#index">
+IO_NVIC_CCR</A></H2>
+<P><FONT size="+1"><B>Configuration Control Register</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_NVIC_CCR ADDRESS:</B></TD>
+<TD><CODE>0xe000ed14</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="22">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">STKALIGN<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">BFHFNMIGN<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="3">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DIV_0_TRP<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">UNALIGN_TRP<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">USERSETMPEND<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">NONBASETHRDENA<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:10</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>STKALIGN</TD>
+<TD nowrap>RW</TD>
+<TD nowrap></TD>
+<TD>Force exception stacking start in double word aligned address.
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>BFHFNMIGN</TD>
+<TD nowrap>RW</TD>
+<TD nowrap></TD>
+<TD>Ignore data bus fault during hard fault and NMI handlers
+<TR align="left">
+<TD nowrap>7:5</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>DIV_0_TRP</TD>
+<TD nowrap>RW</TD>
+<TD nowrap></TD>
+<TD>Trap on divide by 0
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>UNALIGN_TRP</TD>
+<TD nowrap>RW</TD>
+<TD nowrap></TD>
+<TD>Trap on unaligned access
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>RSVD3</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>USERSETMPEND</TD>
+<TD nowrap>RW</TD>
+<TD nowrap></TD>
+<TD>If set to 1, allow user code to write to Software Trigger Interrupt register
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>NONBASETHRDENA</TD>
+<TD nowrap>RW</TD>
+<TD nowrap></TD>
+<TD>Nonbase Thread Enable. If set to 1, allows exception handler to return to thread state at any level by controlling return value.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Configuration Control</P>
+<BR><HR>
+<H2 id="SEPLR0"><A href="#index">
+IO_NVIC_SEPLR0</A></H2>
+<P><FONT size="+1"><B>SYSTEM EXCEPTIONS PRIORTY LEVEL REGISTER 0</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_NVIC_SEPLR0 ADDRESS:</B></TD>
+<TD><CODE>0xe000ed18</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="8">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_6<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_5<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_4<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:24</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>23:16</TD>
+<TD nowrap>PRI_6</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty level for usage fault. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+<TR align="left">
+<TD nowrap>15:8</TD>
+<TD nowrap>PRI_5</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty level for bus fault. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+<TR align="left">
+<TD nowrap>7:0</TD>
+<TD nowrap>PRI_4</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty level for memory management fault. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>System Exceptions Priority Setting Register for mm/bus/usage fault</P>
+<BR><HR>
+<H2 id="SEPLR1"><A href="#index">
+IO_NVIC_SEPLR1</A></H2>
+<P><FONT size="+1"><B>SYSTEM EXCEPTIONS PRIORTY LEVEL REGISTER 1</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_NVIC_SEPLR1 ADDRESS:</B></TD>
+<TD><CODE>0xe000ed1c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_11<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="24">RSVD1<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:24</TD>
+<TD nowrap>PRI_11</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty level for SVC. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+<TR align="left">
+<TD nowrap>23:0</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>System Exceptions Priority Setting Register for SVC</P>
+<BR><HR>
+<H2 id="SEPLR2"><A href="#index">
+IO_NVIC_SEPLR2</A></H2>
+<P><FONT size="+1"><B>SYSTEM EXCEPTIONS PRIORTY LEVEL REGISTER 2</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_NVIC_SEPLR2 ADDRESS:</B></TD>
+<TD><CODE>0xe000ed20</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_15<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_14<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="8">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PRI_12<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:24</TD>
+<TD nowrap>PRI_15</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty level for SYSTICK. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+<TR align="left">
+<TD nowrap>23:16</TD>
+<TD nowrap>PRI_14</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty level for PendSV. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+<TR align="left">
+<TD nowrap>15:8</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>7:0</TD>
+<TD nowrap>PRI_12</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Priorty level for debug monitor. Note only bits [7:5] exist.</TD>
+<TD>Bit [7:5] sets the priority level from 0 to 7.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>System Exceptions Priority Setting Register for debug monitor/PendSV/SYSTICK</P>
+<BR><HR>
+<H2 id="SHCSR"><A href="#index">
+IO_NVIC_SHCSR</A></H2>
+<P><FONT size="+1"><B>System Handler Control and State Register</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_NVIC_SHCSR ADDRESS:</B></TD>
+<TD><CODE>0xe000ed24</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="13">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">USGFAULTENA<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">BUSFAULTENA<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">MEMFAULTENA<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SVCALLPENDED<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">BUSFAULTPENDED<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">MEMFAULTPENDED<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">USGFAULTPENDED<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SYSTICKACT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">PENDSVACT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">MONITORACT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SVCALLACT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="3">RSVD3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">USGFAULTACT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD4<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">BUSFAULTACT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">MEMFAULTACT<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:19</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>18:18</TD>
+<TD nowrap>USGFAULTENA</TD>
+<TD nowrap>RW</TD>
+<TD nowrap></TD>
+<TD>Usage fault handler enable
+<TR align="left">
+<TD nowrap>17:17</TD>
+<TD nowrap>BUSFAULTENA</TD>
+<TD nowrap>RW</TD>
+<TD nowrap></TD>
+<TD>Bus fault handler enable
+<TR align="left">
+<TD nowrap>16:16</TD>
+<TD nowrap>MEMFAULTENA</TD>
+<TD nowrap>RW</TD>
+<TD nowrap></TD>
+<TD>Memory Management fault handler enable
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>SVCALLPENDED</TD>
+<TD nowrap>RW</TD>
+<TD nowrap></TD>
+<TD>SVC pended; SVC is started but was replaced by a higher priority exception
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>BUSFAULTPENDED</TD>
+<TD nowrap>RW</TD>
+<TD nowrap></TD>
+<TD>bus fault pended; bus fault is started but was replaced by a higher priority exception
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>MEMFAULTPENDED</TD>
+<TD nowrap>RW</TD>
+<TD nowrap></TD>
+<TD>mm fault pended; mm fault is started but was replaced by a higher priority exception
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>USGFAULTPENDED</TD>
+<TD nowrap>RW</TD>
+<TD nowrap></TD>
+<TD>usage fault pended; usage fault is started but was replaced by a higher priority exception
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>SYSTICKACT</TD>
+<TD nowrap>RW</TD>
+<TD nowrap></TD>
+<TD>Read as 1 if SYSTICK exception is active
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>PENDSVACT</TD>
+<TD nowrap>RW</TD>
+<TD nowrap></TD>
+<TD>Read as 1 if PendSV exception is active
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>MONITORACT</TD>
+<TD nowrap>RW</TD>
+<TD nowrap></TD>
+<TD>Read as 1 if debug monitor exception is active
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>SVCALLACT</TD>
+<TD nowrap>RW</TD>
+<TD nowrap></TD>
+<TD>Read as 1 if SVC exception is active
+<TR align="left">
+<TD nowrap>6:4</TD>
+<TD nowrap>RSVD3</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>USGFAULTACT</TD>
+<TD nowrap>RW</TD>
+<TD nowrap></TD>
+<TD>Read as 1 if USGFAULTACT exception is active
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>RSVD4</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>BUSFAULTACT</TD>
+<TD nowrap>RW</TD>
+<TD nowrap></TD>
+<TD>Read as 1 if BUSFAULTACT exception is active
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>MEMFAULTACT</TD>
+<TD nowrap>RW</TD>
+<TD nowrap></TD>
+<TD>Read as 1 if MEMFAULTACT exception is active
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>System Handler Control and State</P>
+<BR><HR>
+<H2 id="CFSR"><A href="#index">
+IO_NVIC_CFSR</A></H2>
+<P><FONT size="+1"><B>Configurable Fault Status Register</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_NVIC_CFSR ADDRESS:</B></TD>
+<TD><CODE>0xe000ed28</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="6">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DIVBYZERO<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">UNALIGNED<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="4">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">NOCP<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">INVPC<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">INVSTATE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">UNDEFINSTR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">BFARVALID<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">STKERR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">UNSTKERR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IMPREISERR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">PREISERR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IBUSERR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">MMARVALID<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD4<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">MSTKERR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">MUNSTKERR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD5<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DACCVIOL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IACCVIOL<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:26</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>25:25</TD>
+<TD nowrap>DIVBYZERO</TD>
+<TD nowrap>R/Wc</TD>
+<TD nowrap></TD>
+<TD>Indicate divide by zero takes place (can only set if DIV_0_TRP is set)
+<TR align="left">
+<TD nowrap>24:24</TD>
+<TD nowrap>UNALIGNED</TD>
+<TD nowrap>R/Wc</TD>
+<TD nowrap></TD>
+<TD>Indicate unaligned access takes place (can only set if UNALIGN_TRP is set)
+<TR align="left">
+<TD nowrap>23:20</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>not used
+<TR align="left">
+<TD nowrap>19:19</TD>
+<TD nowrap>NOCP</TD>
+<TD nowrap>R/Wc</TD>
+<TD nowrap></TD>
+<TD>Attemps to execute a coprocessor instruction
+<TR align="left">
+<TD nowrap>18:18</TD>
+<TD nowrap>INVPC</TD>
+<TD nowrap>R/Wc</TD>
+<TD nowrap></TD>
+<TD>Attemps to do exception with bad value in EXC_RETURN number
+<TR align="left">
+<TD nowrap>17:17</TD>
+<TD nowrap>INVSTATE</TD>
+<TD nowrap>R/Wc</TD>
+<TD nowrap></TD>
+<TD>Attemps to switch to invalid state
+<TR align="left">
+<TD nowrap>16:16</TD>
+<TD nowrap>UNDEFINSTR</TD>
+<TD nowrap>R/Wc</TD>
+<TD nowrap></TD>
+<TD>Attemps to execute an undefined instruction
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>BFARVALID</TD>
+<TD nowrap>R</TD>
+<TD nowrap></TD>
+<TD>Indicates BFAR is valid
+<TR align="left">
+<TD nowrap>14:13</TD>
+<TD nowrap>RSVD3</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>STKERR</TD>
+<TD nowrap>R/Wc</TD>
+<TD nowrap></TD>
+<TD>Stacking error
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>UNSTKERR</TD>
+<TD nowrap>R/Wc</TD>
+<TD nowrap></TD>
+<TD>Unstacking error
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>IMPREISERR</TD>
+<TD nowrap>R/Wc</TD>
+<TD nowrap></TD>
+<TD>Imprecise data access violation
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>PREISERR</TD>
+<TD nowrap>R/Wc</TD>
+<TD nowrap></TD>
+<TD>Precise data access violation
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>IBUSERR</TD>
+<TD nowrap>R/Wc</TD>
+<TD nowrap></TD>
+<TD>Instruction access violation
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>MMARVALID</TD>
+<TD nowrap>R</TD>
+<TD nowrap></TD>
+<TD>Indicates MMAR is valid
+<TR align="left">
+<TD nowrap>6:5</TD>
+<TD nowrap>RSVD4</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>MSTKERR</TD>
+<TD nowrap>R/Wc</TD>
+<TD nowrap></TD>
+<TD>Stacking error
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>MUNSTKERR</TD>
+<TD nowrap>R/Wc</TD>
+<TD nowrap></TD>
+<TD>Unstacking error
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>RSVD5</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>DACCVIOL</TD>
+<TD nowrap>R/Wc</TD>
+<TD nowrap></TD>
+<TD>data access violation
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>IACCVIOL</TD>
+<TD nowrap>R/Wc</TD>
+<TD nowrap></TD>
+<TD>Instruction access violation
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Read the fault status, write to clear the fault</P>
+<BR><HR>
+<H2 id="HFSR"><A href="#index">
+IO_NVIC_HFSR</A></H2>
+<P><FONT size="+1"><B>Hard Fault Status Register</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_NVIC_HFSR ADDRESS:</B></TD>
+<TD><CODE>0xe000ed2c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="1">DEBUGEVT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">FORCED<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="28">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">VECTBL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD2<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:31</TD>
+<TD nowrap>DEBUGEVT</TD>
+<TD nowrap>R/Wc</TD>
+<TD nowrap></TD>
+<TD>Indicate hard fault is triggered by debug event
+<TR align="left">
+<TD nowrap>30:30</TD>
+<TD nowrap>FORCED</TD>
+<TD nowrap>R/Wc</TD>
+<TD nowrap></TD>
+<TD>Indicate hard fault is taken because of mm/bus/usage fault
+<TR align="left">
+<TD nowrap>29:2</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>VECTBL</TD>
+<TD nowrap>R/Wc</TD>
+<TD nowrap></TD>
+<TD>Indicate hard fault is caused by failed vetor fetch
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>not used
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Read the fault status, write to clear the fault</P>
+<BR><HR>
+<H2 id="DFSR"><A href="#index">
+IO_NVIC_DFSR</A></H2>
+<P><FONT size="+1"><B>Debug Fault Status Register</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_NVIC_DFSR ADDRESS:</B></TD>
+<TD><CODE>0xe000ed30</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="27">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">EXTERNAL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">VCATCH<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DWTTRAP<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">BKPT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">HALTED<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:5</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>EXTERNAL</TD>
+<TD nowrap>R/Wc</TD>
+<TD nowrap></TD>
+<TD>EDBGRQ signal asserted
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>VCATCH</TD>
+<TD nowrap>R/Wc</TD>
+<TD nowrap></TD>
+<TD>Vector fetch occurred
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>DWTTRAP</TD>
+<TD nowrap>R/Wc</TD>
+<TD nowrap></TD>
+<TD>DWT match occurred
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>BKPT</TD>
+<TD nowrap>R/Wc</TD>
+<TD nowrap></TD>
+<TD>BKPT instruction executed
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>HALTED</TD>
+<TD nowrap>R/Wc</TD>
+<TD nowrap></TD>
+<TD>HALTED requested in NVIC
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Read the fault status, write to clear the fault</P>
+<BR><HR>
+<H2 id="MMAR"><A href="#index">
+IO_NVIC_MMAR</A></H2>
+<P><FONT size="+1"><B>Memory Manage Fault Address Register</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_NVIC_MMAR ADDRESS:</B></TD>
+<TD><CODE>0xe000ed34</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#c0c0c0" colspan="32">MMAR<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>MMAR</TD>
+<TD nowrap>RO</TD>
+<TD nowrap></TD>
+<TD>Address that cuased memory manage fault
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>memory manage address that caused the fault</P>
+<BR><HR>
+<H2 id="BFAR"><A href="#index">
+IO_NVIC_BFAR</A></H2>
+<P><FONT size="+1"><B>Bus Fault Address Register</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_NVIC_BFAR ADDRESS:</B></TD>
+<TD><CODE>0xe000ed38</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#c0c0c0" colspan="32">BFAR<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>BFAR</TD>
+<TD nowrap>RO</TD>
+<TD nowrap></TD>
+<TD>Address that cuased bus fault
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>address that caused bus fault</P>
+<BR><HR>
+<H2 id="STIR"><A href="#index">
+IO_NVIC_STIR</A></H2>
+<P><FONT size="+1"><B>SOFTWARE TRIGGER INTERRUPT REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_NVIC_STIR ADDRESS:</B></TD>
+<TD><CODE>0xe000ef00</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="23">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="9">INTID<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:9</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>8:0</TD>
+<TD nowrap>INTID</TD>
+<TD nowrap>WO</TD>
+<TD nowrap></TD>
+<TD>value written is the interrupt number issued
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Writing the interrupt number sets the pending bit of the interrupt.</P>
+

@@ -1,0 +1,619 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>IOREG FILE: CAYMAN PDM1 Pulse Density Modulation Filter Engine.
+</TITLE>
+</HEAD>
+<BODY>
+<H1 align="center">On-Line Documentation for CAYMAN  :  PDM1 <BR>  Bus Type: PERIPHERAL BUS</H1>
+<FONT size="+2"><B><P align="center">Pulse Density Modulation Filter Engine.</P></B><B</FONT><BR><HR>
+<FONT face="Helvetica" size="-1"><P align="center"><B> Put banner announcement here. </B></P></FONT><HR>
+<BR><B>The Pulse Density Module (PDM) filter engine provides for 2 DMEMs microphones to be attached.  The digital microphone PDM streams comes in at 1.024MHz or 2.048MHz yielding either 8Ksps or 16Ksps stereo PCM sample streams.</B><BR><BR><HR>
+<FONT face="Helvetica" size="-1"><P align="left"><B> Source File Name: ./src/ioreg8_pdm.src <BR> Source File Modification Date Fri Nov 22 08:17:17 2019 <BR> html creation date November 22, 2019</B></P></FONT>
+<H2 id="index"> PDM1 Register Index</H2>
+<B> <CODE>ADDRESS</CODE></B><BR>
+<B><CODE>0x50050300: </CODE></B><A id = "PCMA_CTRLindex" href="#PCMA_CTRL"><B>IO_PDM1_PCMA_CTRL</A></B><BR>
+<B><CODE>0x50050304: </CODE></B><A id = "PDM_CORE_CONFindex" href="#PDM_CORE_CONF"><B>IO_PDM1_PDM_CORE_CONF</A></B><BR>
+<B><CODE>0x50050308: </CODE></B><A id = "PDM_CORE2_CONFindex" href="#PDM_CORE2_CONF"><B>IO_PDM1_PDM_CORE2_CONF</A></B><BR>
+<B><CODE>0x5005030c: </CODE></B><A id = "PDM_CTRL_CONFindex" href="#PDM_CTRL_CONF"><B>IO_PDM1_PDM_CTRL_CONF</A></B><BR>
+<B><CODE>0x50050310: </CODE></B><A id = "DEBUG0index" href="#DEBUG0"><B>IO_PDM1_DEBUG0</A></B><BR>
+<B><CODE>0x50050314: </CODE></B><A id = "DEBUG1index" href="#DEBUG1"><B>IO_PDM1_DEBUG1</A></B><BR>
+<BR><HR>
+<H2 id="PCMA_CTRL"><A href="#index">
+IO_PDM1_PCMA_CTRL</A></H2>
+<P><FONT size="+1"><B>PDM CORE CONTROL REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PDM1_PCMA_CTRL ADDRESS:</B></TD>
+<TD><CODE>0x50050300</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="30">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SFTRST<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">EN<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:2</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>SFTRST</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>PDM SOFT RESET</TD>
+<TD>Soft reset which resets the entire PDM to its POR state.
+<BR>RST = 1 Reset.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>EN</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Enable Data Stream</TD>
+<TD>PDM input and PCM output data streaming enable.
+<BR>DISABLE = 0 Disable.
+<BR>ENABLE = 1 Enable.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Contains the enable bit to start the audio stream.</P>
+<BR><HR>
+<H2 id="PDM_CORE_CONF"><A href="#index">
+IO_PDM1_PDM_CORE_CONF</A></H2>
+<P><FONT size="+1"><B>PDM CORE CONFIGURATION REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PDM1_PDM_CORE_CONF ADDRESS:</B></TD>
+<TD><CODE>0x50050304</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="5">PGA_R<BR><TT>0x8</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="5">PGA_L<BR><TT>0x8</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="7">SINC_RATE<BR><TT>0x20</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="4">MCLKDIV<BR><TT>0x3</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">ADCHPD<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="4">HPGAIN<BR><TT>0xb</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="3">S_CYCLES<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SOFT_MUTE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">LRSWAP<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:31</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>30:26</TD>
+<TD nowrap>PGA_R</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Right Channel PGA Gain</TD>
+<TD>Range: -12dB ~ +34.5dB, +1.5dB per step.
+<BR>m12dB = 0 -12dB
+<BR>m10p5dB = 1 -10.5dB
+<BR>34p5dB = 31 +34.5dB
+<TR align="left">
+<TD nowrap>25:21</TD>
+<TD nowrap>PGA_L</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Left Channel PGA Gain</TD>
+<TD>Range: -12dB ~ +34.5dB, +1.5dB per step.
+<BR>m12dB = 0 -12dB
+<BR>m10p5dB = 1 -10.5dB
+<BR>34p5dB = 31 +34.5dB
+<TR align="left">
+<TD nowrap>20:14</TD>
+<TD nowrap>SINC_RATE</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SINC Decimation Rate</TD>
+<TD>FIXME: describe the function.
+<TR align="left">
+<TD nowrap>13:10</TD>
+<TD nowrap>MCLKDIV</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Master Clock Divisor</TD>
+<TD>PDMA_CKO frequency divisor. F(PDMA_CKO)=F(MCLK_L)/[MCLKDIV+1].
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>ADCHPD</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>ADCHPD</TD>
+<TD>FIXME: describe the function.
+<TR align="left">
+<TD nowrap>8:5</TD>
+<TD nowrap>HPGAIN</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>High-Pass Gain</TD>
+<TD>Adjust High-Pass filter coefficients.
+<TR align="left">
+<TD nowrap>4:2</TD>
+<TD nowrap>S_CYCLES</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Set Cycles</TD>
+<TD>Set number of PDMA_CKO during gain-setting changes or soft mute.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>SOFT_MUTE</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Enables Soft Mute</TD>
+<TD>FIXME: describe the function.
+<BR>DISABLE = 0 Disabled.
+<BR>ENABLE = 1 Enabled.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>LRSWAP</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Left/Right Channel Swap</TD>
+<TD>Swaps the channel of the input audio samples.
+<BR>NORMAL = 0 No swap.
+<BR>SWAP = 1 Swap channel.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Configuration bits for the PDM-to-PCM core.</P>
+<BR><HR>
+<H2 id="PDM_CORE2_CONF"><A href="#index">
+IO_PDM1_PDM_CORE2_CONF</A></H2>
+<P><FONT size="+1"><B>PDM CORE EXTRA CONFIGURATION REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PDM1_PDM_CORE2_CONF ADDRESS:</B></TD>
+<TD><CODE>0x50050308</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="24">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SEL_STEP<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="3">PDMCKO_DLY<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">DIV_MCLKQ<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">PCM_CHSET<BR><TT>0x3</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:8</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>SEL_STEP</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Fine Gain Step</TD>
+<TD>Set fine gain step for smooth PGA or Soft-Mute attenuation transition.
+<BR>LOW = 0 0.13dB.
+<BR>HIGH = 1 0.26dB.
+<TR align="left">
+<TD nowrap>6:4</TD>
+<TD nowrap>PDMCKO_DLY</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>PDM_CKO Phase Delay</TD>
+<TD>PDM_CKO clock phase delay in terms of HMCLKA period to internal Sampler.
+<BR>NONE = 0 No extra HMCLKA clock cycle delay.
+<BR>ONE = 1 One extra HMCLKA clock cycle delay.
+<BR>SEVEN = 7 Seven extra HMCLKA clock cycle delay.
+<TR align="left">
+<TD nowrap>3:2</TD>
+<TD nowrap>DIV_MCLKQ</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>MCLKQ Divisor</TD>
+<TD>HMCLKA divide-down ratio for generating internal master clock MCLKQ.
+<BR>BYPASS = 0 F(MCLKQ)=F(HMCLKA).
+<BR>DIV_BY_1 = 1 F(MCLKQ)=F(HMCLKA)/1.
+<BR>DIV_BY_2 = 2 F(MCLKQ)=F(HMCLKA)/2.
+<BR>DIV_BY_3 = 3 F(MCLKQ)=F(HMCLKA)/3.
+<TR align="left">
+<TD nowrap>1:0</TD>
+<TD nowrap>PCM_CHSET</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>PCM Channel Set</TD>
+<TD>Set PCM Output Channels as Mono or Stereo.
+<BR>DISABLE = 0 Channel disabled.
+<BR>MONO_L = 1 Mono (left).
+<BR>MONO_R = 2 Mono (Right).
+<BR>STEREO = 3 Stereo.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Extra configuration bits for the PDM-to-PCM core.</P>
+<BR><HR>
+<H2 id="PDM_CTRL_CONF"><A href="#index">
+IO_PDM1_PDM_CTRL_CONF</A></H2>
+<P><FONT size="+1"><B>PDM CORE CONTROL CONFIGURATION REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PDM1_PDM_CTRL_CONF ADDRESS:</B></TD>
+<TD><CODE>0x5005030c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="32">PDM_CNTL<BR><TT>0x80000434</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>PDM_CNTL</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Internal Use (Debug)</TD>
+<TD>For internal use only. Do not write to this register in normal operation.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Control configuration bits for the PDM-to-PCM core.</P>
+<BR><HR>
+<H2 id="DEBUG0"><A href="#index">
+IO_PDM1_DEBUG0</A></H2>
+<P><FONT size="+1"><B>PDM CORE Debug0</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PDM1_DEBUG0 ADDRESS:</B></TD>
+<TD><CODE>0x50050310</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="28">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">ONE_SHOT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DBG_RESET<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SELECT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">ENABLE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:4</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>ONE_SHOT</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>One Shot</TD>
+<TD>If 1 we will only capture 31 bits of data and then stop.
+Setting/clearing DBG_RESET before this is required. Toggle
+will be one once sampled.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>DBG_RESET</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Debug Reset</TD>
+<TD>If 1 we hold the shift registers in reset. If 0, data is being captured.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>SELECT</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Data Select</TD>
+<TD>Select data to record. Valid options are:
+<BR>1:Left Channel data only (normally sampled on rising edge of CKO)
+<BR>0:Right Channel data only (normally sampled on falling edge of CKO)
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>ENABLE</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Debug Enable</TD>
+<TD>For internal use only. Do not write to this register in normal operation. If 1, the debug logic is running. If 0, it is not.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>PDM CORE Debug0</P>
+<BR><HR>
+<H2 id="DEBUG1"><A href="#index">
+IO_PDM1_DEBUG1</A></H2>
+<P><FONT size="+1"><B>PDM CORE Debug1</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PDM1_DEBUG1 ADDRESS:</B></TD>
+<TD><CODE>0x50050314</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">TOGGLE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="31">DATA<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:31</TD>
+<TD nowrap>TOGGLE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Toggle Bit</TD>
+<TD>Changes every 31 bits of sample.
+<TR align="left">
+<TD nowrap>30:0</TD>
+<TD nowrap>DATA</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>sample data</TD>
+<TD>31 bit sample data.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>PDM CORE Debug1</P>
+

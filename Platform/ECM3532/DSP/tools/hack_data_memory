@@ -1,0 +1,23 @@
+#!/usr/bin/perl -w
+# Assumes we read lines of: @addr  data(8-bit) all in hex.
+# read pairs of lines and stick the bytes together, shove out with address
+# in word (not byte) format.
+#
+use warnings;
+my($val)=0;
+my($addr)=0;
+my($val2)=0;
+while(!eof()) {
+    $_=<STDIN>;
+    ($addr,$val)=split;
+    $first_byte = hex($val);
+    $addr=~ s/@/0x/g;
+    $new_addr = hex($addr);
+    $word_addr = $new_addr>>1;
+    $_=<>;
+    no warnings 'once';
+    ($addr2,$val2)=split;
+    $second_byte=hex($val2);
+    printf("@%04x %02x%02x\n", $word_addr,$second_byte,$first_byte);
+    last if  (eof());
+}

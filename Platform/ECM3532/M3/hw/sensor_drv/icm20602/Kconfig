@@ -1,0 +1,9 @@
+menu "ICM20602 configuration"
+config ICM20602_NAME
+    string "Device Name String"
+    default "icm20602"
+config ICM20602_GPIO_IRQ
+    int "ICM20602 GPIO Irq Number"
+    default 25
+
+endmenu

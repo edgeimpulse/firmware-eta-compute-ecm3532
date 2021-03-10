@@ -1,0 +1,14 @@
+menu "Board Configuration"
+comment "Select board specific features"
+
+config LPM_LED
+	bool "LPM State Indication LED"
+    default y
+    depends on PM_ENABLE && (HAL_GPIO || HAL_COMMON_GPIO)
+
+config LPM_LED_GPIO
+    int "LPM Led GPIO Number"
+    default 0
+    depends on LPM_LED
+
+endmenu

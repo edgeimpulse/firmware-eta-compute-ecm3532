@@ -1,0 +1,2206 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>IOREG FILE: CAYMAN I2C0 I2C
+</TITLE>
+</HEAD>
+<BODY>
+<H1 align="center">On-Line Documentation for CAYMAN  :  I2C0 <BR>  Bus Type: PERIPHERAL BUS</H1>
+<FONT size="+2"><B><P align="center">I2C</P></B><B</FONT><BR><HR>
+<FONT face="Helvetica" size="-1"><P align="center"><B> Put banner announcement here. </B></P></FONT><HR>
+<BR><B>I2C System Control Block Registers.</B><BR><BR><HR>
+<FONT face="Helvetica" size="-1"><P align="left"><B> Source File Name: ./src/ioreg8_i2c.src <BR> Source File Modification Date Fri Dec 20 09:31:59 2019 <BR> html creation date December 20, 2019</B></P></FONT>
+<H2 id="index"> I2C0 Register Index</H2>
+<B> <CODE>ADDRESS</CODE></B><BR>
+<B><CODE>0x50040000: </CODE></B><A id = "CONFIGindex" href="#CONFIG"><B>IO_I2C0_CONFIG</A></B><BR>
+<B><CODE>0x50040004: </CODE></B><A id = "TXRX_1BYTE_FIFO_DATAindex" href="#TXRX_1BYTE_FIFO_DATA"><B>IO_I2C0_TXRX_1BYTE_FIFO_DATA</A></B><BR>
+<B><CODE>0x5004000c: </CODE></B><A id = "STATUSindex" href="#STATUS"><B>IO_I2C0_STATUS</A></B><BR>
+<B><CODE>0x50040010: </CODE></B><A id = "TX_FIFO_DEBUGindex" href="#TX_FIFO_DEBUG"><B>IO_I2C0_TX_FIFO_DEBUG</A></B><BR>
+<B><CODE>0x50040014: </CODE></B><A id = "RX_FIFO_DEBUGindex" href="#RX_FIFO_DEBUG"><B>IO_I2C0_RX_FIFO_DEBUG</A></B><BR>
+<B><CODE>0x5004001c: </CODE></B><A id = "GENERAL_DEBUGindex" href="#GENERAL_DEBUG"><B>IO_I2C0_GENERAL_DEBUG</A></B><BR>
+<B><CODE>0x50040020: </CODE></B><A id = "INT_ENindex" href="#INT_EN"><B>IO_I2C0_INT_EN</A></B><BR>
+<B><CODE>0x50040024: </CODE></B><A id = "CMD_FIFO_DATAindex" href="#CMD_FIFO_DATA"><B>IO_I2C0_CMD_FIFO_DATA</A></B><BR>
+<B><CODE>0x50040028: </CODE></B><A id = "CONFIG2index" href="#CONFIG2"><B>IO_I2C0_CONFIG2</A></B><BR>
+<B><CODE>0x50040030: </CODE></B><A id = "CLK_CONFIG1index" href="#CLK_CONFIG1"><B>IO_I2C0_CLK_CONFIG1</A></B><BR>
+<B><CODE>0x50040034: </CODE></B><A id = "CLK_CONFIG2index" href="#CLK_CONFIG2"><B>IO_I2C0_CLK_CONFIG2</A></B><BR>
+<B><CODE>0x50040038: </CODE></B><A id = "CLK_CONFIG3index" href="#CLK_CONFIG3"><B>IO_I2C0_CLK_CONFIG3</A></B><BR>
+<B><CODE>0x5004003c: </CODE></B><A id = "SCL_CONFIGindex" href="#SCL_CONFIG"><B>IO_I2C0_SCL_CONFIG</A></B><BR>
+<B><CODE>0x50040040: </CODE></B><A id = "RX_2BYTE_FIFO_DATAindex" href="#RX_2BYTE_FIFO_DATA"><B>IO_I2C0_RX_2BYTE_FIFO_DATA</A></B><BR>
+<B><CODE>0x50040044: </CODE></B><A id = "RX_4BYTE_FIFO_DATAindex" href="#RX_4BYTE_FIFO_DATA"><B>IO_I2C0_RX_4BYTE_FIFO_DATA</A></B><BR>
+<B><CODE>0x50040048: </CODE></B><A id = "RISE_TIME_DEBUGindex" href="#RISE_TIME_DEBUG"><B>IO_I2C0_RISE_TIME_DEBUG</A></B><BR>
+<B><CODE>0x5004004c: </CODE></B><A id = "DUMMY_BYTESindex" href="#DUMMY_BYTES"><B>IO_I2C0_DUMMY_BYTES</A></B><BR>
+<B><CODE>0x50040050: </CODE></B><A id = "TX_1BYTE_DATA_CMD_FIFOindex" href="#TX_1BYTE_DATA_CMD_FIFO"><B>IO_I2C0_TX_1BYTE_DATA_CMD_FIFO</A></B><BR>
+<B><CODE>0x50040054: </CODE></B><A id = "INT_ACTindex" href="#INT_ACT"><B>IO_I2C0_INT_ACT</A></B><BR>
+<BR><HR>
+<H2 id="CONFIG"><A href="#index">
+IO_I2C0_CONFIG</A></H2>
+<P><FONT size="+1"><B>I2C CONFIGURATION REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_I2C0_CONFIG ADDRESS:</B></TD>
+<TD><CODE>0x50040000</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="18">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">HOLD_AT_ACK<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="5">RX_FIFO_INT_LEVEL<BR><TT>0x2</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">EN_RXFIFO_AT_START<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">BYTE2_END<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD4<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">END<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">STALL_IF_RXFULL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IGNORE_NACK<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RD_PUSHES_TX_FIFO<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:14</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>HOLD_AT_ACK</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Hold SM At ACK</TD>
+<TD>Setting this bit holds the SM before sending the clock for
+acknowledgement until an entry is placed in the TX FIFO or CMD FIFO.
+This allows for pathologically slow masters to not be required to
+avoid FIFO starvation on reads. For write operations there is no
+advantage to setting this bit, but the SM will still stop on ACK.
+Note that observers of the I2C lines will see see 8 bits of data
+followed by a pause and eventually the ACK, followed by the next
+8 bits of data.
+<TR align="left">
+<TD nowrap>12:8</TD>
+<TD nowrap>RX_FIFO_INT_LEVEL</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RX and TX FIFO Interrupt Depth Level</TD>
+<TD>Program to the level that you want RX_FIFO_HIT_LEVEL to be set. If this reg is 2, then RX_FIFO_HIT_LEVEL will be set if the number of entries in RX_FIFO are 2 or greater. Similarly
+this defines how many entries available in the TX FIFO for the TXFIFO_HAS_LEVEL_SPACE to be set.
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>EN_RXFIFO_AT_START</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Enable RXFIFO at Start</TD>
+<TD>Typically, the RX FIFO requires a CMD fron the CMD_FIFO_DATA to enable RX FIFO. Setting this bit to 1 changes the default to 1. The RX FIFO can still be disabled using a CMD.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>BYTE2_END</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Multi Byte Endianess</TD>
+<TD>Only used for 2 or 4 byte transfers. If 0, DATA[15:8] is receive on SDA before DATA[7:0]. If 1, vice versa.
+<TR align="left">
+<TD nowrap>5:4</TD>
+<TD nowrap>RSVD4</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>END</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Endianess</TD>
+<TD>If 0, transmit msbit first. If 1 send lsbit first.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>STALL_IF_RXFULL</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Stall TX if RX FIFO FULL</TD>
+<TD>If 1, the TX side will stall if RX FIFO is full.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>IGNORE_NACK</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Ignore NAKs</TD>
+<TD>If 0, an unexpected NACK will lockup the system and require a soft reset to exit. If 1, all NACKs are ignored.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>RD_PUSHES_TX_FIFO</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Enable read pop to also push 0x00 into FIFO.</TD>
+<TD>If set to 1, the TX FIFO will empty as normal, but for every read pop that occurs, a new TX will be pushed into the FIFO. This is good for DMA.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>I2C configuration register.</P>
+<BR><HR>
+<H2 id="TXRX_1BYTE_FIFO_DATA"><A href="#index">
+IO_I2C0_TXRX_1BYTE_FIFO_DATA</A></H2>
+<P><FONT size="+1"><B>I2C READ and WRITE DATA REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_I2C0_TXRX_1BYTE_FIFO_DATA ADDRESS:</B></TD>
+<TD><CODE>0x50040004</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="24">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">DATA<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:8</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>7:0</TD>
+<TD nowrap>DATA</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>I2C Read and Write Data</TD>
+<TD>Reads return receive data from I2C. Writes send data to transmit of I2C.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>I2C read and write data register.</P>
+<BR><HR>
+<H2 id="STATUS"><A href="#index">
+IO_I2C0_STATUS</A></H2>
+<P><FONT size="+1"><B>I2C STATUS REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_I2C0_STATUS ADDRESS:</B></TD>
+<TD><CODE>0x5004000c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="23">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">CMD_DONE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">RX_FIFO_HIT_LEVEL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">XMIT_COMPLETE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">RXFIFO_HAS_1DATA<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">TXFIFO_HAS_1SPACE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">TXFIFO_HAS_LEVEL_SPACE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">SM_IN_NACK_HOLD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">NACK_ESCAPE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">START_BUSY<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:9</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>CMD_DONE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Command done</TD>
+<TD>If 1, the command is done and the SM is idle. This is the inverse of START_BUSY provided here to make interrupt access cleaner.
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>RX_FIFO_HIT_LEVEL</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>RX FIFO has data available</TD>
+<TD>If 1, then there is at least CONFIG.RX_FIFO_INT_LEVEL Byte(s) of data waiting in RX FIFO. Read TXRX_1BYTE_FIFO_DATA or RX_2BYTE_FIFO_DATA or RX_4BYTE_FIFO_DATA to get data.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>XMIT_COMPLETE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Transmit Complete</TD>
+<TD>If 1, all current transmits (data and cmd) are complete, but there may still be a command operation (e.g. stop) pending. See START_BUSY for a true end of command status.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>RXFIFO_HAS_1DATA</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>RX FIFO Has Data in it</TD>
+<TD>If 1, then there is data waiting in RX FIFO. Read TXRX_1BYTE_FIFO_DATA to get data.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>TXFIFO_HAS_1SPACE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>TX FIFO Has 1 byte of Space Available</TD>
+<TD>If 1, then there is space to put onto the TX FIFO queue by writing to TXRX_1BYTE_FIFO_DATA. If 0, there isn't.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>TXFIFO_HAS_LEVEL_SPACE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>TX FIFO Has LEVEL Bytes of Space Available</TD>
+<TD>If 1, then there is space to put If 1, then there is at least CONFIG.RX_FIFO_INT_LEVEL Byte(s) of space available on TX_FIFO. If 0, there isn't.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>SM_IN_NACK_HOLD</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>State Machine in NACK Hold</TD>
+<TD>We have detected an unexpected NACK and the state machine has halted. It can be continued on with its original sequence
+by setting STATUS.NACK_ESCAPE or it can be reset by writing CONFIG.SOFT_RESET.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>NACK_ESCAPE</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>NACK Escape</TD>
+<TD>If an unexpected NACK is received, the SM stalls allowing for debug. The SM can be unfrozen by writing 1 to this location after
+it is in the unexpected NACK stall and will continue with its previous command. Use CONFIG.SOFT_RESET to abort the command in
+progress.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>START_BUSY</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>START_BUSY</TD>
+<TD>Write to 1 to start transaction. Read back to determine if the SM is START_BUSY (1) or if has gone back to idle (0).
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>I2C status register. Note that ANDing this field with INT_EN will give you unmasked interrupts.</P>
+<BR><HR>
+<H2 id="TX_FIFO_DEBUG"><A href="#index">
+IO_I2C0_TX_FIFO_DEBUG</A></H2>
+<P><FONT size="+1"><B>I2C TX FIFO DEBUG REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_I2C0_TX_FIFO_DEBUG ADDRESS:</B></TD>
+<TD><CODE>0x50040010</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="19">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="5">MAX_ENTRIES<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">UFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">OFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="5">ENTRIES<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:13</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>12:8</TD>
+<TD nowrap>MAX_ENTRIES</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Depth of FIFO</TD>
+<TD>Depth of FIFO, i.e. the max number of entries possible in FIFO.
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>UFLOW</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Underflow Sticky bit.</TD>
+<TD>Set when TX FIFO underflows. Cleared by setting CONFIG2.CLR_STICKY
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>OFLOW</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Overflow Sticky bit.</TD>
+<TD>Set when TX FIFO overflows. Newest entries are dropped. Cleared by setting CONFIG2.CLR_STICKY
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>4:0</TD>
+<TD nowrap>ENTRIES</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Entries in FIFO.</TD>
+<TD>Entries in FIFO.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>I2C tx fifo debug register</P>
+<BR><HR>
+<H2 id="RX_FIFO_DEBUG"><A href="#index">
+IO_I2C0_RX_FIFO_DEBUG</A></H2>
+<P><FONT size="+1"><B>I2C RX FIFO DEBUG REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_I2C0_RX_FIFO_DEBUG ADDRESS:</B></TD>
+<TD><CODE>0x50040014</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="19">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="5">MAX_ENTRIES<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">UFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">OFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD5<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="5">ENTRIES<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:13</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>12:8</TD>
+<TD nowrap>MAX_ENTRIES</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Depth of FIFO</TD>
+<TD>Depth of FIFO, i.e. the max number of entries possible in FIFO.
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>UFLOW</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Underflow Sticky bit.</TD>
+<TD>Set when TX FIFO underflows. Cleared by setting CONFIG2.CLR_STICKY
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>OFLOW</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Overflow Sticky bit.</TD>
+<TD>Set when TX FIFO overflows. See CONFIG.RX_OVFLW_KEEPHEAD for details on drop behavior.  Cleared by setting CONFIG2.CLR_STICKY
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>RSVD5</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>4:0</TD>
+<TD nowrap>ENTRIES</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Entries in FIFO.</TD>
+<TD>Entries in FIFO.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>I2C rx fifo debug register</P>
+<BR><HR>
+<H2 id="GENERAL_DEBUG"><A href="#index">
+IO_I2C0_GENERAL_DEBUG</A></H2>
+<P><FONT size="+1"><B>I2C GENERAL DEBUG REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_I2C0_GENERAL_DEBUG ADDRESS:</B></TD>
+<TD><CODE>0x5004001c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="16">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">LAST_BYTE_HAD_NACK<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">MONITOR_SDA<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">MONITOR_EN<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">EN_BIT_BANG<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">BB_SDA_OEN<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">BB_SCL_OEN<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">STRETCH_ACTIVE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">I2C_SDA_LOCAL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">I2C_SDA_OEN<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">I2C_SCL_LOCAL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">I2C_SCL_OEN<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="5">STATE_REG<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:16</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>LAST_BYTE_HAD_NACK</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Last byte had NACK</TD>
+<TD>If 1, the last byte on the wire had a NACK. This bit is cleared and
+reevaluated when the state machine the next time the SM checks for a
+NACK (i.e. on the next byte).
+The bit will be set if the master or slave does not acknowlege for
+any reason.
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>MONITOR_SDA</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Monitor SDA</TD>
+<TD>If 0, we monitor SCL. If 1 we monitor SDA.
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>MONITOR_EN</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Enable Monitor</TD>
+<TD>If 0, the Rise Time debug monitor is disabled and the RISE_TIME_DEBUG.VALUE will be zeroed out. If 1, then the monitor records the time from the internal SDA_OEN or SCL_OEN
+(selected by MONITOR_SDA) to determine the rise time and effecetive pull stretngth of the external PUs. Each value in the monitor is
+a CLKIN. Note that the monitor will count delays from metastable flops or hystersis avoidance flops as additional rise time.
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>EN_BIT_BANG</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Enable Bit Bang</TD>
+<TD>If set, the BB_SDA_OEN, and BB_SCL_OEN control the I2C interface.
+The internal SM has no effect and can be placed in SOFT_RESET. However, the
+CONFIG2.CLK_ON bit should be set, or else the clock may gate off due to apparent
+quiescence.
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>BB_SDA_OEN</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Value to drive on SDA_OEN</TD>
+<TD>Value to drive on SDA_OEN. Signal is active low, so a 0 will drive I2C low. A high will let it float via PU to 1.
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>BB_SCL_OEN</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Value to drive on SCL_OEN</TD>
+<TD>Value to drive on SCL_OEN. Note that if SCL_CONFIG.HARD_DRIVE_SCL is set, this bit actually controlls SCL_OUT and SCL_OEN is set low (always driving)
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>STRETCH_ACTIVE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Stretch Active</TD>
+<TD>If this is set, the internal logic belives the SCL is being driven low by an external force (i.e. clock stretching)
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>I2C_SDA_LOCAL</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Input value of SDA</TD>
+<TD>Live input value of SDA (after meta stable and glitch filter flops)
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>I2C_SDA_OEN</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>I2C SDA OEN</TD>
+<TD>Value of Output Enable (active low) of SDA. If nothing else is driving the line, this is what the line should be at steady state.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>I2C_SCL_LOCAL</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Input value of SCL</TD>
+<TD>Live input value of SCL (after meta stable and glitch filter flops)
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>I2C_SCL_OEN</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>I2C SCL OEN</TD>
+<TD>Value of Output Enable (active low) of SCL. If nothing else is driving the line, this is what the line should be at steady state.
+<TR align="left">
+<TD nowrap>4:0</TD>
+<TD nowrap>STATE_REG</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Main SM State</TD>
+<TD>Current state of primary State Machine
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>I2C General Debug Fields</P>
+<BR><HR>
+<H2 id="INT_EN"><A href="#index">
+IO_I2C0_INT_EN</A></H2>
+<P><FONT size="+1"><B>I2C Interrupt Enable Registger</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_I2C0_INT_EN ADDRESS:</B></TD>
+<TD><CODE>0x50040020</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="16">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_HIT_LEVEL_EN_SRCRDY<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD14<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_DATA_EN_SRCRDY<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TX_DATA_EN_DSTRDY<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TXFIFO_HAS_LEVEL_SPACE_EN_DSTRDY<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD9<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMD_DONE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_HIT_LEVEL_EN<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TX_COMPLETE_EN<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_DATA_EN<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TX_DATA_EN<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TXFIFO_HAS_LEVEL_SPACE_EN<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">UNACK_EN<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD0<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:16</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>RX_HIT_LEVEL_EN_SRCRDY</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Receive X Byte Data Source Ready Enable</TD>
+<TD>If set to 1, the STATUS field RX_FIFO_HIT_LEVEL will be accelerated into an interrupt for i2c_src_rdy. Reading from TXRX_1BYTE_FIFO_DATA will force the interrupt to go low for at least one cycle, perhaps more if the RX FIFO is now empty.
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>RSVD14</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>RX_DATA_EN_SRCRDY</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Receive Data Source Ready Enable</TD>
+<TD>If set to 1, the STATUS field RXFIFO_HAS_DATA will be accelerated into an interrupt for i2c_src_rdy. Reading from TXRX_1BYTE_FIFO_DATA will force the interrupt to go low for at least one cycle, perhaps more if the RX FIFO is now empty.
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>TX_DATA_EN_DSTRDY</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Transmit Data Destination Ready Enable</TD>
+<TD>If set to 1, the STATUS field TXFIFO_HAS_SPACE will be accelerated into an interrupt for i2c_dst_rdy. Writing to TXRX_1BYTE_FIFO_DATA will cause this to go low for at least one cycle, perhaps more if the TX FIFO fills.
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>TXFIFO_HAS_LEVEL_SPACE_EN_DSTRDY</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Transmit X Byte Destination Ready Enable</TD>
+<TD>If set to 1, the STATUS field TXFIFO_HAS_LEVEL_SPACE will be accelerated into an interrupt for i2c_dst_rdy. Writing to TXRX_1BYTE_FIFO_DATA or RX_2BYTE_FIFO_DATA or RX_4BYTE_FIFO_DATA will force the interrupt to go low for at least one cycle, perhaps more if the TX FIFO fills.
+<TR align="left">
+<TD nowrap>10:9</TD>
+<TD nowrap>RSVD9</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>CMD_DONE</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Command Complete Interrupt Enable</TD>
+<TD>If set to 1, the STATUS field CMD_DONE going high will be accelerated into an interrupt for i2c_int. Note this will be high until the cmd is started. If the system is idle, there is no way to clear the interrupt other than disabling it here.
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>RX_HIT_LEVEL_EN</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Receive X Byte Data Interrupt Enable</TD>
+<TD>If set to 1, the STATUS field RX_FIFO_HIT_LEVEL will be accelerated into an interrupt for i2c_int. Reading from TXRX_1BYTE_FIFO_DATA will force the interrupt to go low for at least one cycle, perhaps more if the RX FIFO is now empty.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>TX_COMPLETE_EN</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Transmit Complete Interrupt0 Enable</TD>
+<TD>If set to 1, the STATUS field XMIT_COMPLETE will be accelerated into an interrupt for i2c_int. Writing to TXRX_1BYTE_FIFO_DATA will cause this to go low for at least one cycle, perhaps more if the TX FIFO fills.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>RX_DATA_EN</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Receive Data Interrupt0 Enable</TD>
+<TD>If set to 1, the STATUS field RXFIFO_HAS_DATA will be accelerated into an interrupt for i2c_int. Reading from TXRX_1BYTE_FIFO_DATA will force the interrupt to go low for at least one cycle, perhaps more if the RX FIFO is now empty.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>TX_DATA_EN</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Transmit Data Interrupt0 Enable</TD>
+<TD>If set to 1, the STATUS field TXFIFO_HAS_SPACE will be accelerated into an interrupt for i2c_int. Writing to TXRX_1BYTE_FIFO_DATA will cause this to go low for at least one cycle, perhaps more if the TX FIFO fills.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>TXFIFO_HAS_LEVEL_SPACE_EN</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Transmit X Byte Data Interrupt Enable</TD>
+<TD>If set to 1, the STATUS field TXFIFO_HAS_LEVEL_SPACE will be accelerated into an interrupt for i2c_int. Writing to TXRX_1BYTE_FIFO_DATA or RX_2BYTE_FIFO_DATA or RX_4BYTE_FIFO_DATA will force the interrupt to go low for at least one cycle, perhaps more if the TX FIFO fills.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>UNACK_EN</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Unexpected NACK Interrupt Enable</TD>
+<TD>If set to 1, the STATUS field SM_IN_NACK_HOLD will be accelerated into an interrupt for i2c_int. Note this will be high until the NACK is processed either with a
+STATUS.NACK_ESCAPE or a CONFIG2.SOFT_RESET
+<TR align="left">
+<TD nowrap>1:0</TD>
+<TD nowrap>RSVD0</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>I2C Interrupt Enable Registger. Note that ANDing this field with STATUS will give you unmasked interrupts.</P>
+<BR><HR>
+<H2 id="CMD_FIFO_DATA"><A href="#index">
+IO_I2C0_CMD_FIFO_DATA</A></H2>
+<P><FONT size="+1"><B>I2C READ and WRITE DATA REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_I2C0_CMD_FIFO_DATA ADDRESS:</B></TD>
+<TD><CODE>0x50040024</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="24">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">CMD_RXFIFO<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">CMD_NACK<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">EXP_1NACK<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">CMD_SRD<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:8</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>7:6</TD>
+<TD nowrap>CMD_RXFIFO</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>Command RX FIFO control</TD>
+<TD>Controls when data on the I2C line is driven into RX_FIFO.
+<BR>NOTHING = 0 Leave NACK at its previous state. When STATUS.START_BUSY is written, the NACK bit is set high meaning the master will not drive the NACK low to acknowledge.
+<BR>DISABLE_RXFIFO = 1 All bytes received AFTER this command will be not be sent to the RX_FIFO.
+<BR>ENABLE_RXFIFO = 3 All bytes received AFTER this command will bebe sent into the RX_FIFO. Typically used for reads.
+<TR align="left">
+<TD nowrap>5:4</TD>
+<TD nowrap>CMD_NACK</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>Command NACK control</TD>
+<TD>Controls the master driving the NACK bit.
+<BR>NOTHING = 0 Leave NACK at its previous state. When STATUS.START_BUSY is written, the NACK bit is set high meaning the master will not drive the NACK low to acknowledge.
+<BR>DRIVE_NACK_LOW = 1 All bytes from this point forward will be acknowledged by the master (typically used for reads)
+<BR>DRIVE_NACK_HIGH = 3 All bytes from this point forward will not be acknowledged by the master (typically used for the last read which is NACK'd to tell slave we're done reading)
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>RSVD3</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>EXP_1NACK</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>Expect 1 NACK</TD>
+<TD>Writes this bit to ignore a negative ACK for the PREVIOUS data transfer. Not that this is required if the slave does not acknlowedge or if the
+master does not set the ACK bit low. Without this bit, an unexpected NACK will land the SM in a hold state (see STATUS.SM_IN_NACK_HOLD for more details).
+<TR align="left">
+<TD nowrap>1:0</TD>
+<TD nowrap>CMD_SRD</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>Commands for STOP, RESTART and insertion of Dummy Bytes</TD>
+<TD>These two bits control sending either a STOP, RESTART or a set of dummy bytes. Obviously, you can only send one of the three (or send nothing).
+<BR>NOTHING = 0 Finish current data byte and begin an I2C RESTART sequence.
+<BR>RESTART = 1 Finish current data byte and begin an I2C RESTART sequence.
+<BR>STOP = 2 Finish current data byte and begin an I2C STOP sequence.
+<BR>DUMMYBYTE = 3 If this is set, DUMMY_BYTES worth of dummy bytes (0xff) are "transmitted". This is very useful for read operations where you need to trigger
+a number of byte transfers, but you don't want to feed 1 byte into the TX_FIFO for each one. Once this command is set, the DUMMY bytes will
+fill the TX FIFO. Until those bytes finish, it is dangerous to write to the CMD FIFO, the DATA FIFO or to the DUMMY_BYTES register.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>I2C command FIFO. Writes to this FIFO go into the TX_FIFO and are executed in series with the DATA pushed in TXRX_1BYTE_FIFO_DATA. By using the CMD
+and DATA entries, different sequences can be setup to imelement write, read commands, as well as start / stop seqeuences. Note that the commands
+generally take effect around the ACK time for the PREVIOUS byte. Multiple commands can be combined into a single write with the exception of the
+dummy byte, which must be a command by itself.
+<BR><BR> As an example, a Adesto RM24C32C is a SEEPROM that uses 2 address bytes (called A0 and A1) below. Assuming it has its device
+address bits configured as 0, then a typical write of two bytes of data (0xD0, 0xD1) command would be:
+<LI> Write 0xa4 to TXRX_1BYTE_FIFO_DATA                 // Device ID, Write
+<LI> Write 0xa0 to TXRX_1BYTE_FIFO_DATA                 // SEEPROM Address
+<LI> Write 0xa1 to TXRX_1BYTE_FIFO_DATA                 // SEEPROM Address
+<LI> Write 0xd0 to TXRX_1BYTE_FIFO_DATA                 // Data0
+<LI> Write 0xd1 to TXRX_1BYTE_FIFO_DATA                 // Data1
+<LI> Write 0x04 to CMD_FIFO_DATA                        // Issue STOP
+<BR> A typical random read (which involes writing the desired address and then triggering a restart to read the data) of the same data would be:
+<LI> Write 0xa4 to TXRX_1BYTE_FIFO_DATA                 // Device ID, Write
+<LI> Write 0xa0 to TXRX_1BYTE_FIFO_DATA                 // SEEPROM Address
+<LI> Write 0xa1 to TXRX_1BYTE_FIFO_DATA                 // SEEPROM Address
+<LI> Write 0x01 to CMD_FIFO_DATA                        // Issue Restart
+<LI> Write 0xa5 to TXRX_1BYTE_FIFO_DATA                 // Device ID, Read
+<LI> Write 0xff to TXRX_1BYTE_FIFO_DATA                 // Dummy data (will be filled in by remote side)
+<LI> Write 0xd0 to CMD_FIFO_DATA                        // Issue command to drive NACK to 0 and enable RX FIFO
+<LI> Write 0xff to TXRX_1BYTE_FIFO_DATA                 // Dummy data (will be filled in by remote side)
+<LI> Write 0x34 to CMD_FIFO_DATA                        // Send NACK=1 on last read and issue STOP
+
+<BR> For longer reads, it is probably peferable to use the dummy byte cmd to fill in the dummy data. However, note that to trigger the NACKs
+and other commands correctly, the first and probably last dummy data should be manually entered (last is optional, but it is considered
+good protocol to issue a NACK=1 on the last byte of data read by master).</P>
+<BR><HR>
+<H2 id="CONFIG2"><A href="#index">
+IO_I2C0_CONFIG2</A></H2>
+<P><FONT size="+1"><B>I2C CONFIGURATION2 REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_I2C0_CONFIG2 ADDRESS:</B></TD>
+<TD><CODE>0x50040028</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="17">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DISABLE_SCL_HYSTERSIS<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="4">SCL_HYSTERISIS_LEVEL<BR><TT>0x8</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">AGGR_CLK_GATING<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CLK_ON<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SOFT_RST<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CLR_STICKY<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DISABLE_METAFLOP<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DISABLE_SDA_HYSTERSIS<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="4">SDA_HYSTERISIS_LEVEL<BR><TT>0x8</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:15</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>DISABLE_SCL_HYSTERSIS</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Disable SCL Hysterisys</TD>
+<TD>0 is the normal, recommended flow. If 1, all SCL hysterisis is disabled. See SCL_HYSTERISIS_LEVEL for more info.
+<TR align="left">
+<TD nowrap>13:10</TD>
+<TD nowrap>SCL_HYSTERISIS_LEVEL</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Glitch Avoidance SCL Hysterisis Level</TD>
+<TD>Due to the nature of I2C, the signals are susceptible to noise, especially during the I2C "high" when it is weakly
+driven by a pull up resistor. The IP supports a hysterisis module that samples the input SDA and SCL signal
+signals to ensure they are stable before seen by the
+internal logic. This glitch avoidance circuit adds latency to the receive signals, which can slow down the overall
+I2C period. For this reason, the hysterisys level is configureable from this register. Set to 0x0 to get the full 16
+CLK hysterisis, 0x1 for 15 CLK hystersis, 0x2 for 14 CLK hysteris and up to value 0xf for 1 CLK hysteris.
+To fully disable hystersis, set DISABLE_SCL_HYSTERSIS
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>AGGR_CLK_GATING</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Aggressive Clock Gating</TD>
+<TD>If set to 1, a more aggressive clock gating scheme is enacted that will clock the gate even if the command is
+still in flight, but the FIFOs, etc. have emptied (i.e. processor has starved FIFOs). If 0, we only gate
+when the command is complete.
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>CLK_ON</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Clock Enable Always On</TD>
+<TD>This bit provides an override to the clock gate enable. If 0, the clock will only run if the local state machine is busy. If 1, the clock will always run.
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>SOFT_RST</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Soft Reset</TD>
+<TD>If 1, all FIFO / SM in I2C will be held in reset. If 0, normal operation. To do a soft reset, you must write this to 1 and then back to 0 to remove the reset.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>CLR_STICKY</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Clear Sticky bits</TD>
+<TD>If 1, clear sticky bits in registers. If 0, normal operation. To do a soft reset, you must write this to 1 and then back to 0 to remove the reset.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>DISABLE_METAFLOP</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Disable SDA and SCL Meta Flop Avoidance</TD>
+<TD>0 is the normal, recommended flow. If 1, the 2 CLKIN delay of SDA and SCL is bypassed allowing for faster operation at the risk of metastablity if SDA and SCL changes near sample time. Normally SDA and SCL should change with >100 ns setup / hold, so it may be a viable risk.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>DISABLE_SDA_HYSTERSIS</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Disable SDA Hysterisys</TD>
+<TD>0 is the normal, recommended flow. If 1, all SDA hysterisis is disabled. See SDA_HYSTERISIS_LEVEL for more info.
+<TR align="left">
+<TD nowrap>3:0</TD>
+<TD nowrap>SDA_HYSTERISIS_LEVEL</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Glitch Avoidance SDA Hysterisis Level</TD>
+<TD>Due to the nature of I2C, the signals are susceptible to noise, especially during the I2C "high" when it is weakly
+driven by a pull up resistor. The IP supports a hysterisis module that samples the input SDA and SCL signal
+signals to ensure they are stable before seen by the
+internal logic. This glitch avoidance circuit adds latency to the receive signals, which can slow down the overall
+I2C period. For this reason, the hysterisys level is configureable from this register. Set to 0x0 to get the full 16
+CLK hysterisis, 0x1 for 15 CLK hystersis, 0x2 for 14 CLK hysteris and up to value 0xf for 1 CLK hysteris.
+To fully disable hystersis, set DISABLE_SDA_HYSTERSIS
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>I2C configuration2 register.</P>
+<BR><HR>
+<H2 id="CLK_CONFIG1"><A href="#index">
+IO_I2C0_CLK_CONFIG1</A></H2>
+<P><FONT size="+1"><B>I2C Clock Config Register 1</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_I2C0_CLK_CONFIG1 ADDRESS:</B></TD>
+<TD><CODE>0x50040030</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="16">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">IBG_TIME<BR><TT>0x27</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">CYCLE_TIME<BR><TT>0x27</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:16</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>15:8</TD>
+<TD nowrap>IBG_TIME</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Inter Byte Gap Delay</TD>
+<TD>The delay bewteen each byte will be (IBG_TIME+1) * CLKIN period (125ns).
+<TR align="left">
+<TD nowrap>7:0</TD>
+<TD nowrap>CYCLE_TIME</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Clock divider</TD>
+<TD>Controls I2C clock rate. Several registers control the I2C clock speeds giving maximum flexibility. Each
+register defines the time that an I2C event occurs on against a counter going from 0 to cycle_time.
+Legitimate values for each counter are from 0 to 127. Each bit is an
+additional CLKIN cycle (125ns). The overal speed is derived from the cycle_time, so if cycle_time is 0x4f, then
+the overall period would be (0x4f+1)*125ns = 10us or a 100KHz period.
+
+There are registers to control when I2C_CLK is driven high (pe_time) and when to drive the I2C_CLK low (ne_time). There
+are registers to define when data is driven
+onto the line from the IP (tx_time), when data from the remote slave is sampled (rx_time). The values in
+these registers should be programmed according to I2C protocol, e.g. setting tx_time in between pe_time and ne_time would
+likely not be productive. Additionally, there is an inter byte gap time (ibg_time).
+
+Nothing in the logic checks for incorrect values.
+<BR>
+<BR>
+Assuming CLKIN is 4MHz, this would be a reasonable configuration for 100KHz.
+<LI> cycle_time = 0x27
+<LI> pe_time    = 0x10
+<LI> ne_time    = 0x1f
+<LI> tx_time    = 0x01
+<LI> rx_time    = 0x19
+<LI> min_scl    = 0x04
+<LI> hyst_level = 0x08
+<BR>
+<BR>
+Assuming CLKIN is 4MHz, this would be a reasonable configuration for 400KHz.
+<LI> cycle_time = 0x09
+<LI> pe_time    = 0x04
+<LI> ne_time    = 0x08
+<LI> tx_time    = 0x01
+<LI> rx_time    = 0x05
+<LI> min_scl    = 0x00
+<LI> hyst_level = 0x01
+<BR>
+<BR>
+Note that the follow events are derived from csr times in the sequence
+<LI> START_SDA_LOW - pe_time
+<LI> START_SCL_LOW - ne_time
+<LI> STOP_SDA_HIGH - tx_time
+<LI> STOP_SCL_HIGH - pe_time
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>I2C Clock Config Register 1</P>
+<BR><HR>
+<H2 id="CLK_CONFIG2"><A href="#index">
+IO_I2C0_CLK_CONFIG2</A></H2>
+<P><FONT size="+1"><B>I2C Clock Config Register 2</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_I2C0_CLK_CONFIG2 ADDRESS:</B></TD>
+<TD><CODE>0x50040034</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="16">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">RX_TIME<BR><TT>0x19</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">TX_TIME<BR><TT>0x1</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:16</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>15:8</TD>
+<TD nowrap>RX_TIME</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Time Value</TD>
+<TD>See CLK_CYCLE.TIME_VAL.
+<TR align="left">
+<TD nowrap>7:0</TD>
+<TD nowrap>TX_TIME</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Time Value</TD>
+<TD>See CLK_CYCLE.TIME_VAL.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>I2C Clock Config Register 2</P>
+<BR><HR>
+<H2 id="CLK_CONFIG3"><A href="#index">
+IO_I2C0_CLK_CONFIG3</A></H2>
+<P><FONT size="+1"><B>I2C Clock Config Register 3</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_I2C0_CLK_CONFIG3 ADDRESS:</B></TD>
+<TD><CODE>0x50040038</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="16">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">NE_TIME<BR><TT>0x1f</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">PE_TIME<BR><TT>0x10</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:16</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>15:8</TD>
+<TD nowrap>NE_TIME</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Time Value</TD>
+<TD>See CLK_CYCLE.TIME_VAL.
+<TR align="left">
+<TD nowrap>7:0</TD>
+<TD nowrap>PE_TIME</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Time Value</TD>
+<TD>See CLK_CYCLE.TIME_VAL.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>I2C Clock Config Register 3</P>
+<BR><HR>
+<H2 id="SCL_CONFIG"><A href="#index">
+IO_I2C0_SCL_CONFIG</A></H2>
+<P><FONT size="+1"><B>I2C SCL Config Register</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_I2C0_SCL_CONFIG ADDRESS:</B></TD>
+<TD><CODE>0x5004003c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="21">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DISABLE_FULL_STRETCH_SUPPORT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DISABLE_SCL_HIGH_CHK<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">HARD_DRIVE_SCL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD7<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="7">MIN_SCL_HIGH<BR><TT>0x4</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:11</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>DISABLE_FULL_STRETCH_SUPPORT</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Disable Full Stretch Support</TD>
+<TD>This is a debug bit and should not be set under normal circumstances.
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>DISABLE_SCL_HIGH_CHK</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Disable Minimum SCL High</TD>
+<TD>If this bit is set, then the logic ignore the current input state of the SCL and by extention, disable the metastability FF on the SCL.
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>HARD_DRIVE_SCL</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Hard Drive SCL</TD>
+<TD>If this bit is cleared,the SCL is driven low and then a weak PU pulls the SCL high. If this bit is set
+the SCL will be driven low and high. This allows for better defined rise times on SCL and for the
+removal of a potentially low resistance PU on the SCL line. However, if this bit is set it effectively
+disables clock stretching.
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>RSVD7</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>6:0</TD>
+<TD nowrap>MIN_SCL_HIGH</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Minimum SCL High</TD>
+<TD>In the case where clock stretching deforms the programmed release of SCL so it is pulled high,
+the SCL can have a much shorter width. This register defines that minimum width. Note that
+the metastable FF (1 to 2 clocks) and glitch avoidance logic (0-16 clocks) and the MIN_SCL_HIGH
+are effectively added together to form the SCL high as seen by the outside world. So if the
+glitch avoidance is set to 16 and CLKIN is 8MHz, then the SCL will be high for at least 2.125 ns
+plus 125ns * MIN_SCLK_HIGH.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>I2C SCL Config Register</P>
+<BR><HR>
+<H2 id="RX_2BYTE_FIFO_DATA"><A href="#index">
+IO_I2C0_RX_2BYTE_FIFO_DATA</A></H2>
+<P><FONT size="+1"><B>I2C READ and WRITE DATA REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_I2C0_RX_2BYTE_FIFO_DATA ADDRESS:</B></TD>
+<TD><CODE>0x50040040</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="16">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="16">DATA<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:16</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>15:0</TD>
+<TD nowrap>DATA</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>I2C Read and Write Data</TD>
+<TD>2 byte reads return receive data from I2C. Writes have no effect.
+By default, data is returned little endian so bit [7:0] will have the first byte that was
+received, bit [15:8] will have the second byte received. By setting CONFIG.BYTE2_END,
+this order can be reversed.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>I2C read and write data register.</P>
+<BR><HR>
+<H2 id="RX_4BYTE_FIFO_DATA"><A href="#index">
+IO_I2C0_RX_4BYTE_FIFO_DATA</A></H2>
+<P><FONT size="+1"><B>I2C READ DATA REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_I2C0_RX_4BYTE_FIFO_DATA ADDRESS:</B></TD>
+<TD><CODE>0x50040044</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="32">DATA<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>DATA</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>I2C Read and Write Data</TD>
+<TD>4 byte reads return receive data from I2C. Writes have no effect.
+By default, data is returned little endian so bit [7:0] will have the first byte that was
+received, bit [15:8] will have the second byte received, etc. up to bit [31:24] having the
+fourth byte received. By setting CONFIG.BYTE2_END, this order can be reversed.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>I2C read data register. Note this register is disabled in DSP instances.</P>
+<BR><HR>
+<H2 id="RISE_TIME_DEBUG"><A href="#index">
+IO_I2C0_RISE_TIME_DEBUG</A></H2>
+<P><FONT size="+1"><B>I2C RISE DEBUG REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_I2C0_RISE_TIME_DEBUG ADDRESS:</B></TD>
+<TD><CODE>0x50040048</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="24">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="8">VALUE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:8</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>7:0</TD>
+<TD nowrap>VALUE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Monitor value.</TD>
+<TD>When Monitor Enabled, this is the most recent time
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>I2C rise debug register</P>
+<BR><HR>
+<H2 id="DUMMY_BYTES"><A href="#index">
+IO_I2C0_DUMMY_BYTES</A></H2>
+<P><FONT size="+1"><B>I2C DUMMY BYTE REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_I2C0_DUMMY_BYTES ADDRESS:</B></TD>
+<TD><CODE>0x5004004c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="16">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="16">VALUE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:16</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>15:0</TD>
+<TD nowrap>VALUE</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>Value</TD>
+<TD>This is the number of dummy bytes to send when called out in the CMD_FIFO_DATA when CMD_STOP_RESTART_DUMMY is set to DUMMYBYTE. At that point, the
+DATA FIFO and CMD will begin to be filled with dummy bytes (0xff) and will not be available for writes until the dummy bytes complete. You can
+read this register to determine when all of the dummy bytes are pushed into the FIFO or STATUS.XMIT_COMPLETE for when the entire TX_FIFO has
+transmitted its data. Modifying this value after the DUMMYBYTE command has been issued has an unknown effect.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>I2C Dummy byte register</P>
+<BR><HR>
+<H2 id="TX_1BYTE_DATA_CMD_FIFO"><A href="#index">
+IO_I2C0_TX_1BYTE_DATA_CMD_FIFO</A></H2>
+<P><FONT size="+1"><B>I2C WRITE DATA AND CMD REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_I2C0_TX_1BYTE_DATA_CMD_FIFO ADDRESS:</B></TD>
+<TD><CODE>0x50040050</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="16">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">CMD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">DATA<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:16</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>15:8</TD>
+<TD nowrap>CMD</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>I2C CMD Data</TD>
+<TD>A non-zero write to this location is similar to writing it to CMD_FIFO_DATA. A all zero write has no effect. Reads return all 0.
+<TR align="left">
+<TD nowrap>7:0</TD>
+<TD nowrap>DATA</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>I2C Write Data</TD>
+<TD>Write data to this location is similar to writing it to TXRX_1BYTE_FIFO_DATA. Reads return all 0.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Note this register is only enabled in DSP instances and is intended
+to support DMA transactions.
+Writing this register has a similar effect to writing
+TXRX_1BYTE_FIFO_DATA followed by a write to CMD_FIFO_DATA, but it is
+done in a single write. Note that if the CMD is all 0 (i.e. a nop),
+this does not actually push an entry onto the CMD_FIFO. Note too that
+a single write to this register can push two entries onto the FIFO,
+so be sure to have at least 2 entries in FIFO before writing</P>
+<BR><HR>
+<H2 id="INT_ACT"><A href="#index">
+IO_I2C0_INT_ACT</A></H2>
+<P><FONT size="+1"><B>I2C Active Interrupts</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_I2C0_INT_ACT ADDRESS:</B></TD>
+<TD><CODE>0x50040054</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="23">RSVD9<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">CMD_DONE_ACT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">RX_HIT_LEVEL_ACT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">TX_COMPLETE_ACT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">RX_DATA_ACT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">TX_DATA_ACT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">TXFIFO_HAS_LEVEL_SPACE_ACT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">UNACK_ACT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD0<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:9</TD>
+<TD nowrap>RSVD9</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>CMD_DONE_ACT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Command Complete Interrupt Active</TD>
+<TD>STATUS.CMD_DONE is set and active
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>RX_HIT_LEVEL_ACT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Receive X Byte Data Interrupt Active</TD>
+<TD>STATUS.RX_FIFO_HIT_LEVEL is set and active
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>TX_COMPLETE_ACT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Transmit Complete Interrupt0 Active</TD>
+<TD>STATUS.XMIT_COMPLETE is set and active
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>RX_DATA_ACT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Receive Data Interrupt0 Active</TD>
+<TD>STATUS.RXFIFO_HAS_DATA is set and active
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>TX_DATA_ACT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Transmit Data Interrupt0 Active</TD>
+<TD>STATUS.TXFIFO_HAS_SPACE is set and active
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>TXFIFO_HAS_LEVEL_SPACE_ACT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Transmit X Byte Data Interrupt Active</TD>
+<TD>STATUS.TXFIFO_HAS_LEVEL_SPACE is set and active
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>UNACK_ACT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Unexpected NACK Interrupt Active</TD>
+<TD>STATUS.SM_IN_NACK_HOLD is set and active
+<TR align="left">
+<TD nowrap>1:0</TD>
+<TD nowrap>RSVD0</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>I2C Active Interrupts. This is effectively STATUS ANDed with INT_EN</P>
+

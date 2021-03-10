@@ -1,0 +1,72 @@
+menu "Peripheral HAL Settings"
+comment "Enable Peripheral HAL support required for APP"
+
+config I2C_2  ##DSP I2c
+    bool "Enable I2C 2"
+    default y
+choice
+    prompt "I2C2 Freq Choice"
+    depends on I2C_2
+    config I2C2_FREQ_400_KHZ
+        bool "400KHZ"
+    config I2C2_FREQ_100_KHZ
+        bool "100KHZ"
+    config I2C2_FREQ_1_MHZ
+        bool "1MHZ"
+endchoice
+config I2C_2_FREQ
+    int
+    default 100 if I2C2_FREQ_100_KHZ
+    default 400 if I2C2_FREQ_400_KHZ
+    default 1000 if I2C2_FREQ_1_MHZ
+
+config SPI_DSP_MASTER
+    bool "Enable SPI DSP master"
+    default y
+choice
+    prompt "Select SPI_DSP Baud Rate in KHz"
+    depends on SPI_DSP_MASTER
+    config SPI_DSP_BRATE_1000_KHZ
+        bool "1000KHZ"
+    config SPI_DSP_BRATE_1600_KHZ
+        bool "1600KHZ"
+    config SPI_DSP_BRATE_2000_KHZ
+        bool "2000KHZ"
+    config SPI_DSP_BRATE_2600_KHZ
+        bool "2600KHZ"
+    config SPI_DSP_BRATE_4000_KHZ
+        bool "4000KHZ"
+endchoice
+config SPI_DSP_BRATE_IN_KHZ
+    int
+    default 1000 if SPI_DSP_BRATE_1000_KHZ
+    default 1600 if SPI_DSP_BRATE_1600_KHZ
+    default 2000 if SPI_DSP_BRATE_2000_KHZ
+    default 2600 if SPI_DSP_BRATE_2600_KHZ
+    default 4000 if SPI_DSP_BRATE_4000_KHZ
+
+config SPI_TIMER
+    bool "TIMER SPI"
+    depends on SPI_DSP_MASTER
+    default y
+    if SPI_TIMER
+        config MAX_TIMERS
+        int "No. of SPI based timers"
+        default 10 
+    endif
+
+ 
+config DSP_HAL_DMA
+    bool "DMA HAL"
+    default y
+    if DSP_HAL_DMA
+    ##orsource "rtc/Kconfig"  ==> As of now there are no parameters for DMA
+    endif
+
+config DEBUG_PRINTS
+    bool "Enabling Debug trace message through backdoor UART"
+    default n
+
+
+
+endmenu

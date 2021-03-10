@@ -1,0 +1,6 @@
+load
+set {int}0x1003FFF8 = 0xDEADBEEF
+set {int}0x1003FFFC = 0xC369A517
+monitor reset
+monitor halt
+b main

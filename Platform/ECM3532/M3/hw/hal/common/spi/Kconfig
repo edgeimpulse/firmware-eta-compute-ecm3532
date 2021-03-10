@@ -1,0 +1,53 @@
+menu "SPI HAL Settings"
+
+config SPI_0_MASTER
+    bool "Enable SPI 0 master"
+    depends on !I2c_0
+    default y
+choice SPI_0_BRATE_IN_KHZ
+    prompt "Select SPI0 Baud Rate in KHz"
+    depends on SPI_0_MASTER
+    config SPI_0_BRATE_1000_KHZ
+        bool "1000KHZ"
+    config SPI_0_BRATE_1600_KHZ
+        bool "1600KHZ"
+    config SPI_0_BRATE_2000_KHZ
+        bool "2000KHZ"
+    config SPI_0_BRATE_2600_KHZ
+        bool "2600KHZ"
+    config SPI_0_BRATE_4000_KHZ
+        bool "4000KHZ"
+endchoice
+config SPI_0_BRATE_IN_KHZ
+    int
+    default 1000 if SPI_0_BRATE_1000_KHZ
+    default 1600 if SPI_0_BRATE_1600_KHZ
+    default 2000 if SPI_0_BRATE_2000_KHZ
+    default 2600 if SPI_0_BRATE_2600_KHZ
+    default 4000 if SPI_0_BRATE_4000_KHZ
+
+config SPI_1_MASTER
+    bool "Enable SPI 1 master"
+    default y
+choice SPI_1_BRATE_IN_KHZ
+    prompt "Select SPI1 Baud Rate in KHz"
+    depends on SPI_1_MASTER
+    config SPI_1_BRATE_1000_KHZ
+        bool "1000KHZ"
+    config SPI_1_BRATE_1600_KHZ
+        bool "1600KHZ"
+    config SPI_1_BRATE_2000_KHZ
+        bool "2000KHZ"
+    config SPI_1_BRATE_2600_KHZ
+        bool "2600KHZ"
+    config SPI_1_BRATE_4000_KHZ
+        bool "4000KHZ"
+endchoice
+config SPI_1_BRATE_IN_KHZ
+    int
+    default 1000 if SPI_1_BRATE_1000_KHZ
+    default 1600 if SPI_1_BRATE_1600_KHZ
+    default 2000 if SPI_1_BRATE_2000_KHZ
+    default 2600 if SPI_1_BRATE_2600_KHZ
+    default 4000 if SPI_1_BRATE_4000_KHZ
+endmenu

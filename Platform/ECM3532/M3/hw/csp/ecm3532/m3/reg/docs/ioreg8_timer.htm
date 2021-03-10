@@ -1,0 +1,2379 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>IOREG FILE: CAYMAN TIMER Brief Device Description of the TIMER Goes Here.
+</TITLE>
+</HEAD>
+<BODY>
+<H1 align="center">On-Line Documentation for CAYMAN  :  TIMER <BR>  Bus Type: PERIPHERAL BUS</H1>
+<FONT size="+2"><B><P align="center">Brief Device Description of the TIMER Goes Here.</P></B><B</FONT><BR><HR>
+<FONT face="Helvetica" size="-1"><P align="center"><B> Put banner announcement here. </B></P></FONT><HR>
+<BR><B>The TIMER Device provides programmable timing support for an RTOS or RTOS surrogate, i.e. embedded firmware designs that don't use an RTOS. NOTE Some portions of the timer are only cleared by the initial power on reset to the SOC.</B><BR><BR><HR>
+<FONT face="Helvetica" size="-1"><P align="left"><B> Source File Name: ./src/ioreg8_timer.src <BR> Source File Modification Date Wed Jul 31 17:01:36 2019 <BR> html creation date November 11, 2019</B></P></FONT>
+<H2 id="index"> TIMER Register Index</H2>
+<B> <CODE>ADDRESS</CODE></B><BR>
+<B><CODE>0x50020400: </CODE></B><A id = "CFG_STATUSindex" href="#CFG_STATUS"><B>IO_TIMER_CFG_STATUS</A></B><BR>
+<B><CODE>0x50020408: </CODE></B><A id = "COUNTER_LOindex" href="#COUNTER_LO"><B>IO_TIMER_COUNTER_LO</A></B><BR>
+<B><CODE>0x5002040c: </CODE></B><A id = "COUNTER_HIindex" href="#COUNTER_HI"><B>IO_TIMER_COUNTER_HI</A></B><BR>
+<B><CODE>0x50020410: </CODE></B><A id = "DEBUG_CTLindex" href="#DEBUG_CTL"><B>IO_TIMER_DEBUG_CTL</A></B><BR>
+<B><CODE>0x50020414: </CODE></B><A id = "DEBUG_READ_ONLYindex" href="#DEBUG_READ_ONLY"><B>IO_TIMER_DEBUG_READ_ONLY</A></B><BR>
+<B><CODE>0x50020418: </CODE></B><A id = "CAPTURE_LOindex" href="#CAPTURE_LO"><B>IO_TIMER_CAPTURE_LO</A></B><BR>
+<B><CODE>0x5002041c: </CODE></B><A id = "CAPTURE_HIindex" href="#CAPTURE_HI"><B>IO_TIMER_CAPTURE_HI</A></B><BR>
+<B><CODE>0x50020420: </CODE></B><A id = "COMPAREAindex" href="#COMPAREA"><B>IO_TIMER_COMPAREA</A></B><BR>
+<B><CODE>0x50020424: </CODE></B><A id = "COMPAREBindex" href="#COMPAREB"><B>IO_TIMER_COMPAREB</A></B><BR>
+<B><CODE>0x50020428: </CODE></B><A id = "COMPARECindex" href="#COMPAREC"><B>IO_TIMER_COMPAREC</A></B><BR>
+<B><CODE>0x5002042c: </CODE></B><A id = "COMPAREDindex" href="#COMPARED"><B>IO_TIMER_COMPARED</A></B><BR>
+<B><CODE>0x50020430: </CODE></B><A id = "0_INT_ENABLEindex" href="#0_INT_ENABLE"><B>IO_TIMER_0_INT_ENABLE</A></B><BR>
+<B><CODE>0x50020434: </CODE></B><A id = "0_INT_ENABLE_SETindex" href="#0_INT_ENABLE_SET"><B>IO_TIMER_0_INT_ENABLE_SET</A></B><BR>
+<B><CODE>0x50020438: </CODE></B><A id = "0_INT_ENABLE_CLRindex" href="#0_INT_ENABLE_CLR"><B>IO_TIMER_0_INT_ENABLE_CLR</A></B><BR>
+<B><CODE>0x5002043c: </CODE></B><A id = "0_INT_ENABLE_TOGindex" href="#0_INT_ENABLE_TOG"><B>IO_TIMER_0_INT_ENABLE_TOG</A></B><BR>
+<B><CODE>0x50020440: </CODE></B><A id = "1_INT_ENABLEindex" href="#1_INT_ENABLE"><B>IO_TIMER_1_INT_ENABLE</A></B><BR>
+<B><CODE>0x50020444: </CODE></B><A id = "1_INT_ENABLE_SETindex" href="#1_INT_ENABLE_SET"><B>IO_TIMER_1_INT_ENABLE_SET</A></B><BR>
+<B><CODE>0x50020448: </CODE></B><A id = "1_INT_ENABLE_CLRindex" href="#1_INT_ENABLE_CLR"><B>IO_TIMER_1_INT_ENABLE_CLR</A></B><BR>
+<B><CODE>0x5002044c: </CODE></B><A id = "1_INT_ENABLE_TOGindex" href="#1_INT_ENABLE_TOG"><B>IO_TIMER_1_INT_ENABLE_TOG</A></B><BR>
+<B><CODE>0x50020450: </CODE></B><A id = "INT_STATUSindex" href="#INT_STATUS"><B>IO_TIMER_INT_STATUS</A></B><BR>
+<B><CODE>0x50020454: </CODE></B><A id = "INT_STATUS_SETindex" href="#INT_STATUS_SET"><B>IO_TIMER_INT_STATUS_SET</A></B><BR>
+<B><CODE>0x50020458: </CODE></B><A id = "INT_STATUS_CLRindex" href="#INT_STATUS_CLR"><B>IO_TIMER_INT_STATUS_CLR</A></B><BR>
+<B><CODE>0x5002045c: </CODE></B><A id = "INT_STATUS_TOGindex" href="#INT_STATUS_TOG"><B>IO_TIMER_INT_STATUS_TOG</A></B><BR>
+<BR><HR>
+<H2 id="CFG_STATUS"><A href="#index">
+IO_TIMER_CFG_STATUS</A></H2>
+<P><FONT size="+1"><B>TIMER CONFIGURATION AND STATUS REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_TIMER_CFG_STATUS ADDRESS:</B></TD>
+<TD><CODE>0x50020400</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="26">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">FLAG<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">ENABLE_CAPTURE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CLK_EN_OVR<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SFTRST<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:6</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>FLAG</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>UPDATE FLAG</TD>
+<TD>This bit toggles every time the counter is incremented. It is useful for ensuring a clean read of the full 64-bits of the counter. Note this bit is also visible in the GPIO external status register for faster read access.
+<TR align="left">
+<TD nowrap>4:3</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>ENABLE_CAPTURE</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CAPTURE ENABLE</TD>
+<TD>When this bit is set to 1 it enables the capture registers to respond to a pin transition event in the selected GPIO pin. This would also set the CAPTURE interrupt status bit when it occurs.
+<BR>ENABLE = 1 Enable GPIO Event Capture.
+<BR>DISABLE = 0 Disable GPIO Event Capture.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>CLK_EN_OVR</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CLOCK ENABLE OVERRIDE</TD>
+<TD>Force the clock enable for this module ON to prevent clock gating at the HFO. Intended for debug purposes.
+<BR>ENABLE = 1 Prevent HFO clock gating.
+<BR>DISABLE = 0 Allow HFO clock gating when block is inactive.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>SFTRST</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>SOFT RESET BIT</TD>
+<TD>Set this bit to one to perform a soft reset on the timer.
+<BR>NOW = 1 Perform a soft reset.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Configuration and status bits for the TIMER.</P>
+<BR><HR>
+<H2 id="COUNTER_LO"><A href="#index">
+IO_TIMER_COUNTER_LO</A></H2>
+<P><FONT size="+1"><B>TIMER COUNTER LOW REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_TIMER_COUNTER_LO ADDRESS:</B></TD>
+<TD><CODE>0x50020408</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#c0c0c0" colspan="32">VALUE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>VALUE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>LOWER BITS</TD>
+<TD>This read only bit field provides a view of the lower 32 bits of the counter.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Lower 32-bits of counter.</P>
+<BR><HR>
+<H2 id="COUNTER_HI"><A href="#index">
+IO_TIMER_COUNTER_HI</A></H2>
+<P><FONT size="+1"><B>TIMER COUNTER HIGH REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_TIMER_COUNTER_HI ADDRESS:</B></TD>
+<TD><CODE>0x5002040c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#c0c0c0" colspan="32">VALUE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>VALUE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>UPPER BITS</TD>
+<TD>This read only bit field provides a view of the upper 32 bits of the counter.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Upper 32-bits of counter.</P>
+<BR><HR>
+<H2 id="DEBUG_CTL"><A href="#index">
+IO_TIMER_DEBUG_CTL</A></H2>
+<P><FONT size="+1"><B>TIMER DEBUG CONTROL REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_TIMER_DEBUG_CTL ADDRESS:</B></TD>
+<TD><CODE>0x50020410</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="25">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">COLLECTOR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IRQ2NVICB<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IRQ2NVICA<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SET2MAX_HI<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SET2MAX_LO<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">MODE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">OPERATION<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:7</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>COLLECTOR</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>COLLECTOR OF LOOSE ENDS</TD>
+<TD>This read only bit fields collects a number of signals inside the timer block. This is an internal debug signal.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>IRQ2NVICB</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>MASTER IRQ STATU</TD>
+<TD>Provides a read only view of what the TIMER device is sending to the NVIC on either interrupt 1.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>IRQ2NVICA</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>MASTER IRQ STATUS</TD>
+<TD>Provides a read only view of what the TIMER device is sending to the NVIC on either interrupt 0.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>SET2MAX_HI</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TIMER MAX CONTROL FOR HI</TD>
+<TD>Writing a one to this bit will cause the high counter register to be set to its maximum count (0xFFFFFFFF). This is a diagnostic tool to check the effect of the counter rolling over from 0xFFFFFFFF to 0x00000000.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>SET2MAX_LO</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TIMER MAX CONTROL FOR LO</TD>
+<TD>Writing a one to this bit will cause the counter register to be set to 4 before its maximum count (0xFFFFFFFC). This is a diagnostic tool to check the effect of the counter rolling over from 0xFFFFFFFF to 0x00000000.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>MODE</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>TIMER MODE CONTROL</TD>
+<TD>Set to 1 to enable counting in the timer COUNT registers. Set to zero to stop the main counter and clear it. WARNING: setting this bit to 0 will cause the loss any real time epoch maintained in the timer counter register.
+<BR>ENABLE = 1 Enable Normal Timer Operation.
+<BR>DISABLE = 0 Disable Normal Timer Operation and clear the counter.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>OPERATION</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>TIMER OPERATION CONTROL</TD>
+<TD>Set to 0 to temporarily stop counting in the timer COUNT registers. WARNING: setting this bit to 0 will cause the loss any real time epoch maintained in the timer counter register. This state may be useful during firmware debug.
+<BR>RUN = 1 Enable Normal Timer Operation.
+<BR>STOP = 0 Disable Normal Timer Operation.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Various debug state control bits.</P>
+<BR><HR>
+<H2 id="DEBUG_READ_ONLY"><A href="#index">
+IO_TIMER_DEBUG_READ_ONLY</A></H2>
+<P><FONT size="+1"><B>Debug Read Only Value Register</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_TIMER_DEBUG_READ_ONLY ADDRESS:</B></TD>
+<TD><CODE>0x50020414</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#c0c0c0" colspan="32">VALUE<BR><TT>0x45564144</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>VALUE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>DBG RO</TD>
+<TD>Debug Read Only Value for Diagnostics.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Provide a read only value for diagnostics.</P>
+<BR><HR>
+<H2 id="CAPTURE_LO"><A href="#index">
+IO_TIMER_CAPTURE_LO</A></H2>
+<P><FONT size="+1"><B>CAPTURED TIME OF GPIO EVENT (LOWER)</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_TIMER_CAPTURE_LO ADDRESS:</B></TD>
+<TD><CODE>0x50020418</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="32">VALUE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>VALUE</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>LOW BITS</TD>
+<TD>Read only view of lower 32-bits of the time of day that a GPIO event was detected.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Lower 32-bits of captured time of day.</P>
+<BR><HR>
+<H2 id="CAPTURE_HI"><A href="#index">
+IO_TIMER_CAPTURE_HI</A></H2>
+<P><FONT size="+1"><B>CAPTURED TIME OF GPIO EVENT (UPPER)</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_TIMER_CAPTURE_HI ADDRESS:</B></TD>
+<TD><CODE>0x5002041c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="32">VALUE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>VALUE</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>LOW BITS</TD>
+<TD>Read only view of upper 32-bits of the time of day that a GPIO event was detected.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Upper 32-bits of captured time of day.</P>
+<BR><HR>
+<H2 id="COMPAREA"><A href="#index">
+IO_TIMER_COMPAREA</A></H2>
+<P><FONT size="+1"><B>COMPARE A VALUE</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_TIMER_COMPAREA ADDRESS:</B></TD>
+<TD><CODE>0x50020420</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="32">VALUE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>VALUE</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Counter Matching Value</TD>
+<TD>When this register is loaded with a value and the CMPA_ENABLE bit is on, then it is armed to set an interrupt status bit when the counter value matches this value.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>When this register value exactly matches the lower 32-bits of the counter then CMPA_STATUS interrupt status bit is set.</P>
+<BR><HR>
+<H2 id="COMPAREB"><A href="#index">
+IO_TIMER_COMPAREB</A></H2>
+<P><FONT size="+1"><B>COMPARE B VALUE</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_TIMER_COMPAREB ADDRESS:</B></TD>
+<TD><CODE>0x50020424</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="32">VALUE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>VALUE</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Counter Matching Value</TD>
+<TD>When this register is loaded with a value and the CMPB_ENABLE bit is on, then it is armed to set an interrupt status bit when the counter value matches this value.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>When this register value exactly matches the lower 32-bits of the counter then CMPB_STATUS interrupt status bit is set.</P>
+<BR><HR>
+<H2 id="COMPAREC"><A href="#index">
+IO_TIMER_COMPAREC</A></H2>
+<P><FONT size="+1"><B>COMPARE C VALUE</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_TIMER_COMPAREC ADDRESS:</B></TD>
+<TD><CODE>0x50020428</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="32">VALUE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>VALUE</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Counter Matching Value</TD>
+<TD>When this register is loaded with a value and the CMPC_ENABLE bit is on, then it is armed to set an interrupt status bit when the counter value matches this value.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>When this register value exactly matches the lower 32-bits of the counter then CMPC_STATUS interrupt status bit is set.</P>
+<BR><HR>
+<H2 id="COMPARED"><A href="#index">
+IO_TIMER_COMPARED</A></H2>
+<P><FONT size="+1"><B>COMPARE D VALUE</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_TIMER_COMPARED ADDRESS:</B></TD>
+<TD><CODE>0x5002042c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="32">VALUE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>VALUE</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Counter Matching Value</TD>
+<TD>When this register is loaded with a value and the CMPD_ENABLE bit is on, then it is armed to set an interrupt status bit when the counter value matches this value.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>When this register value exactly matches the lower 32-bits of the counter then CMPD_STATUS interrupt status bit is set.</P>
+<BR><HR>
+<H2 id="0_INT_ENABLE"><A href="#index">
+IO_TIMER_0_INT_ENABLE</A></H2>
+<P><FONT size="+1"><B>INTERRUPT ENABLE 0 REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_TIMER_0_INT_ENABLE ADDRESS:</B></TD>
+<TD><CODE>0x50020430</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="25">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">HI_OVERFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">LO_OVERFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CAPTURED<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPC<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPB<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPA<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:7</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>HI_OVERFLOW</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>UPPER 32 BITS OVERFLOWED</TD>
+<TD>The upper 32-bits of the counter wrapped from 0xFFFFFFFF back to 0x00000000.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>LO_OVERFLOW</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>LOWER 32 BITS OVERFLOWED</TD>
+<TD>The lower 32-bits of the counter wrapped from 0xFFFFFFFF back to 0x00000000.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>CAPTURED</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO EVENT CAPTURED</TD>
+<TD>The selected GPIO pin made the designated transition. The capture registers contain the time of day at which this occurred.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>CMPD</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>COMPARATOR D MATCHED</TD>
+<TD>Comparator D matched the lower bits of the counter.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>CMPC</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>COMPARATOR C MATCHED</TD>
+<TD>Comparator C matched the lower bits of the counter.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>CMPB</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>COMPARATOR B MATCHED</TD>
+<TD>Comparator B matched the lower bits of the counter.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>CMPA</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>COMPARATOR A MATCHED</TD>
+<TD>Comparator A matched the lower bits of the counter.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Interrupt Enable register for the TIMER 0 interrupt.</P>
+<BR><HR>
+<H2 id="0_INT_ENABLE_SET"><A href="#index">
+IO_TIMER_0_INT_ENABLE_SET</A></H2>
+<P><FONT size="+1"><B>TIMER SET INTERRUPT ENABLE 0 BITS</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_TIMER_0_INT_ENABLE_SET ADDRESS:</B></TD>
+<TD><CODE>0x50020434</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="25">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">HI_OVERFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">LO_OVERFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CAPTURED<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPC<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPB<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPA<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:7</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>HI_OVERFLOW</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>UPPER 32 BITS OVERFLOWED</TD>
+<TD>Set the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>LO_OVERFLOW</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>LOWER 32 BITS OVERFLOWED</TD>
+<TD>Set the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>CAPTURED</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO EVENT CAPTURED</TD>
+<TD>Set the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>CMPD</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR D MATCHED</TD>
+<TD>Set the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>CMPC</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR C MATCHED</TD>
+<TD>Set the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>CMPB</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR B MATCHED</TD>
+<TD>Set the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>CMPA</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR A MATCHED</TD>
+<TD>Set the corresponding interrupt enable bit.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Set Interrupt Enable bits for TIMER Interrupt 0</P>
+<BR><HR>
+<H2 id="0_INT_ENABLE_CLR"><A href="#index">
+IO_TIMER_0_INT_ENABLE_CLR</A></H2>
+<P><FONT size="+1"><B>TIMER CLEAR INTERRUPT ENABLE 0 BITS</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_TIMER_0_INT_ENABLE_CLR ADDRESS:</B></TD>
+<TD><CODE>0x50020438</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="25">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">HI_OVERFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">LO_OVERFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CAPTURED<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPC<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPB<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPA<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:7</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>HI_OVERFLOW</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>UPPER 32 BITS OVERFLOWED</TD>
+<TD>Clear the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>LO_OVERFLOW</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>LOWER 32 BITS OVERFLOWED</TD>
+<TD>Clear the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>CAPTURED</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO EVENT CAPTURED</TD>
+<TD>Clear the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>CMPD</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR D MATCHED</TD>
+<TD>Clear the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>CMPC</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR C MATCHED</TD>
+<TD>Clear the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>CMPB</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR B MATCHED</TD>
+<TD>Clear the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>CMPA</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR A MATCHED</TD>
+<TD>Clear the corresponding interrupt enable bit.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Set Interrupt Enable bits for TIMER Interrupt 0</P>
+<BR><HR>
+<H2 id="0_INT_ENABLE_TOG"><A href="#index">
+IO_TIMER_0_INT_ENABLE_TOG</A></H2>
+<P><FONT size="+1"><B>TIMER TOGGLE INTERRUPT ENABLE  BITS INTERRUPT 0</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_TIMER_0_INT_ENABLE_TOG ADDRESS:</B></TD>
+<TD><CODE>0x5002043c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="25">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">HI_OVERFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">LO_OVERFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CAPTURED<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPC<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPB<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPA<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:7</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Toggle the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>HI_OVERFLOW</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>UPPER 32 BITS OVERFLOWED</TD>
+<TD>Toggle the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>LO_OVERFLOW</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>LOWER 32 BITS OVERFLOWED</TD>
+<TD>Toggle the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>CAPTURED</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO EVENT CAPTURED</TD>
+<TD>Toggle the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>CMPD</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR D MATCHED</TD>
+<TD>Toggle the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>CMPC</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR C MATCHED</TD>
+<TD>Toggle the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>CMPB</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR B MATCHED</TD>
+<TD>Toggle the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>CMPA</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR A MATCHED</TD>
+<TD>Toggle the corresponding interrupt enable bit.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Toggle Interrupt Enable bits for TIMER Interrupt 0</P>
+<BR><HR>
+<H2 id="1_INT_ENABLE"><A href="#index">
+IO_TIMER_1_INT_ENABLE</A></H2>
+<P><FONT size="+1"><B>INTERRUPT ENABLE REGISTER INTERRUPT 1</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_TIMER_1_INT_ENABLE ADDRESS:</B></TD>
+<TD><CODE>0x50020440</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="25">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">HI_OVERFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">LO_OVERFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CAPTURED<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPC<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPB<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPA<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:7</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>HI_OVERFLOW</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>UPPER 32 BITS OVERFLOWED</TD>
+<TD>The upper 32-bits of the counter wrapped from 0xFFFFFFFF back to 0x00000000.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>LO_OVERFLOW</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>LOWER 32 BITS OVERFLOWED</TD>
+<TD>The lower 32-bits of the counter wrapped from 0xFFFFFFFF back to 0x00000000.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>CAPTURED</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO EVENT CAPTURED</TD>
+<TD>The selected GPIO pin made the designated transition. The capture registers contain the time of day at which this occurred.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>CMPD</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>COMPARATOR D MATCHED</TD>
+<TD>Comparator D matched the lower bits of the counter.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>CMPC</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>COMPARATOR C MATCHED</TD>
+<TD>Comparator C matched the lower bits of the counter.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>CMPB</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>COMPARATOR B MATCHED</TD>
+<TD>Comparator B matched the lower bits of the counter.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>CMPA</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>COMPARATOR A MATCHED</TD>
+<TD>Comparator A matched the lower bits of the counter.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Interrupt Enable register for the TIMER interrupt 1.</P>
+<BR><HR>
+<H2 id="1_INT_ENABLE_SET"><A href="#index">
+IO_TIMER_1_INT_ENABLE_SET</A></H2>
+<P><FONT size="+1"><B>TIMER SET INTERRUPT ENABLE INTERRUPT 1</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_TIMER_1_INT_ENABLE_SET ADDRESS:</B></TD>
+<TD><CODE>0x50020444</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="25">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">HI_OVERFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">LO_OVERFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CAPTURED<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPC<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPB<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPA<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:7</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>HI_OVERFLOW</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>UPPER 32 BITS OVERFLOWED</TD>
+<TD>Set the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>LO_OVERFLOW</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>LOWER 32 BITS OVERFLOWED</TD>
+<TD>Set the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>CAPTURED</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO EVENT CAPTURED</TD>
+<TD>Set the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>CMPD</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR D MATCHED</TD>
+<TD>Set the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>CMPC</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR C MATCHED</TD>
+<TD>Set the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>CMPB</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR B MATCHED</TD>
+<TD>Set the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>CMPA</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR A MATCHED</TD>
+<TD>Set the corresponding interrupt enable bit.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Set Interrupt Enable bits for TIMER Interrupt 1</P>
+<BR><HR>
+<H2 id="1_INT_ENABLE_CLR"><A href="#index">
+IO_TIMER_1_INT_ENABLE_CLR</A></H2>
+<P><FONT size="+1"><B>TIMER CLEAR INTERRUPT ENABLE INTERRUPT 1</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_TIMER_1_INT_ENABLE_CLR ADDRESS:</B></TD>
+<TD><CODE>0x50020448</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="25">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">HI_OVERFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">LO_OVERFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CAPTURED<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPC<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPB<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPA<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:7</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>HI_OVERFLOW</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>UPPER 32 BITS OVERFLOWED</TD>
+<TD>Clear the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>LO_OVERFLOW</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>LOWER 32 BITS OVERFLOWED</TD>
+<TD>Clear the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>CAPTURED</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO EVENT CAPTURED</TD>
+<TD>Clear the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>CMPD</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR D MATCHED</TD>
+<TD>Clear the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>CMPC</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR C MATCHED</TD>
+<TD>Clear the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>CMPB</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR B MATCHED</TD>
+<TD>Clear the corresponding interrupt enable bit.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>CMPA</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR A MATCHED</TD>
+<TD>Clear the corresponding interrupt enable bit.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Set Interrupt Enable bits for TIMER Interrupt 1</P>
+<BR><HR>
+<H2 id="1_INT_ENABLE_TOG"><A href="#index">
+IO_TIMER_1_INT_ENABLE_TOG</A></H2>
+<P><FONT size="+1"><B>TIMER TOGGLE INTERRUPT ENABLE INTERRUPT 1</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_TIMER_1_INT_ENABLE_TOG ADDRESS:</B></TD>
+<TD><CODE>0x5002044c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="25">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">HI_OVERFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">LO_OVERFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CAPTURED<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPC<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPB<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPA<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:7</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>HI_OVERFLOW</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>UPPER 32 BITS OVERFLOWED</TD>
+<TD>The upper 32-bits of the counter wrapped from 0xFFFFFFFF back to 0x00000000.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>LO_OVERFLOW</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>LOWER 32 BITS OVERFLOWED</TD>
+<TD>The lower 32-bits of the counter wrapped from 0xFFFFFFFF back to 0x00000000.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>CAPTURED</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO EVENT CAPTURED</TD>
+<TD>The selected GPIO pin made the designated transition. The capture registers contain the time of day at which this occurred.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>CMPD</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>COMPARATOR D MATCHED</TD>
+<TD>Comparator D matched the lower bits of the counter.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>CMPC</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>COMPARATOR C MATCHED</TD>
+<TD>Comparator C matched the lower bits of the counter.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>CMPB</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>COMPARATOR B MATCHED</TD>
+<TD>Comparator B matched the lower bits of the counter.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>CMPA</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>COMPARATOR A MATCHED</TD>
+<TD>Comparator A matched the lower bits of the counter.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Toggle Interrupt Enable bits for TIMER Interrupt 1</P>
+<BR><HR>
+<H2 id="INT_STATUS"><A href="#index">
+IO_TIMER_INT_STATUS</A></H2>
+<P><FONT size="+1"><B>INTERRUPT STATUS REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_TIMER_INT_STATUS ADDRESS:</B></TD>
+<TD><CODE>0x50020450</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="25">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">HI_OVERFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">LO_OVERFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CAPTURED<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPC<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPB<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPA<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:7</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>HI_OVERFLOW</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>UPPER 32 BITS OVERFLOWED</TD>
+<TD>The upper 32-bits of the counter wrapped from 0xFFFFFFFF back to 0x00000000.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>LO_OVERFLOW</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>LOWER 32 BITS OVERFLOWED</TD>
+<TD>The lower 32-bits of the counter wrapped from 0xFFFFFFFF back to 0x00000000.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>CAPTURED</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO EVENT CAPTURED</TD>
+<TD>The selected GPIO pin made the designated transition. The capture registers contain the time of day at which this occurred.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>CMPD</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>COMPARATOR D MATCHED</TD>
+<TD>Comparator D matched the lower bits of the counter.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>CMPC</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>COMPARATOR C MATCHED</TD>
+<TD>Comparator C matched the lower bits of the counter.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>CMPB</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>COMPARATOR B MATCHED</TD>
+<TD>Comparator B matched the lower bits of the counter.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>CMPA</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>COMPARATOR A MATCHED</TD>
+<TD>Comparator A matched the lower bits of the counter.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Interrupt Status register for the TIMER. Bits in this register can be routed to either timer_irq0 or timer_irq1 on their way to the NVIC.</P>
+<BR><HR>
+<H2 id="INT_STATUS_SET"><A href="#index">
+IO_TIMER_INT_STATUS_SET</A></H2>
+<P><FONT size="+1"><B>TIMER SET INTERRUPT STATUS BITS</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_TIMER_INT_STATUS_SET ADDRESS:</B></TD>
+<TD><CODE>0x50020454</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="25">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">HI_OVERFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">LO_OVERFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CAPTURED<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPC<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPB<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPA<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:7</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>HI_OVERFLOW</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>UPPER 32 BITS OVERFLOWED</TD>
+<TD>Set the interrupt status bit for the upper 32-bits of the counter wrapped from 0xFFFFFFFF back to 0x00000000.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>LO_OVERFLOW</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>LOWER 32 BITS OVERFLOWED</TD>
+<TD>Set the interrupt status bit for the lower 32-bits of the counter wrapped from 0xFFFFFFFF back to 0x00000000.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>CAPTURED</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO EVENT CAPTURED</TD>
+<TD>Set the interrupt status bit for the selected GPIO pin made the designated transition. The capture registers contain the time of day at which this occurred.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>CMPD</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR D MATCHED</TD>
+<TD>Set the interrupt status bit for the Comparator D matched the lower bits of the counter.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>CMPC</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR C MATCHED</TD>
+<TD>Set the interrupt status bit for the Comparator C matched the lower bits of the counter.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>CMPB</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR B MATCHED</TD>
+<TD>Set the interrupt status bit for the Comparator B matched the lower bits of the counter.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>CMPA</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR A MATCHED</TD>
+<TD>Set the interrupt status bit for the Comparator A matched the lower bits of the counter.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Set Interrupt Status bits for TIMER Interrupts.</P>
+<BR><HR>
+<H2 id="INT_STATUS_CLR"><A href="#index">
+IO_TIMER_INT_STATUS_CLR</A></H2>
+<P><FONT size="+1"><B>TIMER CLEAR INTERRUPT STATUS BITS</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_TIMER_INT_STATUS_CLR ADDRESS:</B></TD>
+<TD><CODE>0x50020458</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="25">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">HI_OVERFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">LO_OVERFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CAPTURED<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPC<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPB<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPA<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:7</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>HI_OVERFLOW</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>UPPER 32 BITS OVERFLOWED</TD>
+<TD>Clear the interrupt status bit for the upper 32-bits of the counter wrapped from 0xFFFFFFFF back to 0x00000000.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>LO_OVERFLOW</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>LOWER 32 BITS OVERFLOWED</TD>
+<TD>Clear the interrupt status bit for the lower 32-bits of the counter wrapped from 0xFFFFFFFF back to 0x00000000.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>CAPTURED</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO EVENT CAPTURED</TD>
+<TD>Clear the interrupt status bit for the selected GPIO pin made the designated transition. The capture registers contain the time of day at which this occurred.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>CMPD</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR D MATCHED</TD>
+<TD>Clear the interrupt status bit for the Comparator D matched the lower bits of the counter.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>CMPC</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR C MATCHED</TD>
+<TD>Clear the interrupt status bit for the Comparator C matched the lower bits of the counter.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>CMPB</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR B MATCHED</TD>
+<TD>Clear the interrupt status bit for the Comparator B matched the lower bits of the counter.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>CMPA</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR A MATCHED</TD>
+<TD>Clear the interrupt status bit for the Comparator A matched the lower bits of the counter.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Clear Interrupt Status bits for TIMER Interrupts.</P>
+<BR><HR>
+<H2 id="INT_STATUS_TOG"><A href="#index">
+IO_TIMER_INT_STATUS_TOG</A></H2>
+<P><FONT size="+1"><B>TIMER TOGGLE INTERRUPT STATUS BITS</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_TIMER_INT_STATUS_TOG ADDRESS:</B></TD>
+<TD><CODE>0x5002045c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="25">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">HI_OVERFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">LO_OVERFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CAPTURED<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPC<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPB<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMPA<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:7</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>HI_OVERFLOW</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>UPPER 32 BITS OVERFLOWED</TD>
+<TD>Toggle the interrupt status bit for the upper 32-bits of the counter wrapped from 0xFFFFFFFF back to 0x00000000.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>LO_OVERFLOW</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>LOWER 32 BITS OVERFLOWED</TD>
+<TD>Toggle the interrupt status bit for the lower 32-bits of the counter wrapped from 0xFFFFFFFF back to 0x00000000.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>CAPTURED</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO EVENT CAPTURED</TD>
+<TD>Toggle the interrupt status bit for the selected GPIO pin made the designated transition. The capture registers contain the time of day at which this occurred.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>CMPD</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR D MATCHED</TD>
+<TD>Toggle the interrupt status bit for the Comparator D matched the lower bits of the counter.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>CMPC</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR C MATCHED</TD>
+<TD>Toggle the interrupt status bit for the Comparator C matched the lower bits of the counter.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>CMPB</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR B MATCHED</TD>
+<TD>Toggle the interrupt status bit for the Comparator B matched the lower bits of the counter.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>CMPA</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>COMPARATOR A MATCHED</TD>
+<TD>Toggle the interrupt status bit for the Comparator A matched the lower bits of the counter.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Toggle Interrupt Status bits for TIMER Interrupts.</P>
+

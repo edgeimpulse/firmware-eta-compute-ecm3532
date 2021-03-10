@@ -6,7 +6,6 @@
 *.ko
 *.obj
 *.elf
-*.bin
 
 # Linker output
 *.ilk
@@ -19,7 +18,6 @@
 
 # Libraries
 *.lib
-*.a
 *.la
 *.lo
 
@@ -52,6 +50,7 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
+3rd_party/edge_impulse/edge-impulse-sdk/
 doc/
 iar_support/
 soc/ecm3532/boards/eta_ai_sensor/examples/m3/gru_keyword/
@@ -67,3 +66,5 @@ soc/ecm3532/boards/eta_ai_sensor/examples/m3/edge-impulse-ingestion/gcc/flash/bu
 soc/ecm3532/boards/eta_ai_sensor/examples/m3/edge-impulse-ingestion/gcc/flash/CommandFile.jlink
 soc/ecm3532/boards/eta_ai_sensor/examples/m3/raw_audio/
 bin/
+build/
+*.pyc

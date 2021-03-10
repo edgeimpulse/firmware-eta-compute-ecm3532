@@ -1,6 +1,6 @@
-# Edge Impulse firmware for Eta Compute ECM3532 AI Sensor
+# Edge Impulse firmware for Eta Compute ECM3532 AI Sensor / AI Vision
 
-Edge Impulse enables developers to create the next generation of intelligent device solutions with embedded Machine Learning. This repository contains the Edge Impulse firmware for the Eta Compute ECM3532 AI Sensor development board. This device supports all Edge Impulse device features, including ingestion, remote management and inferencing.
+Edge Impulse enables developers to create the next generation of intelligent device solutions with embedded Machine Learning. This repository contains the Edge Impulse firmware for the Eta Compute ECM3532 AI Sensor and AI Vision development boards. This device supports all Edge Impulse device features, including ingestion, remote management and inferencing.
 
 > **Note:** Do you just want to use this development board with Edge Impulse? No need to build this firmware. See the instructions [here](https://docs.edgeimpulse.com/docs/eta-compute-ecm3532-ai-sensor) for a prebuilt image and instructions. Or, you can use the [data forwarder](https://docs.edgeimpulse.com/docs/cli-data-forwarder) to capture data from any sensor.
 
@@ -8,12 +8,14 @@ Edge Impulse enables developers to create the next generation of intelligent dev
 
 ### Hardware
 
-* [Eta Compute ECM3532 AI Sensor](https://etacompute.com/products/) development board.
-* [Sparkfun FTDI Basic Breakout](https://www.sparkfun.com/products/9873) breakout board, or a similar FTDI to USB board that supports 3.3V - the ECM3532 AI Sensor is not 5V tolerant.
+* [Eta Compute ECM3532 AI Sensor](https://etacompute.com/products/) or [Eta Compute ECM3532 AI Vision](https://etacompute.com/products/) development board.
+* [Sparkfun FTDI Basic Breakout](https://www.sparkfun.com/products/9873) breakout board, or a similar FTDI to USB board that supports 3.3V - the development boards are not 5V tolerant.
 
 ### Software
 
 * [Node.js 12](https://nodejs.org/en/download/) or higher.
+* [Python 3](https://www.python.org/download/releases/3.0/).
+* [CMake](https://cmake.org).
 * [GNU Make](https://www.gnu.org/software/make/).
 * [GNU ARM Embedded Toolchain 9-2019-q4-major](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads) - make sure `arm-none-eabi-gcc` is in your PATH.
 * [Edge Impulse CLI](https://docs.edgeimpulse.com/docs/cli-installation).
@@ -33,15 +35,64 @@ Edge Impulse enables developers to create the next generation of intelligent dev
 
         ![Flash bootloader](images/flash_bootloader.png)
 
-1. Build the application:
+1. Build the Edge Impulse firmware:
+
+    **AI Sensor board**
 
     ```
-    $ cd soc/ecm3532/boards/eta_ai_sensor/examples/m3/edge-impulse-ingestion/gcc/flash_bootloader
+    $ cd Applications/edge-impulse-standalone
+    $ mkdir build
+    $ cd build
+    $ cmake ..
+    $ make loadconfig CONFIG="../ai-sensor-boot-config"
     $ make -j
     ```
 
-1. Flash the application:
+    **AI Vision board**
 
     ```
-    $ eta-flash-tool --firmware-path bin/edge_impulse_ingestion.bin
+    $ cd Applications/edge-impulse-standalone
+    $ mkdir build
+    $ cd build
+    $ cmake ..
+    $ make loadconfig CONFIG="../ai-vision-boot-config"
+    $ make -j
     ```
+
+    The configuration file you pick, during the `make loadconfig` step depends on the target and flashing method (either with or without bootloader). See Configuration files chapter for more info.
+
+1. To flash your application:
+
+    Using the bootloader:
+
+    ```
+    $ make flash_bl
+    ```
+
+    Using a JLink:
+
+    ```
+    $ make flash
+    ```
+
+## Configuration files
+
+The project can build a firmware binary for either the Eta Compute AI Sensor board or the Eta Compute Vision board, depending on the loaded configuration file.
+
+Apart from the different targets, you can also select between between binary for bootloader upload or uploading using a programmer (JLink).
+As in the previous paragraph, the config is loaded with the command:
+
+```
+    $ make loadconfig CONFIG="../ai-sensor-boot-config"
+```
+
+The available configurations are:
+
+* ai-sensor-config - AI Sensor without bootloader offset.
+* ai-sensor-boot-config - AI Sensor with bootloader offset.
+* ai-vision-config - AI Vision without bootloader offset.
+* ai-vision-boot-config - AI Vision with bootloader offset.
+
+## License
+
+This repository contains code from the Eta Compute TensaiFlow SDK Alpa v2-0.2, which is licensed under the Apache 2.0 license.

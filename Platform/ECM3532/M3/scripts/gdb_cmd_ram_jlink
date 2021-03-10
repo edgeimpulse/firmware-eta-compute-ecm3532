@@ -1,0 +1,7 @@
+load
+set {int}0x1003FFF8 = 0xDEADBEEF
+set {int}0x1003FFFC = 0xC369A517
+monitor writeu32 0xE000ED08 = 0x10000000
+monitor reset halt
+b main
+c

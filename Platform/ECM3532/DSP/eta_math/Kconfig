@@ -1,0 +1,6 @@
+menu "eta math library"
+config ETA_MATH
+    bool "eta math functions acceleration on DSP"
+    depends on EXECUTOR && FRAMEWORK
+    default y
+endmenu

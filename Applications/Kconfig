@@ -1,0 +1,98 @@
+menu "Application Selection Menu"
+comment "Applications Listing depends on Board Type, HAL Layer, Linker File"
+comment "quattro_display depends on TRAVIS_QUATTRO board and SPI 0"
+comment "wake word app depends on TRAVIS_QUATTRO, GPIO HAL, SPI HAL and SHM linker files"
+comment "timer test depends on Timer Hal"
+comment "i2c test depends on I2C and UART HAL"
+comment "async test depends on UART HAL"
+choice
+    prompt "Select Target App"
+    config LOAD_TEST
+        bool "load_test"
+        depends on PM_ENABLE && (HAL_TIMER || HAL_COMMON_TIMER) && (TMR_CH_0 || TMR_CH_1 || TMR_CH_2)
+        if LOAD_TEST
+            orsource "load_test/Kconfig"
+        endif
+
+    config HELLO_WORLD
+        bool "hello_world"
+        if HELLO_WORLD
+            orsource "hello_world/Kconfig"
+        endif
+
+    config I2C_TEST
+        bool "i2c_test"
+        depends on (I2C_1 || I2C_0)
+        depends on (HAL_UART || HAL_COMMON_I2C) && (UART_0 || UART_1)
+        if I2C_TEST
+            orsource "i2c_test/Kconfig"
+        endif
+
+    config SPI_TEST
+        bool "spi_test"
+        depends on (SPI_1_MASTER || SPI_0_MASTER)
+        depends on (HAL_SPI || HAL_COMMON_SPI)
+        depends on FIJI_BOARD
+        if SPI_TEST
+            orsource "spi_test/Kconfig"
+        endif
+
+    config QUATTRO_DISPLAY
+        bool "quattro_display"
+        depends on TRAVIS_QUATTRO_BOARD
+        depends on HAL_SPI && SPI_0_MASTER
+
+    config TIMER_TEST
+        bool "timer_test"
+        depends on (HAL_TIMER || HAL_COMMON_TIMER) && (TMR_CH_0 || TMR_CH_1 || TMR_CH_2)
+        if TIMER_TEST
+            orsource "timer_test/Kconfig"
+        endif
+
+    config ASYNC_TEST
+        bool "async_test"
+        depends on HAL_UART && (UART_0 && UART_1)
+
+    config SENSOR_TEST
+        bool "sensor_test"
+        depends on SENSOR_MANAGER
+        if SENSOR_TEST
+            orsource "sensor_test/Kconfig"
+        endif
+
+    config SENSOR_PP_FFT
+        bool "sensor_post_process_fft"
+        depends on SENSOR_MANAGER
+        if SENSOR_PP_FFT
+            orsource "sensor_pp_fft/Kconfig"
+        endif
+
+    config SENSOR_COMPOSITE_FFT
+        bool "composite_sensor_test"
+        depends on LSM6DSL_FFT_DSP
+        if SENSOR_COMPOSITE_FFT
+            orsource "composite_sensor_fft/Kconfig"
+        endif
+    config IOTHUB_CLIENT_SAMPLE_MQTT
+        bool "iothub_client_sample_mqtt"
+    config WAND
+        bool "wand"
+
+endchoice
+config TARGET_APP
+    string
+    default "load_test" if LOAD_TEST
+    default "hello_world" if HELLO_WORLD
+    default "i2c_test" if I2C_TEST
+    default "spi_test" if SPI_TEST
+    default "hello_world" if HELLO_WORLD
+    default "quattro_display" if QUATTRO_DISPLAY
+    default "chao_wakeup_word" if CHAO_WAKEUP_WORD
+    default "timer_test" if TIMER_TEST
+    default "async_test" if ASYNC_TEST
+    default "sensor_test" if SENSOR_TEST
+    default "sensor_pp_fft" if SENSOR_PP_FFT
+    default "composite_sensor_fft" if SENSOR_COMPOSITE_FFT
+    default "wand" if WAND
+    default "iothub_client_sample_mqtt" if IOTHUB_CLIENT_SAMPLE_MQTT
+endmenu

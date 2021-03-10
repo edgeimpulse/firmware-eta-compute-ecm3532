@@ -1,0 +1,6 @@
+set(getsoc "CONFIG_SOC")
+CONFIGVAL(soc ${getsoc})
+if (EXISTS "${CMAKE_CURRENT_LIST_DIR}/${soc}")
+    add_subdirectory(${soc})
+endif ()
+    add_subdirectory(common)

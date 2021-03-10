@@ -1,0 +1,31 @@
+menu "SPI Slave HAL Settings"
+
+config SPI_0_SLAVE
+    bool "Enable SPI 0 slave"
+    depends on !I2c_0 && !SPI_0_MASTER
+    default y
+
+choice SPI_SLAVE_CLK_PHASE
+    prompt "SPI Slave Clock Phase"
+    config LEADING_EDGE
+        bool "leading edge"
+    config TRAILING_EDGE
+        bool "traling edge"
+endchoice
+config SPI_SLAVE_CLK_PHASE
+    int
+    default 0 if LEADING_EDGE
+    default 1 if TRAILING_EDGE
+
+choice SPI_SLAVE_CLK_POLARITY
+    prompt "SPI Slave Clock Polarity"
+    config POSITIVE_CLOCK_POLARITY
+        bool "positive clock polarity"
+    config NEGATIVE_CLOCK_POLARITY
+        bool "negative clock polarity"
+endchoice
+config SPI_SLAVE_CLK_POLARITY
+    int
+    default 0 if POSITIVE_CLOCK_POLARITY
+    default 1 if NEGATIVE_CLOCK_POLARITY
+endmenu

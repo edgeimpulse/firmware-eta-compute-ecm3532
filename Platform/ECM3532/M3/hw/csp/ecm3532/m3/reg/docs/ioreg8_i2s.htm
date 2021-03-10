@@ -1,0 +1,186 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>IOREG FILE: CAYMAN I2S I2S CSR registers
+</TITLE>
+</HEAD>
+<BODY>
+<H1 align="center">On-Line Documentation for CAYMAN  :  I2S <BR>  Bus Type: PERIPHERAL BUS</H1>
+<FONT size="+2"><B><P align="center">I2S CSR registers</P></B><B</FONT><BR><HR>
+<FONT face="Helvetica" size="-1"><P align="center"><B> Put banner announcement here. </B></P></FONT><HR>
+<BR><B>The I2S Regs provide access to send and receive audio samples from I2S interface.</B><BR><BR><HR>
+<FONT face="Helvetica" size="-1"><P align="left"><B> Source File Name: ./src/ioreg8_i2s.src <BR> Source File Modification Date Sat Aug 24 17:55:47 2019 <BR> html creation date November 11, 2019</B></P></FONT>
+<H2 id="index"> I2S Register Index</H2>
+<B> <CODE>ADDRESS</CODE></B><BR>
+<B><CODE>0x50050100: </CODE></B><A id = "CSRindex" href="#CSR"><B>IO_I2S_CSR</A></B><BR>
+<B><CODE>0x50050104: </CODE></B><A id = "CSR2index" href="#CSR2"><B>IO_I2S_CSR2</A></B><BR>
+<BR><HR>
+<H2 id="CSR"><A href="#index">
+IO_I2S_CSR</A></H2>
+<P><FONT size="+1"><B>CONTROL STATUS REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_I2S_CSR ADDRESS:</B></TD>
+<TD><CODE>0x50050100</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="31">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">I2S_EN<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>I2S_EN</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>ENABLE I2S</TD>
+<TD>Set this bit enable to the I2S.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>This register configure the i2s settings.</P>
+<BR><HR>
+<H2 id="CSR2"><A href="#index">
+IO_I2S_CSR2</A></H2>
+<P><FONT size="+1"><B>CONTROL STATUS REGISTER 2</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_I2S_CSR2 ADDRESS:</B></TD>
+<TD><CODE>0x50050104</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="28">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SFTRST<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">BIT64_MODE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">SAMPLE_FREQ<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:4</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>SFTRST</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>I2S SOFT RESET</TD>
+<TD>Soft reset which resets the entire I2S to its POR state.
+<BR>RST = 1 Reset.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>BIT64_MODE</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>64 BIT MODE</TD>
+<TD>Set this bit to set the frame size to 64 bits.
+<TR align="left">
+<TD nowrap>1:0</TD>
+<TD nowrap>SAMPLE_FREQ</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SELECT SAMPLE FREQUENCY</TD>
+<TD>00: 8ksps, 01: 16ksps, 10: 32ksps, 11: not implemented.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>This register configure the i2s settings.</P>
+

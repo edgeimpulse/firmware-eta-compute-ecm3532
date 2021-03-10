@@ -1,0 +1,45 @@
+menu "NN kernels"
+config NN_KERNELS
+    bool "Accelerated Neural network kernels on DSP"
+    default n
+config CONV_RELU_AVGPOOL_2X2
+    depends on NN_KERNELS	
+    bool "convolve_CHW_q7_ker2x2_stride1_pad0_relu_avgPool_2x2_stride2_pad0"
+    default n
+config CONV_RELU_AVGPOOL_3X3
+    depends on NN_KERNELS
+    bool "convolve_CHW_q7_ker3x3_stride1_pad0_relu_avgPool_2x2_stride2_pad0"
+    default n
+config PW_CONV_FAST
+    depends on NN_KERNELS
+    bool "eta_pw_conv2d_q7_hwc_2mac_schedule"
+    default n
+config CONV_RELU_3X3_STRIDE2
+    depends on NN_KERNELS
+    bool "eta_conv2d_q7_chw_ker3x3_stride2_pad0_relu"
+    default n
+config CONV_RELU_2X2_STRIDE2
+    depends on NN_KERNELS
+    bool "eta_conv2d_q7_chw_ker2x2_stride2_pad0_relu"
+    default n
+config DS_CONV_RELU_2X2_STRIDE2
+    depends on NN_KERNELS
+    bool "eta_ds_conv2d_q7_chw_ker2x2_stride2_pad0_relu"
+    default n
+config CONV_RELU_3X3_STRIDE1
+    depends on NN_KERNELS
+    bool "eta_conv2d_q7_chw_ker3x3_stride1_pad0_relu"
+    default n
+config DS_CONV_RELU_3X3_STRIDE1
+    depends on NN_KERNELS
+    bool "eta_ds_conv2d_q7_chw_ker3x3_stride1_pad0_relu"
+    default n
+config CONV_RELU_3X3_STRIDE1_EX
+    depends on NN_KERNELS
+    bool "eta_conv2d_q7_chw_ker3x3_stride1_pad0_relu_ex"
+    default n
+
+
+endmenu
+
+

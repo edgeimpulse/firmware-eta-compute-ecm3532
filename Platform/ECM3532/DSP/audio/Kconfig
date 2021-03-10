@@ -1,0 +1,5 @@
+menu "PDM block"
+config PDM
+    bool "Enable PCM"
+    default n
+endmenu

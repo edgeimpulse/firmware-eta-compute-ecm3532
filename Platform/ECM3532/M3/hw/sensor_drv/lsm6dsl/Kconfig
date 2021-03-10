@@ -1,0 +1,18 @@
+menu "LSM6DSL configuration"
+config LSM6DSL_NAME
+    string "Device Name String"
+    default "lsm6dsl"
+config LSM6DSL_GPIO_IRQ
+    int "GPIO Irq Number"
+    default 3
+
+config LSM6DSL_GPIO_USERIRQ
+    int "GPIO userIrq Number"
+    default 0
+
+config SENSOR_TIMESTAMP
+	bool "Enable TIMESTAMP in FIFO mode"
+    default n
+	help
+	  "Enable time stamp in sensor Fifo"
+endmenu

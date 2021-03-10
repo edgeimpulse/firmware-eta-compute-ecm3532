@@ -1,0 +1,11 @@
+set(cfgvar "CONFIG_I2C_2")
+CONFIGVAL(cfgvaren ${cfgvar})
+string(COMPARE EQUAL "${cfgvaren}" y _cmp)
+if (_cmp)
+    file (GLOB lsm "${CMAKE_CURRENT_LIST_DIR}/src/*.c")
+    foreach (appf ${lsm})
+        target_sources(${PROJECT_NAME}.elf PRIVATE ${appf})
+    endforeach()
+target_include_directories(${PROJECT_NAME}.elf PUBLIC
+    "${CMAKE_CURRENT_LIST_DIR}/inc")
+endif()

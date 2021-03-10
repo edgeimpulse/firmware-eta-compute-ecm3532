@@ -1,0 +1,6 @@
+set(getsoc "CONFIG_SOC")
+CONFIGVAL(soc ${getsoc})
+if("${soc}" STREQUAL "ecm3532")
+    add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/common common)
+    add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/m3 m3)
+endif ()

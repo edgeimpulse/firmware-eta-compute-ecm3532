@@ -1,0 +1,1449 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>IOREG FILE: CAYMAN ADC ADC AHB REGISTERS
+</TITLE>
+</HEAD>
+<BODY>
+<H1 align="center">On-Line Documentation for CAYMAN  :  ADC <BR>  Bus Type: PERIPHERAL BUS</H1>
+<FONT size="+2"><B><P align="center">ADC AHB REGISTERS</P></B><B</FONT><BR><HR>
+<FONT face="Helvetica" size="-1"><P align="center"><B> Put banner announcement here. </B></P></FONT><HR>
+<BR><B>The ADC AHB interface provides programming control of the analog to digital converter.</B><BR><BR><HR>
+<FONT face="Helvetica" size="-1"><P align="left"><B> Source File Name: ./src/ioreg8_adc.src <BR> Source File Modification Date Mon Oct 28 15:31:34 2019 <BR> html creation date November 11, 2019</B></P></FONT>
+<H2 id="index"> ADC Register Index</H2>
+<B> <CODE>ADDRESS</CODE></B><BR>
+<B><CODE>0x50050000: </CODE></B><A id = "CNTRLindex" href="#CNTRL"><B>IO_ADC_CNTRL</A></B><BR>
+<B><CODE>0x50050004: </CODE></B><A id = "CLOCK_DIVindex" href="#CLOCK_DIV"><B>IO_ADC_CLOCK_DIV</A></B><BR>
+<B><CODE>0x50050008: </CODE></B><A id = "SRCindex" href="#SRC"><B>IO_ADC_SRC</A></B><BR>
+<B><CODE>0x5005000c: </CODE></B><A id = "INT_STATindex" href="#INT_STAT"><B>IO_ADC_INT_STAT</A></B><BR>
+<B><CODE>0x50050010: </CODE></B><A id = "STARTindex" href="#START"><B>IO_ADC_START</A></B><BR>
+<B><CODE>0x50050014: </CODE></B><A id = "SAMPLEindex" href="#SAMPLE"><B>IO_ADC_SAMPLE</A></B><BR>
+<B><CODE>0x50050018: </CODE></B><A id = "OFFSETindex" href="#OFFSET"><B>IO_ADC_OFFSET</A></B><BR>
+<B><CODE>0x5005001c: </CODE></B><A id = "DEBUGAindex" href="#DEBUGA"><B>IO_ADC_DEBUGA</A></B><BR>
+<B><CODE>0x50050020: </CODE></B><A id = "DEBUGBindex" href="#DEBUGB"><B>IO_ADC_DEBUGB</A></B><BR>
+<B><CODE>0x50050024: </CODE></B><A id = "DEBUGCindex" href="#DEBUGC"><B>IO_ADC_DEBUGC</A></B><BR>
+<B><CODE>0x50050028: </CODE></B><A id = "DBG_READ_ONLYindex" href="#DBG_READ_ONLY"><B>IO_ADC_DBG_READ_ONLY</A></B><BR>
+<B><CODE>0x5005002c: </CODE></B><A id = "SFIFO_CFGindex" href="#SFIFO_CFG"><B>IO_ADC_SFIFO_CFG</A></B><BR>
+<B><CODE>0x50050030: </CODE></B><A id = "SFIFOindex" href="#SFIFO"><B>IO_ADC_SFIFO</A></B><BR>
+<B><CODE>0x50050034: </CODE></B><A id = "SFIFO_STATindex" href="#SFIFO_STAT"><B>IO_ADC_SFIFO_STAT</A></B><BR>
+<B><CODE>0x50050038: </CODE></B><A id = "TOGGLEindex" href="#TOGGLE"><B>IO_ADC_TOGGLE</A></B><BR>
+<BR><HR>
+<H2 id="CNTRL"><A href="#index">
+IO_ADC_CNTRL</A></H2>
+<P><FONT size="+1"><B>CONFIGURATION REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_ADC_CNTRL ADDRESS:</B></TD>
+<TD><CODE>0x50050000</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="16">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">CAPTURE_CNT<BR><TT>0x4</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SFTRST<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">GRAB_DELAY<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DMA<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">PERIODIC<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CALIBRATE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">MODE<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">INT_EN<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:16</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>15:8</TD>
+<TD nowrap>CAPTURE_CNT</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SAMPLE TIME</TD>
+<TD>Count for time to wait while the sample and hold circuit is sampling the signal before the conversion is started. WHile the counter continues, the trigger signal will be held low. This counter runs on a 1MHz clock.
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>SFTRST</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>SOFT RESET</TD>
+<TD>Write a once to this bit to force a soft reset to this block.
+<TR align="left">
+<TD nowrap>6:5</TD>
+<TD nowrap>GRAB_DELAY</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SELECTABLE GRAB DELAY</TD>
+<TD>This bit field controls whent the data from the ADC is grabbed and used.
+<BR>IMMED = 0 No delay added
+<BR>1CLK = 1 Delay by 1 additonal clock.
+<BR>2CLK = 2 Delay by 2 additonal clocks.
+<BR>3CLK = 3 Delay by 3 additonal clocks.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>DMA</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>DMA OPERTING MODE</TD>
+<TD>Set this bit to one to enable the transfer of data over to the DSP for DMA access.
+<BR>DISABLE = 0 No DSP transfers are generated.
+<BR>ENABLE = 1 DSP transfers are generated.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>PERIODIC</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>PERIODIC SAMPLING</TD>
+<TD>Set this bit to one to enable periodic sampling instead of firmware triggered one shot samples.
+<BR>DISABLE = 0 No periodic clock selected. Use firmware trigger register.
+<BR>ENABLE = 1 Use selected periodic clock from input port to trigger a conversion cycle.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>CALIBRATE</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CALIBRATION MODE</TD>
+<TD>Set to one to enable calibration mode. Essentilly the differential inputs are tied together so that the offset voltage as expressed a digital ADC count can be measure by firmware. A number of conversions should be performed and the results should be averaged.  NOTE: once the calibration offset has been measured, the computed value is subtracted from each successive sample after firmware reads the value in from the ADC. This is accomplished by writing the average offset value to the OFFSET register.  Hardware performs a saturated add of the offset. A further NOTE, the calibration controls are ahead of the sample and hold circuit so turn it off before attempting to capture any input into the sample and hold that you intend to convert and use.
+<BR>OFF = 0 Calibration mode disabled. This is the normal operating mode.
+<BR>ON = 1 Calibration mode on. Essentially the differential inputs are shorted together to measure offset voltage.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>MODE</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RUN VERSUS SLEEP MODE</TD>
+<TD>Set to one to enable the the ADC to operate and perform captures and conversions. Set to zero to disable this block.
+<BR>SLEEP = 0 ADC interface disabled and in lowest power state. NOTE the ADC voltage plain may still be on.
+<BR>RUN = 1 Enable the normal operation of the ADC block.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>INT_EN</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>INTERRUPT ENABLE</TD>
+<TD>Set to one to enable interrupts to the NVIC.  Interrupts will then be asserted when INT_STAT is a one.
+<BR>DISABLE = 0 ADC interrupts are disabled and can't reach the NVIC.
+<BR>ENABLE = 1 ADC interrupts are enabled and if they occur they will be routed to the NVIC.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>This register provides configuration control and status information for the ADC.</P>
+<BR><HR>
+<H2 id="CLOCK_DIV"><A href="#index">
+IO_ADC_CLOCK_DIV</A></H2>
+<P><FONT size="+1"><B>CLOCK DIVIDER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_ADC_CLOCK_DIV ADDRESS:</B></TD>
+<TD><CODE>0x50050004</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="12">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="20">VALUE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:20</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>19:0</TD>
+<TD nowrap>VALUE</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CLOCK DIVIDER VALUE</TD>
+<TD>Divider for the 1 MHz input clock. When the divider count reaches zero, it is reloaded and an ADC conversion is triggered.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Clock divider register.</P>
+<BR><HR>
+<H2 id="SRC"><A href="#index">
+IO_ADC_SRC</A></H2>
+<P><FONT size="+1"><B>SOURCE CONFIGURATION REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_ADC_SRC ADDRESS:</B></TD>
+<TD><CODE>0x50050008</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="27">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SEL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TOGGLE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DIFF<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:5</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>SEL</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SOURCE MUX SELECT</TD>
+<TD>Sets the channel selector for the analog mux.
+<BR>CHAN0 = 0 Channel #0
+<BR>CHAN1 = 1 Channel #1
+<TR align="left">
+<TD nowrap>3:2</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>TOGGLE</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>TOGGLE SELECT</TD>
+<TD>Selects the analog channel based on the state of the ADC TOGGLE register instead of the SOURCE MUX SELECT.
+<BR>TOGGLE = 1 Use ADC TOGGLE as source for selector.
+<BR>REGISTER = 0 Use SOURCE MUX SELECT as source for selector.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>DIFF</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>DIFFERENTIAL SOURCE</TD>
+<TD>Set this bit to 1 for differential source pair.
+<BR>ENABLE = 1 Enabled.
+<BR>DISABLE = 0 Disabled.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>This register controls the source mux and differential configurations for the ADC.</P>
+<BR><HR>
+<H2 id="INT_STAT"><A href="#index">
+IO_ADC_INT_STAT</A></H2>
+<P><FONT size="+1"><B>INTERRUPT STATUS REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_ADC_INT_STAT ADDRESS:</B></TD>
+<TD><CODE>0x5005000c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="27">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SFIFO<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="3">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">READY<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:5</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>SFIFO</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>SFIFO LOW INTERRUPT</TD>
+<TD>Set to one when the SFIFO is greater the configured low marker. Write a one to this register to clear the interrupt status bit.
+<TR align="left">
+<TD nowrap>3:1</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>READY</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>CONVERSION DATA READY</TD>
+<TD>Set to one when a conversion is complete and data is ready to read from the SAMPLE register. Write a one to this register to clear the interrupt status bit.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>This register contains the one interrupt status bit</P>
+<BR><HR>
+<H2 id="START"><A href="#index">
+IO_ADC_START</A></H2>
+<P><FONT size="+1"><B>START REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_ADC_START ADDRESS:</B></TD>
+<TD><CODE>0x50050010</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="24">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">NOW<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:8</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>7:0</TD>
+<TD nowrap>NOW</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>START CONVERSION</TD>
+<TD>Write anything to this bit field to start a conversion. This bit is essentially part of the state machine and is implemented over there. Once written it will read back as a one until the end of the sample period when the conversion is started. Once the hold and conversion portion of the ADC operation is begun this bit is cleared back to 0.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Writing anything to this register initiates the capture and conversion of an analog sample.  When an ADC conversion is started, the state machine lowers the trigger pin for the required sample time. It then raises the trigger signal and resets this bit. NOTE: this register is not used in periodic mode. In that case, a trigger is automatically generated from the periodic counter.</P>
+<BR><HR>
+<H2 id="SAMPLE"><A href="#index">
+IO_ADC_SAMPLE</A></H2>
+<P><FONT size="+1"><B>ADC RESULT REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_ADC_SAMPLE ADDRESS:</B></TD>
+<TD><CODE>0x50050014</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="16">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">OFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="3">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="12">DATA<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:16</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>OFLOW</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>OVERFLOW OCCURED</TD>
+<TD>If this bit field returns a value of 1, then an overflow occured in analog, or in the digital processing. The offset value can also cause an overflow.  One can examine the RAW sample in the DEBUGB register for exact details on an overflow condition, if necessary. NOTE: This report must be enabled in the configuration register to be seeen here.
+<TR align="left">
+<TD nowrap>14:12</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>11:0</TD>
+<TD nowrap>DATA</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>POST PROCESSED SAMPLE</TD>
+<TD>This bit field returns the post processed 12-bit ADC sample. The post processing improves the ENOB.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>This register returns the results of one analog to digital conversion. Reading this register as a 16-bit halfword gives access to the sample value and a single overflow indication bit.</P>
+<BR><HR>
+<H2 id="OFFSET"><A href="#index">
+IO_ADC_OFFSET</A></H2>
+<P><FONT size="+1"><B>OFFSET REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_ADC_OFFSET ADDRESS:</B></TD>
+<TD><CODE>0x50050018</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="19">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="13">VALUE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:13</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>12:0</TD>
+<TD nowrap>VALUE</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>OFFSET TO ADD TO CORRECTED ADC VALUE</TD>
+<TD>Once the offset value is determined in calibration mode, set the negative value of that offset into this 13 bit bit field. The MSB is a sign bit.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>This register holds the signed 12 bit value (really 13 bits) that will be added to the 12 bit corrected value before presenting it to the user in the sample register. Be sure to clear this register before attempting to measure the offset in calibration mode.  The results of adding this value to the corrected value will be saturated at both 0xFFF and 0x000. No unexpected wrapping from high to low or low to high ADC values will occur when correcting the offset.</P>
+<BR><HR>
+<H2 id="DEBUGA"><A href="#index">
+IO_ADC_DEBUGA</A></H2>
+<P><FONT size="+1"><B>DEBUG ACCESS REGISTER A</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_ADC_DEBUGA ADDRESS:</B></TD>
+<TD><CODE>0x5005001c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">COLLECTOR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="27">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">POSTPROC<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">READY_TOG<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">DONE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">TRIGGER<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:31</TD>
+<TD nowrap>COLLECTOR</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>COLLECTOR OF LOOSE ENDS</TD>
+<TD>This read only bit solves a synthesis problem by collecting some automatically generated signals into one load.
+<TR align="left">
+<TD nowrap>30:4</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>POSTPROC</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>ENABLE POST PROCESSED SAMPLE TO PADS</TD>
+<TD>Set this bit to one to enable the 12 bit post processed conversion information, the ADC start signal, and the ADC done signal directly to chip pads for testing. The 12 bit post processed value is output instead of the 20 bit raw value.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>READY_TOG</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>DATA READY TOGGLE FOR DSP</TD>
+<TD>This bit provides a read only view of the data ready toggled signal for the DSP.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>DONE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>CONVERSION DONE</TD>
+<TD>Read only view of the conversion completion (DONE) signal from the analog side.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>TRIGGER</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>TRIGGER VALUE</TD>
+<TD>Read only view of the trigger signal which goes low to capture the sample  in the sample and hold and goes back high to trigger a conversion.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>This register provides read and write access to debug and diagnostic information.</P>
+<BR><HR>
+<H2 id="DEBUGB"><A href="#index">
+IO_ADC_DEBUGB</A></H2>
+<P><FONT size="+1"><B>DEBUG ACCESS REGISTER B</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_ADC_DEBUGB ADDRESS:</B></TD>
+<TD><CODE>0x50050020</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#c0c0c0" colspan="12">FINAL_VALUE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="20">RAW_VALUE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:20</TD>
+<TD nowrap>FINAL_VALUE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>POST PROCESSED SAMPLE</TD>
+<TD>This bit field returns the post processed 12-bit ADC sample. The post processing improves the ENOB.
+<TR align="left">
+<TD nowrap>19:0</TD>
+<TD nowrap>RAW_VALUE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>RAW ADC VALUE</TD>
+<TD>Read only view of the raw 20 bit conversion result. If a single conversion is performed then this value will show the results of that last conversion.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>This register provides read only access to debug and diagnostic information.</P>
+<BR><HR>
+<H2 id="DEBUGC"><A href="#index">
+IO_ADC_DEBUGC</A></H2>
+<P><FONT size="+1"><B>DEBUG ACCESS REGISTER C</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_ADC_DEBUGC ADDRESS:</B></TD>
+<TD><CODE>0x50050024</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="12">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="20">PERIODIC_CNT<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:20</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>19:0</TD>
+<TD nowrap>PERIODIC_CNT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PERIODIC COUNT</TD>
+<TD>Shows the current value of the periodic counter.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>This register provides read only access to debug and diagnostic information.</P>
+<BR><HR>
+<H2 id="DBG_READ_ONLY"><A href="#index">
+IO_ADC_DBG_READ_ONLY</A></H2>
+<P><FONT size="+1"><B>DEBUG READ ONLY REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_ADC_DBG_READ_ONLY ADDRESS:</B></TD>
+<TD><CODE>0x50050028</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#c0c0c0" colspan="32">VALUE<BR><TT>0x444342c3</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>VALUE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PERIODIC COUNT</TD>
+<TD>Shows the current value of the periodic counter.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>This register provides a read only test value for checking IP connectivity to AHB.</P>
+<BR><HR>
+<H2 id="SFIFO_CFG"><A href="#index">
+IO_ADC_SFIFO_CFG</A></H2>
+<P><FONT size="+1"><B>SAMPLE FIFO CONFIGURATION</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_ADC_SFIFO_CFG ADDRESS:</B></TD>
+<TD><CODE>0x5005002c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="24">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="4">FULL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CLR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">INT_EN<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">ENABLE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:8</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>7:4</TD>
+<TD nowrap>FULL</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SFIFO FULL INTERRUPT LEVEL</TD>
+<TD>Set the level above which the sample FIFO will trigger an interrupt.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>CLR</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>CLEAR SFIFO</TD>
+<TD>Set this bit to clear the SFIFO.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>INT_EN</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SFIFO INTERRUPT ENABLE</TD>
+<TD>Enable the sample FIFO full interrupt.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>ENABLE</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>ENABLE SFIFO</TD>
+<TD>Set this bit to enable the SFIFO.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Configuration register for the sample FIFO.</P>
+<BR><HR>
+<H2 id="SFIFO"><A href="#index">
+IO_ADC_SFIFO</A></H2>
+<P><FONT size="+1"><B>SAMPLE FIFO</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_ADC_SFIFO ADDRESS:</B></TD>
+<TD><CODE>0x50050030</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">VALID1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">OFLOW1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="12">SAMP1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">LOST<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">VALID0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">OFLOW0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="12">SAMP0<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:31</TD>
+<TD nowrap>RSVD3</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>30:30</TD>
+<TD nowrap>VALID1</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>SAMPLE #1 VALID</TD>
+<TD>Indicates whether SAMP1 contains valid data.
+<TR align="left">
+<TD nowrap>29:29</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>28:28</TD>
+<TD nowrap>OFLOW1</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>SAMPLE #1 OVERFLOW</TD>
+<TD>Overflow bit for SAMP1.
+<TR align="left">
+<TD nowrap>27:16</TD>
+<TD nowrap>SAMP1</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>SAMPLE #1 DATA</TD>
+<TD>The value of the second sample out of the FIFO.
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>LOST</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>SAMPLE LOST</TD>
+<TD>Indicates whether at least one sample was lost due to FIFO overflow.
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>VALID0</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>SAMPLE #0 VALID</TD>
+<TD>Indicates whether SAMP0 contains valid data.
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>OFLOW0</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>SAMPLE #0 OVERFLOW</TD>
+<TD>Overflow bit for SAMP0.
+<TR align="left">
+<TD nowrap>11:0</TD>
+<TD nowrap>SAMP0</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>SAMPLE #0 DATA</TD>
+<TD>The value of the first sample out of the FIFO.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>WARNING: READ SIDE EFFECT.<br><br>This register provides a read interface for the sample FIFO. A 32-bit read pops a maximum of two samples off the FIFO. A 16-bit read to the lower half of the register pops one sample off the FIFO. An 8-bit read does nothing. Check the associated VALID bit to know if a SAMP field contains a valid sample.</P>
+<BR><HR>
+<H2 id="SFIFO_STAT"><A href="#index">
+IO_ADC_SFIFO_STAT</A></H2>
+<P><FONT size="+1"><B>SAMPLE FIFO STATUS</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_ADC_SFIFO_STAT ADDRESS:</B></TD>
+<TD><CODE>0x50050034</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="25">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">LOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">EMPTY<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">FULL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="4">SIZE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:7</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>LOW</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>SAMPLE FIFO SPACE LOW</TD>
+<TD>Indicates if the size of the sample FIFO is above the SFIFO_CFG_FULL interrupt level.
+<BR>LOW = 1 Low.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>SAMPLE FIFO EMPTY</TD>
+<TD>Indicates if the sample FIFO is empty.
+<BR>EMPTY = 1 Empty.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>FULL</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>SAMPLE FIFO FULL</TD>
+<TD>Indicates if the sample FIFO is full.
+<BR>FULL = 1 Full.
+<TR align="left">
+<TD nowrap>3:0</TD>
+<TD nowrap>SIZE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>SAMPLE FIFO SIZE</TD>
+<TD>Current consumption of the sample FIFO from 0 -> 15. Check FULL to see if consumption is 16.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Status register for the sample FIFO.</P>
+<BR><HR>
+<H2 id="TOGGLE"><A href="#index">
+IO_ADC_TOGGLE</A></H2>
+<P><FONT size="+1"><B>ADC TOGGLE REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_ADC_TOGGLE ADDRESS:</B></TD>
+<TD><CODE>0x50050038</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="31">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">STATE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>STATE</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>ADC TOGGLE STATE</TD>
+<TD>The current state of the ADC toggle register. Can be written with an initial value.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>When in periodic mode the ADC toggle register toggles halfway through every period. This register can be driven on CLKOUT or used to select the source of the internal analog MUX. See the CLKOUT register in the RTC register file or the TOGGLE bit of the SRC register respectively.</P>
+

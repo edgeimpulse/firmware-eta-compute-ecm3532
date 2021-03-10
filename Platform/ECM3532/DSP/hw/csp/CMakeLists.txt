@@ -1,0 +1,5 @@
+set(getsoc "CONFIG_SOC")
+CONFIGVAL(soc ${getsoc})
+#add_subdirectory(${soc})
+add_subdirectory(ecm3532)
+add_subdirectory(common)

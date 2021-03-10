@@ -1,0 +1,45 @@
+menu "Sensor Driver Menu"
+
+config LSM6DSL_M3
+    bool "LSM6DSL I2C accelerometer and gyroscope Chip"
+    depends on SENSOR_MANAGER && (HAL_I2C || HAL_COMMON_I2C) && (!RPC)
+    default n
+    if LSM6DSL_M3
+        rsource "lsm6dsl/Kconfig"
+    endif
+
+config LSM6DSL_DSP
+    bool "DSP Driver for LSM6DSL I2C accelerometer and gyroscope Chip"
+    depends on SENSOR_MANAGER && RPC
+    default n
+    if LSM6DSL_DSP
+        rsource "lsm6dsl_dsp/Kconfig"
+    endif
+
+config LSM6DSL_FFT_DSP
+    bool "DSP Composite Driver for FFT using LSM6DSL"
+    depends on SENSOR_MANAGER && RPC
+    default n
+    if LSM6DSL_FFT_DSP
+        rsource "lsm6dsl_fft_dsp/Kconfig"
+    endif
+
+config STUB_DRV
+	bool "Sensor manager stub driver for interface testing"
+    depends on SENSOR_MANAGER
+    default n
+    if STUB_DRV
+        rsource "stub_drv/Kconfig"
+    endif
+
+config ICM20602_M3
+    bool "ICM20602 I2C accelerometer and gyroscope Chip"
+    depends on SENSOR_MANAGER && (HAL_I2C || HAL_COMMON_I2C) && (!RPC)
+    default n
+    if ICM20602_M3
+        rsource "icm20602/Kconfig"
+    endif
+
+
+endmenu
+

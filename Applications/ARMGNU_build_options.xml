@@ -1,0 +1,88 @@
+<!DOCTYPE Generic_Project_Options>
+<options>
+  <property tool="compiler" name="gcc_cl_optimization_level" type="Enumeration" group="GCC Compiler Options" short="Optimization" long="Code optimization" default="None">
+    <enum value="None" option="-O0" />
+    <enum value="Level 1" option="-O1" />
+    <enum value="Level 2" option="-O2" />
+    <enum value="Level 3" option="-O3" />
+    <enum value="Size" option="-Os" />
+    <enum value="Speed" option="-Ofast" />
+    <enum value="Debug" option="-Og" />
+  </property>
+  <property tool="assembler;compiler" name="gcc_cl_enable_debug_info" type="Enumeration" group="GCC Compiler Options" short="Include Debug Information" long="Specifies whether symbolic debug information is generated." default="Yes">
+    <enum value="Yes" option="-g" />
+    <enum value="No" option="" />
+    <enum value="Level 1" option="-g1" />
+    <enum value="Level 2" option="-g2" />
+    <enum value="Level 3" option="-g3" />
+  </property>
+  <property tool="cpp_compiler" name="gcc_cl_cpp_enable_rtti" type="Enumeration" group="GCC Compiler Options" short="Enable RTTI Support" long="Specifies whether RTTI support is enabled for C++ programs." default="No">
+    <enum value="Yes" option="" />
+    <enum value="No" option="-fno-rtti" />
+  </property>
+  <property tool="cpp_compiler" name="gcc_cl_cpp_enable_exceptions" type="Enumeration" group="GCC Compiler Options" short="Enable Exception Support" long="Specifies whether exception support is enabled for C++ programs." default="No">
+    <enum value="Yes" option="" />
+    <enum value="No" option="-fno-exceptions" />
+  </property>
+  <property tool="compiler" name="gcc_cl_function_sections" type="Enumeration" group="GCC Compiler Options" short="Function Sections" long="Place functions in their own sections" default="Yes">
+    <enum value="Yes" option="-ffunction-sections" />
+    <enum value="No" option="" />
+  </property>
+  <property tool="compiler" name="gcc_cl_data_sections" type="Enumeration" group="GCC Compiler Options" short="Data Sections" long="Place data in their own sections" default="Yes">
+    <enum value="Yes" option="-fdata-sections" />
+    <enum value="No" option="" />
+  </property>
+  <property tool="compiler" name="gcc_cl_pedantic" type="Enumeration" group="GCC Compiler Options" short="Pedantic" long="Enforce language dialect standard checking" default="No">
+    <enum value="Yes" option="-pedantic" />
+    <enum value="No" option="" />
+  </property>
+  <property tool="compiler" name="gcc_cl_pedantic_errors" type="Enumeration" group="GCC Compiler Options" short="Pedantic Warnings As Errors" long="Consider language dialect standard checking as errors" default="No">
+    <enum value="Yes" option="-pedantic-errors" />
+    <enum value="No" option="" />
+  </property>
+  <property tool="compiler" name="gcc_cl_inhibit_warnings" type="Enumeration" group="GCC Compiler Options" short="Inhibit All Warnings" long="Inhibit all warning messages" default="No">
+    <enum value="Yes" option="-w" />
+    <enum value="No" option="" />
+  </property>
+  <property tool="compiler" name="gcc_cl_all_warnings" type="Enumeration" group="GCC Compiler Options" short="All Warnings" long="Enable all warnings" default="Yes">
+    <enum value="Yes" option="-Wall" />
+    <enum value="No" option="" />
+  </property>
+  <property tool="compiler" name="gcc_cl_extra_warnings" type="Enumeration" group="GCC Compiler Options" short="Extra Warnings" long="Enable extra warnings" default="No">
+    <enum value="Yes" option="-Wextra" />
+    <enum value="No" option="" />
+  </property>
+  <property tool="compiler" name="gcc_cl_warnings_as_errors" type="Enumeration" group="GCC Compiler Options" short="Warnings As Errors" long="Make all warnings errors" default="No">
+    <enum value="Yes" option="-Werror" />
+    <enum value="No" option="" />
+  </property>
+  <property tool="c_compiler" name="gcc_cl_c_language" type="Enumeration" group="GCC Compiler Options" short="C++ Language Standard" long="Specify the language standard" default="None">
+    <enum value="None" option="" />
+    <enum value="c90" option="-std=c90" />
+    <enum value="c99" option="-std=c99" />
+    <enum value="c11" option="-std=c11" />
+  </property>
+  <property tool="cpp_compiler" name="gcc_cl_cpp_language" type="Enumeration" group="GCC Compiler Options" short="C Language Standard" long="Specify the language standard" default="None">
+    <enum value="None" option="" />
+    <enum value="c++98" option="-std=c++98" />
+    <enum value="c++11" option="-std=c++11" />
+    <enum value="c++14" option="-std=c++14" />
+    <enum value="c++17" option="-std=c++17" />
+  </property>
+  <property name="external_archive_command" default="&quot;$(ToolChainDir)/arm-none-eabi-ar&quot; -rcs &quot;$(RelTargetPath)&quot; $(Objects)" />
+  <property name="external_assemble_command" default="&quot;$(ToolChainDir)/arm-none-eabi-gcc&quot; -c $(AsmOptions) $(Defines) $(Includes) &quot;$(RelInputPath)&quot; -o &quot;$(RelTargetPath)&quot;" />
+  <property name="external_c_compile_command" default="&quot;$(ToolChainDir)/arm-none-eabi-gcc&quot; -c $(COptions) $(COnlyOptions) $(Defines) $(Includes) &quot;$(RelInputPath)&quot; -MD -MF &quot;$(RelDependencyPath)&quot; -fno-diagnostics-show-caret -o &quot;$(RelTargetPath)&quot;" />
+  <property name="external_cpp_compile_command" default="&quot;$(ToolChainDir)/arm-none-eabi-g++&quot; -c $(COptions) $(CppOnlyOptions) $(Defines) $(Includes) &quot;$(RelInputPath)&quot; -MD -MF &quot;$(RelDependencyPath)&quot; -fno-diagnostics-show-caret -o &quot;$(RelTargetPath)&quot;" />
+  <property name="external_link_command" default="&quot;$(ToolChainDir)/arm-none-eabi-gcc&quot; $(LinkOptions) -T &quot;$(RelLinkerScriptPath)&quot; $(Objects) -o &quot;$(RelTargetPath)&quot; -Xlinker -Map=&quot;$(RelMapPath)&quot;" />
+  <property name="external_cpp_link_command" default="&quot;$(ToolChainDir)/arm-none-eabi-g++&quot; $(LinkOptions) -T &quot;$(RelLinkerScriptPath)&quot; $(Objects) -o &quot;$(RelTargetPath)&quot; -Xlinker -Map=&quot;$(RelMapPath)&quot;" />
+  <property name="linker_post_build_command" default="&quot;$(ToolChainDir)/arm-none-eabi-objcopy&quot; &quot;$(RelTargetPath)&quot; &quot;$(PostLinkOutputFilePath)&quot; -Oihex" />
+  <property name="linker_post_build_command_output_file" default="$(OutDir)/$(ProjectName).hex" />
+  <property tool="assembler;compiler;linker" name="armgnu_cl_cpu" type="Enumeration" group="GCC Compiler Options" short="CPU" long="Select the processor variant" default="cortex-m3" option2="-mcpu=" values="arm1020e;arm1020t;arm1022e;arm1026ej-s;arm10e;arm10tdmi;arm1136j-s;arm1136jf-s;arm1156t2-s;arm1156t2f-s;arm1176jz-s;arm1176jzf-s;arm2;arm250;arm3;arm6;arm60;arm600;arm610;arm620;arm7;arm70;arm700;arm700i;arm710;arm7100;arm710c;arm710t;arm720;arm720t;arm740t;arm7500;arm7500fe;arm7d;arm7di;arm7dm;arm7dmi;arm7m;arm7tdmi;arm7tdmi-s;arm8;arm810;arm9;arm920;arm920t;arm922t;arm926ej-s;arm940t;arm946e-s;arm966e-s;arm968e-s;arm9e;arm9tdmi;cortex-a12;cortex-a15;cortex-a15.cortex-a7;cortex-a17;cortex-a17.cortex-a7;cortex-a32;cortex-a35;cortex-a5;cortex-a53;cortex-a57;cortex-a57.cortex-a53;cortex-a7;cortex-a72;cortex-a72.cortex-a53;cortex-a8;cortex-a9;cortex-m0;cortex-m0.small-multiply;cortex-m0plus;cortex-m0plus.small-multiply;cortex-m1;cortex-m1.small-multiply;cortex-m23;cortex-m3;cortex-m33;cortex-m4;cortex-m7;cortex-r4;cortex-r4f;cortex-r5;cortex-r7;cortex-r8;ep9312;exynos-m1;fa526;fa606te;fa626;fa626te;fa726te;fmp626;generic-armv7-a;iwmmxt;iwmmxt2;marvell-pj4;mpcore;mpcorenovfp;native;qdf24xx;strongarm;strongarm110;strongarm1100;strongarm1110;xgene1;xscale" />
+  <property tool="assembler;compiler;linker" name="armgnu_cl_fpu" type="Enumeration" group="GCC Compiler Options" short="FPU" long="Select the FPU architecture" default="vfp" option2="-mfpu=" values="crypto-neon-fp-armv8;fp-armv8;fpv4-sp-d16;fpv5-d16;fpv5-sp-d16;neon;neon-fp-armv8;neon-fp16;neon-vfpv4;vfp;vfp3;vfpv3;vfpv3-d16;vfpv3-d16-fp16;vfpv3-fp16;vfpv3xd;vfpv3xd-fp16;vfpv4;vfpv4-d16" />
+  <property tool="assembler;compiler;linker" name="armgnu_cl_fpabi" type="Enumeration" group="GCC Compiler Options" short="FP ABI" long="Select the floating point abi" default="soft" option2="-mfloat-abi=" values="soft;softfp;hard" />
+  <property tool="assembler;compiler;linker" name="armgnu_cl_endian" type="Enumeration" group="GCC Compiler Options" short="Endian" long="Select the byte order" default="little">
+    <enum value="little" option="-mlittle-endian" />
+    <enum value="big" option="-mbig-endian" />
+  </property>
+  <property name="c_system_include_directories" default="$(ToolChainDir)/../arm-none-eabi/include;$(ToolChainDir)/../lib/gcc/arm-none-eabi/$(GCCVersion)/include;$(ToolChainDir)/../lib/gcc/arm-none-eabi/$(GCCVersion)/include-fixed" />
+</options>

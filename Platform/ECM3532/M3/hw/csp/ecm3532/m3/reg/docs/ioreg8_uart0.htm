@@ -1,0 +1,1602 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>IOREG FILE: CAYMAN UART0 The uart is an 8-bit peripheral in the peripherals block. It provides TX, RX, RTS and CTS interfaces to the chip pads.
+</TITLE>
+</HEAD>
+<BODY>
+<H1 align="center">On-Line Documentation for CAYMAN  :  UART0 <BR>  Bus Type: PERIPHERAL BUS</H1>
+<FONT size="+2"><B><P align="center">The uart is an 8-bit peripheral in the peripherals block. It provides TX, RX, RTS and CTS interfaces to the chip pads.</P></B><B</FONT><BR><HR>
+<FONT face="Helvetica" size="-1"><P align="center"><B> Put banner announcement here. </B></P></FONT><HR>
+<BR><B>The UART Device provides a UART serial port communication peripheral for the chip. It also provides for on-chip loop back with a second uart on the same chip.</B><BR><BR><HR>
+<FONT face="Helvetica" size="-1"><P align="left"><B> Source File Name: ./src/ioreg8_uart.src <BR> Source File Modification Date Wed Jul 31 17:01:36 2019 <BR> html creation date November 11, 2019</B></P></FONT>
+<H2 id="index"> UART0 Register Index</H2>
+<B> <CODE>ADDRESS</CODE></B><BR>
+<B><CODE>0x50020200: </CODE></B><A id = "CFG_STATUSindex" href="#CFG_STATUS"><B>IO_UART0_CFG_STATUS</A></B><BR>
+<B><CODE>0x50020204: </CODE></B><A id = "RX_FIFOindex" href="#RX_FIFO"><B>IO_UART0_RX_FIFO</A></B><BR>
+<B><CODE>0x50020208: </CODE></B><A id = "TX_FIFOindex" href="#TX_FIFO"><B>IO_UART0_TX_FIFO</A></B><BR>
+<B><CODE>0x5002020c: </CODE></B><A id = "PHASEindex" href="#PHASE"><B>IO_UART0_PHASE</A></B><BR>
+<B><CODE>0x50020210: </CODE></B><A id = "INT_STATindex" href="#INT_STAT"><B>IO_UART0_INT_STAT</A></B><BR>
+<B><CODE>0x50020214: </CODE></B><A id = "INT_STAT_CLEARindex" href="#INT_STAT_CLEAR"><B>IO_UART0_INT_STAT_CLEAR</A></B><BR>
+<B><CODE>0x50020218: </CODE></B><A id = "INT_ENABLEindex" href="#INT_ENABLE"><B>IO_UART0_INT_ENABLE</A></B><BR>
+<B><CODE>0x5002021c: </CODE></B><A id = "INT_ENABLE_SETindex" href="#INT_ENABLE_SET"><B>IO_UART0_INT_ENABLE_SET</A></B><BR>
+<B><CODE>0x50020220: </CODE></B><A id = "INT_ENABLE_CLEARindex" href="#INT_ENABLE_CLEAR"><B>IO_UART0_INT_ENABLE_CLEAR</A></B><BR>
+<B><CODE>0x50020224: </CODE></B><A id = "BAUDRATEindex" href="#BAUDRATE"><B>IO_UART0_BAUDRATE</A></B><BR>
+<B><CODE>0x50020228: </CODE></B><A id = "CONFIG2index" href="#CONFIG2"><B>IO_UART0_CONFIG2</A></B><BR>
+<B><CODE>0x50020230: </CODE></B><A id = "DEBUGindex" href="#DEBUG"><B>IO_UART0_DEBUG</A></B><BR>
+<B><CODE>0x50020234: </CODE></B><A id = "DEBUG_READ_ONLYindex" href="#DEBUG_READ_ONLY"><B>IO_UART0_DEBUG_READ_ONLY</A></B><BR>
+<BR><HR>
+<H2 id="CFG_STATUS"><A href="#index">
+IO_UART0_CFG_STATUS</A></H2>
+<P><FONT size="+1"><B>UART CONFIGURATION AND STATUS REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_UART0_CFG_STATUS ADDRESS:</B></TD>
+<TD><CODE>0x50020200</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="6">RSVD3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TX_ONE_STOP<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">TX_FIFO_FULL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TX_PARITY_TYPE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TX_SHIFT_DIR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TX_POLARITY<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">BREAK<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CTS_POLARITY<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">CTS_PIN<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CTS<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TX_EN<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="6">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">RX_FIFO_EMPTY<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_SHIFT_DIR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RTS_AUTO<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RTS_POLARITY<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_POLARITY<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_PARITY_TYPE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_TX_PARITY<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RTS_STATE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RTS_CONTROL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_EN<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:26</TD>
+<TD nowrap>RSVD3</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>25:25</TD>
+<TD nowrap>TX_ONE_STOP</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SEND ONE STOP BIT</TD>
+<TD>Set to send only one STOP bit, sends two STOP bits by default, if this bit is not set.
+<BR>SET = 1 Sends one STOP bit.
+<BR>CLEAR = 0 Sends two STOP bits.
+<TR align="left">
+<TD nowrap>24:24</TD>
+<TD nowrap>TX_FIFO_FULL</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>TX FIFO IS FULL</TD>
+<TD>This bit field returns a 1 if the FIFO count is at 16. This bit is also visible in the GPIO external status register.
+<TR align="left">
+<TD nowrap>23:23</TD>
+<TD nowrap>TX_PARITY_TYPE</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>TRANSMITTER SIDE PARITY</TD>
+<TD>Set to one to cause the transmitter to generate even parity, if parity is enabled in the CFG_A register.
+<BR>EVEN = 1 Generate Even Parity.
+<BR>ODD = 0 Generate Odd Parity.
+<TR align="left">
+<TD nowrap>22:22</TD>
+<TD nowrap>TX_SHIFT_DIR</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>DIRECTION FOR DATA BYTE SHIFTING IN TX</TD>
+<TD>Writing one to  this bit causes the UART to assume MSB first shifting. NOTE: this bit only controls the shift direction for the transmitter side. See the BAUDRATE_HIGH register for a bit that controls the receiver side of the UART.
+<BR>MSB = 1 Most significant bit first.
+<BR>LSB = 0 Least significant bit first.
+<TR align="left">
+<TD nowrap>21:21</TD>
+<TD nowrap>TX_POLARITY</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>TX OUTPUT PIN POLARITY</TD>
+<TD>This bit defines mark space polarity for the TX pin.
+<BR>INVERTED = 1 Start equals one stop equals zero and data bit inverted.
+<BR>NORMAL = 0 Start equals zero, stop equals one.
+<TR align="left">
+<TD nowrap>20:20</TD>
+<TD nowrap>BREAK</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SEND BREAK ON TX PIN</TD>
+<TD>Writing one to  this bit causes the TX pun to pulled to the break state. This is always the opposite state from the signals idle state.
+<BR>ENABLE = 1 Enables the transmitter section to use hardware flow control.
+<BR>STOP = 0 Disables the transmitter section from using hardware flow control.
+<TR align="left">
+<TD nowrap>19:19</TD>
+<TD nowrap>CTS_POLARITY</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CTS INPUT PIN POLARITY</TD>
+<TD>This bit defines polarity of the CTS pin. Normal polarity for this UART is defined such that a
+zero/low on the CTS pin means I am clear to send.  It appears that it is more common in the industry
+for the opposite polarity to be used. Thus the default is set to zero.
+<BR>INVERTED = 1 Clear to send is zero, stop sending is one.
+<BR>NORMAL = 0 Clear to send is one, stop sending is zero.
+<TR align="left">
+<TD nowrap>18:18</TD>
+<TD nowrap>CTS_PIN</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>RAW STATE OF THE CTS PIN</TD>
+<TD>This read only bit can be used to determine the state of the CTS input pin.  NOTE: The pin value comes on to the chip and goes directly to this status bit without passing through the polarity setting logic.
+<TR align="left">
+<TD nowrap>17:17</TD>
+<TD nowrap>CTS</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CLEAR TO SEND</TD>
+<TD>Writing one to  this bit enables the use of the CTS input pin to throttle the transmitter section for hardware flow control purposes.
+<BR>ENABLE = 1 Enables the transmitter section to use hardware flow control.
+<BR>STOP = 0 Disables the transmitter section from using hardware flow control.
+<TR align="left">
+<TD nowrap>16:16</TD>
+<TD nowrap>TX_EN</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>TX ENABLE</TD>
+<TD>Writing one to  this bit enables the transmitter functions. Writing a zero has most of the effects of resetting just the transmitter section.
+<BR>RUN = 1 Enables the transmitter section to run.
+<BR>STOP = 0 Turns off the transmitter section.
+<TR align="left">
+<TD nowrap>15:10</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>RX_FIFO_EMPTY</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>RX FIFO IS EMPTY</TD>
+<TD>This bit field returns a 1 if the RX FIFO count is at 0. This bit is also visible in the GPIO external status register.
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>RX_SHIFT_DIR</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>DIRECTION FOR DATA BYTE SHIFTING IN RX</TD>
+<TD>Writing one to  this bit causes the UART to assume MSB first shifting. NOTE: this bit only controls the shift direction for the receiver side. See CFG_B for the transmitter shift direction control.
+<BR>MSB = 1 Shifts data into the receiver MSB first.
+<BR>LSB = 0 Shifts data into the receiver LSB first.
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>RTS_AUTO</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>USE AUTOMATIC HARDWARE RTS CONTROLS.</TD>
+<TD>Use automatic hardware algorithm to control the RTS pin state. This is based on RX FIFO high water mark. This is based on RX FIFO high water mark comparator.
+<BR>ENABLE = 1 Enables automatic RTS flow control in hardware.
+<BR>DISABLE = 0 Disables automatic RTS flow control in hardware. Use the RTS_STATE value instead.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>RTS_POLARITY</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RTS OUTPUT PIN POLARITY</TD>
+<TD>This bit defines polarity of the RTS pin. Normal polarity for this UART is defined such that a
+zero/low on the RTS pin means you are clear to send.  It appears that it is more common in the
+industry for the opposite polarity to be used. Thus the default is set to zero.
+<BR>INVERTED = 1 Request to send is zero, stop sending is one.
+<BR>NORMAL = 0 Request to send is one, stop sending is zero.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>RX_POLARITY</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RX INPUT PIN POLARITY</TD>
+<TD>This bit defines mark space polarity for the RX pin.
+<BR>INVERTED = 1 Start equals one stop equals zero and data bit inverted.
+<BR>NORMAL = 0 Start equals zero, stop equals one.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>RX_PARITY_TYPE</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>USE EVEN PARITY IN UART FRAMES</TD>
+<TD>Writing one to  this bit causes the UART receiver to compute EVEN parity for received frames. NOTE: this bit only controls the parity type for the receiver side. See the BAUDRATE_HIGH register for a bit that controls the transmitter side of the UART.
+<BR>EVEN = 1 Check for even parity on received frames and check for even parity on received frames.
+<BR>ODD = 0 Check for odd parity on received frames and check for odd parity on received frames.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>RX_TX_PARITY</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>ENABLE PARITY IN RX AND TX UART FRAMES</TD>
+<TD>Writing one to  this bit causes the UART to insert a parity bit into transmitted frames and to check for parity on received frames.
+<BR>ENABLE = 1 Enables parity generation and checking.
+<BR>DISABLE = 0 Disables parity generation and checking.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>RTS_STATE</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RTS PIN STATE WHEN NOT AUTOMATIC</TD>
+<TD>The value in this bit field defines the state of the RTS when it is not automatically controlled by the high water mark in the RX FIFO.
+<BR>RUN = 1 Asserts the RTS signal telling the other end it is free to transmit.
+<BR>STOP = 0 Deasserts the RTS signal telling the other end to stop transmitting.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>RTS_CONTROL</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>FORCE REQUEST TO SEND TO HALT STATE</TD>
+<TD>Writing one to  this bit causes the UART to force the RTS pin to the HALT state. This signals the remote transmitter to stop sending bytes on its TX line. Firmware can use this pin to effect longer HALT times, independent of the normal RTS control mechanism.
+<BR>FORCE = 1 Force the RTS pin to the HALT state.
+<BR>FREE = 0 Release the RTS pin to follow either the definition in the RTS_STATE bit or the state defined by the RTS_AUTO pin and the RX FIFO.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>RX_EN</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RX ENABLE</TD>
+<TD>Writing one to  this bit enables the receiver functions. Writing a zero has most of the effects of resetting just the receiver section.
+<BR>RUN = 1 Enables the receiver section to run.
+<BR>STOP = 0 Turns off the receiver section.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Configuration and status bits for the UART.</P>
+<BR><HR>
+<H2 id="RX_FIFO"><A href="#index">
+IO_UART0_RX_FIFO</A></H2>
+<P><FONT size="+1"><B>RX FIFO REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_UART0_RX_FIFO ADDRESS:</B></TD>
+<TD><CODE>0x50020204</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="14">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">TIMEOUT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">HWM<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">EMPTY<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_FRAME_ERROR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_PARITY_ERROR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="5">DEPTH<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="8">DATA<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:18</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>17:17</TD>
+<TD nowrap>TIMEOUT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>RX FIFO TIMED OUT</TD>
+<TD>This bit field returns a 1 if the RX FIFO Time Out expired.
+<TR align="left">
+<TD nowrap>16:16</TD>
+<TD nowrap>HWM</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>RX FIFO HIGH WATER MARK</TD>
+<TD>This bit field returns a 1 if the RX FIFO count is above the high water mark.
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>RX FIFO IS EMPTY</TD>
+<TD>This bit field returns a 1 if the RX FIFO count is at 0. This bit is also visible in the GPIO external status register.
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>RX_FRAME_ERROR</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>RX DETECTED A FRAMING ERROR</TD>
+<TD>This is not an interrupt status bit. It is an extension of the RX_FIFO_DATA register and obeys the same valid semantics as that register.  When a data byte is valid in the RX_FIFO_DATA register then this bit reflects its framing error status. If it is zero then no error is being reported for the data byte in the RX_FIFO_DATA register. If it is a one than an error occurred when that byte was received from the UART_RX pin.  Popping the RX FIFO by writing anything to he RX_FIFO_DATA register also advances this bit to correspond to the new value in the RX_FIFO_DATA register.
+<BR>PRESENT = 1 Indicates a framing error has been detected.
+<BR>ABSENT = 0 Indicates that no framing error has been detected.
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>RX_PARITY_ERROR</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>RX DETECTED A PARITY ERROR</TD>
+<TD>This is not an interrupt status bit. It is an extension of the RX_FIFO_DATA register and obeys the same valid semantics as that register.  When a data byte is valid in the RX_FIFO_DATA register then this bit reflects its parity error status. If it is zero then no error is being reported for the data byte in the RX_FIFO_DATA register. If it is a one than an error occurred when that byte was received from the UART_RX pin.  Popping the RX FIFO by writing anything to he RX_FIFO_DATA register also advances this bit to correspond to the new value in the RX_FIFO_DATA register.
+<BR>PRESENT = 1 Indicates a parity error has been detected.
+<BR>ABSENT = 0 Indicates that no parity error has been detected.
+<TR align="left">
+<TD nowrap>12:8</TD>
+<TD nowrap>DEPTH</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>RX FIFO DEPTH</TD>
+<TD>Reads back the current RX FIFO depth.
+<TR align="left">
+<TD nowrap>7:0</TD>
+<TD nowrap>DATA</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>RX FIFO DATA</TD>
+<TD>Reads back the current RX FIFO data at the top of the FIFO.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Reciever FIFO register.</P>
+<BR><HR>
+<H2 id="TX_FIFO"><A href="#index">
+IO_UART0_TX_FIFO</A></H2>
+<P><FONT size="+1"><B>TX FIFO REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_UART0_TX_FIFO ADDRESS:</B></TD>
+<TD><CODE>0x50020208</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="16">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">FIFO_LWM<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">FIFO_EMPTY<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">TX_BUSY<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="5">COUNT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">DATA<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:16</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>FIFO_LWM</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>FIFO IS BELOW LOW WATER MARK</TD>
+<TD>This bit field returns a 1 if the FIFO count is below its low water mark.
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>FIFO_EMPTY</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>TX FIFO IS EMPTY</TD>
+<TD>This bit field returns a 1 if the FIFO count is at 0.
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>TX_BUSY</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>TX FSM IS BUSY</TD>
+<TD>This bit field returns a 1 if the TX FSM is not in its idle state.
+<TR align="left">
+<TD nowrap>12:8</TD>
+<TD nowrap>COUNT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>TX FIFO COUNT</TD>
+<TD>This bit field returns the number of entries currently in the TX FIFO.
+<TR align="left">
+<TD nowrap>7:0</TD>
+<TD nowrap>DATA</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>TX FIFO DATA</TD>
+<TD>This bit field returns the value of the most recently pushed TX data item.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Transmitter FIFO register.</P>
+<BR><HR>
+<H2 id="PHASE"><A href="#index">
+IO_UART0_PHASE</A></H2>
+<P><FONT size="+1"><B>TX AND RX PHASE SHIFT CONTROL REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_UART0_PHASE ADDRESS:</B></TD>
+<TD><CODE>0x5002020c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="8">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">SHIFT_TX<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="8">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">SHIFT_RX<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:24</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>23:16</TD>
+<TD nowrap>SHIFT_TX</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>TX PHASE SHIFT CONTROL</TD>
+<TD>Starting with data bit 0 and proceeding through the first stop bit, each corresponding bit in this bit will increment the reload count by 1 when the count is reloaded.
+<TR align="left">
+<TD nowrap>15:8</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>7:0</TD>
+<TD nowrap>SHIFT_RX</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RX PHASE SHIFT CONTROL</TD>
+<TD>Starting with data bit 0 and proceeding through the first stop bit, each corresponding bit in this bit will increment the reload count by 1 when the count is reloaded.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Any bit with a value of one in this byte will increase the baudrate divider by one count when it is reloaded.</P>
+<BR><HR>
+<H2 id="INT_STAT"><A href="#index">
+IO_UART0_INT_STAT</A></H2>
+<P><FONT size="+1"><B>INTERRUPT STATUS REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_UART0_INT_STAT ADDRESS:</B></TD>
+<TD><CODE>0x50020210</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="26">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_ERROR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TX_IDLE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TX_FIFO_LWM<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">EOB<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_FIFO_TO<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_FIFO_HWM<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:6</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>RX_ERROR</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>RX DETECTED EITHER A PARITY ERROR OR FRAME ERROR</TD>
+<TD>This interrupt is reported when the receiver has detected at least one parity error or at least one frame error.
+<BR>PRESENT = 1 Indicates an interrupt has been detected.
+<BR>ABSENT = 0 Indicates that no interrupt has been detected.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>TX_IDLE</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>TX HAS GONE IDLE</TD>
+<TD>This interrupt is reported when the TX FIFO is empty and the TX SERIALIZER is no longer busy. This indicates that the last stop bit of the last byte has left the chip.
+<BR>PRESENT = 1 Indicates an interrupt has been detected.
+<BR>ABSENT = 0 Indicates that no interrupt has been detected.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>TX_FIFO_LWM</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>TX FIFO LOW WATER MARK</TD>
+<TD>This interrupt is occurs when the TX FIFO count falls below its low water mark.
+<BR>PRESENT = 1 Indicates an interrupt has been detected.
+<BR>ABSENT = 0 Indicates that no interrupt has been detected.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>EOB</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>RX HAS DETECTED END OF BREAK</TD>
+<TD>This interrupt is reported when the RX DESERIALIZER detects that a break condition is no longer being signaled on the UART_RX pad.
+<BR>PRESENT = 1 Indicates an interrupt has been detected.
+<BR>ABSENT = 0 Indicates that no interrupt has been detected.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>RX_FIFO_TO</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>RX FIFO TIME OUT INTERRUPT REQUEST</TD>
+<TD>RX FIFO time out detected. This occurs when the FIFO is not empty for 8 character times. When the FIFO goes non-empty, a timer is started. Everytime a character goes into the FIFO from the UART receiver, the timer is restarted.  If it reaches N character times with the FIFO non-empty then this interrupt bit is set.
+<BR>PRESENT = 1 Indicates an interrupt has been detected.
+<BR>ABSENT = 0 Indicates that no interrupt has been detected.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>RX_FIFO_HWM</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>RX FIFO HIG WATER INTERRUPT REQUEST</TD>
+<TD>RX FIFO is at or above high water marker. Requesting an interrupt for immediate serviceing of the FIFO.
+<BR>PRESENT = 1 Indicates an interrupt has been detected.
+<BR>ABSENT = 0 Indicates that no interrupt has been detected.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Interrupt status register.</P>
+<BR><HR>
+<H2 id="INT_STAT_CLEAR"><A href="#index">
+IO_UART0_INT_STAT_CLEAR</A></H2>
+<P><FONT size="+1"><B>CLEAR INTERRUPT STATUS REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_UART0_INT_STAT_CLEAR ADDRESS:</B></TD>
+<TD><CODE>0x50020214</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="26">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_ERROR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TX_IDLE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TX_FIFO_LWM<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">EOB<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_FIFO_TO<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_FIFO_HWM<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:6</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>RX_ERROR</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>RX DETECTED EITHER A PARITY ERROR OR FRAME ERROR</TD>
+<TD>Write a one to clear this interrupt status bit.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>TX_IDLE</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TX HAS GONE IDLE</TD>
+<TD>Write a one to clear this interrupt status bit.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>TX_FIFO_LWM</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TX FIFO LOW WATER MARK</TD>
+<TD>Write a one to clear this interrupt status bit.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>EOB</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>RX HAS DETECTED END OF BREAK</TD>
+<TD>Write a one to clear this interrupt status bit.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>RX_FIFO_TO</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>RX FIFO TIME OUT INTERRUPT REQUEST</TD>
+<TD>Write a one to clear this interrupt status bit.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>RX_FIFO_HWM</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>RX FIFO HIG WATER INTERRUPT REQUEST</TD>
+<TD>Write a one to clear this interrupt status bit.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Clear corresponding interrupt status register bits.</P>
+<BR><HR>
+<H2 id="INT_ENABLE"><A href="#index">
+IO_UART0_INT_ENABLE</A></H2>
+<P><FONT size="+1"><B>INTERRUPT ENABLE REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_UART0_INT_ENABLE ADDRESS:</B></TD>
+<TD><CODE>0x50020218</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="26">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_ERROR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TX_IDLE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TX_FIFO_LWM<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">EOB<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_FIFO_TO<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_FIFO_HWM<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:6</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>RX_ERROR</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>RX DETECTED EITHER A PARITY ERROR OR FRAME ERROR</TD>
+<TD>Enable this interrupt
+<BR>ENABLE = 1 Enable this interrupt.
+<BR>DISABLE = 0 Disable this interrupt.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>TX_IDLE</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>TX HAS GONE IDLE</TD>
+<TD>Enable this interrupt
+<BR>ENABLE = 1 Enable this interrupt.
+<BR>DISABLE = 0 Disable this interrupt.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>TX_FIFO_LWM</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>TX FIFO LOW WATER MARK</TD>
+<TD>Enable this interrupt
+<BR>ENABLE = 1 Enable this interrupt.
+<BR>DISABLE = 0 Disable this interrupt.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>EOB</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>RX HAS DETECTED END OF BREAK</TD>
+<TD>Enable this interrupt
+<BR>ENABLE = 1 Enable this interrupt.
+<BR>DISABLE = 0 Disable this interrupt.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>RX_FIFO_TO</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>RX FIFO TIME OUT INTERRUPT REQUEST</TD>
+<TD>Enable this interrupt
+<BR>ENABLE = 1 Enable this interrupt.
+<BR>DISABLE = 0 Disable this interrupt.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>RX_FIFO_HWM</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>RX FIFO HIG WATER INTERRUPT REQUEST</TD>
+<TD>Enable this interrupt
+<BR>ENABLE = 1 Enable this interrupt.
+<BR>DISABLE = 0 Disable this interrupt.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Interrupt enable register.</P>
+<BR><HR>
+<H2 id="INT_ENABLE_SET"><A href="#index">
+IO_UART0_INT_ENABLE_SET</A></H2>
+<P><FONT size="+1"><B>SET INTERRUPT ENABLE REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_UART0_INT_ENABLE_SET ADDRESS:</B></TD>
+<TD><CODE>0x5002021c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="26">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_ERROR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TX_IDLE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TX_FIFO_LWM<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">EOB<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_FIFO_TO<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_FIFO_HWM<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:6</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>RX_ERROR</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>RX DETECTED EITHER A PARITY ERROR OR FRAME ERROR</TD>
+<TD>Write a one to set this interrupt enable bit.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>TX_IDLE</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TX HAS GONE IDLE</TD>
+<TD>Write a one to set this interrupt enable bit.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>TX_FIFO_LWM</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TX FIFO LOW WATER MARK</TD>
+<TD>Write a one to set this interrupt enable bit.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>EOB</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>RX HAS DETECTED END OF BREAK</TD>
+<TD>Write a one to set this interrupt enable bit.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>RX_FIFO_TO</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>RX FIFO TIME OUT INTERRUPT REQUEST</TD>
+<TD>Write a one to set this interrupt enable bit.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>RX_FIFO_HWM</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>RX FIFO HIG WATER INTERRUPT REQUEST</TD>
+<TD>Write a one to set this interrupt enable bit.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Interrupt enable register.</P>
+<BR><HR>
+<H2 id="INT_ENABLE_CLEAR"><A href="#index">
+IO_UART0_INT_ENABLE_CLEAR</A></H2>
+<P><FONT size="+1"><B>CLEAR INTERRUPT ENABLE REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_UART0_INT_ENABLE_CLEAR ADDRESS:</B></TD>
+<TD><CODE>0x50020220</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="26">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_ERROR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TX_IDLE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TX_FIFO_LWM<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">EOB<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_FIFO_TO<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_FIFO_HWM<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:6</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>RX_ERROR</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>RX DETECTED EITHER A PARITY ERROR OR FRAME ERROR</TD>
+<TD>Write a one to clear this interrupt enable bit.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>TX_IDLE</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TX HAS GONE IDLE</TD>
+<TD>Write a one to clear this interrupt enable bit.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>TX_FIFO_LWM</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TX FIFO LOW WATER MARK</TD>
+<TD>Write a one to clear this interrupt enable bit.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>EOB</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>RX HAS DETECTED END OF BREAK</TD>
+<TD>Write a one to clear this interrupt enable bit.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>RX_FIFO_TO</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>RX FIFO TIME OUT INTERRUPT REQUEST</TD>
+<TD>Write a one to clear this interrupt enable bit.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>RX_FIFO_HWM</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>RX FIFO HIG WATER INTERRUPT REQUEST</TD>
+<TD>Write a one to clear this interrupt enable bit.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Interrupt enable register.</P>
+<BR><HR>
+<H2 id="BAUDRATE"><A href="#index">
+IO_UART0_BAUDRATE</A></H2>
+<P><FONT size="+1"><B>TX AND RX BAUD RATE DIVIDER REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_UART0_BAUDRATE ADDRESS:</B></TD>
+<TD><CODE>0x50020224</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="21">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="11">DIVISOR<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:11</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>10:0</TD>
+<TD nowrap>DIVISOR</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>BAUD RATE DIVISOR</TD>
+<TD>8MHz input clock is divided by DIVISOR+1.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>The initial baud rate divisor will be the value set here plus 1.</P>
+<BR><HR>
+<H2 id="CONFIG2"><A href="#index">
+IO_UART0_CONFIG2</A></H2>
+<P><FONT size="+1"><B>CLOCK ENABLE INSURANCE POLICY REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_UART0_CONFIG2 ADDRESS:</B></TD>
+<TD><CODE>0x50020228</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="31">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CLK_ON<BR><TT>0x1</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:1</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>CLK_ON</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CLOCK ENABLE FORCE BIT</TD>
+<TD>Set this bit to one to force the UART clock enable to always remain asserted.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>This register holds a clock enable insurance policy bit.</P>
+<BR><HR>
+<H2 id="DEBUG"><A href="#index">
+IO_UART0_DEBUG</A></H2>
+<P><FONT size="+1"><B>DEBUG CONTROL REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_UART0_DEBUG ADDRESS:</B></TD>
+<TD><CODE>0x50020230</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">UART_RX<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">RX_BREAK_DETECT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="21">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TWIN_LOOPBACK<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SELF_LOOPBACK<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">DBG_PIN_C<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">DBG_PIN_B<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">DBG_PIN_A<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:31</TD>
+<TD nowrap>UART_RX</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>UART RX SAMPLED DATA</TD>
+<TD>This read only bit field provides visibility to the UART RX pin state.
+<TR align="left">
+<TD nowrap>30:30</TD>
+<TD nowrap>RX_BREAK_DETECT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>UART RX BREAK DETECTOR</TD>
+<TD>This read only bit field provides visibility to the UART RX break detector state.
+<TR align="left">
+<TD nowrap>29:9</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>TWIN_LOOPBACK</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>LOOP BACK TX TO RX AND RTS TO CTS WITH TWIN OF THIS UART</TD>
+<TD>Writing one to  this bit causes the UART to cross connect its twins signals in a NULL modem configuration with hardware flow controll looped back as well.
+<BR>ENABLE = 1 Enables loopback.
+<BR>STOP = 0 Disables loopback.
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>SELF_LOOPBACK</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>LOOP BACK TX TO RX AND RTS TO CTS</TD>
+<TD>Writing one to  this bit causes the UART to cross connect its own signals in a NULL modem configuration with hardware flow controll looped back as well. Setting with TWIN_LOOPBACK produces unpredictable results.
+<BR>ENABLE = 1 Enables loopback.
+<BR>STOP = 0 Disables loopback.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>5:4</TD>
+<TD nowrap>DBG_PIN_C</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>DEBUG PIN C OUTPUT SELECTOR</TD>
+<TD>This bit field selects one of 4 values to present on debug pin C. This pin is presented on GPIO[0] for uart0 and GPIO[3] for uart1.
+<BR>RX_DATA = 0 Marks the synchronized internal state of UART_RX pin on a GPIO pin.
+<BR>TX_STEP = 1 Shows the TX step clock on a GPIO pin.
+<BR>TX_FIFO_LWM = 2 Shows the state of the TX FiFO low water mark status on a GPIO pin.
+<BR>RX_FIFO_EMPTY = 3 Shows the state of the RX FIFO empty status on a GPIO pin.
+<TR align="left">
+<TD nowrap>3:2</TD>
+<TD nowrap>DBG_PIN_B</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>DEBUG PIN B OUTPUT SELECTOR</TD>
+<TD>This bit field selects one of 4 values to present on debug pin B. This pin is presented on GPIO[1] for uart0 and GPIO[4] for uart1.
+<BR>RX_STEP = 0 Marks the RX step state on a GPIO pin.
+<BR>TX_STOP = 1 Marks the TX stop bit on a GPIO pin.
+<BR>TX_FIFO_FULL = 2 Shows the state of the TX FiFO full status.
+<BR>RX_FIFO_HWM = 3 Shows the state of the RX FIFO high water mark.
+<TR align="left">
+<TD nowrap>1:0</TD>
+<TD nowrap>DBG_PIN_A</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>DEBUG PIN A OUTPUT SELECTOR</TD>
+<TD>This bit field selects one of 4 values to present on debug pin A. This pin is presented on GPIO[2] for uart0 and GPIO[5] for uart1.
+<BR>RX_START = 0 Marks the RX start bit on a GPIO pin.
+<BR>TX_START = 1 Marks the TX start bit on a GPIO pin.
+<BR>TX_FIFO_EMPTY = 2 Shows the state of the TX FiFO empty status.
+<BR>RX_FIFO_TIMEOUT = 3 Indicates when the RX TIME OUT counter is running.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Debug control register.</P>
+<BR><HR>
+<H2 id="DEBUG_READ_ONLY"><A href="#index">
+IO_UART0_DEBUG_READ_ONLY</A></H2>
+<P><FONT size="+1"><B>DEBUG READ ONLY  REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_UART0_DEBUG_READ_ONLY ADDRESS:</B></TD>
+<TD><CODE>0x50020234</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#c0c0c0" colspan="32">VALUE<BR><TT>0x87655678</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>VALUE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Read Only Value</TD>
+<TD>A readable test value for testing the bus to the UART.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Debug read only register.</P>
+

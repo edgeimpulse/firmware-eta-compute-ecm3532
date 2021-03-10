@@ -1,0 +1,147 @@
+<!DOCTYPE CrossStudio_Project_File>
+<solution Name="edge-impulse-ingestion" target="8" version="2">
+  <project Name="edge-impulse-ingestion">
+    <configuration
+      JLinkExecuteCommand=""
+      JLinkScriptFileName="$(ProjectDir)/../../Platform/ECM3532/M3/cmake/SEGGER/ECM3532.JLinkScript"
+      Name="Common"
+      arm_architecture="v7M"
+      arm_compiler_variant="gcc"
+      arm_core_type="Cortex-M3"
+      arm_endian="Little"
+      arm_fp_abi="None"
+      arm_fpu_type=""
+      arm_linker_heap_size="0"
+      arm_linker_process_stack_size="0"
+      arm_linker_stack_size="4096"
+      arm_linker_variant="GNU"
+      arm_simulator_memory_simulation_parameter="RX 0x01000000,0x80000,FFFFFFFF;RWX 0x10000000,0x40000,CDCDCDCD"
+      arm_target_device_name="ECM3532"
+      arm_target_interface_type="SWD"
+      armgnu_cl_cpu="cortex-m3"
+      armgnu_cl_endian="little"
+      asm_additional_options="-x assembler-with-cpp -mthumb -O3"
+      asm_generate_listing_file="No"
+      build_generic_options_file_name="$(ProjectDir)/../ARMGNU_build_options.xml"
+      build_toolchain_directory="/opt/gcc-arm-none-eabi-8-2018-q4-major/bin"
+      build_treat_warnings_as_errors="Yes"
+      c_additional_options="-mthumb -fno-exceptions -Wno-unused-variable -nostartfiles -Wno-unused-parameter -Wno-parentheses -Wno-unused-function -ggdb -fno-common -fmessage-length=0 -std=gnu99"
+      c_preprocessor_definitions="SRAM;PROJ_NAME=&quot;edge-impulse-ingestion&quot;;ECM3532"
+      c_user_include_directories="../../Thirdparty/edge_impulse;../../Thirdparty/edge_impulse/ingestion-sdk-platform/eta-compute;../../Thirdparty/edge_impulse/repl;../../Thirdparty/edge_impulse/edge-impulse-sdk/CMSIS/DSP/Include;../../Thirdparty/edge_impulse/edge-impulse-sdk/CMSIS/Core/Include;../../Platform/ECM3532/M3/hw/hal/common/include;../../Platform/ECM3532/Common/framework/inc;../../eta_ai_bsp/inc;src/sensors;../../Platform/ECM3532/M3/framework/executor/include/pub;../../Platform/ECM3532/M3/NN_kernels/include;.;../../Platform/ECM3532/M3;../../Platform/ECM3532/M3/util/include;../../Platform/ECM3532/M3/hw/include;../../Platform/ECM3532/M3/hw/include/ecm3532;../../Platform/ECM3532/M3/hw/board/ecm3532/ai_vision/include;../../Platform/ECM3532/M3/hw/drivers/hm0360;../../Platform/ECM3532/M3/util/dsp_helper/include;include;../../Platform/ECM3532/M3/hw/csp/ecm3532/common/csp/inc;../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/reg/inc;../../Platform/ECM3532/M3/hw/csp/common/inc;../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/csp/inc;../../Thirdparty/FreeRTOS/Source/include;../../Thirdparty/FreeRTOS/Source/portable/GCC/ARM_CM3;../../Platform/ECM3532/M3/hw/hal/common/include;../../Platform/ECM3532/M3/hw/hal/ecm3532/include;../../Platform/ECM3532/Common/audio/inc;../../Platform/ECM3532/M3/hw/drivers/spi_flash/common;../../Platform/ECM3532/M3/hw/drivers/spi_flash/maxim;../../Platform/ECM3532/M3/framework/rpc/src;../../Platform/ECM3532/M3/framework/rpc/include;../../Platform/ECM3532/Common/framework/inc;../../Platform/ECM3532/M3/hw/ipc/common/include;"
+      debug_RTTCB=""
+      debug_enable_RTT="No"
+      debug_register_definition_file="../../Platform/ECM3532/M3/cmake/SEGGER/ECM3532.svd"
+      debug_target_connection="J-Link"
+      gcc_c_language_standard="gnu11"
+      gcc_cl_optimization_level="Level 3"
+      gcc_cplusplus_language_standard="c++11"
+      gdb_server_allow_memory_access_during_execution="Yes"
+      gdb_server_autostart_server="Yes"
+      gdb_server_command_line="/usr/local/bin/openocd --file board/eta_ecm35xx.cfg"
+      gdb_server_ignore_checksum_errors="No"
+      gdb_server_port="3333"
+      gdb_server_type="OpenOCD"
+      link_keep_lto_files="No"
+      link_linker_script_file="edge-impulse-ingestion.ld"
+      link_time_optimization="No"
+      link_use_linker_script_file="Yes"
+      linker_additional_options="-Wl,-gc-sections -Wl,-nostdlib -mthumb --specs=nosys.specs -Wall -fno-exceptions -ffunction-sections -fdata-sections -Wno-unused-variable -nostartfiles -Wno-unused-parameter -Wno-parentheses -Wno-unused-function -ggdb -MD -fno-common -fmessage-length=0 -std=gnu99"
+      linker_output_format="bin"
+      linker_section_placements_segments="FLASH1 RX 0x01000000 0x80000;RAM1 RWX 0x10000000 0x40000"
+      project_directory=""
+      project_type="Externally Built Executable" />
+
+    <folder Name="Freertos">
+      <file file_name="../../Thirdparty/FreeRTOS/Source/croutine.c" />
+      <file file_name="../../Thirdparty/FreeRTOS/Source/list.c" />
+      <file file_name="../../Thirdparty/FreeRTOS/Source/queue.c" />
+      <file file_name="../../Thirdparty/FreeRTOS/Source/tasks.c" />
+      <file file_name="../../Thirdparty/FreeRTOS/Source/timers.c" />
+      <file file_name="../../Thirdparty/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c" />
+      <file file_name="../../Thirdparty/FreeRTOS/Source/portable/MemMang/heap_3.c" />
+
+    </folder>
+    <folder Name="Util">
+      <file file_name="../../Platform/ECM3532/M3/util/console/src/printf-stdarg.c" />
+      <file file_name="../../Platform/ECM3532/M3/util/dsp_helper/src/dsp_helper.c" />
+      <file file_name="../../Platform/ECM3532/M3/util/helper_func/src/freestanding_functions.c" />
+
+    </folder>
+    <folder Name="CSP">
+      <configuration Name="Common" gcc_cl_optimization_level="Size" />
+      <file file_name="../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/csp/src/eta_csp.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/csp/src/eta_csp_adc.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/csp/src/eta_csp_buck.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/csp/src/eta_csp_dsp.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/csp/src/eta_csp_flash.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/csp/src/eta_csp_gpio.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/csp/src/eta_csp_hfo.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/csp/src/eta_csp_i2c.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/csp/src/eta_csp_i2s.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/csp/src/eta_csp_isr.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/csp/src/eta_csp_lfo.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/csp/src/eta_csp_m3.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/csp/src/eta_csp_nvic.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/csp/src/eta_csp_pdm.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/csp/src/eta_csp_pwm.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/csp/src/eta_csp_pwr.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/csp/src/eta_csp_rtc.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/csp/src/eta_csp_socctrl.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/csp/src/eta_csp_spi.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/csp/src/eta_csp_sys_clock.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/csp/src/eta_csp_timer.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/csp/src/eta_csp_tsense.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/csp/src/eta_csp_uart.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/csp/src/eta_csp_vhfo.c" />
+
+    </folder>
+    <folder Name="HW">
+      <file file_name="../../Platform/ECM3532/M3/hw/board/ecm3532/ai_vision/src/board_config.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/ipc/common/src/dsp_ipc.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/system/ecm3532/src/ecm3532_pinconfig.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/system/ecm3532/src/os_systick.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/system/ecm3532/src/startup_ecm3532.s" />
+      <file file_name="../../Platform/ECM3532/M3/hw/system/ecm3532/src/system_ecm3532.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/hal/common/gpio/src/gpio_hal.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/hal/common/i2c/src/i2c_hal.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/hal/common/rtc/src/rtc_hal.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/hal/common/spi/src/spi_hal.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/hal/common/timer/src/timer_hal.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/hal/common/uart/src/uart_hal.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/hal/ecm3532/pdm/src/pdm_hal.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/drivers/hm0360/eta_devices_hm0360.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/drivers/spi_flash/common/spi_flash.c" />
+
+    </folder>
+    <folder Name="Framework">
+      <file file_name="../../Platform/ECM3532/M3/framework/rpc/src/bget.c" />
+      <file file_name="../../Platform/ECM3532/M3/framework/rpc/src/rpc.c" />
+      <file file_name="../../Platform/ECM3532/M3/framework/rpc/src/shmem.c" />
+      <file file_name="../../Platform/ECM3532/M3/framework/rpc/src/workQ_common.c" />
+
+    </folder>
+    <folder Name="App">
+      <file file_name="src/ei_run_impulse.cpp" />
+      <file file_name="src/eta_devices_spiflash.c" />
+      <file file_name="src/main.cpp" />
+      <file file_name="src/sensors/ei_camera.cpp" />
+      <file file_name="src/sensors/ei_inertialsensor.cpp" />
+      <file file_name="src/sensors/ei_microphone.cpp" />
+      <file file_name="config.h" />
+
+    </folder>
+    
+  </project>
+  <configuration
+    Name="Debug"
+    arm_use_builtins="Yes"
+    build_intermediate_directory="build/bin"
+    build_output_directory="build/$(ProjectName)_$(Configuration)"
+    gcc_entry_point="Reset_Handler" />
+  <configuration
+    Name="Release"
+    arm_use_builtins="Yes"
+    build_intermediate_directory="build/bin"
+    build_output_directory="build/$(ProjectName)_$(Configuration)"
+    gcc_entry_point="Reset_Handler" />
+</solution>

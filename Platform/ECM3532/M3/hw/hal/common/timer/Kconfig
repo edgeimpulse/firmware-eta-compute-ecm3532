@@ -1,0 +1,15 @@
+menu "Timer menu"
+comment "Timer HAL enables support for 64 bit timer"
+comment "Select Timer Channel's to be enabled"
+config TMR_CH_0
+    bool "Timer Channel 0"
+    default y
+
+config TMR_CH_1
+    bool "Timer Channel 1"
+    default n
+
+config TMR_CH_2
+    bool "Timer Channel 2"
+    default n
+endmenu

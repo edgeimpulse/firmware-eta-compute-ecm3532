@@ -1,0 +1,18 @@
+
+void ResetTarget(void) {
+  Report("******************************************************");
+  Report("J-Link script: ResetTarget()");
+  Report("******************************************************");
+  JLINK_TIF_ActivateTargetReset();
+  SYS_Sleep(500);
+  JLINK_TIF_ReleaseTargetReset();
+  // MEM_WriteU32(0x50010000,0);
+  // MEM_WriteU32(0x50010058, 0xdeadd00d);
+  // MEM_WriteU32(0x1003FFF0, 0xc001c0de);
+  // MEM_WriteU32(0x1003FFF4, 0xc001c0de);
+  // MEM_WriteU32(0x1003FFF8, 0xDEADBEEF);
+  // MEM_WriteU32(0x1003FFFC, 0xC369A517);
+  Report("******************************************************");
+  Report("J-Link script: End ResetTarget()");
+  Report("******************************************************");
+}

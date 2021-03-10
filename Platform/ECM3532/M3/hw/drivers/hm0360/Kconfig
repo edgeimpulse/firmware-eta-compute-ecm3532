@@ -1,0 +1,64 @@
+config STREAMING_MODE
+    bool "use streaming mode"
+    default n
+
+config HM0360_I2C_INSTANCE
+    int "hm0360 I2c Instance"
+    default "1"
+
+config HM0360_I2C_ADDRESS
+    hex "hm0360 I2C address"
+    default 0x24
+
+choice
+    prompt "camera mode"
+    config VGA_MODE
+        bool "vga mode"
+    config QVGA_MODE
+        bool "qvga mode"
+    config QQVGA_MODE
+        bool "qqvga mode"
+endchoice
+
+
+config IMAGE_COLUMN_COUNT
+    int "Image Columns"
+    default 320 if (VGA_MODE)
+    default 256 if (QVGA_MODE)
+    default 96 if (QQVGA_MODE)
+    range 1 640 if (VGA_MODE)
+    range 1 320 if (QVGA_MODE)
+    range 1 160 if (QQVGA_MODE)
+
+config IMAGE_ROW_COUNT
+    int "Image Rows"
+    default 320 if (VGA_MODE)
+    default 240 if (QVGA_MODE)
+    default 96 if (QQVGA_MODE)
+    range 1 480 if (VGA_MODE)
+    range 1 240 if (QVGA_MODE)
+    range 1 120 if (QQVGA_MODE)
+
+config HM0360_PCLK_GPIO
+    int  "hm0360 PCLK GPIO"
+    default 31
+config HM0360_VSYNC_GPIO
+    int  "hm0360 VSYNC GPIO"
+    range 26 26 if (AI_VISION_EXTENSION_BOARD)
+    range 30 30 if (AI_VISION_BOARD)
+    default 26  if (AI_VISION_EXTENSION_BOARD)
+    default 30  if (AI_VISION_BOARD)
+config HM0360_HSYNC_GPIO
+    int  "hm0360 HSYNC GPIO"
+    default 24
+config HM0360_D0_PIN
+    int  "hm0360 D0 GPIO"
+    default 16
+
+choice
+    prompt "PCLK Frequency"
+    config PCLK_2MHZ
+        bool "2MHz"
+    config PCLK_1MHZ
+        bool "1MHz"
+endchoice

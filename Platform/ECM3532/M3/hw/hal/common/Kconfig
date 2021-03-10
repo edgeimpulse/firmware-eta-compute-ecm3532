@@ -1,0 +1,41 @@
+config HAL_COMMON_UART
+	bool "UART HAL"
+    default y
+	if HAL_COMMON_UART
+    orsource "uart/Kconfig"
+    endif
+
+config HAL_COMMON_GPIO
+	bool "GPIO HAL"
+	default y
+    if HAL_COMMON_GPIO
+    orsource "gpio/Kconfig"
+    endif
+
+config HAL_COMMON_TIMER
+	bool "TIMER HAL"
+	default y
+    if HAL_COMMON_TIMER
+    orsource "timer/Kconfig"
+    endif
+
+config HAL_COMMON_RTC
+	bool "RTC HAL"
+	default y
+    if HAL_COMMON_RTC
+    orsource "rtc/Kconfig"
+    endif
+
+config HAL_COMMON_I2C
+	bool "I2C HAL"
+	default y
+    if HAL_COMMON_I2C
+    orsource "i2c/Kconfig"
+    endif
+
+config HAL_COMMON_SPI
+	bool "SPI HAL"
+	default y
+    if HAL_COMMON_SPI
+    orsource "spi/Kconfig"
+    endif

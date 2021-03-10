@@ -1,0 +1,33 @@
+# cool flux DSP build configuration
+mainmenu "DSP Build Config"
+
+choice
+    prompt "SOC"
+    comment "Select Target SOC"
+    config DSP_ECM3532
+    bool "ECM3532 SOC"
+endchoice
+
+config DSP_SOC
+    string
+    default "ecm3532" if DSP_ECM3532
+
+if DSP_ECM3532
+orsource "hw/csp/ecm3532/Kconfig"
+endif  ##if ECM3532
+
+orsource "framework/Kconfig"
+orsource "sensor_mgr/Kconfig" 
+orsource "kernel/Kconfig" 
+orsource "executor/Kconfig"
+orsource "audio/Kconfig"
+orsource "eta_math/Kconfig"
+
+menu "Application Menu"
+orsource "appKconfig"
+
+endmenu 
+
+##src packaging options
+orsource "packaging/Kconfig"
+

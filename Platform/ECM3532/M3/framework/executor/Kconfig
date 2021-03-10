@@ -1,0 +1,6 @@
+menu "Executor library"
+
+config EXECUTOR
+    bool "library to enable executor framework"
+    default n
+endmenu

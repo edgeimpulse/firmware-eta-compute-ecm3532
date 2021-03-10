@@ -1,0 +1,12 @@
+config OP_M3_CONV2D_Q7
+	bool
+	default y
+config OP_M3_AVPOOL2D_Q7
+	bool
+	default y
+config OP_M3_MAXPOOL_Q7
+	bool
+	default y
+config OP_M3_FULLY_CONNECTED_Q7
+	bool
+	default y

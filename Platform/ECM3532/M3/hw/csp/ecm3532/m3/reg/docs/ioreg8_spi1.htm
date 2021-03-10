@@ -1,0 +1,1986 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>IOREG FILE: CAYMAN SPI1 SPI
+</TITLE>
+</HEAD>
+<BODY>
+<H1 align="center">On-Line Documentation for CAYMAN  :  SPI1 <BR>  Bus Type: PERIPHERAL BUS</H1>
+<FONT size="+2"><B><P align="center">SPI</P></B><B</FONT><BR><HR>
+<FONT face="Helvetica" size="-1"><P align="center"><B> Put banner announcement here. </B></P></FONT><HR>
+<BR><B>SPI System Control Block Registers.</B><BR><BR><HR>
+<FONT face="Helvetica" size="-1"><P align="left"><B> Source File Name: ./src/ioreg8_spi.src <BR> Source File Modification Date Wed Sep 18 18:41:20 2019 <BR> html creation date November 11, 2019</B></P></FONT>
+<H2 id="index"> SPI1 Register Index</H2>
+<B> <CODE>ADDRESS</CODE></B><BR>
+<B><CODE>0x50020100: </CODE></B><A id = "CONFIGindex" href="#CONFIG"><B>IO_SPI1_CONFIG</A></B><BR>
+<B><CODE>0x50020104: </CODE></B><A id = "TXRX_1BYTE_FIFO_DATAindex" href="#TXRX_1BYTE_FIFO_DATA"><B>IO_SPI1_TXRX_1BYTE_FIFO_DATA</A></B><BR>
+<B><CODE>0x50020108: </CODE></B><A id = "CLKDIVindex" href="#CLKDIV"><B>IO_SPI1_CLKDIV</A></B><BR>
+<B><CODE>0x5002010c: </CODE></B><A id = "STATUSindex" href="#STATUS"><B>IO_SPI1_STATUS</A></B><BR>
+<B><CODE>0x50020110: </CODE></B><A id = "TX_FIFO_DEBUGindex" href="#TX_FIFO_DEBUG"><B>IO_SPI1_TX_FIFO_DEBUG</A></B><BR>
+<B><CODE>0x50020114: </CODE></B><A id = "RX_FIFO_DEBUGindex" href="#RX_FIFO_DEBUG"><B>IO_SPI1_RX_FIFO_DEBUG</A></B><BR>
+<B><CODE>0x50020118: </CODE></B><A id = "RXDROP_CNTindex" href="#RXDROP_CNT"><B>IO_SPI1_RXDROP_CNT</A></B><BR>
+<B><CODE>0x5002011c: </CODE></B><A id = "GENERAL_DEBUGindex" href="#GENERAL_DEBUG"><B>IO_SPI1_GENERAL_DEBUG</A></B><BR>
+<B><CODE>0x50020120: </CODE></B><A id = "INT_ENindex" href="#INT_EN"><B>IO_SPI1_INT_EN</A></B><BR>
+<B><CODE>0x50020124: </CODE></B><A id = "TXRX_2BYTE_FIFO_DATAindex" href="#TXRX_2BYTE_FIFO_DATA"><B>IO_SPI1_TXRX_2BYTE_FIFO_DATA</A></B><BR>
+<B><CODE>0x50020128: </CODE></B><A id = "CONFIG2index" href="#CONFIG2"><B>IO_SPI1_CONFIG2</A></B><BR>
+<B><CODE>0x5002012c: </CODE></B><A id = "TX_DUMMY_BYTE_CNTindex" href="#TX_DUMMY_BYTE_CNT"><B>IO_SPI1_TX_DUMMY_BYTE_CNT</A></B><BR>
+<B><CODE>0x50020130: </CODE></B><A id = "CS_CONFIGindex" href="#CS_CONFIG"><B>IO_SPI1_CS_CONFIG</A></B><BR>
+<B><CODE>0x50020134: </CODE></B><A id = "RX_4BYTE_FIFO_DATAindex" href="#RX_4BYTE_FIFO_DATA"><B>IO_SPI1_RX_4BYTE_FIFO_DATA</A></B><BR>
+<B><CODE>0x50020138: </CODE></B><A id = "INT_ACTindex" href="#INT_ACT"><B>IO_SPI1_INT_ACT</A></B><BR>
+<B><CODE>0x5002013c: </CODE></B><A id = "SLAVE_MODEindex" href="#SLAVE_MODE"><B>IO_SPI1_SLAVE_MODE</A></B><BR>
+<BR><HR>
+<H2 id="CONFIG"><A href="#index">
+IO_SPI1_CONFIG</A></H2>
+<P><FONT size="+1"><B>SPI CONFIGURATION REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SPI1_CONFIG ADDRESS:</B></TD>
+<TD><CODE>0x50020100</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="17">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SPIRDY_ACT_LOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DIS_RX_FIFO<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="5">FIFO_LEVEL_TRIG<BR><TT>0x2</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">EN_SLVRDY<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD7<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_OVFLW_DROPHEAD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SLVRDY_IS_MISO<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">END<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CPHA<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CPOL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RD_PUSHES_TX_FIFO<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:15</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>SPIRDY_ACT_LOW</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Interpret SPI Ready as Active Low</TD>
+<TD>If 1, SPI Ready (from SPI_RDY or MISO) will be treated as active low (e.g. if 0, then we are
+ready and no flow control active). If 0 it is active high.
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>DIS_RX_FIFO</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Disable RX FIFO</TD>
+<TD>If 1, RX FIFO is disabled and will not receive any further data.
+<TR align="left">
+<TD nowrap>12:8</TD>
+<TD nowrap>FIFO_LEVEL_TRIG</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RX/TX FIFO Interrupt Depth Level</TD>
+<TD>Program to the level that you want RX_FIFO_HIT_LEVEL to be set. If this reg is
+2, then RX_FIFO_HIT_LEVEL will be set if the number of entries in RX_FIFO are
+2 or greater.
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>EN_SLVRDY</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Enable Slave Raedy</TD>
+<TD>If 1, SPI_RDY going low can stall the SPI transfers until it goes back high.
+Takes effect at byte boundaries. Note SLVRDY_IS_MISO can change if SPI_RDY or
+SPI_MISO is used as flow control.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>RSVD7</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>RX_OVFLW_DROPHEAD</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RX FIFO Overflow Drop Head</TD>
+<TD>If 0, if the RX FIFO has an overflow, the first entries it received will be
+preserved. If 1, the most recent entries will be preserved. Note if 1, the
+RX_FIFO Overflow sticky bit will never bet set
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>SLVRDY_IS_MISO</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>MISO is treated as Remote Slave Ready.</TD>
+<TD>This bit has no effect if EN_SLVRDY is 0. If SLVRDY_IS_MISO is 0, then the RDY signal
+comes from SPI_RDY. If SLVRDY_IS_MISO is 1, RDY comes from MISO. Note MISO data is
+not very helpful in this mode, but is not automatically disabled. Use RXDROP_CNT or
+CONFIG.DIS_RX_FIFO to drop RX data if needed.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>END</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Endianess</TD>
+<TD>If 0, transmit msbit first. If 1 send lsbit first.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>CPHA</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Clock Phase</TD>
+<TD>If CPHA=1 and CPOL=0, drive on PE and sample on NE. If CPHA=0 and CPOL=0, drive on
+NE and sample on PE. Swapping CPOL=1 will swap the PE and NE above.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>CPOL</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Clock Polarity</TD>
+<TD>CPOL indicates idle clock steady state. CPOL=0 and SPICLK will default to low.
+CPOL=1 and SPICLK will default to high.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>RD_PUSHES_TX_FIFO</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Enable read pop to also push 0x00 into FIFO.</TD>
+<TD>If set to 1, the TX FIFO will empty as normal, but for every read pop that
+occurs, a new TX will be pushed into the FIFO. This can be useful for
+a sequence of indeterminate length to save the processor from pushing data into the
+TX FIFO or using dummy bytes.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>SPI configuration register.</P>
+<BR><HR>
+<H2 id="TXRX_1BYTE_FIFO_DATA"><A href="#index">
+IO_SPI1_TXRX_1BYTE_FIFO_DATA</A></H2>
+<P><FONT size="+1"><B>SPI READ and WRITE DATA REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SPI1_TXRX_1BYTE_FIFO_DATA ADDRESS:</B></TD>
+<TD><CODE>0x50020104</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="24">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="8">DATA<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:8</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>7:0</TD>
+<TD nowrap>DATA</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>SPI Read and Write Data</TD>
+<TD>Reads return receive data from SPI. Writes send data to transmit of SPI.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>SPI read and write data register.</P>
+<BR><HR>
+<H2 id="CLKDIV"><A href="#index">
+IO_SPI1_CLKDIV</A></H2>
+<P><FONT size="+1"><B>SPI CLKDIV REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SPI1_CLKDIV ADDRESS:</B></TD>
+<TD><CODE>0x50020108</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="20">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="4">ICG<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="4">IBG<BR><TT>0x7</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="4">CLKDIV<BR><TT>0x7</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:12</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>11:8</TD>
+<TD nowrap>ICG</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Inter Command Gap</TD>
+<TD>The delay bewteen each command will be ((ICG*2)+1) * PeriphClk period (125ns).
+<TR align="left">
+<TD nowrap>7:4</TD>
+<TD nowrap>IBG</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Inter Byte Gap</TD>
+<TD>The delay bewteen each byte will be (IBG+1) * PeriphClk period (125ns).
+<TR align="left">
+<TD nowrap>3:0</TD>
+<TD nowrap>CLKDIV</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Clock divider</TD>
+<TD>Controls SPI clock rate. SPI_CLK freq is PeriphClk (125ns) / (CLKDIV+1). Min
+legal value is 1. However, for value of 1 or 2, additional settings are
+required. Specifically:
+<LI>Value 1 (4MHz) requires CONFIG2.RX_SAMPLE_TIME = 2 and CONFIG2.DISABLE_MISO_METAFLOP = 1 to operate.
+<LI>Value 2 (2.6MHz) requires CONFIG2.RX_SAMPLE_TIME = 1 to operate.
+<LI>Value 3 and above operate normally without additional settings.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>SPI clock divider register.</P>
+<BR><HR>
+<H2 id="STATUS"><A href="#index">
+IO_SPI1_STATUS</A></H2>
+<P><FONT size="+1"><B>SPI STATUS REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SPI1_STATUS ADDRESS:</B></TD>
+<TD><CODE>0x5002010c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="16">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">RX_FIFO_HIT_LEVEL_DUP<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD14<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">RXFIFO_HAS_1DATA_DUP<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD12<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">NE_BUSY_STICKY<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">PE_BUSY_STICKY<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">CMD_IS_DONE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">XMIT_COMPLETE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">RX_FIFO_HIT_LEVEL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">TXFIFO_HAS_LEVEL_SPACE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">RXFIFO_HAS_1DATA<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">TXFIFO_HAS_1SPACE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">CS_SEL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">HOLD_CS<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">START_BUSY<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:16</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>RX_FIFO_HIT_LEVEL_DUP</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Receive X Byte Data Interrupt1 Enable Duplicate</TD>
+<TD>This is a duplicate of STATUS.RX_FIFO_HIT_LEVEL presented here for interrupt simplicity.
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>RSVD14</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>RXFIFO_HAS_1DATA_DUP</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Receive Data Interrupt1 Enable Duplicate</TD>
+<TD>This is a duplicate of STATUS.RXFIFO_HAS_1DATA presented here for interrupt simplicity.
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>RSVD12</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>NE_BUSY_STICKY</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Negedge of Busy (Sticky)</TD>
+<TD>This goes high when busy goes from high to low. This bit will be set until
+it is cleared by a W1C to this location or soft reset or CONFIG2.CLR_STICKY
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>PE_BUSY_STICKY</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Posedge of Busy (Sticky)</TD>
+<TD>This goes high when busy goes from low to high. This bit will be set until
+it is cleared by a W1C to this location or soft reset or CONFIG2.CLR_STICKY
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>CMD_IS_DONE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Command is Complete</TD>
+<TD>This is exactly the inverse of STATUS.START_BUSY and when it goes high, the
+command is done and a new transaction can start. It is presented here for
+regularity in the interrupts.
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>XMIT_COMPLETE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Transmit Complete</TD>
+<TD>If 1, all current transmits in TX_FIFO (including DUMMY_BYTES)
+are complete and on the wire. Note that just because the
+transmits are complete, the SPI transaction is not yet
+completed until the CS deasserts. Look at
+STATUS.START_BUSY or STATUS.CMD_IS_DONE to determine if the command is done.
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>RX_FIFO_HIT_LEVEL</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>RX FIFO has data available</TD>
+<TD>If 1, then there is at least CONFIG.FIFO_LEVEL_TRIG Byte(s) of data
+waiting in RX FIFO. Read TXRX_1BYTE_FIFO_DATA or TXRX_2BYTE_FIFO_DATA or
+RX_4BYTE_FIFO_DATA to get data.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>TXFIFO_HAS_LEVEL_SPACE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>TX FIFO Has LEVEL Bytes of Space Available</TD>
+<TD>If 1, then there is at least CONFIG.FIFO_LEVEL_TRIG Byte(s) of space available on
+TX_FIFO. If 0, there isn't that much space. Write TXRX_1BYTE_FIFO_DATA or
+TXRX_2BYTE_FIFO_DATA to push more data.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>RXFIFO_HAS_1DATA</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>RX FIFO Has Data in it</TD>
+<TD>If 1, then there is at least 1 byte of data waiting in RX FIFO.
+Read TXRX_1BYTE_FIFO_DATA to get data.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>TXFIFO_HAS_1SPACE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>TX FIFO Has 1 byte of Space Available</TD>
+<TD>If 1, then there is at least 1 byte of space to put onto the TX FIFO queue by writing to
+TXRX_1BYTE_FIFO_DATA. If 0, there isn't. Note, actual space available can be derived
+by reading TX_FIFO_DEBUG.ENTRIES and subtracting that from MAX entries (16).
+<TR align="left">
+<TD nowrap>3:2</TD>
+<TD nowrap>CS_SEL</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>Chip Select Select</TD>
+<TD>Select which of the 4 chip selects to be used. 0=CS0, 1=CS1, 2=CS2 and 3=CS3.
+Note this bit is latched when start is written and is ignored until the next start.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>HOLD_CS</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>Hold CS</TD>
+<TD>If 1, CS stays active until this bit is cleared. If written to 0 the CS will go inactive
+after all data in TX FIFO (and DUMMY_BYTES) has been transmitted. Note this bit
+can be changed in mid transaction without issue.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>START_BUSY</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>START_BUSY</TD>
+<TD>Write to 1 to start transaction. Read back to determine if the SM is
+START_BUSY (1) or if has gone back to idle (0). Note that this will only
+go to idle (0) when the entier command is finished (CS deasserted) which is
+not the same as the TX FIFO being empty.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>SPI status register. Note that ANDing this register with INT_EN will effectively give you the unmasked interrupts.</P>
+<BR><HR>
+<H2 id="TX_FIFO_DEBUG"><A href="#index">
+IO_SPI1_TX_FIFO_DEBUG</A></H2>
+<P><FONT size="+1"><B>SPI TX FIFO DEBUG REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SPI1_TX_FIFO_DEBUG ADDRESS:</B></TD>
+<TD><CODE>0x50020110</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="19">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="5">MAX_ENTRIES<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">UFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">OFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="5">ENTRIES<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:13</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>12:8</TD>
+<TD nowrap>MAX_ENTRIES</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Depth of FIFO</TD>
+<TD>Depth of FIFO, i.e. the max number of entries possible in FIFO.
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>UFLOW</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Underflow Sticky bit.</TD>
+<TD>Set when TX FIFO underflows. Cleared by setting CONFIG2.CLR_STICKY
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>OFLOW</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Overflow Sticky bit.</TD>
+<TD>Set when TX FIFO overflows. Newest entries are dropped. Cleared by setting CONFIG2.CLR_STICKY
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>4:0</TD>
+<TD nowrap>ENTRIES</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Entries in FIFO.</TD>
+<TD>Current number of entries in FIFO.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>SPI TX FIFO debug register</P>
+<BR><HR>
+<H2 id="RX_FIFO_DEBUG"><A href="#index">
+IO_SPI1_RX_FIFO_DEBUG</A></H2>
+<P><FONT size="+1"><B>SPI RX FIFO DEBUG REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SPI1_RX_FIFO_DEBUG ADDRESS:</B></TD>
+<TD><CODE>0x50020114</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="19">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="5">MAX_ENTRIES<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">UFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">OFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">SPI_RDY<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="5">ENTRIES<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:13</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>12:8</TD>
+<TD nowrap>MAX_ENTRIES</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Depth of FIFO</TD>
+<TD>Depth of FIFO, i.e. the max number of entries possible in FIFO.
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>UFLOW</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Underflow Sticky bit.</TD>
+<TD>Set when RX FIFO underflows. Cleared by setting CONFIG2.CLR_STICKY
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>OFLOW</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Overflow Sticky bit.</TD>
+<TD>Set when RX FIFO overflows. See CONFIG.RX_OVFLW_KEEPHEAD for additional details on drop
+behavior.  Cleared by setting CONFIG2.CLR_STICKY
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>SPI_RDY</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>SPI_RDY</TD>
+<TD>Live value of SPI_RDY
+<TR align="left">
+<TD nowrap>4:0</TD>
+<TD nowrap>ENTRIES</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Entries in FIFO.</TD>
+<TD>Current number of entries in FIFO.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>SPI RX FIFO debug register</P>
+<BR><HR>
+<H2 id="RXDROP_CNT"><A href="#index">
+IO_SPI1_RXDROP_CNT</A></H2>
+<P><FONT size="+1"><B>RX Drop Byte Count</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SPI1_RXDROP_CNT ADDRESS:</B></TD>
+<TD><CODE>0x50020118</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="16">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="16">COUNT<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:16</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>15:0</TD>
+<TD nowrap>COUNT</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>RX Byte Count</TD>
+<TD>Indicates how many RX bytes to silently drop before triggering an interrupt or rxfifo_has_data. Note, this should be written before the command begins to avoid cornercase issues.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>RX Drop Byte Count</P>
+<BR><HR>
+<H2 id="GENERAL_DEBUG"><A href="#index">
+IO_SPI1_GENERAL_DEBUG</A></H2>
+<P><FONT size="+1"><B>SPI GENERAL DEBUG REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SPI1_GENERAL_DEBUG ADDRESS:</B></TD>
+<TD><CODE>0x5002011c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="20">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">EN_BIT_BANG<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">BB_SPI_MOSI<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">BB_SPI_CS_N<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">BB_SPI_CLK<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">SPI_MISO<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">SPI_MOSI<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">SPI_CS_N<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">SPI_CLK<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="4">STATE_REG<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:12</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>EN_BIT_BANG</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Enable Bit Bang</TD>
+<TD>If set, the BB_SPI_MOSI, BB_SPI_CS_N and BB_SPI_CLK control the SPI interface.
+The internal SM has no effect and can be placed in SOFT_RESET. However, the
+CONFIG2.CLK_ON bit should be set, or else the clock may gate off due to apparent
+quiescence.
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>BB_SPI_MOSI</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Value to drive on SPI_MOSI</TD>
+<TD>Value to drive on of SPI_MOSI
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>BB_SPI_CS_N</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Value to drive on SPI_CS_N</TD>
+<TD>Value to drive on SPI_CS_N. Note the CS will be asserted on the CS specified in STATUS.CS_SEL
+which is only selected when STATUS.START_BUSY is written. So to use this feature,
+set START_BUSY and then operate the bit bang mode. After wards, you should finish the
+command by writing at least one byte to TX_FIFO and making sure STATUS.HOLD_CS is low.
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>BB_SPI_CLK</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Value to drive on SPI_CLK</TD>
+<TD>Value to drive on SPI_CLK
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>SPI_MISO</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Current value of SPI_MISO input</TD>
+<TD>Current value of SPI_MISO input
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>SPI_MOSI</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Current value of expected SPI_MOSI output</TD>
+<TD>Current value of expected SPI_MOSI output
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>SPI_CS_N</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Current value of expected SPI_CS_N output</TD>
+<TD>Current value of expected expected SPI_CS_N output
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>SPI_CLK</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Current value of expected SPI_CLK output</TD>
+<TD>Current value of expected SPI_CLK output
+<TR align="left">
+<TD nowrap>3:0</TD>
+<TD nowrap>STATE_REG</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Main SM State</TD>
+<TD>Current state of primary State Machine. States are listed in normal order of execution.
+<LI>0x0=STATE_IDLE
+<LI>0x1=STATE_TX_ASSERT_CS
+<LI>0x3=STATE_TRANS_BIT7
+<LI>0x2=STATE_TRANS_BIT6
+<LI>0x6=STATE_TRANS_BIT5
+<LI>0x7=STATE_TRANS_BIT4
+<LI>0x5=STATE_TRANS_BIT3
+<LI>0x4=STATE_TRANS_BIT2
+<LI>0xc=STATE_TRANS_BIT1
+<LI>0xd=STATE_TRANS_BIT0
+<LI>0xf=STATE_TRANS_PUSH
+<LI>0xe=STATE_TX_DEASS_CS
+<LI>0xb=STATE_TRANS_W4D
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>SPI General Debug Fields</P>
+<BR><HR>
+<H2 id="INT_EN"><A href="#index">
+IO_SPI1_INT_EN</A></H2>
+<P><FONT size="+1"><B>SPI Interrupt Enable Registger</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SPI1_INT_EN ADDRESS:</B></TD>
+<TD><CODE>0x50020120</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="16">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_FIFO_HIT_LEVEL_EN1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TXFIFO_HAS_LEVEL_SPACE_EN2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_DATA_EN1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TX_DATA_EN2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">NE_BUSY_STICKY_EN0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">PE_BUSY_STICKY_EN0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CMD_IS_DONE_EN0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">XMIT_COMPLETE_EN0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_FIFO_HIT_LEVEL_EN0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TXFIFO_HAS_LEVEL_SPACE_EN0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_DATA_EN0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TX_DATA_EN0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="4">RSVD1<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:16</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>RX_FIFO_HIT_LEVEL_EN1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Receive X Byte Data Interrupt1 Enable</TD>
+<TD>If set to 1, the STATUS field RX_FIFO_HIT_LEVEL will be accelerated into an interrupt
+for spi_int1. Reading from TXRX_2BYTE_FIFO_DATA will force the interrupt to go low
+for at least one cycle, perhaps more if the RX FIFO is now empty. This is used for SPI Source Ready.
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>TXFIFO_HAS_LEVEL_SPACE_EN2</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Transmit 2Byte Data Interrupt2 Enable</TD>
+<TD>If set to 1, the STATUS field TXFIFO_HAS_LEVEL_SPACE will be accelerated into an
+interrupt for spi_int2. Writing to TXRX_2BYTE_FIFO_DATA will force the interrupt to go
+low for at least one cycle, perhaps more if the TX FIFO fills. This is used for SPI Destination Ready.
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>RX_DATA_EN1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Receive Data Interrupt1 Enable</TD>
+<TD>If set to 1, the STATUS field RXFIFO_HAS_DATA will be accelerated into an interrupt for
+spi_int1. Reading from TXRX_1BYTE_FIFO_DATA will force the interrupt to go low for at
+least one cycle, perhaps more if the RX FIFO is now empty. This is used for SPI Source Ready.
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>TX_DATA_EN2</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Transmit Data Interrupt2 Enable</TD>
+<TD>If set to 1, the STATUS field TXFIFO_HAS_SPACE will be accelerated into an interrupt
+for spi_int2. Writing to TXRX_1BYTE_FIFO_DATA will cause this to go low for at least
+one cycle, perhaps more if the TX FIFO fills. This is used for SPI Destination Ready.
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>NE_BUSY_STICKY_EN0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Negedge of Busy (Sticky)</TD>
+<TD>Enables STATUS.NE_BUSY_STICKY to set spi0_int
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>PE_BUSY_STICKY_EN0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Posedge of Busy (Sticky)</TD>
+<TD>Enables STATUS.PE_BUSY_STICKY to set spi0_int
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>CMD_IS_DONE_EN0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Command is Complete Interrupt0 Enable</TD>
+<TD>Enables STATUS.CMD_IS_DONE to set spi0_int
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>XMIT_COMPLETE_EN0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Transmit Complete Interrupt0 Enable</TD>
+<TD>Enables STATUS.XMIT_COMPLETE to set spi0_int
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>RX_FIFO_HIT_LEVEL_EN0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Receive X Byte Data Interrupt0 Enable</TD>
+<TD>If set to 1, the STATUS field RX_FIFO_HIT_LEVEL will be accelerated into an interrupt for
+spi_int0. Reading from TXRX_1BYTE_FIFO_DATA will force the interrupt to go low for at
+least one cycle, perhaps more if the RX FIFO is now empty.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>TXFIFO_HAS_LEVEL_SPACE_EN0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Transmit 2Byte Data Interrupt0 Enable</TD>
+<TD>If set to 1, the STATUS field TXFIFO_HAS_LEVEL_SPACE will be accelerated into an
+interrupt for spi_int0. Writing to TXRX_2BYTE_FIFO_DATA will force the interrupt to go
+low for at least one cycle, perhaps more if the TX FIFO fills.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>RX_DATA_EN0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Receive Data Interrupt0 Enable</TD>
+<TD>If set to 1, the STATUS field RXFIFO_HAS_DATA will be accelerated into an interrupt for
+spi_int0. Reading from TXRX_1BYTE_FIFO_DATA will force the interrupt to go low for at
+least one cycle, perhaps more if the RX FIFO is now empty.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>TX_DATA_EN0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Transmit Data Interrupt0 Enable</TD>
+<TD>If set to 1, the STATUS field TXFIFO_HAS_SPACE will be accelerated into an interrupt
+for spi_int0. Writing to TXRX_1BYTE_FIFO_DATA will cause this to go low for at least
+one cycle, perhaps more if the TX FIFO fills.
+<TR align="left">
+<TD nowrap>3:0</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>SPI Interrupt Enable Registger. Note that ANDing this register with STATUS will effectively give you the unmasked interrupts.</P>
+<BR><HR>
+<H2 id="TXRX_2BYTE_FIFO_DATA"><A href="#index">
+IO_SPI1_TXRX_2BYTE_FIFO_DATA</A></H2>
+<P><FONT size="+1"><B>SPI READ and WRITE DATA REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SPI1_TXRX_2BYTE_FIFO_DATA ADDRESS:</B></TD>
+<TD><CODE>0x50020124</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="16">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="16">DATA<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:16</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>15:0</TD>
+<TD nowrap>DATA</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>SPI Read and Write Data</TD>
+<TD>2 byte reads return receive data from SPI. 2 byte writes send data to transmit of SPI.
+By default, data is presented in little endian so bit [7:0] will have the first byte that was
+received or to be transmitted, bit [15:8] will have the second byte received or to be
+transmitted. By setting CONFIG2.TX_BYTE2_END or CONFIG2.RX_BYTE2_END, this order can be reversed.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>SPI read and write data register.</P>
+<BR><HR>
+<H2 id="CONFIG2"><A href="#index">
+IO_SPI1_CONFIG2</A></H2>
+<P><FONT size="+1"><B>SPI CONFIGURATION2 REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SPI1_CONFIG2 ADDRESS:</B></TD>
+<TD><CODE>0x50020128</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="20">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RX_BYTE2_END<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TX_BYTE2_END<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">AGGR_CLK_GATING<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CLK_ON<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SOFT_RST<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CLR_STICKY<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">STALL_IF_RXFULL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DISABLE_MISO_METAFLOP<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">EN_LOOPBACK<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">RX_SAMPLE_TIME<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:12</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>RX_BYTE2_END</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Two Byte Endianess</TD>
+<TD>Only used for 16 or 32 bit transfers. If 0, then the first byte received on MISO is in position
+data[7:0], the second is data[15:8]. Similarly, if 0, then 4 byte read will have the first byte
+received in position data[7:0], the next byte in [15:8], etc. If 1, vice versa and first byte is in
+position [15:8] for 2 byte read and [31:24] in 4 byte read. This affects only RX side
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>TX_BYTE2_END</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Two Byte Endianess</TD>
+<TD>Only used for 16 or 32 bit transfers. If 0, data[7:0] is transmitted on MOSI before data[15:8]. If 1,
+vice versa. This affects only TX side
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>AGGR_CLK_GATING</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Aggressive Clock Gating</TD>
+<TD>If set to 1, a more aggressive clock gating scheme is enacted that will clock the gate even if the
+command is  still in flight, but the FIFOs, etc. have emptied (i.e. processor has starved FIFOs). If
+0, we only gate when the command is complete.
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>CLK_ON</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Clock Enable Always On</TD>
+<TD>This bit provides an override to the clock gate enable. If 0, the clock will only run if the local state
+machine is busy. If 1, the clock will always run.
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>SOFT_RST</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Soft Reset</TD>
+<TD>If 1, all FIFO / SM in SPI will be held in reset. If 0, normal operation. To do a soft reset, you must write
+this to 1 and then back to 0 to remove the reset. It is recommened to perform a read operation in between
+writing the reset to 1 and then 0 to ensure the logic has enough time to see the reset.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>CLR_STICKY</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Clear Sticky bits</TD>
+<TD>If 1, clear sticky bits in registers. If 0, normal operation. To clear sticky bits, you must
+write this to 1 and then back to 0 to remove the clear. It is recommened to perform a read
+operation in between writing the reset to 1 and then 0 to ensure the logic has enough time to
+see the clear.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>STALL_IF_RXFULL</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Stall TX if RX FIFO Full</TD>
+<TD>If 1, the TX side will stall if RX FIFO is full. If 0, then the TX side will transmit
+without being flow controlled by RX FIFO full.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>DISABLE_MISO_METAFLOP</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Disable MISO Meta Flop Avoidance</TD>
+<TD>0 is the normal, recommended flow. If 1, the 2 CLKIN delay of MISO is bypassed allowing for
+faster operation at the risk of metastablity if MISO changes near sample time. Normally MISO
+should change with >100 ns setup / hold with respect to SPI clock, so it may be a viable risk.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>EN_LOOPBACK</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Enable loopbck</TD>
+<TD>0 is the normal flow. If 1, MISO comes directly from MOSI. Note that CSN and SPI_CLK are
+still output and are effectively ignored in loopback mode.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>1:0</TD>
+<TD nowrap>RX_SAMPLE_TIME</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>RX Sample Time Adjust</TD>
+<TD>Used to adjust receive sample time. Can be modified to increase max speed at cost of
+setup, metastability flops. Normal flow uses 2 delay FF of early signal. (i.e. delay[1].
+00=delay[1], 01=delay[0],  10=early,  11=delay[2]
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>SPI configuration2 register.</P>
+<BR><HR>
+<H2 id="TX_DUMMY_BYTE_CNT"><A href="#index">
+IO_SPI1_TX_DUMMY_BYTE_CNT</A></H2>
+<P><FONT size="+1"><B>SPI TRANSMIT DUMMY BYTE COUNT</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SPI1_TX_DUMMY_BYTE_CNT ADDRESS:</B></TD>
+<TD><CODE>0x5002012c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="16">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="16">COUNT<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:16</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>15:0</TD>
+<TD nowrap>COUNT</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>Dummy byte count</TD>
+<TD>Every write to this register increments the DUMMY_BYTE_COUNT by the value written. The DUMMY bytes are pushed
+onto the tail of the TX FIFO. This is useful for a SPI read command to save the processor for
+sending uninteresting TX data to keep the RX flow going. The counter can hold 16 bits worth (64K-1) of dummy bytes
+and each dummy byte is necessarily a transmit of 0x00. A read of
+this field will indicate the current dummy byte count left that have not already been pushed into the TX FIFO.
+
+Note that since every SPI RX entry requires one SPI TX entry, the Dummy Byte Count is generally set to the
+length in bytes of the receive portion of the SPI transactions.
+
+Note that the CS_HOLD bit can be cleared once the dummy bytes have been written and the logic will
+keep the CS asserted until both the TX FIFO and then the Dummy Bytes have been exhausted. Note once
+any dummy bytes are written, the user should not write to the TX FIFO again as this will cause
+corruption. The max value allowed in the DUMMY_BYTE counter is 0xffff (64K-1)
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>spi transmit dummy byte count</P>
+<BR><HR>
+<H2 id="CS_CONFIG"><A href="#index">
+IO_SPI1_CS_CONFIG</A></H2>
+<P><FONT size="+1"><B>SPI CS config</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SPI1_CS_CONFIG ADDRESS:</B></TD>
+<TD><CODE>0x50020130</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="28">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CS3_POL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CS2_POL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CS1_POL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CS0_POL<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:4</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>CS3_POL</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Chip Select 0 Polarity</TD>
+<TD>If 0, the CS is active low and will default to 1 until the device is selected and then drive to a 0. If 1, it is reversed (active high)
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>CS2_POL</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Chip Select 2 Polarity</TD>
+<TD>If 0, the CS is active low and will default to 1 until the device is selected and then drive to a 0. If 1, it is reversed (active high)
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>CS1_POL</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Chip Select 1 Polarity</TD>
+<TD>If 0, the CS is active low and will default to 1 until the device is selected and then drive to a 0. If 1, it is reversed (active high)
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>CS0_POL</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Chip Select 0 Polarity</TD>
+<TD>If 0, the CS is active low and will default to 1 until the device is selected and then drive to a 0. If 1, it is reversed (active high)
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>SPI Chip select config</P>
+<BR><HR>
+<H2 id="RX_4BYTE_FIFO_DATA"><A href="#index">
+IO_SPI1_RX_4BYTE_FIFO_DATA</A></H2>
+<P><FONT size="+1"><B>SPI READ DATA REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SPI1_RX_4BYTE_FIFO_DATA ADDRESS:</B></TD>
+<TD><CODE>0x50020134</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="32">DATA<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>DATA</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>SPI Read Data</TD>
+<TD>4 byte reads return receive data from SPI. Writes have no effect.
+By default, data is returned little endian so bit [7:0] will have the first byte that was
+received, bit [15:8] will have the second byte received, etc. up to bit [31:24] having the
+fourth byte received. By setting CONFIG2.RX_BYTE2_END, this order can be reversed.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>SPI read data register. Note this register is disabled in DSP instances.</P>
+<BR><HR>
+<H2 id="INT_ACT"><A href="#index">
+IO_SPI1_INT_ACT</A></H2>
+<P><FONT size="+1"><B>SPI Active Interrupts</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SPI1_INT_ACT ADDRESS:</B></TD>
+<TD><CODE>0x50020138</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="20">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">NE_BUSY_STICKY_ACT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">PE_BUSY_STICKY_ACT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">CMD_IS_DONE_ACT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">XMIT_COMPLETE_ACT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">RX_FIFO_HIT_LEVEL_ACT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">TXFIFO_HAS_LEVEL_SPACE_ACT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">RX_DATA_ACT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">TX_DATA_ACT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="4">RSVD1<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:12</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>NE_BUSY_STICKY_ACT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Negedge of Busy (Sticky) Active</TD>
+<TD>STATUS.NE_BUSY_STICKY is set and active
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>PE_BUSY_STICKY_ACT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Posedge of Busy (Sticky) Active</TD>
+<TD>STATUS.PE_BUSY_STICKY is set and active
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>CMD_IS_DONE_ACT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Command is Complete Interrupt0 Active</TD>
+<TD>STATUS.CMD_IS_DONE is set and active
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>XMIT_COMPLETE_ACT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Transmit Complete Interrupt0 Active</TD>
+<TD>STATUS.XMIT_COMPLETE is set and active
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>RX_FIFO_HIT_LEVEL_ACT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Receive X Byte Data Interrupt0 Active</TD>
+<TD>STATUS.RX_FIFO_HIT_LEVEL is set and active
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>TXFIFO_HAS_LEVEL_SPACE_ACT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Transmit 2Byte Data Interrupt0 Active</TD>
+<TD>STATUS.TXFIFO_HAS_LEVEL_SPACE is set and active
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>RX_DATA_ACT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Receive Data (1 byte) Interrupt0 Active</TD>
+<TD>STATUS.RXFIFO_HAS_DATA is set and active
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>TX_DATA_ACT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Transmit Data (1 byte) Interrupt0 Active</TD>
+<TD>STATUS.TXFIFO_HAS_SPACE is set and active
+<TR align="left">
+<TD nowrap>3:0</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>SPI Active Interrupts. This is effectively STATUS ANDed with INT_EN</P>
+<BR><HR>
+<H2 id="SLAVE_MODE"><A href="#index">
+IO_SPI1_SLAVE_MODE</A></H2>
+<P><FONT size="+1"><B>SPI SLAVE MODE CONFIGURATION REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SPI1_SLAVE_MODE ADDRESS:</B></TD>
+<TD><CODE>0x5002013c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="28">RSVD32<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DISABLED_TX_FIFO_DATA<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DISABLE_TX_FIFO<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DISABLE_ALL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SLAVE_EN<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:4</TD>
+<TD nowrap>RSVD32</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>DISABLED_TX_FIFO_DATA</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Disabled Transmit FIFO Data</TD>
+<TD>Has no effect unless DISABLE_TX_FIFO is set.
+If DISABLE_TX_FIFO is set, this bit determines
+what data is sent to the remote slave. Note we transmit 1 byte
+of data at a time, so changing this will only change values on the byte
+boundary.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>DISABLE_TX_FIFO</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Disable Transmit FIFO</TD>
+<TD>If set, TX FIFO is disabled and we always transmit DISABLED_TX_FIFO_DATA data.
+Internally the TX FIFO contents are not modified, but the slave thinks
+the TX FIFO is full of bytes consisting of DISABLED_TX_FIFO_DATA.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>DISABLE_ALL</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Disable SPI</TD>
+<TD>If set to 1, rhe SPI is in neither master of slave mode. This mode may be
+useful when transitioning between master / slave. ... but I suspect a
+reset will be sufficient.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>SLAVE_EN</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Enables Slave Mode</TD>
+<TD>If set to 1, the logic acts like a slave mode. If 0, it will act like a
+master if DISABLE_ALL is also 0. In slave mode, busy is determined by
+the incomming chip select going active.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>SPI Slave Mode configuraiton</P>
+

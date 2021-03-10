@@ -1,0 +1,32 @@
+menu "dsp framework"
+
+config FRAMEWORK
+    bool "DSP frame work based on SHM, globle and local queue"
+    default y
+
+config MAX_DSP_LOCAL_QUEUE_SIZE
+    depends on FRAMEWORK
+    int "select MAX_DSP_LOCAL_QUEUE_SIZE"
+    default 8
+
+config MAX_DSP_LOCAL_MSG_DATA_SIZE
+    depends on FRAMEWORK
+    int "select MAX_DSP_LOCAL_MSG_DATA_SIZE"
+    default 2
+
+config DSP_MAX_TASKS
+    depends on FRAMEWORK
+    int "select DSP_MAX_TASKS"
+    default 4
+
+config XMEM_HEAP_SIZE_BYTES
+    depends on FRAMEWORK
+    int "select XMEM_HEAP_SIZE_BYTES"
+    default 4096
+
+config YMEM_HEAP_SIZE_BYTES
+    depends on FRAMEWORK
+    int "select YMEM_HEAP_SIZE_BYTES"
+    default 4096
+
+endmenu

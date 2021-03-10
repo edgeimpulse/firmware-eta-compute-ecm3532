@@ -1,0 +1,6 @@
+menu "Edge Impulse firmware project"
+comment "Ingestion / inference firmware for Eta Compute Sensor or Vision board"
+
+orsource "Kernel_config"
+
+endmenu

@@ -1,0 +1,4 @@
+config XPORT_UART
+  int "UART port for serial xport"
+  default 1 if UART_1
+  default 0 if UART_0

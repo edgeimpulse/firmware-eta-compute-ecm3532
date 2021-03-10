@@ -1,0 +1,91 @@
+menu "RPC library"
+
+config RPC
+    bool "library to enable RPC cross accross processor boundary"
+    default n
+endmenu
+menu "DSP FW Configuations"
+
+config DSP_BACK_DOOR_UART
+    bool "enable DSP back door uart"
+    depends on RPC  && ECM3531
+    default n
+config DSP_UART
+    bool "enable DSP uart"
+    depends on RPC  && ECM3532
+    default y
+
+
+choice PRE_BUILD_DSP_FW
+    prompt "Select Pre Build DSP FW"
+    depends on RPC
+    config DSP_EXECUTOR_FW
+      bool "DSP Executor"
+      depends on EXECUTOR
+    config DSP_PDM_FW
+      bool "DSP PDM"
+      depends on HAL_PDM
+    config DSP_LSM6DSL_FW
+      bool "DSP LSM6DS Sensor"
+      depends  on (LSM6DSL_DSP && !SENSOR_TIMESTAMP)
+    config DSP_LSM6DSL_TS_FW
+      bool "DSP LSM6DS Sensor time stamp enabled"
+      depends  on (LSM6DSL_DSP && SENSOR_TIMESTAMP)
+    config DSP_LSM6DSL_FFT_FW
+      bool "DSP LSM6DSL FFT"
+      depends on (LSM6DSL_FFT_DSP)
+    config DSP_DEFAULT_FW
+      bool "DSP Default"
+endchoice
+
+config PRE_BUILD_DSP_FW_RELOCATED
+    string
+    depends on RPC
+    default "dsp_fw_executor_relocated.bin" if DSP_EXECUTOR_FW
+    default "dsp_fw_pdm_relocated.bin" if DSP_PDM_FW
+    default "dsp_fw_lsm6dsl_relocated.bin" if DSP_LSM6DSL_FW
+    default "dsp_fw_lsm6dsl_ts_relocated.bin" if DSP_LSM6DSL_TS_FW
+    default "dsp_fw_comp_lsm6dsl_fft_relocated.bin" if DSP_LSM6DSL_FFT_FW
+    default "dsp_fw_relocated.bin" if DSP_DEFAULT_FW
+
+config PRE_BUILD_DSP_FW
+    string
+    depends on RPC
+    default "dsp_fw_executor.bin" if DSP_EXECUTOR_FW
+    default "dsp_fw_pdm.bin" if DSP_PDM_FW
+    default "dsp_fw_lsm6dsl.bin" if DSP_LSM6DSL_FW
+    default "dsp_fw_lsm6dsl_ts.bin" if DSP_LSM6DSL_TS_FW
+    default "dsp_fw_comp_lsm6dsl_fft.bin" if DSP_LSM6DSL_FFT_FW
+    default "dsp_fw.bin" if DSP_DEFAULT_FW
+
+choice BUILD_DSP_FW
+    prompt "Select DSP Build FW"
+    depends on RPC
+    config DSP_EXECUTOR
+        bool "executor"
+    config DSP_HELLO_WORLD
+        bool "hello world"
+    config DSP_SENSOR
+        bool "sensor"
+    config DSP_PDM
+        bool "pdm fw"
+    config DSP_I2C
+        bool "i2c"
+    config DSP_KERNEL
+        bool "kernel"
+    config DSP_TIMER
+        bool "timer"
+    config DSP_MALLOC
+        bool "malloc"
+endchoice
+config BUILD_DSP_FW
+    string
+    default "hello_world" if DSP_HELLO_WORLD
+    default "executor_test" if DSP_EXECUTOR
+    default "sensor_test" if DSP_SENSOR
+    default "pdm_test" if DSP_PDM
+    default "i2c_test" if DSP_I2C
+    default "kernel_test" if DSP_KERNEL
+    default "timer_test" if DSP_TIMER
+    default "malloc_test" if DSP_MALLOC
+endmenu

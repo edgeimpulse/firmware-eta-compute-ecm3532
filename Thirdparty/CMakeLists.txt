@@ -1,0 +1,22 @@
+GETCONFIG(varen "AZURE_IOT_SDK")
+string(COMPARE EQUAL "${varen}" y _cmp)
+if (_cmp)
+    if (EXISTS "${CMAKE_CURRENT_LIST_DIR}/azure")
+        ADD_SUBDIRECTORY(azure)
+    endif ()
+endif()
+
+ADD_SUBDIRECTORY(edge_impulse)
+ADD_SUBDIRECTORY(eta_ai_bsp)
+ADD_SUBDIRECTORY(FreeRTOS)
+ADD_SUBDIRECTORY(FreeRTOS-Plus)
+
+GETCONFIG(varaz "AZURE_SRC_PACKAGE")
+string(COMPARE EQUAL "${varaz}" y _cmp1)
+if (NOT _cmp)
+    if (NOT _cmp1)
+        get_property(ignore_list GLOBAL PROPERTY ignore_list_property)
+        set_property(GLOBAL PROPERTY ignore_list_property
+        "${ignore_list};azure")
+    endif()
+endif()

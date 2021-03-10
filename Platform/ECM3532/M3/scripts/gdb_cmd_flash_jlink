@@ -1,0 +1,6 @@
+load
+set {int}0x1003FFF8 = 0
+monitor writeu32 0xE000ED08 = 0x1000000
+monitor reset halt
+b main
+c

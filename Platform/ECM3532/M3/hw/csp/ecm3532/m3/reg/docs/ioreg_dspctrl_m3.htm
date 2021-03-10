@@ -1,0 +1,1908 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>IOREG FILE: NGC18 DSPCTRL_M3 DSP control registers as seen in M3
+</TITLE>
+</HEAD>
+<BODY>
+<H1 align="center">On-Line Documentation for NGC18  :  DSPCTRL_M3 <BR>  Bus Type: APB</H1>
+<FONT size="+2"><B><P align="center">DSP control registers as seen in M3</P></B><B</FONT><BR><HR>
+<FONT face="Helvetica" size="-1"><P align="center"><B> Put banner announcement here. </B></P></FONT><HR>
+<BR><B>These registers control the DSP complex.</B><BR><BR><HR>
+<FONT face="Helvetica" size="-1"><P align="left"><B> Source File Name: ./src/ioreg_dspctrl_m3.src <BR> Source File Modification Date Mon Oct 28 15:31:34 2019 <BR> html creation date November 11, 2019</B></P></FONT>
+<H2 id="index"> DSPCTRL_M3 Register Index</H2>
+<B> <CODE>ADDRESS</CODE></B><BR>
+<B><CODE>0x40800000: </CODE></B><A id = "DSP_CTRLindex" href="#DSP_CTRL"><B>IO_DSPCTRL_M3_DSP_CTRL</A></B><BR>
+<B><CODE>0x40800004: </CODE></B><A id = "DSP_STATUSindex" href="#DSP_STATUS"><B>IO_DSPCTRL_M3_DSP_STATUS</A></B><BR>
+<B><CODE>0x40800008: </CODE></B><A id = "RELEASE_HOLD_PULSEindex" href="#RELEASE_HOLD_PULSE"><B>IO_DSPCTRL_M3_RELEASE_HOLD_PULSE</A></B><BR>
+<B><CODE>0x40800020: </CODE></B><A id = "DMA_SRCRDY_12index" href="#DMA_SRCRDY_12"><B>IO_DSPCTRL_M3_DMA_SRCRDY_12</A></B><BR>
+<B><CODE>0x40800024: </CODE></B><A id = "DMA_SRCRDY_13index" href="#DMA_SRCRDY_13"><B>IO_DSPCTRL_M3_DMA_SRCRDY_13</A></B><BR>
+<B><CODE>0x40800028: </CODE></B><A id = "DMA_SRCRDY_14index" href="#DMA_SRCRDY_14"><B>IO_DSPCTRL_M3_DMA_SRCRDY_14</A></B><BR>
+<B><CODE>0x4080002c: </CODE></B><A id = "DMA_SRCRDY_15index" href="#DMA_SRCRDY_15"><B>IO_DSPCTRL_M3_DMA_SRCRDY_15</A></B><BR>
+<B><CODE>0x40800030: </CODE></B><A id = "DMA_DSTRDY_12index" href="#DMA_DSTRDY_12"><B>IO_DSPCTRL_M3_DMA_DSTRDY_12</A></B><BR>
+<B><CODE>0x40800034: </CODE></B><A id = "DMA_DSTRDY_13index" href="#DMA_DSTRDY_13"><B>IO_DSPCTRL_M3_DMA_DSTRDY_13</A></B><BR>
+<B><CODE>0x40800038: </CODE></B><A id = "DMA_DSTRDY_14index" href="#DMA_DSTRDY_14"><B>IO_DSPCTRL_M3_DMA_DSTRDY_14</A></B><BR>
+<B><CODE>0x4080003c: </CODE></B><A id = "DMA_DSTRDY_15index" href="#DMA_DSTRDY_15"><B>IO_DSPCTRL_M3_DMA_DSTRDY_15</A></B><BR>
+<B><CODE>0x40800040: </CODE></B><A id = "DSP_LOCKUP_DEBUGindex" href="#DSP_LOCKUP_DEBUG"><B>IO_DSPCTRL_M3_DSP_LOCKUP_DEBUG</A></B><BR>
+<B><CODE>0x40800044: </CODE></B><A id = "DSP_STACK_DEBUG1index" href="#DSP_STACK_DEBUG1"><B>IO_DSPCTRL_M3_DSP_STACK_DEBUG1</A></B><BR>
+<B><CODE>0x40800048: </CODE></B><A id = "DSP_HOLD_DEBUG0index" href="#DSP_HOLD_DEBUG0"><B>IO_DSPCTRL_M3_DSP_HOLD_DEBUG0</A></B><BR>
+<B><CODE>0x4080004c: </CODE></B><A id = "READONLY_DSP_CONFIG_STATUSindex" href="#READONLY_DSP_CONFIG_STATUS"><B>IO_DSPCTRL_M3_READONLY_DSP_CONFIG_STATUS</A></B><BR>
+<B><CODE>0x40821030: </CODE></B><A id = "SEMAPHORE0index" href="#SEMAPHORE0"><B>IO_DSPCTRL_M3_SEMAPHORE0</A></B><BR>
+<B><CODE>0x40821034: </CODE></B><A id = "SEMAPHORE1index" href="#SEMAPHORE1"><B>IO_DSPCTRL_M3_SEMAPHORE1</A></B><BR>
+<B><CODE>0x40821038: </CODE></B><A id = "SEMAPHORE2index" href="#SEMAPHORE2"><B>IO_DSPCTRL_M3_SEMAPHORE2</A></B><BR>
+<B><CODE>0x4082103c: </CODE></B><A id = "SEMAPHORE3index" href="#SEMAPHORE3"><B>IO_DSPCTRL_M3_SEMAPHORE3</A></B><BR>
+<BR><HR>
+<H2 id="DSP_CTRL"><A href="#index">
+IO_DSPCTRL_M3_DSP_CTRL</A></H2>
+<P><FONT size="+1"><B>DSP Control Register</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_DSPCTRL_M3_DSP_CTRL ADDRESS:</B></TD>
+<TD><CODE>0x40800000</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="27">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">HOLD_TOGGLE_EN<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DMS_HOLD_EN<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DMA_INV_PRIO<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CORE_HOLD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RESET_DSP<BR><TT>0x1</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:5</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>HOLD_TOGGLE_EN</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Enable Hold Toggle</TD>
+<TD>This is a purely debug feature that effectively emulates a very
+fast series of writes to RELEASE_HOLD_PULSE. So by setting this
+field (and DSP_CTRL.CORE_HOLD), the DSP will run approximately
+1/3 slower and be affected by a series of holds. Useful for
+testing responses to unexpected hold cases.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>DMS_HOLD_EN</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Control dma_inv_prio port</TD>
+<TD>From NXP doc:  Controls the function of the core_hold input. When
+dms_hold_en is high, a high on core_hold puts the entire CoolFlux DSP
+into the hold state (same as io_hold). When dms_hold_en is low, a high
+on core_hold puts the entire CoolFlux DSP except the DMS
+block into the hold state; the DMS block remains
+
+<BR><BR>
+John's translation: setting dms_hold_en and core_hold stops everything
+and would likely PREVENT PMEM, XMEM, YMEM access.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>DMA_INV_PRIO</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Control dma_inv_prio port</TD>
+<TD>If set to 1, the DMA and AHB have highest priority access to the
+PMEM, XMEM and YMEM. If set to 0, the DSP Core typically has
+priority (note the DSP has a timeout capability that can
+override this setting).
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>CORE_HOLD</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Assert HOLD into DSP Core</TD>
+<TD>Setting this bit places the DSP in hold. To confirm it is in hold,
+look at the core_hold_ack bit in the dsp_status. dma_hold_en
+affects how this bit is interpreted. Theoretically, setting this
+bit and then clearing it should allow the DSP to pause and then
+restart.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>RESET_DSP</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Reset DSP (active high)</TD>
+<TD>Setting this bit resets most of the DSP Core and holds it in a reset
+state. When this is high and the DSP complex is out of reset, the AHB has access
+to PMEM, XMEM and YMEM without the DSP attempting to access those
+memories.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>DSP Control register</P>
+<BR><HR>
+<H2 id="DSP_STATUS"><A href="#index">
+IO_DSPCTRL_M3_DSP_STATUS</A></H2>
+<P><FONT size="+1"><B>DSP Status Register</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_DSPCTRL_M3_DSP_STATUS ADDRESS:</B></TD>
+<TD><CODE>0x40800004</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="28">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">AHB_RELEASE2_HOLD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">AHB_RELEASE_HOLD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DSP_INIT_HOLD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">CORE_HOLD_ACK<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:4</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>AHB_RELEASE2_HOLD</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Release hold2 asserted by DSP subsystem</TD>
+<TD>Live value of toggle hold enabled by DSP_CTRL.HOLD_TOGGLE_EN. When this bit
+is one, the core is in HOLD, while zero the core is running.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>AHB_RELEASE_HOLD</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Release hold asserted by DSP subsystem</TD>
+<TD>Live value of core_hold_ack from DSP Core. When it is one, the core
+is safely in HOLD.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>DSP_INIT_HOLD</TD>
+<TD nowrap>W1C</TD>
+<TD nowrap>DSP initiated a hold</TD>
+<TD>This bit is set by the DSP when it wants to initiate a hold
+(dsp_hold) or by DSP debug logic when it detects a warning in
+AHB window control register dsp_status and the
+control_status.warn_to_hold is set.  It is cleared by writing a
+1 to this location, presumably after debugging is complete. To determine
+what initiated the hold, read the DSP IOMEM register CONFIG_STATUS.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>CORE_HOLD_ACK</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Core HOLD Acknowledge</TD>
+<TD>Live value of core_hold_ack from DSP Core. When it is one, the core
+is safely in HOLD.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>DSP Status register</P>
+<BR><HR>
+<H2 id="RELEASE_HOLD_PULSE"><A href="#index">
+IO_DSPCTRL_M3_RELEASE_HOLD_PULSE</A></H2>
+<P><FONT size="+1"><B>DSP Debug Hold Pulse</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_DSPCTRL_M3_RELEASE_HOLD_PULSE ADDRESS:</B></TD>
+<TD><CODE>0x40800008</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="32">DATA<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>DATA</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>PULSE</TD>
+<TD>Any write will pulse HOLD low.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>This debug register allows for single instruction stepping from the
+outside for debug purposes. To use it, first assert core_hold
+(DSP_CTRL.CORE_HOLD). Then write any value to this register, which will
+cause the core_hold to be temporarily driven low. Note that the logic
+waits for core_hold_ack to deassert before it reasserts core_hold,
+which should allow for one instruction to complete. This allows for
+single instruciton sequences.</P>
+<BR><HR>
+<H2 id="DMA_SRCRDY_12"><A href="#index">
+IO_DSPCTRL_M3_DMA_SRCRDY_12</A></H2>
+<P><FONT size="+1"><B>DMA Source Ready bit 12</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_DSPCTRL_M3_DMA_SRCRDY_12 ADDRESS:</B></TD>
+<TD><CODE>0x40800020</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="31">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">READY<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>READY</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Addr</TD>
+<TD>Write a 1 to mark this as ready.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>CSR bit for DSP DMA engine. Accessible from AHB Slave and DSP IOBUS and useable by DMA as a Source Ready.</P>
+<BR><HR>
+<H2 id="DMA_SRCRDY_13"><A href="#index">
+IO_DSPCTRL_M3_DMA_SRCRDY_13</A></H2>
+<P><FONT size="+1"><B>DMA Source Ready bit 13</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_DSPCTRL_M3_DMA_SRCRDY_13 ADDRESS:</B></TD>
+<TD><CODE>0x40800024</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="31">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">READY<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>READY</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Addr</TD>
+<TD>Write a 1 to mark this as ready.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>CSR bit for DSP DMA engine. Accessible from AHB Slave and DSP IOBUS and useable by DMA as a Source Ready.</P>
+<BR><HR>
+<H2 id="DMA_SRCRDY_14"><A href="#index">
+IO_DSPCTRL_M3_DMA_SRCRDY_14</A></H2>
+<P><FONT size="+1"><B>DMA Source Ready bit 14</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_DSPCTRL_M3_DMA_SRCRDY_14 ADDRESS:</B></TD>
+<TD><CODE>0x40800028</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="31">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">READY<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>READY</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Addr</TD>
+<TD>Write a 1 to mark this as ready.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>CSR bit for DSP DMA engine. Accessible from AHB Slave and DSP IOBUS and useable by DMA as a Source Ready.</P>
+<BR><HR>
+<H2 id="DMA_SRCRDY_15"><A href="#index">
+IO_DSPCTRL_M3_DMA_SRCRDY_15</A></H2>
+<P><FONT size="+1"><B>DMA Source Ready bit 15</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_DSPCTRL_M3_DMA_SRCRDY_15 ADDRESS:</B></TD>
+<TD><CODE>0x4080002c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="31">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">READY<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>READY</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Addr</TD>
+<TD>Write a 1 to mark this as ready.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>CSR bit for DSP DMA engine. Accessible from AHB Slave and DSP IOBUS and useable by DMA as a Source Ready.</P>
+<BR><HR>
+<H2 id="DMA_DSTRDY_12"><A href="#index">
+IO_DSPCTRL_M3_DMA_DSTRDY_12</A></H2>
+<P><FONT size="+1"><B>DMA Source Ready bit 12</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_DSPCTRL_M3_DMA_DSTRDY_12 ADDRESS:</B></TD>
+<TD><CODE>0x40800030</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="31">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">READY<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>READY</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Addr</TD>
+<TD>Write a 1 to mark this as ready.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>CSR bit for DSP DMA engine. Accessible from AHB Slave and DSP IOBUS and useable by DMA as a Destination Ready.</P>
+<BR><HR>
+<H2 id="DMA_DSTRDY_13"><A href="#index">
+IO_DSPCTRL_M3_DMA_DSTRDY_13</A></H2>
+<P><FONT size="+1"><B>DMA Source Ready bit 13</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_DSPCTRL_M3_DMA_DSTRDY_13 ADDRESS:</B></TD>
+<TD><CODE>0x40800034</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="31">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">READY<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>READY</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Addr</TD>
+<TD>Write a 1 to mark this as ready.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>CSR bit for DSP DMA engine. Accessible from AHB Slave and DSP IOBUS and useable by DMA as a Destination Ready.</P>
+<BR><HR>
+<H2 id="DMA_DSTRDY_14"><A href="#index">
+IO_DSPCTRL_M3_DMA_DSTRDY_14</A></H2>
+<P><FONT size="+1"><B>DMA Source Ready bit 14</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_DSPCTRL_M3_DMA_DSTRDY_14 ADDRESS:</B></TD>
+<TD><CODE>0x40800038</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="31">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">READY<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>READY</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Addr</TD>
+<TD>Write a 1 to mark this as ready.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>CSR bit for DSP DMA engine. Accessible from AHB Slave and DSP IOBUS and useable by DMA as a Destination Ready.</P>
+<BR><HR>
+<H2 id="DMA_DSTRDY_15"><A href="#index">
+IO_DSPCTRL_M3_DMA_DSTRDY_15</A></H2>
+<P><FONT size="+1"><B>DMA Source Ready bit 15</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_DSPCTRL_M3_DMA_DSTRDY_15 ADDRESS:</B></TD>
+<TD><CODE>0x4080003c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="31">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">READY<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>READY</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Addr</TD>
+<TD>Write a 1 to mark this as ready.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>CSR bit for DSP DMA engine. Accessible from AHB Slave and DSP IOBUS and useable by DMA as a Destination Ready.</P>
+<BR><HR>
+<H2 id="DSP_LOCKUP_DEBUG"><A href="#index">
+IO_DSPCTRL_M3_DSP_LOCKUP_DEBUG</A></H2>
+<P><FONT size="+1"><B>DSP lockup / debug bus</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_DSPCTRL_M3_DSP_LOCKUP_DEBUG ADDRESS:</B></TD>
+<TD><CODE>0x40800040</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="4">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">core_hold_dmatimeout<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">loop_en<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">break_out<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">loop_overflow<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">halt_ack<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">dms_hold_en<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">pmem_cs_cf<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">garbage<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">io_data_rddata_spi_hold<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">io_data_rddata_i2c_hold<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">io_i2s_hold<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">io_data_rddata_ahb_window_hold<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">stop_ack_reg<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">core_hold_ack<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">io_slave_hold<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="13">pmem_a_cf<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:28</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>27:27</TD>
+<TD nowrap>core_hold_dmatimeout</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>core_hold_dmatimeout</TD>
+<TD>core_hold_dmatimeout
+<TR align="left">
+<TD nowrap>26:26</TD>
+<TD nowrap>loop_en</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>loop_en</TD>
+<TD>loop_en
+<TR align="left">
+<TD nowrap>25:25</TD>
+<TD nowrap>break_out</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>break_out</TD>
+<TD>break_out
+<TR align="left">
+<TD nowrap>24:24</TD>
+<TD nowrap>loop_overflow</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>loop_overflow</TD>
+<TD>loop_overflow
+<TR align="left">
+<TD nowrap>23:23</TD>
+<TD nowrap>halt_ack</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>halt_ack</TD>
+<TD>halt_ack
+<TR align="left">
+<TD nowrap>22:22</TD>
+<TD nowrap>dms_hold_en</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>dms_hold_en</TD>
+<TD>dms_hold_en
+<TR align="left">
+<TD nowrap>21:21</TD>
+<TD nowrap>pmem_cs_cf</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>pmem_cs_cf</TD>
+<TD>pmem_cs_cf
+<TR align="left">
+<TD nowrap>20:20</TD>
+<TD nowrap>garbage</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>garbage</TD>
+<TD>garbage(reads are unknown)
+<TR align="left">
+<TD nowrap>19:19</TD>
+<TD nowrap>io_data_rddata_spi_hold</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>io_data_rddata_spi_hold</TD>
+<TD>io_data_rddata_spi_hold
+<TR align="left">
+<TD nowrap>18:18</TD>
+<TD nowrap>io_data_rddata_i2c_hold</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>io_data_rddata_i2c_hold</TD>
+<TD>io_data_rddata_i2c_hold
+<TR align="left">
+<TD nowrap>17:17</TD>
+<TD nowrap>io_i2s_hold</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>io_i2s_hold</TD>
+<TD>io_i2s_hold
+<TR align="left">
+<TD nowrap>16:16</TD>
+<TD nowrap>io_data_rddata_ahb_window_hold</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>io_data_rddata_ahb_window_hold</TD>
+<TD>io_data_rddata_ahb_window_hold
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>stop_ack_reg</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>stop_ack_reg</TD>
+<TD>stop_ack_reg
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>core_hold_ack</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>core_hold_ack</TD>
+<TD>core_hold_ack
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>io_slave_hold</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>io_slave_hold</TD>
+<TD>io_slave_hold
+<TR align="left">
+<TD nowrap>12:0</TD>
+<TD nowrap>pmem_a_cf</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>pmem_a_cf</TD>
+<TD>pmem_a_cf
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Provides basic information about the current DSP state and possible sources of lockups.</P>
+<BR><HR>
+<H2 id="DSP_STACK_DEBUG1"><A href="#index">
+IO_DSPCTRL_M3_DSP_STACK_DEBUG1</A></H2>
+<P><FONT size="+1"><B>DSP Max Stack Used</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_DSPCTRL_M3_DSP_STACK_DEBUG1 ADDRESS:</B></TD>
+<TD><CODE>0x40800044</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="17">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="15">MAX_STACK_ADDR<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:15</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>14:0</TD>
+<TD nowrap>MAX_STACK_ADDR</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Max Stack Address</TD>
+<TD>Read only register that indicates the maximum stack address used.
+Since stack starts at address 0, this should indicate the max stack used.
+Note this is expressed as halfwords (2 bytes).
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Provides information about Maximum Stack Used. Setup by DSP, but readable from both DSP and M3.</P>
+<BR><HR>
+<H2 id="DSP_HOLD_DEBUG0"><A href="#index">
+IO_DSPCTRL_M3_DSP_HOLD_DEBUG0</A></H2>
+<P><FONT size="+1"><B>DSP Hold Debug0</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_DSPCTRL_M3_DSP_HOLD_DEBUG0 ADDRESS:</B></TD>
+<TD><CODE>0x40800048</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="16">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RESET<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="7">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="8">HOLD_COUNT<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:16</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>RESET</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Reset active high</TD>
+<TD>If 1, places HOLD_COUNT logic in reset. Set to 0 to start counting holds.
+Note, this can be writte or read from DSPCTRL_DSP or DSPCTRL_M3.
+<TR align="left">
+<TD nowrap>14:8</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>7:0</TD>
+<TD nowrap>HOLD_COUNT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Hold Count</TD>
+<TD>Records the max number of holds detected in 256 clock cycle sample time. Holds can be due to
+peripherals (including DMA access to peripherals) or other mechianms like
+WARN signals or CSR holds. Counts both HOLD and HOLD_ACK signals. Hyper technicality, the real
+number is (1+HOLD_COUNT) over 257 cycles since a hold starts the counter.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Controls for measuring how much time core spends in hold waiting for peripheral to respond.</P>
+<BR><HR>
+<H2 id="READONLY_DSP_CONFIG_STATUS"><A href="#index">
+IO_DSPCTRL_M3_READONLY_DSP_CONFIG_STATUS</A></H2>
+<P><FONT size="+1"><B>DSP Config Status</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_DSPCTRL_M3_READONLY_DSP_CONFIG_STATUS ADDRESS:</B></TD>
+<TD><CODE>0x4080004c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="16">RSVD3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO_CMD_IN_PROG<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">WARN_BAD_AHB_RESP<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">WARN_DSP2AHB_OOO<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">NESTED_LOOP_OFLOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">DSP_SPI_CLK_ON<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">DSP_I2C_CLK_ON<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">ANY_WR_INV_CACHE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">MODULO_FIX_DISABLE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">DMA_BYTE_ACC_DISABLE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">START_HALFWORD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">CACHE_DISABLE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">DONT_WAIT<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">HALFWORD_ENDIAN<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:16</TD>
+<TD nowrap>RSVD3</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>IO_CMD_IN_PROG</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>IOMEM to AHB Window Command In Progress</TD>
+<TD>If 1, there are transactions (read or write) ongoing on the AHB
+Window interface.  By polling this bit for a zero and ensuring no DMA
+traffic is active, the processor can determine when it can change
+the AHB window(s) without affecting in flight transactions.
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>WARN_BAD_AHB_RESP</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Warning due to bad AHB Response</TD>
+<TD>This is a read-only copy of a DSP WARNING bit.
+If warn_to_hold is set, this can cause a DSP hold event.
+This is a sticky bit that collects all nonzero AHB responses and stores it
+here. AHB non-zero responses are generally errors. We do not track the specific
+command that resulted in the error. These errors should generally be rare are
+are most often the result of a bad address.
+The sticky bit can be cleared by writing a 1 the corresponding location
+in the DSP register CONFIG_STATUS (after clearing any holds)
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>WARN_DSP2AHB_OOO</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Warning DSP2AHB Out of Order</TD>
+<TD>This is a read-only copy of a DSP WARNING bit.
+If warn_to_hold is set, this can cause a DSP hold
+event. This is a sticky bit indicating that a DSP client (DSP Core or
+DMA Channel) did not follow the prescribed write sequence described in
+the DSP User Guide under "32 bit Write Accesses", that is, it did not
+write an even address followed by an odd address (or reversed if
+START_HALFWORD is set).
+The sticky bit can be cleared by writing a 1 the corresponding location
+in the DSP register CONFIG_STATUS (after clearing any holds)
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>NESTED_LOOP_OFLOW</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Warning Nested Loop Overflow</TD>
+<TD>This is a read-only copy of a DSP WARNING bit.
+If warn_to_hold is set, this can cause a DSP hold
+event. This is a sticky bit indicating that the DSP Core Nested Loop HW has
+suffered an overflow.
+The sticky bit can be cleared by writing a 1 the corresponding location
+in the DSP register CONFIG_STATUS (after clearing any holds)
+<TR align="left">
+<TD nowrap>11:10</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>DSP_SPI_CLK_ON</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>SPI Clock Enable</TD>
+<TD>If 0, the 8MHz clock to the SPI is only enabled once the local SM determines
+it is needed. This is the lowest power setting, but requires some spin up
+time for every DMA or DSP Core access (typically ~500-625ns). If 1, the 8MHz
+clock is always running, which is higher power but quicker response time.
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>DSP_I2C_CLK_ON</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>I2C Clock Enable</TD>
+<TD>If 0, the 8MHz clock to the I2C is only enabled once the local SM determines
+it is needed. This is the lowest power setting, but requires some spin up
+time for every DMA or DSP Core access (typically ~500-625ns). If 1, the 8MHz
+clock is always running, which is higher power but quicker response time.
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>ANY_WR_INV_CACHE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Read Cache from M3 Invalidated by Any Write</TD>
+<TD>Normally, the cache is invalidated by a write to the cache line.
+If this bit is set, any write will invalidate the cache line. This may be
+useful if a write changes the data (e.g. popping a FIFO), but if set the
+read cache may be disabled (or less effective) on a M3 to M3 DMA transfer.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>MODULO_FIX_DISABLE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Disable Modulo Bug Fix</TD>
+<TD>If this bit is set, it disables the Modulo Fix which doubles the
+number of nested loops. This is intended as a debug bit and it
+has no functional use.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>DMA_BYTE_ACC_DISABLE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>DMA Byte Access Disable</TD>
+<TD>If this bit is set, it disables the DMA byte access functionality. This is
+intended as a debug bit and it has no functional use.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>START_HALFWORD</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Halfword that starts the AHB command</TD>
+<TD>This bit controls when the AHB command is issued on the AHB Window bus. Typically this bit is set
+the same as halfword_endian.
+<BR>0 - AHB write begins when odd address is written.
+<BR>1 - AHB write begins when even address is written.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>CACHE_DISABLE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Cache Disable</TD>
+<TD>If set to 1, it disables the 16 bit halfword cache. This will cause every 16 bit read to result
+in a 32 bit read on the AHB bus.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>DONT_WAIT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Dont wait for 32 bits, sends 16 bit transfers</TD>
+<TD>Debug option that causes every 16 bit write on the DSP to result in a
+16 bit access on the 32 bit AHB Window bus with HSIZE indicating it is
+a 2 byte access.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>HALFWORD_ENDIAN</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>Halfword Endian</TD>
+<TD>This bit swaps the endianness of 16 bit halfwords as they appear on the AHB bus and which DSP
+write starts the AHB write. Typically this bit is set the same as halfword_endian.
+<BR>0 - DSP data appears on AHB Window bus[31:0]={odd_data, even_data}
+<BR>1 - DSP data appears on AHB Window bus[31:0]={even_data, odd_data}
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>This is a read only copy of the DSP Config status register intended to provide M3 access if the DSP is in hold.</P>
+<BR><HR>
+<H2 id="SEMAPHORE0"><A href="#index">
+IO_DSPCTRL_M3_SEMAPHORE0</A></H2>
+<P><FONT size="+1"><B>Semaphore 0</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_DSPCTRL_M3_SEMAPHORE0 ADDRESS:</B></TD>
+<TD><CODE>0x40821030</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="31">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SEMAPHORE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>SEMAPHORE</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Addr</TD>
+<TD>See register description for details.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>The semaphores are implemented to provide a mechanism for coordination
+between the DSP Core and any other AHB Masters accessing the IOMEM
+space. The intent of the semaphores was to arbitrate usage of the DMA
+Channels, but the semaphores are general purpose and be used as FW
+sees fit.
+
+To reserve a semaphore, read the register. If it is a zero, the
+accessing client has just grabbed the semaphore. Future reads by any
+client will show this bit to be a 1. Once a client is done with the
+semaphore, it can release it by writing a 1 to the bit location.
+
+Note that any client can release any semaphore reserved by any other
+client.</P>
+<BR><HR>
+<H2 id="SEMAPHORE1"><A href="#index">
+IO_DSPCTRL_M3_SEMAPHORE1</A></H2>
+<P><FONT size="+1"><B>Semaphore 1</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_DSPCTRL_M3_SEMAPHORE1 ADDRESS:</B></TD>
+<TD><CODE>0x40821034</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="31">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SEMAPHORE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>SEMAPHORE</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Addr</TD>
+<TD>See register description for details.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>The semaphores are implemented to provide a mechanism for coordination
+between the DSP Core and any other AHB Masters accessing the IOMEM
+space. The intent of the semaphores was to arbitrate usage of the DMA
+Channels, but the semaphores are general purpose and be used as FW
+sees fit.
+
+To reserve a semaphore, read the register. If it is a zero, the
+accessing client has just grabbed the semaphore. Future reads by any
+client will show this bit to be a 1. Once a client is done with the
+semaphore, it can release it by writing a 1 to the bit location.
+
+Note that any client can release any semaphore reserved by any other
+client.</P>
+<BR><HR>
+<H2 id="SEMAPHORE2"><A href="#index">
+IO_DSPCTRL_M3_SEMAPHORE2</A></H2>
+<P><FONT size="+1"><B>Semaphore 2</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_DSPCTRL_M3_SEMAPHORE2 ADDRESS:</B></TD>
+<TD><CODE>0x40821038</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="31">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SEMAPHORE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>SEMAPHORE</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Addr</TD>
+<TD>See register description for details.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>The semaphores are implemented to provide a mechanism for coordination
+between the DSP Core and any other AHB Masters accessing the IOMEM
+space. The intent of the semaphores was to arbitrate usage of the DMA
+Channels, but the semaphores are general purpose and be used as FW
+sees fit.
+
+To reserve a semaphore, read the register. If it is a zero, the
+accessing client has just grabbed the semaphore. Future reads by any
+client will show this bit to be a 1. Once a client is done with the
+semaphore, it can release it by writing a 1 to the bit location.
+
+Note that any client can release any semaphore reserved by any other
+client.</P>
+<BR><HR>
+<H2 id="SEMAPHORE3"><A href="#index">
+IO_DSPCTRL_M3_SEMAPHORE3</A></H2>
+<P><FONT size="+1"><B>Semaphore 3</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_DSPCTRL_M3_SEMAPHORE3 ADDRESS:</B></TD>
+<TD><CODE>0x4082103c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="31">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SEMAPHORE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>SEMAPHORE</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Addr</TD>
+<TD>See register description for details.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>The semaphores are implemented to provide a mechanism for coordination
+between the DSP Core and any other AHB Masters accessing the IOMEM
+space. The intent of the semaphores was to arbitrate usage of the DMA
+Channels, but the semaphores are general purpose and be used as FW
+sees fit.
+
+To reserve a semaphore, read the register. If it is a zero, the
+accessing client has just grabbed the semaphore. Future reads by any
+client will show this bit to be a 1. Once a client is done with the
+semaphore, it can release it by writing a 1 to the bit location.
+
+Note that any client can release any semaphore reserved by any other
+client.</P>
+

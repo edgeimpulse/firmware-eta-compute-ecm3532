@@ -1,0 +1,13 @@
+menu "DSP LSM6DSL configuration"
+config LSM6DSL_DSP_NAME
+    string "Device Name String"
+    default "lsm6dsl_dsp"
+
+config SENSOR_TIMESTAMP
+	bool "Enable TIMESTAMP in FIFO mode"
+  default n
+	help
+	  "Enable time stamp in sensor Fifo"
+
+endmenu
+

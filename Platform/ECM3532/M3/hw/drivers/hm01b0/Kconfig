@@ -1,0 +1,27 @@
+config STREAMING_MODE
+    bool "use streaming mode"
+    default y
+
+config HM01B0_I2C_INSTANCE
+    int "hm01b0 I2c Instance"
+    default "1"
+config HM01B0_I2C_ADDRESS
+    hex "hm01b0 I2C address"
+    default 0x24
+config IMAGE_COLUMN_COUNT
+    int "Image Column to fill"
+    default 256
+    range 1 324
+
+config HM01B0_PCLK_GPIO
+    int  "hm01b0 PCLK GPIO"
+    default 21
+config HM01B0_VSYNC_GPIO
+    int  "hm01b0 VSYNC GPIO"
+    default 30
+config HM01B0_HSYNC_GPIO
+    int  "hm01b0 HSYNC GPIO"
+    default 22
+config HM01B0_D0_PIN
+    int  "hm01b0 D0 GPIO"
+    default 12

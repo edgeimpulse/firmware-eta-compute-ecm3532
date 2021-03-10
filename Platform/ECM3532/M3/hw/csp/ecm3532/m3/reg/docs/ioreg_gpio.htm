@@ -1,0 +1,4194 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>IOREG FILE: NGC18 GPIO GENERAL PURPOSE I/O (M3 LOCAL)
+</TITLE>
+</HEAD>
+<BODY>
+<H1 align="center">On-Line Documentation for NGC18  :  GPIO <BR>  Bus Type: APB</H1>
+<FONT size="+2"><B><P align="center">GENERAL PURPOSE I/O (M3 LOCAL)</P></B><B</FONT><BR><HR>
+<FONT face="Helvetica" size="-1"><P align="center"><B> Put banner announcement here. </B></P></FONT><HR>
+<BR><B>The General Purpose I/O (GPIO) Device provides programmable access to the pins of the chip from within the M3 complex.</B><BR><BR><HR>
+<FONT face="Helvetica" size="-1"><P align="left"><B> Source File Name: ./src/ioreg_gpio.src <BR> Source File Modification Date Wed Jul 31 17:01:36 2019 <BR> html creation date November 11, 2019</B></P></FONT>
+<H2 id="index"> GPIO Register Index</H2>
+<B> <CODE>ADDRESS</CODE></B><BR>
+<B><CODE>0x40010000: </CODE></B><A id = "CSRindex" href="#CSR"><B>IO_GPIO_CSR</A></B><BR>
+<B><CODE>0x40010004: </CODE></B><A id = "M3_TICKindex" href="#M3_TICK"><B>IO_GPIO_M3_TICK</A></B><BR>
+<B><CODE>0x40010008: </CODE></B><A id = "XTERN_STATUSAindex" href="#XTERN_STATUSA"><B>IO_GPIO_XTERN_STATUSA</A></B><BR>
+<B><CODE>0x4001000c: </CODE></B><A id = "DATA_INindex" href="#DATA_IN"><B>IO_GPIO_DATA_IN</A></B><BR>
+<B><CODE>0x40010010: </CODE></B><A id = "DATA_OUTindex" href="#DATA_OUT"><B>IO_GPIO_DATA_OUT</A></B><BR>
+<B><CODE>0x40010014: </CODE></B><A id = "DATA_OUT_SETindex" href="#DATA_OUT_SET"><B>IO_GPIO_DATA_OUT_SET</A></B><BR>
+<B><CODE>0x40010018: </CODE></B><A id = "DATA_OUT_CLRindex" href="#DATA_OUT_CLR"><B>IO_GPIO_DATA_OUT_CLR</A></B><BR>
+<B><CODE>0x4001001c: </CODE></B><A id = "DATA_OUT_TOGindex" href="#DATA_OUT_TOG"><B>IO_GPIO_DATA_OUT_TOG</A></B><BR>
+<B><CODE>0x40010020: </CODE></B><A id = "DATA_ENABLEindex" href="#DATA_ENABLE"><B>IO_GPIO_DATA_ENABLE</A></B><BR>
+<B><CODE>0x40010024: </CODE></B><A id = "DATA_ENABLE_SETindex" href="#DATA_ENABLE_SET"><B>IO_GPIO_DATA_ENABLE_SET</A></B><BR>
+<B><CODE>0x40010028: </CODE></B><A id = "DATA_ENABLE_CLRindex" href="#DATA_ENABLE_CLR"><B>IO_GPIO_DATA_ENABLE_CLR</A></B><BR>
+<B><CODE>0x4001002c: </CODE></B><A id = "DATA_ENABLE_TOGindex" href="#DATA_ENABLE_TOG"><B>IO_GPIO_DATA_ENABLE_TOG</A></B><BR>
+<B><CODE>0x40010030: </CODE></B><A id = "SPEC_READ_Aindex" href="#SPEC_READ_A"><B>IO_GPIO_SPEC_READ_A</A></B><BR>
+<B><CODE>0x40010034: </CODE></B><A id = "SPEC_READ_Bindex" href="#SPEC_READ_B"><B>IO_GPIO_SPEC_READ_B</A></B><BR>
+<B><CODE>0x40010038: </CODE></B><A id = "SPEC_READ_Cindex" href="#SPEC_READ_C"><B>IO_GPIO_SPEC_READ_C</A></B><BR>
+<B><CODE>0x4001003c: </CODE></B><A id = "SPEC_READ_Dindex" href="#SPEC_READ_D"><B>IO_GPIO_SPEC_READ_D</A></B><BR>
+<B><CODE>0x40010040: </CODE></B><A id = "SPEC_READ_STATindex" href="#SPEC_READ_STAT"><B>IO_GPIO_SPEC_READ_STAT</A></B><BR>
+<B><CODE>0x40010044: </CODE></B><A id = "ASYNC_BUSindex" href="#ASYNC_BUS"><B>IO_GPIO_ASYNC_BUS</A></B><BR>
+<B><CODE>0x40010048: </CODE></B><A id = "HFO_FREQindex" href="#HFO_FREQ"><B>IO_GPIO_HFO_FREQ</A></B><BR>
+<B><CODE>0x4001004c: </CODE></B><A id = "FLASH_INFO_RD_ENABLEindex" href="#FLASH_INFO_RD_ENABLE"><B>IO_GPIO_FLASH_INFO_RD_ENABLE</A></B><BR>
+<B><CODE>0x40010050: </CODE></B><A id = "FLASH_INFO_WRT_ENABLEindex" href="#FLASH_INFO_WRT_ENABLE"><B>IO_GPIO_FLASH_INFO_WRT_ENABLE</A></B><BR>
+<B><CODE>0x40010054: </CODE></B><A id = "DEBUG0_READ_ONLYindex" href="#DEBUG0_READ_ONLY"><B>IO_GPIO_DEBUG0_READ_ONLY</A></B><BR>
+<B><CODE>0x40010058: </CODE></B><A id = "DEBUG1_READ_ONLYindex" href="#DEBUG1_READ_ONLY"><B>IO_GPIO_DEBUG1_READ_ONLY</A></B><BR>
+<BR><HR>
+<H2 id="CSR"><A href="#index">
+IO_GPIO_CSR</A></H2>
+<P><FONT size="+1"><B>CONTROL AND STATUS REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_GPIO_CSR ADDRESS:</B></TD>
+<TD><CODE>0x40010000</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="12">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="4">M3_TICK_HI<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="15">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TICK2GPIOIN<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:20</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>19:16</TD>
+<TD nowrap>M3_TICK_HI</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>UPPER BITS OF THE M3 TICK COUNTER</TD>
+<TD>The M3 TICK counter is 36 bits long. The upper 4 bits, M3_TICK[35:32], can be read here when the counter is frozen.
+<TR align="left">
+<TD nowrap>15:1</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>TICK2GPIOIN</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>MAKE TICK CLOCK SOURCES VISIBLE</TD>
+<TD>Enable a few clock sources as inputs for GPIO[7:0] instead of the usual pad inputs. This assumes these GPIOs are normally used as outputs to drive LEDs on a board. This allow these bits to simultaneously serve as dedicated outputs and also as dedicated inputs.
+<BR>ENABLE = 1 Enable ticks to GPIO inputs.
+<BR>DISABLE = 0 Do not use the tick inputs.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Control and Status Register for GPIO inside of M3 Complex.</P>
+<BR><HR>
+<H2 id="M3_TICK"><A href="#index">
+IO_GPIO_M3_TICK</A></H2>
+<P><FONT size="+1"><B>STATUS OF VARIOUS BITS EXTERNAL TO M3 COMPLEX</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_GPIO_M3_TICK ADDRESS:</B></TD>
+<TD><CODE>0x40010004</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#c0c0c0" colspan="32">COUNT<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>COUNT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>M3 OSCILLATOR TICK COUNTS</TD>
+<TD>This register accumulates tick counts at the rate of the M3 oscillator. Firmware first issues a start command, which clears the count and then begins counting up.  Firmware then issues a stop command which freezes the count so it can be read. Write 0x474F to clear and restart the counter. Write 0x4E4F to freeze the count. Write 0xAAAA to resume counting where it left off.
+<BR>CLEAR_AND_START = 18255 First clear the counter and then begin counting M3 oscillator ticks.
+<BR>FREEZE = 20047 Freeze the counter so it can be read.
+<BR>RESUME = 43690 Resume counting from where it was stopped.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>This register accumulates tick counts at the rate of the M3 oscillator. Firmware controls when it starts counting and when it stops counting. It is intended to measure the duration of firmware execution regions in core (M3) oscillator ticks.</P>
+<BR><HR>
+<H2 id="XTERN_STATUSA"><A href="#index">
+IO_GPIO_XTERN_STATUSA</A></H2>
+<P><FONT size="+1"><B>STATUS OF VARIOUS BITS EXTERNAL TO M3 COMPLEX</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_GPIO_XTERN_STATUSA ADDRESS:</B></TD>
+<TD><CODE>0x40010008</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="8">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">GPIO_PM_MODE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">FLUSH_FLASH<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">INFO_SECURE_BOOT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">INFO_PRESERVE_FLASH<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">INFO_PRESERVE_SRAM<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">INFO_DEBUG_ENABLE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">INFO_CUST_UNLOCK<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">INFO_ETA_UNLOCK<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">DSP_FREQ_TOG<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">M3_FREQ_TOG<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">RTC_TMR_INT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">RTC_FLAG<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">UART1_RX_EMPTY<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">UART1_TX_FULL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">UART0_RX_EMPTY<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">UART0_TX_FULL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="8">WARM_START_MODE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:24</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>23:23</TD>
+<TD nowrap>GPIO_PM_MODE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>STATE OF GPIO_PM MODE PIN</TD>
+<TD>This read only bit indicates the state of the GPIO PM MODE pin. If it is one then bootrom firmware must check GPIO[28]. If that is zero then bootrom firmware has to decde GPIO[31:29].
+<BR>NORMAL = 0 Perform normal customer facing bootmode.
+<BR>VALIDATION = 1 Select validdation bootmode from GPIO[31:29], provided GPIO[28] == zero.
+<TR align="left">
+<TD nowrap>22:22</TD>
+<TD nowrap>FLUSH_FLASH</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>DEBUGGER ATTACHED AND FLUSH FLASH REQUESTED</TD>
+<TD>This read only bit indicates that a debugger has been detected on the SWD interface while INFO page indicates that the FLASH is not to be preserved in this case.  This bit is used in the boot ROM.
+<TR align="left">
+<TD nowrap>21:21</TD>
+<TD nowrap>INFO_SECURE_BOOT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>FLASH INFO READER SECURE BOOT MODE</TD>
+<TD>This read only bit indicates that a secure boot protocol will be used at power up to provide a hardware root of trust state for the code to be executed in flash segment zero.
+<TR align="left">
+<TD nowrap>20:20</TD>
+<TD nowrap>INFO_PRESERVE_FLASH</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>FLASH INFO READER FLASH PRESERVED</TD>
+<TD>This read only bit indicates that the FLASH will be preserved when a debugger is attached to the SWD port.  Zero indiates that it will be erased when a debugger is attached to hide the contents from view.
+<TR align="left">
+<TD nowrap>19:19</TD>
+<TD nowrap>INFO_PRESERVE_SRAM</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>FLASH INFO READER SRAM PRESERVED</TD>
+<TD>This read only bit indicates that the SRAM will be preserved when a debugger is attached to the SWD port.  Zero indiates that it will be erased when a debugger is attached to hide the contents from view.
+<TR align="left">
+<TD nowrap>18:18</TD>
+<TD nowrap>INFO_DEBUG_ENABLE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>FLASH INFO READER SWD DEBUG PORT ENABLED</TD>
+<TD>This read only bit indicates whether the SWD port is enabled for debug. Zero indiates that a debugger can not be connected through the SWD port.
+<TR align="left">
+<TD nowrap>17:17</TD>
+<TD nowrap>INFO_CUST_UNLOCK</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>FLASH INFO READER CUSTOMER UNLOCKED</TD>
+<TD>This read only bit indicates whether the customer section of the INFO page is unlocked for further programming. This is represents the state for the last 3072 bytes in the INFO page. If this bit is set to zero then INFO page can not be erased.
+<TR align="left">
+<TD nowrap>16:16</TD>
+<TD nowrap>INFO_ETA_UNLOCK</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>FLASH INFO READER ETA COMPUTE UNLOCKED</TD>
+<TD>This read only bit indicates whether the Eta Compute section of the INFO page is unlocked for further programming. This is represents the state for the first 1024 bytes in the INFO page. If this bit is set to zero then INFO page can not be erased.
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>DSP_FREQ_TOG</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>STATE OF TOGGLE FOR DSP FREQ COUNTER CAPTURE</TD>
+<TD>A toggle on this read only bit indicates that the DSP frequency counter has produced a fresh value.
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>M3_FREQ_TOG</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>STATE OF TOGGLE FOR M3 FREQ COUNTER CAPTURE</TD>
+<TD>A toggle on this read only bit indicates that the M3 frequency counter has produced a fresh value.
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>RTC_TMR_INT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>RTC TIMER INTERRUPT STATUS BIT</TD>
+<TD>This read only bit provides access to the RTC TIMER interrupt status bit.
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>RTC_FLAG</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>RTC TOGGLE FLAG</TD>
+<TD>This read only bit toggles everytime the RTC time of day counter increments (once per second). It is used to guarantee safe reads of the current time of day.
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>UART1_RX_EMPTY</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>UART1 RX FIFO EMPTY</TD>
+<TD>This read only bit tells driver level code whent there is at least one byte to the UART1 receiver FIFO.
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>UART1_TX_FULL</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>UART1 TX FIFO FULL</TD>
+<TD>This read only bit tells driver level code whent there is room to add at least one more byte to the UART1 transmitter FIFO.
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>UART0_RX_EMPTY</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>UART0 RX FIFO EMPTY</TD>
+<TD>This read only bit tells driver level code whent there is at least one byte to the UART0 receiver FIFO.
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>UART0_TX_FULL</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>UART0 TX FIFO FULL</TD>
+<TD>This read only bit tells driver level code whent there is room to add at least one more byte to the UART0 transmitter FIFO.
+<TR align="left">
+<TD nowrap>7:0</TD>
+<TD nowrap>WARM_START_MODE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>WARM START MODE FROM ALWAYS ON BLOCK</TD>
+<TD>These read only bits tell the BOOTROM how to warm start and if it should warm start. Anything greater than 0x8 is a warm start.
+<BR>NORMAL_COLD_START = 0 Normal cold start in SRAM or flash.
+<BR>FORCE_COLD_START_IN_FLASH = 1 Force cold start in flash even if valid SRAM program present.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Quick read of various external status bits.</P>
+<BR><HR>
+<H2 id="DATA_IN"><A href="#index">
+IO_GPIO_DATA_IN</A></H2>
+<P><FONT size="+1"><B>GPIO DATA INPUT REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_GPIO_DATA_IN ADDRESS:</B></TD>
+<TD><CODE>0x4001000c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO31<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO30<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO29<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO28<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO27<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO26<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO25<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO24<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO23<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO22<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO21<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO20<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO19<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO18<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO17<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO16<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO15<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO14<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO13<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO12<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO11<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO10<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO9<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO8<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO7<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO6<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO5<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO4<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">IO0<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:31</TD>
+<TD nowrap>IO31</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>30:30</TD>
+<TD nowrap>IO30</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>29:29</TD>
+<TD nowrap>IO29</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>28:28</TD>
+<TD nowrap>IO28</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>27:27</TD>
+<TD nowrap>IO27</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>26:26</TD>
+<TD nowrap>IO26</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>25:25</TD>
+<TD nowrap>IO25</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>24:24</TD>
+<TD nowrap>IO24</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>23:23</TD>
+<TD nowrap>IO23</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>22:22</TD>
+<TD nowrap>IO22</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>21:21</TD>
+<TD nowrap>IO21</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>20:20</TD>
+<TD nowrap>IO20</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>19:19</TD>
+<TD nowrap>IO19</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>18:18</TD>
+<TD nowrap>IO18</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>17:17</TD>
+<TD nowrap>IO17</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>16:16</TD>
+<TD nowrap>IO16</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>IO15</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>IO14</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>IO13</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>IO12</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>IO11</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>IO10</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>IO9</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>IO8</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>IO7</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>IO6</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>IO5</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>IO4</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>IO3</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>IO2</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>IO1</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>IO0</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO PAD INPUT</TD>
+<TD>Input bits from each Pad/Pin
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Data INPUT for each PAD.</P>
+<BR><HR>
+<H2 id="DATA_OUT"><A href="#index">
+IO_GPIO_DATA_OUT</A></H2>
+<P><FONT size="+1"><B>GPIO DATA OUTPUT REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_GPIO_DATA_OUT ADDRESS:</B></TD>
+<TD><CODE>0x40010010</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO31<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO30<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO29<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO28<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO27<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO26<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO25<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO24<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO23<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO22<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO21<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO20<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO19<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO18<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO17<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO16<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO15<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO14<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO13<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO12<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO11<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO10<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO9<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO8<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO7<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO6<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO5<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO4<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO0<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:31</TD>
+<TD nowrap>IO31</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>30:30</TD>
+<TD nowrap>IO30</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>29:29</TD>
+<TD nowrap>IO29</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>28:28</TD>
+<TD nowrap>IO28</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>27:27</TD>
+<TD nowrap>IO27</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>26:26</TD>
+<TD nowrap>IO26</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>25:25</TD>
+<TD nowrap>IO25</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>24:24</TD>
+<TD nowrap>IO24</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>23:23</TD>
+<TD nowrap>IO23</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>22:22</TD>
+<TD nowrap>IO22</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>21:21</TD>
+<TD nowrap>IO21</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>20:20</TD>
+<TD nowrap>IO20</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>19:19</TD>
+<TD nowrap>IO19</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>18:18</TD>
+<TD nowrap>IO18</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>17:17</TD>
+<TD nowrap>IO17</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>16:16</TD>
+<TD nowrap>IO16</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>IO15</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>IO14</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>IO13</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>IO12</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>IO11</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>IO10</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>IO9</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>IO8</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>IO7</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>IO6</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>IO5</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>IO4</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>IO3</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>IO2</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>IO1</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>IO0</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set or clear output bit
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Data Output for each PAD.</P>
+<BR><HR>
+<H2 id="DATA_OUT_SET"><A href="#index">
+IO_GPIO_DATA_OUT_SET</A></H2>
+<P><FONT size="+1"><B>GPIO SET DATA OUTPUT REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_GPIO_DATA_OUT_SET ADDRESS:</B></TD>
+<TD><CODE>0x40010014</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO31<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO30<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO29<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO28<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO27<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO26<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO25<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO24<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO23<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO22<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO21<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO20<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO19<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO18<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO17<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO16<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO15<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO14<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO13<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO12<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO11<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO10<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO9<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO8<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO7<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO6<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO5<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO4<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO0<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:31</TD>
+<TD nowrap>IO31</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>30:30</TD>
+<TD nowrap>IO30</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>29:29</TD>
+<TD nowrap>IO29</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>28:28</TD>
+<TD nowrap>IO28</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>27:27</TD>
+<TD nowrap>IO27</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>26:26</TD>
+<TD nowrap>IO26</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>25:25</TD>
+<TD nowrap>IO25</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>24:24</TD>
+<TD nowrap>IO24</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>23:23</TD>
+<TD nowrap>IO23</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>22:22</TD>
+<TD nowrap>IO22</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>21:21</TD>
+<TD nowrap>IO21</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>20:20</TD>
+<TD nowrap>IO20</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>19:19</TD>
+<TD nowrap>IO19</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>18:18</TD>
+<TD nowrap>IO18</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>17:17</TD>
+<TD nowrap>IO17</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>16:16</TD>
+<TD nowrap>IO16</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>IO15</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>IO14</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>IO13</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>IO12</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>IO11</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>IO10</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>IO9</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>IO8</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>IO7</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>IO6</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>IO5</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>IO4</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>IO3</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>IO2</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>IO1</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>IO0</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to set output bit
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Set 1 to set Data Output to one.</P>
+<BR><HR>
+<H2 id="DATA_OUT_CLR"><A href="#index">
+IO_GPIO_DATA_OUT_CLR</A></H2>
+<P><FONT size="+1"><B>GPIO CLEAR DATA OUTPUT REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_GPIO_DATA_OUT_CLR ADDRESS:</B></TD>
+<TD><CODE>0x40010018</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO31<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO30<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO29<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO28<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO27<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO26<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO25<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO24<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO23<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO22<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO21<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO20<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO19<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO18<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO17<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO16<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO15<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO14<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO13<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO12<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO11<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO10<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO9<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO8<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO7<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO6<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO5<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO4<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO0<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:31</TD>
+<TD nowrap>IO31</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>30:30</TD>
+<TD nowrap>IO30</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>29:29</TD>
+<TD nowrap>IO29</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>28:28</TD>
+<TD nowrap>IO28</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>27:27</TD>
+<TD nowrap>IO27</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>26:26</TD>
+<TD nowrap>IO26</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>25:25</TD>
+<TD nowrap>IO25</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>24:24</TD>
+<TD nowrap>IO24</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>23:23</TD>
+<TD nowrap>IO23</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>22:22</TD>
+<TD nowrap>IO22</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>21:21</TD>
+<TD nowrap>IO21</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>20:20</TD>
+<TD nowrap>IO20</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>19:19</TD>
+<TD nowrap>IO19</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>18:18</TD>
+<TD nowrap>IO18</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>17:17</TD>
+<TD nowrap>IO17</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>16:16</TD>
+<TD nowrap>IO16</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>IO15</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>IO14</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>IO13</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>IO12</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>IO11</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>IO10</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>IO9</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>IO8</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>IO7</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>IO6</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>IO5</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>IO4</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>IO3</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>IO2</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>IO1</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>IO0</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT</TD>
+<TD>Set to 1 to clear output bit
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Set 1 to set Data Output to zero.</P>
+<BR><HR>
+<H2 id="DATA_OUT_TOG"><A href="#index">
+IO_GPIO_DATA_OUT_TOG</A></H2>
+<P><FONT size="+1"><B>GPIO TOGGLE_ DATA OUTPUT REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_GPIO_DATA_OUT_TOG ADDRESS:</B></TD>
+<TD><CODE>0x4001001c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO31<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO30<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO29<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO28<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO27<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO26<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO25<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO24<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO23<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO22<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO21<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO20<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO19<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO18<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO17<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO16<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO15<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO14<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO13<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO12<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO11<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO10<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO9<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO8<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO7<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO6<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO5<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO4<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO0<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:31</TD>
+<TD nowrap>IO31</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>30:30</TD>
+<TD nowrap>IO30</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>29:29</TD>
+<TD nowrap>IO29</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>28:28</TD>
+<TD nowrap>IO28</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>27:27</TD>
+<TD nowrap>IO27</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>26:26</TD>
+<TD nowrap>IO26</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>25:25</TD>
+<TD nowrap>IO25</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>24:24</TD>
+<TD nowrap>IO24</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>23:23</TD>
+<TD nowrap>IO23</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>22:22</TD>
+<TD nowrap>IO22</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>21:21</TD>
+<TD nowrap>IO21</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>20:20</TD>
+<TD nowrap>IO20</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>19:19</TD>
+<TD nowrap>IO19</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>18:18</TD>
+<TD nowrap>IO18</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>17:17</TD>
+<TD nowrap>IO17</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>16:16</TD>
+<TD nowrap>IO16</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>IO15</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>IO14</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>IO13</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>IO12</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>IO11</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>IO10</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>IO9</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>IO8</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>IO7</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>IO6</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>IO5</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>IO4</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>IO3</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>IO2</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>IO1</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>IO0</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>TOG GPIO PAD OUTPUT</TD>
+<TD>Set to 1 toggle output bit
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Set 1 to toggle Data Output to zero.</P>
+<BR><HR>
+<H2 id="DATA_ENABLE"><A href="#index">
+IO_GPIO_DATA_ENABLE</A></H2>
+<P><FONT size="+1"><B>GPIO DATA OUTPUT ENABLE REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_GPIO_DATA_ENABLE ADDRESS:</B></TD>
+<TD><CODE>0x40010020</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO31<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO30<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO29<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO28<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO27<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO26<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO25<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO24<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO23<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO22<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO21<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO20<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO19<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO18<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO17<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO16<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO15<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO14<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO13<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO12<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO11<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO10<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO9<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO8<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO7<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO6<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO5<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO4<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO0<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:31</TD>
+<TD nowrap>IO31</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>30:30</TD>
+<TD nowrap>IO30</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>29:29</TD>
+<TD nowrap>IO29</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>28:28</TD>
+<TD nowrap>IO28</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>27:27</TD>
+<TD nowrap>IO27</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>26:26</TD>
+<TD nowrap>IO26</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>25:25</TD>
+<TD nowrap>IO25</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>24:24</TD>
+<TD nowrap>IO24</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>23:23</TD>
+<TD nowrap>IO23</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>22:22</TD>
+<TD nowrap>IO22</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>21:21</TD>
+<TD nowrap>IO21</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>20:20</TD>
+<TD nowrap>IO20</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>19:19</TD>
+<TD nowrap>IO19</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>18:18</TD>
+<TD nowrap>IO18</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>17:17</TD>
+<TD nowrap>IO17</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>16:16</TD>
+<TD nowrap>IO16</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>IO15</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>IO14</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>IO13</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>IO12</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>IO11</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>IO10</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>IO9</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>IO8</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>IO7</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>IO6</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>IO5</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>IO4</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>IO3</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>IO2</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>IO1</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>IO0</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE</TD>
+<TD>Set to 1 to enable output bit
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Data Output Enable for each PAD.</P>
+<BR><HR>
+<H2 id="DATA_ENABLE_SET"><A href="#index">
+IO_GPIO_DATA_ENABLE_SET</A></H2>
+<P><FONT size="+1"><B>GPIO SET DATA OUTPUT ENABLE REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_GPIO_DATA_ENABLE_SET ADDRESS:</B></TD>
+<TD><CODE>0x40010024</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO31<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO30<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO29<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO28<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO27<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO26<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO25<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO24<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO23<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO22<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO21<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO20<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO19<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO18<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO17<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO16<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO15<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO14<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO13<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO12<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO11<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO10<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO9<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO8<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO7<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO6<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO5<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO4<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO0<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:31</TD>
+<TD nowrap>IO31</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>30:30</TD>
+<TD nowrap>IO30</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>29:29</TD>
+<TD nowrap>IO29</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>28:28</TD>
+<TD nowrap>IO28</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>27:27</TD>
+<TD nowrap>IO27</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>26:26</TD>
+<TD nowrap>IO26</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>25:25</TD>
+<TD nowrap>IO25</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>24:24</TD>
+<TD nowrap>IO24</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>23:23</TD>
+<TD nowrap>IO23</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>22:22</TD>
+<TD nowrap>IO22</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>21:21</TD>
+<TD nowrap>IO21</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>20:20</TD>
+<TD nowrap>IO20</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>19:19</TD>
+<TD nowrap>IO19</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>18:18</TD>
+<TD nowrap>IO18</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>17:17</TD>
+<TD nowrap>IO17</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>16:16</TD>
+<TD nowrap>IO16</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>IO15</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>IO14</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>IO13</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>IO12</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>IO11</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>IO10</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>IO9</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>IO8</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>IO7</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>IO6</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>IO5</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>IO4</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>IO3</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>IO2</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>IO1</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>IO0</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE SET</TD>
+<TD>Set to 1 to set enable output bit
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Set Data Output Enable for each PAD.</P>
+<BR><HR>
+<H2 id="DATA_ENABLE_CLR"><A href="#index">
+IO_GPIO_DATA_ENABLE_CLR</A></H2>
+<P><FONT size="+1"><B>GPIO CLEAR DATA OUTPUT ENABLE REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_GPIO_DATA_ENABLE_CLR ADDRESS:</B></TD>
+<TD><CODE>0x40010028</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO31<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO30<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO29<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO28<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO27<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO26<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO25<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO24<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO23<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO22<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO21<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO20<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO19<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO18<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO17<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO16<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO15<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO14<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO13<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO12<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO11<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO10<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO9<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO8<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO7<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO6<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO5<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO4<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO0<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:31</TD>
+<TD nowrap>IO31</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>30:30</TD>
+<TD nowrap>IO30</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>29:29</TD>
+<TD nowrap>IO29</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>28:28</TD>
+<TD nowrap>IO28</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>27:27</TD>
+<TD nowrap>IO27</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>26:26</TD>
+<TD nowrap>IO26</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>25:25</TD>
+<TD nowrap>IO25</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>24:24</TD>
+<TD nowrap>IO24</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>23:23</TD>
+<TD nowrap>IO23</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>22:22</TD>
+<TD nowrap>IO22</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>21:21</TD>
+<TD nowrap>IO21</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>20:20</TD>
+<TD nowrap>IO20</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>19:19</TD>
+<TD nowrap>IO19</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>18:18</TD>
+<TD nowrap>IO18</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>17:17</TD>
+<TD nowrap>IO17</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>16:16</TD>
+<TD nowrap>IO16</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>IO15</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>IO14</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>IO13</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>IO12</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>IO11</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>IO10</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>IO9</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>IO8</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>IO7</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>IO6</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>IO5</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>IO4</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>IO3</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>IO2</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>IO1</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>IO0</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE CLEAR</TD>
+<TD>Set to 1 to clr enable output bit
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Clear Data Output Enable for each PAD.</P>
+<BR><HR>
+<H2 id="DATA_ENABLE_TOG"><A href="#index">
+IO_GPIO_DATA_ENABLE_TOG</A></H2>
+<P><FONT size="+1"><B>GPIO TOGGLE_ DATA OUTPUT ENABLE REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_GPIO_DATA_ENABLE_TOG ADDRESS:</B></TD>
+<TD><CODE>0x4001002c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO31<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO30<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO29<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO28<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO27<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO26<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO25<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO24<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO23<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO22<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO21<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO20<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO19<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO18<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO17<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO16<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO15<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO14<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO13<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO12<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO11<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO10<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO9<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO8<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO7<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO6<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO5<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO4<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">IO0<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:31</TD>
+<TD nowrap>IO31</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>30:30</TD>
+<TD nowrap>IO30</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>29:29</TD>
+<TD nowrap>IO29</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>28:28</TD>
+<TD nowrap>IO28</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>27:27</TD>
+<TD nowrap>IO27</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>26:26</TD>
+<TD nowrap>IO26</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>25:25</TD>
+<TD nowrap>IO25</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>24:24</TD>
+<TD nowrap>IO24</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>23:23</TD>
+<TD nowrap>IO23</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>22:22</TD>
+<TD nowrap>IO22</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>21:21</TD>
+<TD nowrap>IO21</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>20:20</TD>
+<TD nowrap>IO20</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>19:19</TD>
+<TD nowrap>IO19</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>18:18</TD>
+<TD nowrap>IO18</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>17:17</TD>
+<TD nowrap>IO17</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>16:16</TD>
+<TD nowrap>IO16</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>IO15</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>IO14</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>IO13</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>IO12</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>IO11</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>IO10</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>IO9</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>IO8</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>IO7</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>IO6</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>IO5</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>IO4</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>IO3</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>IO2</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>IO1</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>IO0</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>GPIO PAD OUTPUT ENABLE TOGGLE</TD>
+<TD>Set to 1 toggle enable output bit
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Toggle Data Output Enable for each PAD.</P>
+<BR><HR>
+<H2 id="SPEC_READ_A"><A href="#index">
+IO_GPIO_SPEC_READ_A</A></H2>
+<P><FONT size="+1"><B>SPECULATIVE READ CHANNEL A</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_GPIO_SPEC_READ_A ADDRESS:</B></TD>
+<TD><CODE>0x40010030</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#c0c0c0" colspan="32">VALUE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>VALUE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>SPEC READ VALUE</TD>
+<TD>Read Only Value of a speculative read.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Provide a read only value for speculative read support on the peripheral bus.</P>
+<BR><HR>
+<H2 id="SPEC_READ_B"><A href="#index">
+IO_GPIO_SPEC_READ_B</A></H2>
+<P><FONT size="+1"><B>SPECULATIVE READ CHANNEL B</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_GPIO_SPEC_READ_B ADDRESS:</B></TD>
+<TD><CODE>0x40010034</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#c0c0c0" colspan="32">VALUE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>VALUE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>SPEC READ VALUE</TD>
+<TD>Read Only Value of a speculative read.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Provide a read only value for speculative read support on the peripheral bus.</P>
+<BR><HR>
+<H2 id="SPEC_READ_C"><A href="#index">
+IO_GPIO_SPEC_READ_C</A></H2>
+<P><FONT size="+1"><B>SPECULATIVE READ CHANNEL C</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_GPIO_SPEC_READ_C ADDRESS:</B></TD>
+<TD><CODE>0x40010038</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#c0c0c0" colspan="32">VALUE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>VALUE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>SPEC READ VALUE</TD>
+<TD>Read Only Value of a speculative read.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Provide a read only value for speculative read support on the peripheral bus.</P>
+<BR><HR>
+<H2 id="SPEC_READ_D"><A href="#index">
+IO_GPIO_SPEC_READ_D</A></H2>
+<P><FONT size="+1"><B>SPECULATIVE READ CHANNEL D</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_GPIO_SPEC_READ_D ADDRESS:</B></TD>
+<TD><CODE>0x4001003c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#c0c0c0" colspan="32">VALUE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>VALUE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>SPEC READ VALUE</TD>
+<TD>Read Only Value of a speculative read.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Provide a read only value for speculative read support on the peripheral bus.</P>
+<BR><HR>
+<H2 id="SPEC_READ_STAT"><A href="#index">
+IO_GPIO_SPEC_READ_STAT</A></H2>
+<P><FONT size="+1"><B>SPECULATIVE READ STATUS</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_GPIO_SPEC_READ_STAT ADDRESS:</B></TD>
+<TD><CODE>0x40010040</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="28">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SPEC_D<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SPEC_C<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SPEC_B<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SPEC_A<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:4</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>SPEC_D</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>SPEC DATA AVAILABLE</TD>
+<TD>Speculative read data available for read. Write a one to this bit to clear it.
+<BR>READY = 1 Result is ready.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>SPEC_C</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>SPEC DATA AVAILABLE</TD>
+<TD>Speculative read data available for read. Write a one to this bit to clear it.
+<BR>READY = 1 Result is ready.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>SPEC_B</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>SPEC DATA AVAILABLE</TD>
+<TD>Speculative read data available for read. Write a one to this bit to clear it.
+<BR>READY = 1 Result is ready.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>SPEC_A</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>SPEC DATA AVAILABLE</TD>
+<TD>Speculative read data available for read. Write a one to this bit to clear it.
+<BR>READY = 1 Result is ready.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Provide a status bit for each of the four speculative read contexts.</P>
+<BR><HR>
+<H2 id="ASYNC_BUS"><A href="#index">
+IO_GPIO_ASYNC_BUS</A></H2>
+<P><FONT size="+1"><B>Asynchronous Bus Control Register</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_GPIO_ASYNC_BUS ADDRESS:</B></TD>
+<TD><CODE>0x40010044</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="1">RST_AHB2PERIPH<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="17">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">RST_STATE_PWM<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">RST_STATE_RTC<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">RST_STATE_UST<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">RST_STATE_GPIO_SOCCTRL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">RST_STATE_I2C<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">RST_STATE_ADC<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RST_REQ_PWM<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RST_REQ_RTC<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RST_REQ_UST<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RST_REQ_GPIO_SOCCTRL<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RST_REQ_I2C<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RST_REQ_ADC<BR><TT>0x1</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:31</TD>
+<TD nowrap>RST_AHB2PERIPH</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>RESET AHB2PERIPH</TD>
+<TD>Flush the buffer and reset the state of the AHB2PERIPH logic. This will also issue a reset request on all async buses.
+<BR>RESET = 1 Assert the reset.
+<TR align="left">
+<TD nowrap>30:14</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>RST_STATE_PWM</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PWM RESET STATE</TD>
+<TD>Actual reset response from the slave.
+<BR>RESET = 0 Slave reset
+<BR>ACTIVE = 1 Slave active
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>RST_STATE_RTC</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>RTC RESET STATE</TD>
+<TD>Actual reset response from the slave
+<BR>RESET = 0 Slave reset
+<BR>ACTIVE = 1 Slave active
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>RST_STATE_UST</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>UST RESET STATE</TD>
+<TD>Actual reset response from the slave
+<BR>RESET = 0 Slave reset
+<BR>ACTIVE = 1 Slave active
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>RST_STATE_GPIO_SOCCTRL</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>GPIO/SOCCTRL RESET STATE</TD>
+<TD>Actual reset response from the slave.
+<BR>RESET = 0 Slave reset
+<BR>ACTIVE = 1 Slave active
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>RST_STATE_I2C</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>I2C RESET STATE</TD>
+<TD>Actual reset response from the slave.
+<BR>RESET = 0 Slave reset
+<BR>ACTIVE = 1 Slave active
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>RST_STATE_ADC</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>ADC RESET STATE</TD>
+<TD>Actual reset response from the slave.
+<BR>RESET = 0 Slave reset
+<BR>ACTIVE = 1 Slave active
+<TR align="left">
+<TD nowrap>7:6</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>RST_REQ_PWM</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>PWM RESET REQUEST</TD>
+<TD>Issue a reset request from the PWM async bus master. Field will remain set until reset is complete.
+<BR>RESET = 1 Assert the reset request.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>RST_REQ_RTC</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>RTC RESET REQUEST</TD>
+<TD>Issue a reset request from the RTC async bus master. Field will remain set until reset is complete.
+<BR>RESET = 1 Assert the reset request.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>RST_REQ_UST</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>UST RESET REQUEST</TD>
+<TD>Issue a reset request from the UST async bus master. Field will remain set until reset is complete.
+<BR>RESET = 1 Assert the reset request.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>RST_REQ_GPIO_SOCCTRL</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>GPIO/SOCCTRL RESET REQUEST</TD>
+<TD>Issue a reset request from the GPIO/SOCCTRL async bus master. Field will remain set until reset is complete.
+<BR>RESET = 1 Assert the reset request.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>RST_REQ_I2C</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>I2C RESET REQUEST</TD>
+<TD>Issue a reset request from the I2C async bus master. Field will remain set until reset is complete.
+<BR>RESET = 1 Assert the reset request.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>RST_REQ_ADC</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>ADC RESET REQUEST</TD>
+<TD>Issue a reset request from the ADC async bus master. Field will remain set until reset is complete.
+<BR>RESET = 1 Assert the reset request.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Control fields for the asynchronous buses.</P>
+<BR><HR>
+<H2 id="HFO_FREQ"><A href="#index">
+IO_GPIO_HFO_FREQ</A></H2>
+<P><FONT size="+1"><B>HFO FREQUENCY COUNTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_GPIO_HFO_FREQ ADDRESS:</B></TD>
+<TD><CODE>0x40010048</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="7">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">FLAG<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="14">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="10">COUNT<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:25</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>24:24</TD>
+<TD nowrap>FLAG</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>HFO TOGGLE FLAG</TD>
+<TD>This toggles for every counter update (once every 4x32KHz clocks).
+<TR align="left">
+<TD nowrap>23:10</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>9:0</TD>
+<TD nowrap>COUNT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>HFO COUNT FREQUENCY</TD>
+<TD>This counter tells the approximate frequency of the HFO.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>This register contains the frequency counter for the HFO.  It counts the number of HFO clocks that occur between two rising edges of the 32KHz  clock. NOTE: while this counter measures for the period of one 32KHz clock it does not do it every clock.  This register will update every 4 32KHz clocks.</P>
+<BR><HR>
+<H2 id="FLASH_INFO_RD_ENABLE"><A href="#index">
+IO_GPIO_FLASH_INFO_RD_ENABLE</A></H2>
+<P><FONT size="+1"><B>FLASH READ ENABLE</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_GPIO_FLASH_INFO_RD_ENABLE ADDRESS:</B></TD>
+<TD><CODE>0x4001004c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#c0c0c0" colspan="32">VALUE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>VALUE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>READ ENABLES</TD>
+<TD>When a bit is set to zero then the corresponding 16KB segment in flash is read protected. Neither the M3 nor the DSP can read a value from the affected segment. It can be fetched for execution but not loaded into a register. This also applies to attempts from a debugger to read the value.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Provide a read only view of the flash read protection word obtained from the flash INFO page during POR sequencing. This value is saved in AO and restored at each subsequent M3 power up event even though the FLASH may have been forced off at power up. Thus these protections exist from before reset is removed from the M3 until it is powered down. Each bit in this register corresponds to one 16KB segment in flash.</P>
+<BR><HR>
+<H2 id="FLASH_INFO_WRT_ENABLE"><A href="#index">
+IO_GPIO_FLASH_INFO_WRT_ENABLE</A></H2>
+<P><FONT size="+1"><B>FLASH WRITE ENABLE</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_GPIO_FLASH_INFO_WRT_ENABLE ADDRESS:</B></TD>
+<TD><CODE>0x40010050</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#c0c0c0" colspan="32">VALUE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>VALUE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>FLASH WRITE ENABLE</TD>
+<TD>When a bit is set to zero then the corresponding 16KB segment in flash is write protected. The flash controller will will not allow any page in the segment to be erased or programmd.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Provide a read only view of the flash write protection word obtained from the flash INFO page during POR sequencing. This value is saved in AO and restored at each subsequent M3 power up event even though the FLASH may have been forced off at power up. Thus these protections exist from before reset is removed from the M3 until it is powered down. Each bit in this register corresponds to one 16KB segment in flash.</P>
+<BR><HR>
+<H2 id="DEBUG0_READ_ONLY"><A href="#index">
+IO_GPIO_DEBUG0_READ_ONLY</A></H2>
+<P><FONT size="+1"><B>Debug Read Only Value Register 0</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_GPIO_DEBUG0_READ_ONLY ADDRESS:</B></TD>
+<TD><CODE>0x40010054</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#c0c0c0" colspan="32">VALUE<BR><TT>0xd00dd00d</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>VALUE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>DBG RO</TD>
+<TD>Debug Read Only Value for Diagnostics.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Provide a read only value for diagnostics.</P>
+<BR><HR>
+<H2 id="DEBUG1_READ_ONLY"><A href="#index">
+IO_GPIO_DEBUG1_READ_ONLY</A></H2>
+<P><FONT size="+1"><B>Debug Read Only Value Register 1</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_GPIO_DEBUG1_READ_ONLY ADDRESS:</B></TD>
+<TD><CODE>0x40010058</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#c0c0c0" colspan="32">VALUE<BR><TT>0x2ff22ff2</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>VALUE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>DBG RO</TD>
+<TD>Debug Read Only Value for Diagnostics.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Provide a read only value for diagnostics.</P>
+

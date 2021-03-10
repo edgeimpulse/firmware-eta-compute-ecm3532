@@ -1,0 +1,5 @@
+menu "Stub Driver Configuration"
+config STUB_DRV_NAME
+    string "Device Name String"
+    default "stub_drv"
+endmenu

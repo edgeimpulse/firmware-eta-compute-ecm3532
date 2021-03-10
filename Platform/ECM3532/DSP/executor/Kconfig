@@ -1,0 +1,10 @@
+menu "Executor framework on DSP"
+config EXECUTOR
+    bool "Executor framework support  on DSP"
+    depends on NN_KERNELS && FRAMEWORK
+    default n
+config EXECUTOR_UNIT_TEST
+    depends on EXECUTOR	
+    bool "Unit test"
+    default n
+endmenu

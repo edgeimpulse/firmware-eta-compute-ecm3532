@@ -1,0 +1,2960 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>IOREG FILE: CAYMAN SOCCTRL SYSTEM CONTROL MODULE
+</TITLE>
+</HEAD>
+<BODY>
+<H1 align="center">On-Line Documentation for CAYMAN  :  SOCCTRL <BR>  Bus Type: PERIPHERAL BUS</H1>
+<FONT size="+2"><B><P align="center">SYSTEM CONTROL MODULE</P></B><B</FONT><BR><HR>
+<FONT face="Helvetica" size="-1"><P align="center"><B> Put banner announcement here. </B></P></FONT><HR>
+<BR><B>The system control module provides memory mapped I/O control and status for various and miscellaneous portions of the SOC.</B><BR><BR><HR>
+<FONT face="Helvetica" size="-1"><P align="left"><B> Source File Name: ./src/ioreg8_socctrl.src <BR> Source File Modification Date Tue Jan 21 13:17:50 2020 <BR> html creation date January 21, 2020</B></P></FONT>
+<H2 id="index"> SOCCTRL Register Index</H2>
+<B> <CODE>ADDRESS</CODE></B><BR>
+<B><CODE>0x50030080: </CODE></B><A id = "CFG_STATUSindex" href="#CFG_STATUS"><B>IO_SOCCTRL_CFG_STATUS</A></B><BR>
+<B><CODE>0x50030084: </CODE></B><A id = "FLASH_CFG_STATUSindex" href="#FLASH_CFG_STATUS"><B>IO_SOCCTRL_FLASH_CFG_STATUS</A></B><BR>
+<B><CODE>0x50030088: </CODE></B><A id = "M3_FREQUENCYindex" href="#M3_FREQUENCY"><B>IO_SOCCTRL_M3_FREQUENCY</A></B><BR>
+<B><CODE>0x5003008c: </CODE></B><A id = "DSP_FREQUENCYindex" href="#DSP_FREQUENCY"><B>IO_SOCCTRL_DSP_FREQUENCY</A></B><BR>
+<B><CODE>0x50030090: </CODE></B><A id = "DSP_CSRindex" href="#DSP_CSR"><B>IO_SOCCTRL_DSP_CSR</A></B><BR>
+<B><CODE>0x50030094: </CODE></B><A id = "M3_DIAL_STALL_CSRindex" href="#M3_DIAL_STALL_CSR"><B>IO_SOCCTRL_M3_DIAL_STALL_CSR</A></B><BR>
+<B><CODE>0x50030098: </CODE></B><A id = "M3_DIAL_STALL_SETindex" href="#M3_DIAL_STALL_SET"><B>IO_SOCCTRL_M3_DIAL_STALL_SET</A></B><BR>
+<B><CODE>0x5003009c: </CODE></B><A id = "M3_DIAL_STALL_CLRindex" href="#M3_DIAL_STALL_CLR"><B>IO_SOCCTRL_M3_DIAL_STALL_CLR</A></B><BR>
+<B><CODE>0x500300a0: </CODE></B><A id = "RESET_STATUSindex" href="#RESET_STATUS"><B>IO_SOCCTRL_RESET_STATUS</A></B><BR>
+<B><CODE>0x500300a8: </CODE></B><A id = "FWTRACEAindex" href="#FWTRACEA"><B>IO_SOCCTRL_FWTRACEA</A></B><BR>
+<B><CODE>0x500300ac: </CODE></B><A id = "FWTRACEBindex" href="#FWTRACEB"><B>IO_SOCCTRL_FWTRACEB</A></B><BR>
+<B><CODE>0x500300b0: </CODE></B><A id = "PMUXAindex" href="#PMUXA"><B>IO_SOCCTRL_PMUXA</A></B><BR>
+<B><CODE>0x500300b4: </CODE></B><A id = "PMUXBindex" href="#PMUXB"><B>IO_SOCCTRL_PMUXB</A></B><BR>
+<B><CODE>0x500300b8: </CODE></B><A id = "PMUXCindex" href="#PMUXC"><B>IO_SOCCTRL_PMUXC</A></B><BR>
+<B><CODE>0x500300bc: </CODE></B><A id = "PMUXDindex" href="#PMUXD"><B>IO_SOCCTRL_PMUXD</A></B><BR>
+<B><CODE>0x500300c0: </CODE></B><A id = "PMUXEindex" href="#PMUXE"><B>IO_SOCCTRL_PMUXE</A></B><BR>
+<B><CODE>0x500300d0: </CODE></B><A id = "CLK_CFGindex" href="#CLK_CFG"><B>IO_SOCCTRL_CLK_CFG</A></B><BR>
+<B><CODE>0x500300e0: </CODE></B><A id = "TSENSE_CTRLindex" href="#TSENSE_CTRL"><B>IO_SOCCTRL_TSENSE_CTRL</A></B><BR>
+<B><CODE>0x500300e4: </CODE></B><A id = "TSENSE_FREQindex" href="#TSENSE_FREQ"><B>IO_SOCCTRL_TSENSE_FREQ</A></B><BR>
+<B><CODE>0x500300f4: </CODE></B><A id = "FPANELindex" href="#FPANEL"><B>IO_SOCCTRL_FPANEL</A></B><BR>
+<B><CODE>0x500300fc: </CODE></B><A id = "DEBUG_READ_ONLYindex" href="#DEBUG_READ_ONLY"><B>IO_SOCCTRL_DEBUG_READ_ONLY</A></B><BR>
+<BR><HR>
+<H2 id="CFG_STATUS"><A href="#index">
+IO_SOCCTRL_CFG_STATUS</A></H2>
+<P><FONT size="+1"><B>SOCCTRL CONFIGURATION AND STATUS REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SOCCTRL_CFG_STATUS ADDRESS:</B></TD>
+<TD><CODE>0x50030080</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">GPIO_PM_STATE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">COLLECTOR<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="23">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">WFI_STALL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CLK_EN_OVR<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">M3DSEN<BR><TT>0x1</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:30</TD>
+<TD nowrap>RSVD3</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>29:29</TD>
+<TD nowrap>GPIO_PM_STATE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PAD MUX TEST MODE SELECTED</TD>
+<TD>Read only view of the pin state for the GPIO_PM pin. When this is one, then the chip is in one of its pin based test modes.
+<BR>NORMAL = 0 Pins are all zero for normal mode. Anything else is abbienormal.
+<BR>ABNORMAL = 1 Pins are in use for one of several test modes. GPIO, SPI1, SPI2, I2C1, I2C2, and UART1 do not work in this case.
+<TR align="left">
+<TD nowrap>28:28</TD>
+<TD nowrap>COLLECTOR</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>COLLECTOR OF LOOSE ENDS</TD>
+<TD>Read only view of internal debug state.
+<TR align="left">
+<TD nowrap>27:5</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>WFI_STALL</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>WFI STALL ENABLE</TD>
+<TD>Allow WFI to trigger a DIAL stall.
+<BR>ENABLE = 1 WFI can trigger a DIAL stall.
+<BR>DISABLE = 0 WFI does not trigger a DIAL stall.
+<TR align="left">
+<TD nowrap>3:2</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>CLK_EN_OVR</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CLOCK ENABLE OVERRIDE</TD>
+<TD>Force the clock enable for this module ON to prevent clock gating at the HFO. Intended for debug purposes.
+<BR>ENABLE = 1 Prevent HFO clock gating.
+<BR>DISABLE = 0 Allow HFO clock gating when block is inactive.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>M3DSEN</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>DIAL STALL ENABLE</TD>
+<TD>Set to 1 to enable DIAL stall operations.
+<BR>ENABLE = 1 Enable DIAL STALL of M3
+<BR>DISABLE = 0 Disable DIAL STALLs for the M3 for testing.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Configuration and status bits for the SOCCTRL register.</P>
+<BR><HR>
+<H2 id="FLASH_CFG_STATUS"><A href="#index">
+IO_SOCCTRL_FLASH_CFG_STATUS</A></H2>
+<P><FONT size="+1"><B>FLASH CONFIGURATION AND STATUS REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SOCCTRL_FLASH_CFG_STATUS ADDRESS:</B></TD>
+<TD><CODE>0x50030084</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="29">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="3">NUM_WS<BR><TT>0x3</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:3</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>2:0</TD>
+<TD nowrap>NUM_WS</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>NUMBER OF WAIT STATES</TD>
+<TD>Programmable number of wait states for the Flash Interface from the ARM M3.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Configuration and status bits for the FLASH controller.</P>
+<BR><HR>
+<H2 id="M3_FREQUENCY"><A href="#index">
+IO_SOCCTRL_M3_FREQUENCY</A></H2>
+<P><FONT size="+1"><B>M3 CLOCK FREQUENCY COUNTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SOCCTRL_M3_FREQUENCY ADDRESS:</B></TD>
+<TD><CODE>0x50030088</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#c0c0c0" colspan="32">COUNT<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>COUNT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>M3 COUNT</TD>
+<TD>Debug Read Only Value M3 CLOCK frequency counter.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Provide a read only value for diagnostics.</P>
+<BR><HR>
+<H2 id="DSP_FREQUENCY"><A href="#index">
+IO_SOCCTRL_DSP_FREQUENCY</A></H2>
+<P><FONT size="+1"><B>DSP OSCILLATOR FREQUENCY COUNTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SOCCTRL_DSP_FREQUENCY ADDRESS:</B></TD>
+<TD><CODE>0x5003008c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#c0c0c0" colspan="32">COUNT<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>COUNT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>DSP COUNT</TD>
+<TD>Debug Read Only Value DSP frequency counter.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Provide a read only value for diagnostics.</P>
+<BR><HR>
+<H2 id="DSP_CSR"><A href="#index">
+IO_SOCCTRL_DSP_CSR</A></H2>
+<P><FONT size="+1"><B>DSP CONFIGURATION AND STATUS REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SOCCTRL_DSP_CSR ADDRESS:</B></TD>
+<TD><CODE>0x50030090</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="19">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">DSP_TDO<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DSP_TRST_N<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DSP_TDI<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DSP_TMS<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DSP_TCLK<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="6">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DSP_COMPLEX_STALL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DSP_COMPLEX_RESET_N<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:13</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>DSP_TDO</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>DSP JTAG TDO</TD>
+<TD>Bit bang interface for DSP JTAG.
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>DSP_TRST_N</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>DSP JTAG RESET (NOT)</TD>
+<TD>Bit bang interface for DSP JTAG. NOTE the inversion.
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>DSP_TDI</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>DSP JTAG TDI</TD>
+<TD>Bit bang interface for DSP JTAG.
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>DSP_TMS</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>DSP JTAG TMS</TD>
+<TD>Bit bang interface for DSP JTAG.
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>DSP_TCLK</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>DSP JTAG CLOCK</TD>
+<TD>Bit bang interface for DSP JTAG.
+<TR align="left">
+<TD nowrap>7:2</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>DSP_COMPLEX_STALL</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>DIAL STALL BIT</TD>
+<TD>Set to 1 to stall the DSP DIAL block. DSP will wait remaining in the state when it received the assertion of the bit, much like clock gating, until the bit is cleared.
+<BR>FORCE = 1 Force the DSP to stall.
+<BR>RELEASE = 0 Release from stall.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>DSP_COMPLEX_RESET_N</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>DSP MASTER RESET</TD>
+<TD>Set to 0 to reset the DSP using the hard reset input to its DIAL block.
+<BR>FORCE = 0 Force reset to the DSP.
+<BR>RELEASE = 1 Release the master reset.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Configuration and status bits for controlling the DSP.</P>
+<BR><HR>
+<H2 id="M3_DIAL_STALL_CSR"><A href="#index">
+IO_SOCCTRL_M3_DIAL_STALL_CSR</A></H2>
+<P><FONT size="+1"><B>DIAL STALL CONFIGURATION AND STATUS REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SOCCTRL_M3_DIAL_STALL_CSR ADDRESS:</B></TD>
+<TD><CODE>0x50030094</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="1">STALL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="13">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">AO_BOD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RTC_TMR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">WDT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">PWM<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">ADC<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DSP<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RTC1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RTC0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">I2C1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">I2C0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SPI1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SPI0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">UART1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">UART0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TIMER1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TIMER0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">GPIO1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">GPIO0<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:31</TD>
+<TD nowrap>STALL</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>DIAL STALL BIT</TD>
+<TD>Set to 1 to force the M3 into a DIAL STALL condition. In this state, the M3 is held in wait state much like clock gating sleep in conventional clocked logic. The normal NULL/DATA cycling is suspended until this flip flop is reset. It is reset upon the arrival of an enabled interrupt request to the M3, as enabled by the bits in this register. This FF can be set by the arrival of a WFI_TOGGLE from the M3 core. Use DIAL_STALL_SET and DIAL_STALL_CLR registers to manipulate this bit.
+<TR align="left">
+<TD nowrap>30:18</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>17:17</TD>
+<TD nowrap>AO_BOD</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Set to 1 to enable the corresponding external interrupt to wake up the M3 core from a DIAL STALL state. Use DIAL_STALL_SET and DIAL_STALL_CLR registers to manipulate these bits.
+<TR align="left">
+<TD nowrap>16:16</TD>
+<TD nowrap>RTC_TMR</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Set to 1 to enable the corresponding external interrupt to wake up the M3 core from a DIAL STALL state. Use DIAL_STALL_SET and DIAL_STALL_CLR registers to manipulate these bits.
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>WDT</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Set to 1 to enable the corresponding external interrupt to wake up the M3 core from a DIAL STALL state. Use DIAL_STALL_SET and DIAL_STALL_CLR registers to manipulate these bits.
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>PWM</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Set to 1 to enable the corresponding external interrupt to wake up the M3 core from a DIAL STALL state. Use DIAL_STALL_SET and DIAL_STALL_CLR registers to manipulate these bits.
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>ADC</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Set to 1 to enable the corresponding external interrupt to wake up the M3 core from a DIAL STALL state. Use DIAL_STALL_SET and DIAL_STALL_CLR registers to manipulate these bits.
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>DSP</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Set to 1 to enable the corresponding external interrupt to wake up the M3 core from a DIAL STALL state. Use DIAL_STALL_SET and DIAL_STALL_CLR registers to manipulate these bits.
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>RTC1</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Set to 1 to enable the corresponding external interrupt to wake up the M3 core from a DIAL STALL state. Use DIAL_STALL_SET and DIAL_STALL_CLR registers to manipulate these bits.
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>RTC0</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Set to 1 to enable the corresponding external interrupt to wake up the M3 core from a DIAL STALL state. Use DIAL_STALL_SET and DIAL_STALL_CLR registers to manipulate these bits.
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>I2C1</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Set to 1 to enable the corresponding external interrupt to wake up the M3 core from a DIAL STALL state. Use DIAL_STALL_SET and DIAL_STALL_CLR registers to manipulate these bits.
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>I2C0</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Set to 1 to enable the corresponding external interrupt to wake up the M3 core from a DIAL STALL state. Use DIAL_STALL_SET and DIAL_STALL_CLR registers to manipulate these bits.
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>SPI1</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Set to 1 to enable the corresponding external interrupt to wake up the M3 core from a DIAL STALL state. Use DIAL_STALL_SET and DIAL_STALL_CLR registers to manipulate these bits.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>SPI0</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Set to 1 to enable the corresponding external interrupt to wake up the M3 core from a DIAL STALL state. Use DIAL_STALL_SET and DIAL_STALL_CLR registers to manipulate these bits.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>UART1</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Set to 1 to enable the corresponding external interrupt to wake up the M3 core from a DIAL STALL state. Use DIAL_STALL_SET and DIAL_STALL_CLR registers to manipulate these bits.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>UART0</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Set to 1 to enable the corresponding external interrupt to wake up the M3 core from a DIAL STALL state. Use DIAL_STALL_SET and DIAL_STALL_CLR registers to manipulate these bits.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>TIMER1</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Set to 1 to enable the corresponding external interrupt to wake up the M3 core from a DIAL STALL state. Use DIAL_STALL_SET and DIAL_STALL_CLR registers to manipulate these bits.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>TIMER0</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Set to 1 to enable the corresponding external interrupt to wake up the M3 core from a DIAL STALL state. Use DIAL_STALL_SET and DIAL_STALL_CLR registers to manipulate these bits.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>GPIO1</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Set to 1 to enable the corresponding external interrupt to wake up the M3 core from a DIAL STALL state. Use DIAL_STALL_SET and DIAL_STALL_CLR registers to manipulate these bits.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>GPIO0</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Set to 1 to enable the corresponding external interrupt to wake up the M3 core from a DIAL STALL state. Use DIAL_STALL_SET and DIAL_STALL_CLR registers to manipulate these bits.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Configuration and status bits for controlling DIAL stalls in the M3</P>
+<BR><HR>
+<H2 id="M3_DIAL_STALL_SET"><A href="#index">
+IO_SOCCTRL_M3_DIAL_STALL_SET</A></H2>
+<P><FONT size="+1"><B>DIAL STALL SET REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SOCCTRL_M3_DIAL_STALL_SET ADDRESS:</B></TD>
+<TD><CODE>0x50030098</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="1">STALL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="13">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">AO_BOD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RTC_TMR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">WDT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">PWM<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">ADC<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DSP<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RTC1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RTC0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">I2C1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">I2C0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SPI1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SPI0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">UART1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">UART0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TIMER1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TIMER0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">GPIO1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">GPIO0<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:31</TD>
+<TD nowrap>STALL</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>SET DIAL STALL BIT</TD>
+<TD>Set to 1 to cause the corresponding bit in the M3 DIAL STALL CSR to be set.
+<TR align="left">
+<TD nowrap>30:18</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>17:17</TD>
+<TD nowrap>AO_BOD</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to set the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>16:16</TD>
+<TD nowrap>RTC_TMR</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to set the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>WDT</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to set the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>PWM</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to set the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>ADC</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to set the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>DSP</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to set the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>RTC1</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to set the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>RTC0</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to set the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>I2C1</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to set the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>I2C0</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to set the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>SPI1</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to set the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>SPI0</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to set the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>UART1</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to set the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>UART0</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to set the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>TIMER1</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to set the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>TIMER0</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to set the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>GPIO1</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to set the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>GPIO0</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to set the corresponding DIAL STALL interrupt enable.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Bit settting for the configuration and status bits for controlling DIAL stalls in the M3</P>
+<BR><HR>
+<H2 id="M3_DIAL_STALL_CLR"><A href="#index">
+IO_SOCCTRL_M3_DIAL_STALL_CLR</A></H2>
+<P><FONT size="+1"><B>DIAL STALL CLEAR REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SOCCTRL_M3_DIAL_STALL_CLR ADDRESS:</B></TD>
+<TD><CODE>0x5003009c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="1">STALL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="13">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">AO_BOD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RTC_TMR<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">WDT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">PWM<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">ADC<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DSP<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RTC1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RTC0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">I2C1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">I2C0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SPI1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SPI0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">UART1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">UART0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TIMER1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">TIMER0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">GPIO1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">GPIO0<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:31</TD>
+<TD nowrap>STALL</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>CLEAR DIAL STALL BIT</TD>
+<TD>Write one to clear the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>30:18</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>17:17</TD>
+<TD nowrap>AO_BOD</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to clear the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>16:16</TD>
+<TD nowrap>RTC_TMR</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to clear the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>WDT</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to clear the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>PWM</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to clear the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>ADC</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to clear the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>DSP</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to clear the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>RTC1</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to clear the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>RTC0</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to clear the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>I2C1</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to clear the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>I2C0</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to clear the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>SPI1</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to clear the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>SPI0</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to clear the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>UART1</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to clear the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>UART0</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to clear the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>TIMER1</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to clear the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>TIMER0</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to clear the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>GPIO1</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to clear the corresponding DIAL STALL interrupt enable.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>GPIO0</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>INTERRUPT ENABLES FOR STALL RELEASE</TD>
+<TD>Write one to clear the corresponding DIAL STALL interrupt enable.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Bit clearing for the configuration and status bits for controlling DIAL stalls in the M3</P>
+<BR><HR>
+<H2 id="RESET_STATUS"><A href="#index">
+IO_SOCCTRL_RESET_STATUS</A></H2>
+<P><FONT size="+1"><B>Status About the Reset(s) That  Have Happened.</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SOCCTRL_RESET_STATUS ADDRESS:</B></TD>
+<TD><CODE>0x500300a0</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="25">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">BROWN<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">PIN<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">WDT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">M3_DAP<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">M3_AIRCR_SYS<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">M3_AIRCR_VECT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">POR<BR><TT>0x1</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:7</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>BROWN</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>BROWNOUT DETECTED</TD>
+<TD>Set to one if and only if a brownout reset occurred, since the last time this bit was cleared. This bit is cleared by writing anything to this register. NOTE: This is not currently implemented in the chip.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>PIN</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>RESET PIN</TD>
+<TD>Set to one if and only if the hardware reset pin was asserted since the last time this bit was cleared. This bit is cleared by writing anything to this register.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>WDT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>WATCH DOG TIMER</TD>
+<TD>Set to one if and only if the watchdog timer expired with reset enabled, since the last time this bit was cleared. This bit is cleared by writing anything to this register.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>M3_DAP</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>M3 DEBUGGER RESET REQUEST</TD>
+<TD>Set to one if and only if the M3 DAP CSR bit in the M3 was written to 1 since the last time this bit was cleared. This bit is cleared by writing anything to this register.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>M3_AIRCR_SYS</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>M3 SYSTEM RESET REQUEST</TD>
+<TD>Set to one if and only if the AIRCR SYSTEM RESET REQUEST bit in the M3 was written to 1 since the last time this bit was cleared. This bit is cleared by writing anything to this register. This bit resets the entire chip.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>M3_AIRCR_VECT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>M3 VECTOR RESET REQUEST</TD>
+<TD>Set to one if and only if the AIRCR VECTOR RESET REQUEST bit in the M3 was written to 1 since the last time this bit was cleared. This bit is cleared by writing anything to this register. This bit only resets the M3 core.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>POR</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>POWER ON RESET</TD>
+<TD>Set to one if and only if the power on reset pin was asserted since the last time this bit was cleared. This bit is cleared by writing anything to this register.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Provide a read only view of status bits that get set by the various causes for an SOC reset. Writing anything to this register resets all the bits.  The bits can accumulate so it is possible to have both the POR and M3_DAP bits set immediately after a reset caused by the debugger, for example.  POR will always clear the other status bits as will writing to this regiser.</P>
+<BR><HR>
+<H2 id="FWTRACEA"><A href="#index">
+IO_SOCCTRL_FWTRACEA</A></H2>
+<P><FONT size="+1"><B>FIRMWARE TRACE REGISTER A</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SOCCTRL_FWTRACEA ADDRESS:</B></TD>
+<TD><CODE>0x500300a8</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="32">VALUE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>VALUE</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>TRACE VALUE</TD>
+<TD>Firmware can write to this register and the results will show up on the front panel.NOTE: this register only gets cleared by the initial power on reset and not by anyother form of reset.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Provide software driven output that can be seen on the front panel without a UART, etc.</P>
+<BR><HR>
+<H2 id="FWTRACEB"><A href="#index">
+IO_SOCCTRL_FWTRACEB</A></H2>
+<P><FONT size="+1"><B>FIRMWARE TRACE REGISTER B</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SOCCTRL_FWTRACEB ADDRESS:</B></TD>
+<TD><CODE>0x500300ac</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="32">VALUE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>VALUE</TD>
+<TD nowrap>EMPTY</TD>
+<TD nowrap>TRACE VALUE</TD>
+<TD>Firmware can write to this register and the results will show up on the front panel.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Provide software driven output that can be seen on the front panel without a UART, etc. NOTE: this register only gets cleared by the initial power on reset and not by anyother form of reset.</P>
+<BR><HR>
+<H2 id="PMUXA"><A href="#index">
+IO_SOCCTRL_PMUXA</A></H2>
+<P><FONT size="+1"><B>PIN MUX A REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SOCCTRL_PMUXA ADDRESS:</B></TD>
+<TD><CODE>0x500300b0</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD7<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">GPIO7<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD6<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">GPIO6<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD5<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">GPIO5<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD4<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">GPIO4<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">GPIO3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="3">GPIO2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="3">GPIO1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="3">GPIO0<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:30</TD>
+<TD nowrap>RSVD7</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>29:28</TD>
+<TD nowrap>GPIO7</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO7 PIN MUX SELECT</TD>
+<TD>Selects one of 4 possible uses for this pin.
+<BR>GPIO7 = 0 GPIO7 in normal mode
+<BR>PWMCH7 = 1 PWM Channel 7 in normal mode
+<BR>DSP_UART_TX = 2 DSP UART TX output.
+<BR>UART1TX = 3 UART1 TX pin.
+<TR align="left">
+<TD nowrap>27:26</TD>
+<TD nowrap>RSVD6</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>25:24</TD>
+<TD nowrap>GPIO6</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO6 PIN MUX SELECT</TD>
+<TD>Selects one of 4 possible uses for this pin.
+<BR>GPIO6 = 0 GPIO6 in normal mode
+<BR>PWMCH6 = 1 PWM Channel 6 in normal mode
+<BR>FPANEL = 2 FPANEL output.
+<BR>CLKOUT = 3 CLKOUT output
+<TR align="left">
+<TD nowrap>23:22</TD>
+<TD nowrap>RSVD5</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>21:20</TD>
+<TD nowrap>GPIO5</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO5 PIN MUX SELECT</TD>
+<TD>Selects one of 4 possible uses for this pin.
+<BR>GPIO5 = 0 GPIO5 in normal mode
+<BR>PWMCH5 = 1 PWM Channel 5 in normal mode
+<BR>UART1DBGA = 2 UART1 DEBUG A output in normal mode
+<BR>UART1CTS = 3 UART1 CTS pin.
+<TR align="left">
+<TD nowrap>19:18</TD>
+<TD nowrap>RSVD4</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>17:16</TD>
+<TD nowrap>GPIO4</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO4 PIN MUX SELECT</TD>
+<TD>Selects one of 4 possible uses for this pin.
+<BR>GPIO4 = 0 GPIO4 in normal mode
+<BR>PWMCH4 = 1 PWM Channel 4 in normal mode
+<BR>UART1DBGB = 2 UART1 DEBUG B output in normal mode
+<BR>UART1RTS = 3 UART1 RTS pin.
+<TR align="left">
+<TD nowrap>15:14</TD>
+<TD nowrap>RSVD3</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>13:12</TD>
+<TD nowrap>GPIO3</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO3 PIN MUX SELECT</TD>
+<TD>Selects one of 4 possible uses for this pin.
+<BR>GPIO3 = 0 GPIO3 in normal mode
+<BR>PWMCH3 = 1 PWM Channel 3 in normal mode
+<BR>UART1DBGC = 2 UART1 DEBUG C output in normal mode
+<BR>UART1RX = 3 UART1 RX pin.
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>10:8</TD>
+<TD nowrap>GPIO2</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO2 PIN MUX SELECT</TD>
+<TD>Selects one of 4 possible uses for this pin.
+<BR>GPIO2 = 0 GPIO2 in normal mode
+<BR>PWMCH2 = 1 PWM Channel 2 in normal mode
+<BR>UART0DBGA = 2 UART0 DEBUG A output in normal mode
+<BR>SPI2CLK = 3 SPI2 Clock output in master mode
+<BR>SPISLV2CLK = 4 SPI2 Clock input in slave mode
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>6:4</TD>
+<TD nowrap>GPIO1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO1 PIN MUX SELECT</TD>
+<TD>Selects one of 4 possible uses for this pin.
+<BR>GPIO1 = 0 GPIO1 in normal mode
+<BR>PWMCH1 = 1 PWM Channel 1 in normal mode
+<BR>UART0DBGB = 2 UART0 DEBUG B output in normal mode
+<BR>SPI2MOSI = 3 SPI2 MOSI input in master mode
+<BR>SPISLV2MISO = 4 SPI2 MISO input in slave mode
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>RSVD0</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>2:0</TD>
+<TD nowrap>GPIO0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO0 PIN MUX SELECT</TD>
+<TD>Selects one of 4 possible uses for this pin.
+<BR>GPIO0 = 0 GPIO0 in normal mode
+<BR>PWMCH0 = 1 PWM Channel 0 in normal mode
+<BR>UART0DBGC = 2 UART0 DEBUG C output in normal mode
+<BR>SPI2MISO = 3 SPI2 MISO input in master mode
+<BR>SPISLV2MOSI = 4 SPI2 MOSI input in slave mode
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>This register provides control pin/pad mux for GPIO[7:0]</P>
+<BR><HR>
+<H2 id="PMUXB"><A href="#index">
+IO_SOCCTRL_PMUXB</A></H2>
+<P><FONT size="+1"><B>PIN MUX B REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SOCCTRL_PMUXB ADDRESS:</B></TD>
+<TD><CODE>0x500300b4</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD7<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">GPIO15<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD6<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">GPIO14<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="3">RSVD5<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">GPIO13<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="3">RSVD4<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">GPIO12<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="3">GPIO11<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">GPIO10<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">GPIO9<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">GPIO8<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:30</TD>
+<TD nowrap>RSVD7</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>29:28</TD>
+<TD nowrap>GPIO15</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO15 PIN MUX SELECT</TD>
+<TD>Selects one of 2 possible uses for this pin.
+<BR>GPIO15 = 0 GPIO15 in normal mode
+<BR>I2S_DATA_IN = 1 I2S Data Input in normal mode
+<BR>PDM1DATA = 2 PDM1 Data Input
+<TR align="left">
+<TD nowrap>27:26</TD>
+<TD nowrap>RSVD6</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>25:24</TD>
+<TD nowrap>GPIO14</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO14 PIN MUX SELECT</TD>
+<TD>Selects one of 4 possible uses for this pin.
+<BR>GPIO14 = 0 GPIO14 in normal mode
+<BR>I2S_LRCLK = 1 I2S Left/Right Frame Clock.
+<BR>PDM1CLK = 2 PDM1 clock Output
+<TR align="left">
+<TD nowrap>23:21</TD>
+<TD nowrap>RSVD5</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>20:20</TD>
+<TD nowrap>GPIO13</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO13 PIN MUX SELECT</TD>
+<TD>Selects one of 2 possible uses for this pin.
+<BR>GPIO13 = 0 GPIO13 in normal mode
+<BR>I2S_BCLK = 1 I2S Bit Clock
+<TR align="left">
+<TD nowrap>19:17</TD>
+<TD nowrap>RSVD4</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>16:16</TD>
+<TD nowrap>GPIO12</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO12 PIN MUX SELECT</TD>
+<TD>Selects one of 2 possible uses for this pin.
+<BR>GPIO12 = 0 GPIO12 in normal mode
+<BR>I2S_ACLK = 1 I2S Input Source Clock
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>RSVD3</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>14:12</TD>
+<TD nowrap>GPIO11</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO11 PIN MUX SELECT</TD>
+<TD>Selects one of 3 possible uses for this pin.
+<BR>GPIO11 = 0 GPIO12 in normal mode
+<BR>SPI2RDY = 2 SPI2 Ready
+<BR>SPI2CS3 = 3 SPI2 Chip Select 3 in master mode
+<BR>SPISLV2CS = 4 SPI2 Chip Select input in slave mode
+<TR align="left">
+<TD nowrap>11:10</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>9:8</TD>
+<TD nowrap>GPIO10</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO10 PIN MUX SELECT</TD>
+<TD>Selects one of 2 possible uses for this pin.
+<BR>GPIO10 = 0 GPIO12 in normal mode
+<BR>SPI2CS2 = 3 SPI2 Chip Select 2 in master mode
+<TR align="left">
+<TD nowrap>7:6</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>5:4</TD>
+<TD nowrap>GPIO9</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO9 PIN MUX SELECT</TD>
+<TD>Selects one of 4 possible uses for this pin.
+<BR>GPIO9 = 0 GPIO9 in normal mode
+<BR>I2C1SCK = 1 I2C1 Clock pin
+<BR>PDM0DATA = 2 PDM0 Data Input
+<BR>I2C2SCK = 3 I2C2 Clock pin
+<TR align="left">
+<TD nowrap>3:2</TD>
+<TD nowrap>RSVD0</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>1:0</TD>
+<TD nowrap>GPIO8</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO8 PIN MUX SELECT</TD>
+<TD>Selects one of 4 possible uses for this pin.
+<BR>GPIO8 = 0 GPIO8 in normal mode
+<BR>I2C1SDA = 1 I2C1 SDATA pin
+<BR>PDM0CLK = 2 PDM0 clock Output
+<BR>I2C2SDA = 3 I2C2 SDATA pin
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>This register provides control pin/pad mux for GPIO[15:8]</P>
+<BR><HR>
+<H2 id="PMUXC"><A href="#index">
+IO_SOCCTRL_PMUXC</A></H2>
+<P><FONT size="+1"><B>PIN MUX C REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SOCCTRL_PMUXC ADDRESS:</B></TD>
+<TD><CODE>0x500300b8</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD7<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">GPIO23<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD6<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">GPIO22<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD5<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">GPIO21<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD4<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">GPIO20<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">GPIO19<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">GPIO18<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">GPIO17<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="3">RSVD0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">GPIO16<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:30</TD>
+<TD nowrap>RSVD7</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>29:28</TD>
+<TD nowrap>GPIO23</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO23 PIN MUX SELECT</TD>
+<TD>Selects one of 2 possible uses for this pin.
+<BR>GPIO23 = 0 GPIO23 in normal mode
+<BR>SPI0CS0 = 1 SPI0 Chip Select 0 in master mode
+<BR>SPISLV0CS = 2 SPI0 Chip Select input in slave mode
+<TR align="left">
+<TD nowrap>27:26</TD>
+<TD nowrap>RSVD6</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>25:24</TD>
+<TD nowrap>GPIO22</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO22 PIN MUX SELECT</TD>
+<TD>Selects one of 4 possible uses for this pin.
+<BR>GPIO22 = 0 GPIO22 in normal mode
+<BR>UART1RTS = 1 UART1 RTS pin.
+<BR>DSP_JTAG_TDO = 2 DSP JTAG TDO ouput pin.
+<BR>CLKOUT = 3 CLKOUT output
+<TR align="left">
+<TD nowrap>23:22</TD>
+<TD nowrap>RSVD5</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>21:20</TD>
+<TD nowrap>GPIO21</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO21 PIN MUX SELECT</TD>
+<TD>Selects one of 3 possible uses for this pin.
+<BR>GPIO21 = 0 GPIO21 in normal mode
+<BR>UART1CTS = 1 UART1 CTS pin.
+<BR>DSP_JTAG_TCLK = 2 DSP JTAG TCLK input.
+<TR align="left">
+<TD nowrap>19:18</TD>
+<TD nowrap>RSVD4</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>17:16</TD>
+<TD nowrap>GPIO20</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO20 PIN MUX SELECT</TD>
+<TD>Selects one of 4 possible uses for this pin.
+<BR>GPIO20 = 0 GPIO20 in normal mode
+<BR>UART1TX = 1 UART1 TX pin.
+<BR>DSP_UART_TX = 2 DSP UART TX output.
+<BR>FPANEL = 3 FPANEL output.
+<TR align="left">
+<TD nowrap>15:14</TD>
+<TD nowrap>RSVD3</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>13:12</TD>
+<TD nowrap>GPIO19</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO19 PIN MUX SELECT</TD>
+<TD>Selects one of 3 possible uses for this pin.
+<BR>GPIO19 = 0 GPIO19 in normal mode
+<BR>UART1RX = 1 UART1 RX pin.
+<BR>DSP_JTAG_TRST_N = 2 DSP JTAG TRST_N input.
+<TR align="left">
+<TD nowrap>11:10</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>9:8</TD>
+<TD nowrap>GPIO18</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO18 PIN MUX SELECT</TD>
+<TD>Selects one of 2 possible uses for this pin.
+<BR>GPIO18 = 0 GPIO18 in normal mode
+<BR>I2C0SCK = 1 I2C0 Clock
+<BR>DSP_JTAG_TDI = 2 DSP JTAG TDI INPUT
+<BR>PDM0DATA = 3 PDM0 Data Input
+<TR align="left">
+<TD nowrap>7:6</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>5:4</TD>
+<TD nowrap>GPIO17</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO17 PIN MUX SELECT</TD>
+<TD>Selects one of 2 possible uses for this pin.
+<BR>GPIO17 = 0 GPIO17 in normal mode
+<BR>I2C0SDA = 1 I2C0 Data
+<BR>DSP_JTAG_TMS = 2 DSP JTAG TMS INPUT
+<BR>PDM0CLK = 3 PDM0 clock Output
+<TR align="left">
+<TD nowrap>3:1</TD>
+<TD nowrap>RSVD0</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>GPIO16</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO16 PIN MUX SELECT</TD>
+<TD>Selects one of 2 possible uses for this pin.
+<BR>GPIO16 = 0 GPIO16 in normal mode
+<BR>I2S_DATA_OUT = 1 I2S Data Output pin.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>This register provides control pin/pad mux for GPIO[23:16]</P>
+<BR><HR>
+<H2 id="PMUXD"><A href="#index">
+IO_SOCCTRL_PMUXD</A></H2>
+<P><FONT size="+1"><B>PIN MUX D REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SOCCTRL_PMUXD ADDRESS:</B></TD>
+<TD><CODE>0x500300bc</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD8<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">GPIO31<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD7<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="3">GPIO30<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD6<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="3">GPIO29<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD5<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="3">GPIO28<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="1">RSVD4<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="3">GPIO27<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">GPIO26<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="3">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">GPIO25<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="3">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">GPIO24<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:30</TD>
+<TD nowrap>RSVD8</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>29:28</TD>
+<TD nowrap>GPIO31</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO31 PIN MUX SELECT</TD>
+<TD>Selects one of 3 possible uses for this pin.
+<BR>GPIO31 = 0 GPIO31 in normal mode
+<BR>SPI1CS1 = 1 SPI1 Chip Select 1 in master mode
+<BR>SPI1RDY = 2 SPI1 Ready
+<BR>SPI2CS1 = 3 SPI2 Chip Select 1 in master mode
+<TR align="left">
+<TD nowrap>27:27</TD>
+<TD nowrap>RSVD7</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>26:24</TD>
+<TD nowrap>GPIO30</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO30 PIN MUX SELECT</TD>
+<TD>Selects one of 2 possible uses for this pin.
+<BR>GPIO30 = 0 GPIO30 in normal mode
+<BR>SPI1CS0 = 1 SPI1 chip select 0 in master mode
+<BR>SPI2RDY = 2 SPI2 Ready
+<BR>SPI2CS0 = 3 SPI2 Chip Select 0 in master mode
+<BR>SPISLV1CS = 4 SPI1 chip select input in slave mode
+<BR>SPISLV2CS = 5 SPI2 chip select input in slave mode
+<TR align="left">
+<TD nowrap>23:23</TD>
+<TD nowrap>RSVD6</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>22:20</TD>
+<TD nowrap>GPIO29</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO29 PIN MUX SELECT</TD>
+<TD>Selects one of 3 possible uses for this pin.
+<BR>GPIO29 = 0 GPIO29 in normal mode
+<BR>SPI1CLK = 1 SPI1 Clock output in master mode
+<BR>I2C1SCK = 2 I2C1 Clock pin
+<BR>SPI2CLK = 3 SPI2 Clock output in master mode
+<BR>SPISLV1CLK = 4 SPI1 Clock input in slave mode
+<BR>SPISLV2CLK = 5 SPI2 Clock input in slave mode
+<TR align="left">
+<TD nowrap>19:19</TD>
+<TD nowrap>RSVD5</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>18:16</TD>
+<TD nowrap>GPIO28</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO28 PIN MUX SELECT</TD>
+<TD>Selects one of 3 possible uses for this pin.
+<BR>GPIO28 = 0 GPIO28 in normal mode
+<BR>SPI1MOSI = 1 SPI1 MOSI output in master mode
+<BR>I2C1SDA = 2 I2C1 SDATA pin
+<BR>SPI2MOSI = 3 SPI2 MOSI output in master mode
+<BR>SPISLV1MISO = 4 SPI1 MISO output in slave mode
+<BR>SPISLV2MISO = 5 SPI2 MISO output in slave mode
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>RSVD4</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>14:12</TD>
+<TD nowrap>GPIO27</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO27 PIN MUX SELECT</TD>
+<TD>Selects one of 3 possible uses for this pin.
+<BR>GPIO27 = 0 GPIO27 in normal mode
+<BR>SPI1MISO = 1 SPI1 MISO input in master mode
+<BR>SPI2MISO = 3 SPI2 MISO input in master mode
+<BR>SPISLV1MOSI = 4 SPI1 MOSI input in slave mode
+<BR>SPISLV2MOSI = 5 SPI2 MOSI input in slave mode
+<TR align="left">
+<TD nowrap>11:10</TD>
+<TD nowrap>RSVD3</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>9:8</TD>
+<TD nowrap>GPIO26</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO26 PIN MUX SELECT</TD>
+<TD>Selects one of 3 possible uses for this pin.
+<BR>GPIO26 = 0 GPIO26 in normal mode
+<BR>SPI0CS3 = 1 SPI0 Chip Select 3 in master mode
+<BR>SPI0RDY = 2 SPI0 ready input.
+<TR align="left">
+<TD nowrap>7:5</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>GPIO25</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO25 PIN MUX SELECT</TD>
+<TD>Selects one of 2 possible uses for this pin.
+<BR>GPIO25 = 0 GPIO25 in normal mode
+<BR>SPI0CS2 = 1 SPI0 Chip Select 2 in master mode
+<TR align="left">
+<TD nowrap>3:1</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>GPIO24</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>GPIO24 PIN MUX SELECT</TD>
+<TD>Selects one of 2 possible uses for this pin.
+<BR>GPIO24 = 0 GPIO24 in normal mode
+<BR>SPI0CS1 = 1 SPI0 Chip Select 1
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>This register provides control pin/pad mux for GPIO[31:24]</P>
+<BR><HR>
+<H2 id="PMUXE"><A href="#index">
+IO_SOCCTRL_PMUXE</A></H2>
+<P><FONT size="+1"><B>PIN MUX E REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SOCCTRL_PMUXE ADDRESS:</B></TD>
+<TD><CODE>0x500300c0</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="23">RSVD3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SPI0MISO<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">SPI0MOSI<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">SPI0CLK<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:9</TD>
+<TD nowrap>RSVD3</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>SPI0MISO</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SPI0 MISO PIN MUX SELECT</TD>
+<TD>Selects one of 2 possible uses for this pin.
+<BR>SPI0MISO = 0 SPI0 Data input in SPI Master mode
+<BR>SPISLV0MOSI = 1 SPI0 Data input in SPI Slave mode
+<TR align="left">
+<TD nowrap>7:6</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>5:4</TD>
+<TD nowrap>SPI0MOSI</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SPI0 MOSI PIN MUX SELECT</TD>
+<TD>Selects one of 2 possible uses for this pin.
+<BR>MOSI = 0 SPI0 Data output in SPI Master mode
+<BR>I2C0SDA = 1 I2C0 DATA in I2C mode
+<BR>SPISLV0MISO = 2 SPI0 Data output in SPI Slave mode
+<TR align="left">
+<TD nowrap>3:2</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>1:0</TD>
+<TD nowrap>SPI0CLK</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>SPI0 CLOCK PIN MUX SELECT</TD>
+<TD>Selects one of 2 possible uses for this pin.
+<BR>SPI0CLK = 0 SPI0 Clock in SPI mode
+<BR>I2C0SCK = 1 I2C0 Clock in I2C mode
+<BR>SPISLV0SCK = 2 SPI0 Clock in SPI Slave mode
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>This register provides control pin/pad mux for SPI0</P>
+<BR><HR>
+<H2 id="CLK_CFG"><A href="#index">
+IO_SOCCTRL_CLK_CFG</A></H2>
+<P><FONT size="+1"><B>CLOCK CONFIGURATION REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SOCCTRL_CLK_CFG ADDRESS:</B></TD>
+<TD><CODE>0x500300d0</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="19">RSVD4<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">I2C_CLK_SEL<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">DSP_CLK_SEL<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">UST_CLK_SEL<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="2">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">ADC_CLK_SEL<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:13</TD>
+<TD nowrap>RSVD4</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>I2C_CLK_SEL</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>I2C DOMAIN CLOCK SELECT</TD>
+<TD>Select 4MHz or 2MHz clock for I2C domain.
+<BR>2MHZ = 0 I2C runs on 2MHz.
+<BR>4MHZ = 1 I2C runs on 4MHz.
+<TR align="left">
+<TD nowrap>11:10</TD>
+<TD nowrap>RSVD3</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>9:8</TD>
+<TD nowrap>DSP_CLK_SEL</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>DSP DOMAIN CLOCK SELECT</TD>
+<TD>Select 8MHz, 4MHz or 2MHz clock for DSP domain.
+<BR>4MHZ = 0 DSP runs on 4MHz.
+<BR>8MHZ = 1 DSP runs on 8MHz.
+<BR>2MHZ = 2 UST runs on 2MHz.
+<TR align="left">
+<TD nowrap>7:6</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>5:4</TD>
+<TD nowrap>UST_CLK_SEL</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>UST DOMAIN CLOCK SELECT</TD>
+<TD>Select 8MHz, 4MHz or 2MHz clock for UST domain.
+<BR>4MHZ = 0 UST runs on 4MHz.
+<BR>8MHZ = 1 UST runs on 8MHz.
+<BR>2MHZ = 2 UST runs on 2MHz.
+<TR align="left">
+<TD nowrap>3:2</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>1:0</TD>
+<TD nowrap>ADC_CLK_SEL</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>ADC DOMAIN CLOCK SELECT</TD>
+<TD>Select 1MHz HFO, 2MHz HFO, 2MHz XTAL or 2MHz PAD clock.
+<BR>1MHZ_HFO = 0 1MHz divided from HFO clock is selected.
+<BR>2MHZ_HFO = 1 2MHz divided from HFO clock is selected.
+<BR>2MHZ_XTAL = 2 2MHz divided from audio crystal is selected.
+<BR>2MHZ_PAD = 3 2MHz from input pad is selected.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>This register controls various clock sources.</P>
+<BR><HR>
+<H2 id="TSENSE_CTRL"><A href="#index">
+IO_SOCCTRL_TSENSE_CTRL</A></H2>
+<P><FONT size="+1"><B>TEMPERATURE SENSOR CONTROL REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SOCCTRL_TSENSE_CTRL ADDRESS:</B></TD>
+<TD><CODE>0x500300e0</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="26">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">SATURATED<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">READY<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="3">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RST_N<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:6</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>SATURATED</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>TSENSE SATURATED</TD>
+<TD>Temperature sensor result has saturated and is not reliable.
+<BR>NORMAL = 0 Result is normal.
+<BR>SATURATED = 1 Result has saturated.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>READY</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>TSENSE READY</TD>
+<TD>Temperature sensor frequency ready.
+<BR>WAITING = 0 Result is not ready.
+<BR>READY = 1 Result is ready.
+<TR align="left">
+<TD nowrap>3:1</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>RST_N</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>TSENSE RESET_N</TD>
+<TD>Reset control for the temperature sensor FDC. Set to 0 to reset and disable the temperature sensor FDC.
+<BR>RESET = 0 Reset and disable the tsensor FDC.
+<BR>RUN = 1 Allow the tsensor FDC to run.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>This register controls the temperature sensor FDC.</P>
+<BR><HR>
+<H2 id="TSENSE_FREQ"><A href="#index">
+IO_SOCCTRL_TSENSE_FREQ</A></H2>
+<P><FONT size="+1"><B>TEMPERATURE SENSOR FREQUENCY REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SOCCTRL_TSENSE_FREQ ADDRESS:</B></TD>
+<TD><CODE>0x500300e4</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="16">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="16">VALUE<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:16</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>15:0</TD>
+<TD nowrap>VALUE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>TSENSOR FREQUENCY</TD>
+<TD>Temperature sensor frequency. Do not read until READY bit is set. Set RST_N bit to begin collection. Unset RST_N bit when done to save energy and reset the counter.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>This register shows the temperature sensor FDC result.</P>
+<BR><HR>
+<H2 id="FPANEL"><A href="#index">
+IO_SOCCTRL_FPANEL</A></H2>
+<P><FONT size="+1"><B>FRONT PANEL CONTROL REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SOCCTRL_FPANEL ADDRESS:</B></TD>
+<TD><CODE>0x500300f4</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="20">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="3">DSP_OSC_DIV<BR><TT>0x4</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="3">M3_OSC_DIV<BR><TT>0x4</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CLK_DISABLE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">OEN<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DSP_OSC<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">M3_OSC<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CONTINUOUS<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">RUN_STATE<BR><TT>0x1</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:12</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>11:9</TD>
+<TD nowrap>DSP_OSC_DIV</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>DSP OSCILLATOR DIVIDE</TD>
+<TD>Divide down the DSP oscillator out of DSP to ANALYZER debug bus.
+<BR>DIV_BY_1 = 0 Undivided dsp_osc to analyzer bus.
+<BR>DIV_BY_2 = 1 Divide by 2.
+<BR>DIV_BY_4 = 2 Divide by 4.
+<BR>DIV_BY_8 = 3 Divide by 8.
+<BR>DIV_BY_16 = 4 Divide by 16.
+<TR align="left">
+<TD nowrap>8:6</TD>
+<TD nowrap>M3_OSC_DIV</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>M3 OSCILLATOR DIVIDE</TD>
+<TD>Divide down the M3 oscillator out of M3 to ANALYZER debug bus.
+<BR>DIV_BY_1 = 0 Undivided dsp_osc to analyzer bus.
+<BR>DIV_BY_2 = 1 Divide by 2.
+<BR>DIV_BY_4 = 2 Divide by 4.
+<BR>DIV_BY_8 = 3 Divide by 8.
+<BR>DIV_BY_16 = 4 Divide by 16.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>CLK_DISABLE</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Front Panel Clock enable</TD>
+<TD>Set to 1 to disable the 8MHZ oscillator normally enabled by padmux controls selecting FPANEL.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>OEN</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>Front Panel OEN</TD>
+<TD>Set to 1 to tristate FPANEL output pin.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>DSP_OSC</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CONTROLS DSP OSCILLATOR GATE</TD>
+<TD>Set to 1 to enable DSP oscillator from DSP complex into the frequency counter in the front panel.
+<BR>ENABLE = 1 Enable the high frequency DSP oscillator out of the DSP complex so we can measure it.
+<BR>DISABLE = 0 Disable the high frequency DSP oscillator from the DSP complex to save chip power.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>M3_OSC</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CONTROLS M3 OSCILLATOR GATE</TD>
+<TD>Set to 1 to enable M3 oscillator from M3 complex into the frequency counter in the front panel.
+<BR>ENABLE = 1 Enable the high frequency M3 oscillator out of the M3 complex so we can measure it.
+<BR>DISABLE = 0 Disable the high frequency M3 oscillator from the M3 complex to save chip power.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>CONTINUOUS</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>FRONTPANEL LAUNCHES CONTINUOUSLY</TD>
+<TD>Set to 1 to launch continuously, i.e. restart immediately after the last spew. Note setting this disables the clear screen escape sequence.
+<BR>ALWAYS = 1 Always restart immediately.
+<BR>LAUNCHED = 0 Use 1Hz clock to launch.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>RUN_STATE</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>HALT/RUN FRONTPANEL</TD>
+<TD>Set to 1 to stop the front panel.
+<BR>HALT = 0 stop the front panel to save power.
+<BR>RUN = 1 let the front panel run (default).
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>This register provides control over a few functions in the front panel and the INSTR_STOP pin. Write a zero to this register to shutdown all A/C power in the peripheral piece of the front panel.</P>
+<BR><HR>
+<H2 id="DEBUG_READ_ONLY"><A href="#index">
+IO_SOCCTRL_DEBUG_READ_ONLY</A></H2>
+<P><FONT size="+1"><B>DEBUG READ ONLY VALUE REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_SOCCTRL_DEBUG_READ_ONLY ADDRESS:</B></TD>
+<TD><CODE>0x500300fc</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#c0c0c0" colspan="32">VALUE<BR><TT>0x44415645</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>VALUE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>DBG RO</TD>
+<TD>Debug Read Only Value for Diagnostics.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Provide a read only value for diagnostics.</P>
+

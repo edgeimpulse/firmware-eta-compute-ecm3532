@@ -1,0 +1,7 @@
+#!/bin/bash
+#openocd  -f board/eta_ecm35xx_board.cfg
+#openocd  -f board/eta_ecm35xx_fpga.cfg
+#/home/dave/openocd/0.10.0-5-20171220-0003/bin/openocd -f board/eta_ecm35xx_fpga.cfg
+#openocd -f board/eta_ecm35xx_fpga.cfg
+#openocd -f board/eta_ecm35xx_board.cfg
+openocd  -s /usr/local/share/openocd/scripts -f board/eta_ecm35xx.cfg

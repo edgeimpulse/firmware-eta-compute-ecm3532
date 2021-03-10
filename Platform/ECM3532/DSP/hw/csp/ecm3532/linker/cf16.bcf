@@ -1,0 +1,9 @@
+_symbol _ivt 0			// interrupt vector table at PM 0
+_symbol _main_init _after _ivt
+_entry_point _ivt		// start execution at _ivt
+
+_stack XMEM 0 2048		// stack region
+
+_reserved PMEM 0x2000 .. 0xffff
+_reserved XMEM 0x8000 .. 0xffff
+_reserved YMEM 0x8000 .. 0xffff  

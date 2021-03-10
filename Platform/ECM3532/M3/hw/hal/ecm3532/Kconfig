@@ -1,0 +1,13 @@
+config HAL_SPI_SLAVE
+	bool "SPI SLAVE"
+	default n
+    if HAL_SPI_SLAVE
+    orsource "spi_slave/Kconfig"
+    endif
+
+config HAL_PDM
+	bool "Enable PDM"
+	default n
+    if HAL_PDM
+    orsource "pdm/Kconfig"
+    endif

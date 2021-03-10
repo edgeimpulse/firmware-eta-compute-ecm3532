@@ -1,0 +1,56 @@
+menu "DVFS Parameters"
+comment "DVFS configrable parameters"
+config MIN_M3_FREQ
+	int "M3 Lowest Allowed Freq"
+    depends on PM_ENABLE && ECM3532
+	default 20
+    range 20 60
+
+config MAX_M3_FREQ
+	int "M3 MAX Target Freq"
+    depends on PM_ENABLE && ECM3532
+	default 100
+    range 20 100
+
+menu "DVFS Threshold"
+
+config DELTA_STEP_UP
+    int "M3 Step Up delta"
+    default 5
+    range 3 20
+    depends on PM_ENABLE && ECM3532
+
+config DELTA_STEP_DOWN
+    int "M3 Step Down delta"
+    default 3
+    range 3 20
+    depends on PM_ENABLE && ECM3532
+
+config LOAD_HIGH_THRESH
+	int "CPU Load Step Up threshold"
+    depends on PM_ENABLE && ECM3532
+	default 80
+
+config LOAD_CRIT_HIGH_THRESH
+	int "CPU Load Critical High threshold"
+    depends on PM_ENABLE && ECM3532
+	default 90
+
+config LOAD_LOW_THRESH
+	int "CPU Load Step Down threshold"
+    depends on PM_ENABLE && ECM3532
+	default 75
+
+config STEP_UP_DEBOUNCE
+	int "Debounce count of Load for step up"
+    depends on PM_ENABLE && ECM3532
+	default 2
+
+config STEP_DOWN_DEBOUNCE
+	int "Debounce count of Load for step down"
+    depends on PM_ENABLE && ECM3532
+	default 2
+
+endmenu
+
+endmenu

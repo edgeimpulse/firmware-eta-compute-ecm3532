@@ -1,0 +1,12 @@
+
+ config APP_NAME
+    string
+    default "firmware-eta-compute-ecm3532-internal"
+
+ config SW_VERSION
+    string
+    default "TensaiFlow_rc_alpha2-0.2"
+
+ config SW_VERSION_EXTRA
+    string
+    default ""

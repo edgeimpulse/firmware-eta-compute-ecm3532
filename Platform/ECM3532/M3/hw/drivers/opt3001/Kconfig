@@ -1,0 +1,9 @@
+config OPT3001_I2C_INSTANCE
+    int "opt3001 I2C Instance"
+    default "1"
+config OPT3001_I2C_ADDRESS
+    hex "opt3001 I2C address"
+    default 0x44
+config OPT3001_INT_PIN
+    int  "opt3001 int GPIO"
+    default 1

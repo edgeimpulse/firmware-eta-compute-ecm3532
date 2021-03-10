@@ -1,0 +1,6 @@
+load
+set {int}0x1001FFF8 = 0
+monitor reset
+monitor halt
+b main
+c

@@ -1,0 +1,10 @@
+config BLE_UART
+    int "a31r118 ble uart port"
+    default "0"
+config BLE_RST_PIN
+    int  "a31r118 ble reset gpio pin"
+    depends on (AI_VISION_BOARD || AI_SENSOR_BOARD)
+    range 12 12  if AI_VISION_BOARD
+    range 16 16  if AI_SENSOR_BOARD
+    default 12 if AI_VISION_BOARD
+    default 16 if AI_SENSOR_BOARD

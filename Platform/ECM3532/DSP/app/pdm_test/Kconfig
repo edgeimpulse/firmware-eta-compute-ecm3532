@@ -1,0 +1,8 @@
+menu "PDM Test"
+comment "PDM Test app"
+    config PDM_TEST
+        bool "PDM Test"
+        default y
+        select PDM
+        select PDM_1
+endmenu

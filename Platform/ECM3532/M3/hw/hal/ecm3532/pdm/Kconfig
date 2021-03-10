@@ -1,0 +1,38 @@
+menu "PDM HAL Settings"
+
+config PDM_0
+    bool "Enable PDM 0"
+    default n
+
+config PDM_1
+    bool "Enable PDM 1"
+    default n
+
+config PDM_COUNT
+  int
+  default 2 if (PDM_0 && PDM_1)
+  default 1 if (PDM_0 || PDM_1)
+  default 0
+config PDM_CLK_SRC
+  int
+  default 1
+config PGA_L
+  int  "Lt pga gain -12 to 34.5db 1.5dbstep"
+  range 0 31
+  default 8
+
+config PGA_R
+  int  "Rt pga gain -12 to 34.5db 1.5dbstep"
+  range 0 31
+  default 8
+
+config HP_FILTER
+  bool "enable HP Filter"
+  default y
+
+config HP_COEF
+  int  "HP filter coefficient"
+  depends on HP_FILTER
+  range 0  15
+  default 11
+endmenu

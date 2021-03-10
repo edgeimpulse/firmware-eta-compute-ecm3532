@@ -1,0 +1,38 @@
+-------------------------------------------------------------------------------
+2020 May 22: Failures we have seen on this release on dev branch
+csp_hfo_tune_update_test1: ERROR in SRAM waiting for 10 seconds  Os,Ofast
+csp_por_test1: ERROR in SRAM waiting for 4 seconds               O3
+csp_spi_test1: ERROR in SRAM waiting for 4 seconds               O3
+csp_uart_echo: ERROR in SRAM waiting for 20 seconds              Os
+csp_wdt_test3: ERROR in SRAM waiting for 10 seconds              O3
+csp_wdt_test7: ERROR in SRAM waiting for 30 seconds              O3,Ofast
+
+-------------------------------------------------------------------------------
+2020 May 20: FS-50 HOTFIX
+        "DSP API naming" PrintViaM3 changes.
+
+-------------------------------------------------------------------------------
+2020 May 19: FS-51 HOTFIX
+        David Racine ran into a problem while porting Keyword spotting bare 
+        metal functions from 3531 to 3532. There is no way to specify a PGA
+        gain other than a hard coded 0xA (10X). This will also be an 
+        impediment for AGC algorithms in the DSP going forward.
+
+2020 May 19: FS-45 HOTFIX
+        Removed the concept of a back door UART.
+
+2020 May 6: FS-48: Default Value of DONT_WAIT bit in regs is not 1
+        Noticed by Nilanjan and crew. Fixed with CSP functions to control 
+        the bit on this date.  
+
+
+-------------------------------------------------------------------------------
+The following changes are being recorded with respect to the CSP alpha release for ecm3532. This release notes starts 2020 April 29.
+
+2020 April 29: FS-41 HOTFIX on DEV by DB 
+	added additional warning switches per Inder to csp make file for gcc
+        Warning on warnings, you will -fno-strict-aliasing added to your warning set.
+
+2020 April 29: FS-42 HOTFIX on DEV by DB 
+	updated fence functions in EtaCspRtcTmrTimedRun.
+

@@ -1,0 +1,31 @@
+menu "Serial Protocol"
+config SERIAL_PROTOCOL
+	bool "Serial Protocol"
+    default n
+config DATA_CRC_CHECK
+  bool "use CRC for DATA packet"
+  depends on SERIAL_PROTOCOL
+  default y
+choice CRC_TYPE
+  prompt "CRC type"
+  depends on DATA_CRC_CHECK
+  config CRC8
+    bool "crc-8"
+  config CRC32
+  bool "crc-32"
+endchoice
+
+config  DATA_PKT_LEN
+  int "Max Data pkt len"
+  depends on SERIAL_PROTOCOL
+  default 100
+
+config SERIAL_XPORT
+  bool
+  depends on SERIAL_PROTOCOL
+  default y
+  if SERIAL_PROTOCOL
+    orsource "xport/Kconfig"
+  endif
+
+endmenu

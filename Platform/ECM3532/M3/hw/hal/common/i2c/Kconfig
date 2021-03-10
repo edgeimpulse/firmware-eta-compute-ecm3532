@@ -1,0 +1,42 @@
+menu "I2C setting"
+comment "I2C0 and SPI0 are mutually exclusive"
+
+config I2C_0
+	bool "Enable I2C 0"
+    depends on !SPI_0_MASTER
+choice I2C_0_FREQ
+    prompt "I2C0 Freq Choice"
+    depends on I2C_0
+    config I2C0_FREQ_400_KHZ
+        bool "400KHZ"
+    config I2C0_FREQ_100_KHZ
+        bool "100KHZ"
+    config I2C0_FREQ_1_MHZ
+        bool "1MHZ"
+endchoice
+config I2C_0_FREQ
+    int
+    default 100 if I2C0_FREQ_100_KHZ
+    default 400 if I2C0_FREQ_400_KHZ
+    default 1000 if I2C0_FREQ_1_MHZ
+
+config I2C_1
+	bool "Enable I2C 1"
+	default y
+choice I2C_1_FREQ
+    prompt "I2C1 Freq Choice"
+    depends on I2C_1
+    config I2C1_FREQ_400_KHZ
+        bool "400KHZ"
+    config I2C1_FREQ_100_KHZ
+        bool "100KHZ"
+    config I2C1_FREQ_1_MHZ
+        bool "1MHZ"
+endchoice
+config I2C_1_FREQ
+    int
+    default 100 if I2C1_FREQ_100_KHZ
+    default 400 if I2C1_FREQ_400_KHZ
+    default 1000 if I2C1_FREQ_1_MHZ
+
+endmenu

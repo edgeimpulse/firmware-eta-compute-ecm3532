@@ -1,0 +1,10 @@
+set(cfgvar "CONFIG_SENSOR_MANAGER")
+CONFIGVAL(cfgvaren ${cfgvar})
+string(COMPARE EQUAL "${cfgvaren}" y _cmp)
+if (_cmp)
+  SUBDIRLIST(SDIRS ${CMAKE_CURRENT_LIST_DIR})
+  FOREACH(subdir ${SDIRS})
+  ADD_SUBDIRECTORY(${subdir})
+  ENDFOREACH()
+endif()
+

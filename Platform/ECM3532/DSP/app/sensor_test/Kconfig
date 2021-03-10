@@ -1,0 +1,3 @@
+menu "DSP Sensor Test"
+comment "DSP Sensor test app, Sensors data collection by DSP and transmitted to M3 side"
+endmenu

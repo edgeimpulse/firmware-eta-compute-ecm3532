@@ -1,0 +1,6 @@
+menu "FFT DSP LSM6DSL configuration"
+config LSM6DSL_FFT_DSP_NAME
+    string "Device Name String"
+    default "lsm6dsl_fft_dsp"
+endmenu
+

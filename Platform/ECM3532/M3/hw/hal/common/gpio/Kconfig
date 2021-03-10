@@ -1,0 +1,8 @@
+menu "GPIO HAL Settings"
+config GPIO_PIN_CNT
+	int "Default PIN COUNT"
+    default 31
+config GPIO_MAX_IRQ
+	int "GPIO IRQ PIN MAX COUNT"
+    default 3
+endmenu

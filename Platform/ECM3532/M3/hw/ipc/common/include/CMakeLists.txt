@@ -1,0 +1,7 @@
+GETCONFIG(rpcen "RPC")
+string(COMPARE EQUAL "${rpcen}" y _rpcen)
+if (_rpcen)
+    if (EXISTS "${PROJ_DIR}/framework/rpc/src")
+        target_include_directories(rpc PUBLIC "${CMAKE_CURRENT_LIST_DIR}")
+    endif ()
+endif ()

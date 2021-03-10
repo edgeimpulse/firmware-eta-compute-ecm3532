@@ -1,0 +1,9 @@
+device ECM3532
+if SWD
+speed 4000
+erase
+loadbin build/edge-impulse-ingestion.bin,0x01000000
+verifybin build/edge-impulse-ingestion.bin,0x01000000
+r0
+r1
+qc

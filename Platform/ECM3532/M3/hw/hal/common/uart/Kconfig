@@ -1,0 +1,134 @@
+menu "UART HAL Settings"
+comment "UART HAL support, below mentioned are configurable param"
+
+
+config UART_ASYNC_RECV_MAX_CNT
+    int "Max Client that can be registered to receive Async callback"
+    default 2
+    help
+        UART HAL support asynchronous receive of data by registering callback
+            with client id, this option define number of such clients
+            can be registered
+
+menu "UART 0 Settings"
+comment "Uart 0 param"
+config UART_0
+	bool "Enable UART 0"
+	default y
+choice UART0_DEFAULT_BAUD_RATE
+    prompt "Select UART 0 BAUD Rate"
+    depends on UART_0
+    config UART0_BRATE_115200
+        bool "115200"
+    config UART0_BRATE_9600
+        bool "9600"
+    config UART0_BRATE_38400
+        bool "38400"
+    config UART0_BRATE_57600
+        bool "57600"
+    config UART0_BRATE_234000
+        bool "234000"
+    config UART0_BRATE_460800
+        bool "460800"
+endchoice
+config UART0_DEFAULT_BAUD_RATE
+    int
+    default 9600   if UART0_BRATE_9600
+    default 38400  if UART0_BRATE_38400
+    default 57600  if UART0_BRATE_57600
+    default 115200 if UART0_BRATE_115200
+    default 234000 if UART0_BRATE_234000
+    default 460800 if UART0_BRATE_460800
+
+config UART0_DEFAULT_PARITY
+	int "Default Parity: 2 for none, 1 for even, 0 for odd"
+    default 2
+	depends on UART_0
+
+config UART0_DEFAULT_FLOW_CTRL
+	int "Default flow Ctrl: 0 for No Flow Ctrl, 1 for HW Flow Ctrl"
+    default 0
+	depends on UART_0
+
+config UART0_DEFAULT_STOP_BITS
+	int "Default Stop Bits: 2"
+	depends on UART_0
+  default 2
+endmenu
+
+menu "UART 1 Settings"
+comment "Uart 1 param"
+config UART_1
+	bool "Enable UART 1"
+	default y
+choice UART1_DEFAULT_BAUD_RATE
+    prompt "Select UART 1 BAUD Rate"
+    depends on UART_1
+    config UART1_BRATE_115200
+        bool "115200"
+    config UART1_BRATE_9600
+        bool "9600"
+    config UART1_BRATE_38400
+        bool "38400"
+    config UART1_BRATE_57600
+        bool "57600"
+    config UART1_BRATE_234000
+        bool "234000"
+    config UART1_BRATE_460800
+        bool "460800"
+endchoice
+config UART1_DEFAULT_BAUD_RATE
+    int
+    default 9600   if UART1_BRATE_9600
+    default 38400  if UART1_BRATE_38400
+    default 57600  if UART1_BRATE_57600
+    default 115200 if UART1_BRATE_115200
+    default 234000 if UART1_BRATE_234000
+    default 460800 if UART1_BRATE_460800
+
+config UART1_DEFAULT_PARITY
+	int "Default Parity: 2 for none, 1 for even, 0 for odd"
+  default 2
+	depends on UART_1
+
+config UART1_DEFAULT_FLOW_CTRL
+	int "Default flow Ctrl: 0 for No Flow Ctrl, 1 for HW Flow Ctrl"
+  default 0
+	depends on UART_1
+
+config UART1_DEFAULT_STOP_BITS
+	int "Default Stop Bits: 2"
+  depends on UART_1
+  default 2
+endmenu
+
+config UART_CNT
+  int
+  default 2 if (UART_0 && UART_1)
+  default 1 if (UART_0 || UART_1)
+config UART_INDEX_OFFSET
+  int
+  default 0 if (UART_0 && UART_1)
+  default 1 if (UART_1)
+  default 0 if (UART_0)
+
+config DEBUG_UART_PRINT
+    bool "Enable UART print"
+    default y
+
+choice DEBUG_UART
+  prompt "DEBUG UART"
+  depends on (UART_0 || UART_1) && (DEBUG_UART_PRINT)
+  config DEBUG_UART_0
+    bool "Debug Uart 0"
+    depends on (UART_0 && (EVB_BOARD || AI_VISION_EXTENSION_BOARD))
+  config DEBUG_UART_1
+    bool "Debug Uart 1"
+    depends on (UART_1 && (AI_SENSOR_BOARD || EVB_BOARD || AI_VISION_EXTENSION_BOARD || AI_VISION_BOARD))
+  endchoice
+config DEBUG_UART
+  int
+  depends on (DEBUG_UART_PRINT)
+  default 0 if DEBUG_UART_0
+  default 1 if DEBUG_UART_1
+endmenu

@@ -1,0 +1,6 @@
+menu "Hello World"
+comment "Hello world test app, simple task periodically prints hello on uart"
+config APP_LED_GPIO
+  int "LED GPIO"
+  default 1
+endmenu

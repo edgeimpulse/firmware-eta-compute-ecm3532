@@ -1,0 +1,702 @@
+menu "Board Selection"
+comment "Board specific configuration"
+comment "Select Target Board, Some APP are specific to Board"
+choice ECM3532_TARGET_BOARD
+    prompt "Select Target Board"
+if !DISABLE_AI_VISION_BRD
+    config AI_VISION_BOARD
+        bool "ECM3532_AI_VISION_BOARD"
+        if AI_VISION_BOARD
+            orsource "ai_vision/Kconfig"
+        endif
+endif
+if !DISABLE_AI_VISION_EXT_BRD && !BOOTLOADER_APP
+    config AI_VISION_EXTENSION_BOARD
+        bool "ECM3532_AI_VISION_EXTENSION_BOARD"
+        if AI_VISION_EXTENSION_BOARD
+            orsource "ai_vision_extension/Kconfig"
+        endif
+endif
+if !DISABLE_AI_SENSOR_BRD
+    config AI_SENSOR_BOARD
+        bool "ECM3532_AI_SENSOR_BOARD"
+        select UART_1
+        if AI_SENSOR_BOARD
+            orsource "ai_sensor/Kconfig"
+        endif
+endif
+if !DISABLE_EVB_BRD && !BOOTLOADER_APP
+    config EVB_BOARD
+        bool "ECM3532EVB"
+        if EVB_BOARD
+            orsource "evb/Kconfig"
+        endif
+endif
+endchoice
+config ECM3532_TARGET_BOARD
+    string
+    default "evb" if EVB_BOARD
+    default "ai_sensor" if AI_SENSOR_BOARD
+    default "ai_vision_extension" if AI_VISION_EXTENSION_BOARD
+    default "ai_vision" if AI_VISION_BOARD
+
+config BUTTON_GPIO
+    bool "push button gpio"
+    default n
+
+config BUTTON_GPIO_NUM
+  int "Push Button GPIO Number"
+  depends on BUTTON_GPIO
+  default 10
+
+menu "PIN MUX"
+choice PIN0_MUX
+    prompt "PIN0_MUX"
+    optional
+config PIN0_FUNC_GPIO0
+    bool "PIN0_FUNC_GPIO0"
+config PIN0_FUNC_PWMCH0
+    bool "PIN0_FUNC_PWMCH0"
+config PIN0_FUNC_UART0DBGC
+    bool "PIN0_FUNC_UART0DBGC"
+config PIN0_FUNC_SPI2MISO
+    bool "PIN0_FUNC_SPI2MISO"
+config PIN0_FUNC_SPISLV2MOSI
+    bool "PIN0_FUNC_SPISLV2MOSI"
+endchoice
+config PIN0_MUX
+	int
+    default 0 if PIN0_FUNC_GPIO0
+    default 1 if PIN0_FUNC_PWMCH0
+    default 2 if PIN0_FUNC_UART0DBGC
+    default 3 if PIN0_FUNC_SPI2MISO
+    default 4 if PIN0_FUNC_SPISLV2MOSI
+
+choice PIN1_MUX
+    prompt "PIN1_MUX"
+    optional
+config PIN1_FUNC_GPIO1
+    bool "PIN1_FUNC_GPIO1"
+config PIN1_FUNC_PWMCH1
+    bool "PIN1_FUNC_PWMCH1"
+config PIN1_FUNC_UART0DBGB
+    bool "PIN1_FUNC_UART0DBGB"
+config PIN1_FUNC_SPI2MOSI
+    bool "PIN1_FUNC_SPI2MOSI"
+config PIN1_FUNC_SPISLV2MISO
+    bool "PIN1_FUNC_SPISLV2MISO"
+endchoice
+config PIN1_MUX
+	int
+    default 0 if PIN1_FUNC_GPIO1
+    default 1 if PIN1_FUNC_PWMCH1
+    default 2 if PIN1_FUNC_UART0DBGB
+    default 3 if PIN1_FUNC_SPI2MOSI
+    default 4 if PIN1_FUNC_SPISLV2MISO
+
+choice PIN2_MUX
+    prompt "PIN2_MUX"
+    optional
+config PIN2_FUNC_GPIO2
+    bool "PIN2_FUNC_GPIO2"
+config PIN2_FUNC_PWMCH2
+    bool "PIN2_FUNC_PWMCH2"
+config PIN2_FUNC_UART0DBGA
+    bool "PIN2_FUNC_UART0DBGA"
+config PIN2_FUNC_SPI2CLK
+    bool "PIN2_FUNC_SPI2CLK"
+config PIN2_FUNC_SPISLV2CLK
+    bool "PIN2_FUNC_SPISLV2CLK"
+endchoice
+config  PIN2_MUX
+	int
+    default 0 if PIN2_FUNC_GPIO2
+    default 1 if PIN2_FUNC_PWMCH2
+    default 2 if PIN2_FUNC_UART0DBGA
+    default 3 if PIN2_FUNC_SPI2CLK
+    default 4 if PIN2_FUNC_SPISLV2CLK
+
+choice PIN3_MUX
+    bool "PIN3_MUX"
+    default PIN3_FUNC_UART1RX if UART_1
+config PIN3_FUNC_GPIO3
+    bool "PIN3_FUNC_GPIO3"
+config PIN3_FUNC_PWMCH3
+    bool "PIN3_FUNC_PWMCH3"
+config PIN3_FUNC_UART1DBGC
+    bool "PIN3_FUNC_UART1DBGC"
+config PIN3_FUNC_UART1RX
+    bool "PIN3_FUNC_UART1RX"
+endchoice
+config PIN3_MUX
+    int
+    default 0 if PIN3_FUNC_GPIO3
+    default 1 if PIN3_FUNC_PWMCH3
+    default 2 if PIN3_FUNC_UART1DBGC
+    default 3 if PIN3_FUNC_UART1RX
+
+choice PIN4_MUX
+    bool "PIN4_MUX"
+    default PIN4_FUNC_UART1RTS
+config PIN4_FUNC_GPIO4
+    bool "PIN4_FUNC_GPIO4"
+config PIN4_FUNC_PWMCH4
+    bool "PIN4_FUNC_PWMCH4"
+config PIN4_FUNC_UART1DBGB
+    bool "PIN4_FUNC_UART1DBGB"
+config PIN4_FUNC_UART1RTS
+    bool "PIN4_FUNC_UART1RTS"
+endchoice
+config PIN4_MUX
+    int
+    default 0 if PIN4_FUNC_GPIO4
+    default 1 if PIN4_FUNC_PWMCH4
+    default 2 if PIN4_FUNC_UART1DBGB
+    default 3 if PIN4_FUNC_UART1RTS
+
+choice PIN5_MUX
+    bool "PIN5_MUX"
+    default PIN5_FUNC_UART1CTS
+config PIN5_FUNC_GPIO5
+    bool "PIN5_FUNC_GPIO5"
+config PIN5_FUNC_PWMCH5
+    bool "PIN5_FUNC_PWMCH5"
+config PIN5_FUNC_UART1DBGA
+    bool "PIN5_FUNC_UART1DBGA"
+config PIN5_FUNC_UART1CTS
+    bool "PIN5_FUNC_UART1CTS"
+endchoice
+config PIN5_MUX
+    int
+    default 0 if PIN5_FUNC_GPIO5
+    default 1 if PIN5_FUNC_PWMCH5
+    default 2 if PIN5_FUNC_UART1DBGA
+    default 3 if PIN5_FUNC_UART1CTS
+
+choice PIN6_MUX
+    prompt "PIN6_MUX"
+    optional
+config PIN6_FUNC_GPIO6
+    bool "PIN6_FUNC_GPIO6"
+config PIN6_FUNC_PWMCH6
+    bool "PIN6_FUNC_PWMCH6"
+config PIN6_FUNC_FPANEL
+    bool "PIN6_FUNC_FPANEL"
+config PIN6_FUNC_CLKOUT
+    bool "PIN6_FUNC_CLKOUT"
+endchoice
+config PIN6_MUX
+    int
+    default 0 if PIN6_FUNC_GPIO6
+    default 1 if PIN6_FUNC_PWMCH6
+    default 2 if PIN6_FUNC_FPANEL
+    default 3 if PIN6_FUNC_CLKOUT
+
+choice PIN7_MUX
+    prompt "PIN7_MUX"
+    default PIN7_FUNC_UART1TX if UART_1
+config PIN7_FUNC_GPIO7
+    bool "PIN7_FUNC_GPIO7"
+config PIN7_FUNC_PWMCH7
+    bool "PIN7_FUNC_PWMCH7"
+config PIN7_FUNC_DSP_UART_TX
+    bool "PIN7_FUNC_DSP_UART_TX"
+config PIN7_FUNC_UART1TX
+    bool "PIN7_FUNC_UART1TX"
+endchoice
+config PIN7_MUX
+    int
+    default 0 if PIN7_FUNC_GPIO7
+    default 1 if PIN7_FUNC_PWMCH7
+    default 2 if PIN7_FUNC_DSP_UART_TX
+    default 3 if PIN7_FUNC_UART1TX
+
+choice PIN8_MUX
+    prompt "PIN8_MUX"
+    default PIN8_FUNC_I2C2SDA if RPC
+    default PIN8_FUNC_I2C1SDA if I2C_1
+config PIN8_FUNC_GPIO8
+    bool "PIN8_FUNC_GPIO8"
+config PIN8_FUNC_I2C1SDA
+    bool "PIN8_FUNC_I2C1SDA"
+    depends on I2C_1
+config PIN8_FUNC_PDM0CLK
+    bool "PIN8_FUNC_PDM0CLK"
+config PIN8_FUNC_I2C2SDA
+    bool "PIN8_FUNC_I2C2SDA"
+    depends on RPC
+endchoice
+config PIN8_MUX
+	int
+    default 0 if PIN8_FUNC_GPIO8
+    default 1 if PIN8_FUNC_I2C1SDA
+    default 2 if PIN8_FUNC_PDM0CLK
+    default 3 if PIN8_FUNC_I2C2SDA
+
+choice PIN9_MUX
+    prompt "PIN9_MUX"
+    default PIN9_FUNC_I2C2SCK if RPC
+    default PIN9_FUNC_I2C1SCK if I2C_1
+config PIN9_FUNC_GPIO9
+    bool "PIN9_FUNC_GPIO9"
+config PIN9_FUNC_I2C1SCK
+    bool "PIN9_FUNC_I2C1SCK"
+    depends on I2C_1
+config PIN9_FUNC_PDM0DATA
+    bool "PIN9_FUNC_PDM0DATA"
+config PIN9_FUNC_I2C2SCK
+    bool "PIN9_FUNC_I2C2SCK"
+    depends on RPC
+endchoice
+config PIN9_MUX
+    int
+    default 0 if PIN9_FUNC_GPIO9
+    default 1 if PIN9_FUNC_I2C1SCK
+    default 2 if PIN9_FUNC_PDM0DATA
+    default 3 if PIN9_FUNC_I2C2SCK
+
+choice PIN10_MUX
+    prompt "PIN10_MUX"
+    optional
+config PIN10_FUNC_GPIO10
+    bool "PIN10_FUNC_GPIO10"
+config PIN10_FUNC_SPI2CS2
+    bool "PIN10_FUNC_SPI2CS2"
+endchoice
+config PIN10_MUX
+    int
+    default 0 if PIN10_FUNC_GPIO10
+    default 1 if PIN10_FUNC_SPI2CS2
+
+choice PIN11_MUX
+    prompt "PIN11_MUX"
+    optional
+config PIN11_FUNC_GPIO11
+    bool "PIN11_FUNC_GPIO11"
+config PIN11_FUNC_SPI2RDY
+    bool "PIN11_FUNC_SPI2RDY"
+config PIN11_FUNC_SPI2CS3
+    bool "PIN11_FUNC_SPI2CS3"
+config PIN11_FUNC_SPISLV2CS
+    bool "PIN11_FUNC_SPISLV2CS"
+endchoice
+config PIN11_MUX
+    int
+    default 0 if PIN11_FUNC_GPIO11
+    default 1 if PIN11_FUNC_SPI2RDY
+    default 2 if PIN11_FUNC_SPI2CS3
+    default 3 if PIN11_FUNC_SPISLV2CS
+
+choice PIN12_MUX
+    prompt "PIN12_MUX"
+    optional
+config PIN12_FUNC_GPIO12
+    bool "PIN12_FUNC_GPIO12"
+config PIN12_FUNC_I2SACLK
+    bool "PIN12_FUNC_I2SACLK"
+endchoice
+config PIN12_MUX
+    int
+    default 0 if PIN12_FUNC_GPIO12
+    default 1 if PIN12_FUNC_I2SACLK
+
+choice PIN13_MUX
+    prompt "PIN13_MUX"
+    optional
+config PIN13_FUNC_GPIO13
+    bool "PIN13_FUNC_GPIO13"
+config PIN13_FUNC_I2SBCLK
+    bool "PIN13_FUNC_I2SBCLK"
+endchoice
+config PIN13_MUX
+	int
+    default 0 if PIN13_FUNC_GPIO13
+    default 1 if PIN13_FUNC_I2SBCLK
+
+choice PIN14_MUX
+    prompt "PIN14_MUX"
+    optional
+config PIN14_FUNC_GPIO14
+    bool "PIN14_FUNC_GPIO14"
+config PIN14_FUNC_I2SLRCLK
+    bool "PIN14_FUNC_I2SLRCLK"
+config PIN14_FUNC_PDM1CLK
+    bool "PIN14_FUNC_PDM1CLK"
+endchoice
+config PIN14_MUX
+    int
+    default 0 if PIN14_FUNC_GPIO14
+    default 1 if PIN14_FUNC_I2SLRCLK
+    default 2 if PIN14_FUNC_PDM1CLK
+
+choice PIN15_MUX
+    prompt "PIN15_MUX"
+    optional
+config PIN15_FUNC_GPIO15
+    bool "PIN15_FUNC_GPIO15"
+config PIN15_FUNC_I2SDATA_IN
+    bool "PIN15_FUNC_I2SDATA_IN"
+config PIN15_FUNC_PDM1DATA
+    bool "PIN15_FUNC_PDM1DATA"
+endchoice
+config PIN15_MUX
+    int
+    default 0 if PIN15_FUNC_GPIO15
+    default 1 if PIN15_FUNC_I2SDATA_IN
+    default 2 if PIN15_FUNC_PDM1DATA
+
+choice PIN16_MUX
+    prompt "PIN16_MUX"
+    optional
+config PIN16_FUNC_GPIO16
+    bool "PIN16_FUNC_GPIO16"
+config PIN16_FUNC_I2SDATA_OUT
+    bool "PIN16_FUNC_I2SDATA_OUT"
+endchoice
+config PIN16_MUX
+    int
+    default 0 if PIN16_FUNC_GPIO16
+    default 1 if PIN16_FUNC_I2SDATA_OUT
+
+choice PIN17_MUX
+    prompt "PIN17_MUX"
+    optional
+config PIN17_FUNC_GPIO17
+    bool "PIN17_FUNC_GPIO17"
+config PIN17_FUNC_I2C0SDA
+    bool "PIN17_FUNC_I2C0SDA"
+config PIN17_FUNC_DSP_JTAG_TMS
+    bool "PIN17_FUNC_DSP_JTAG_TMS"
+config PIN17_FUNC_PDM0CLK
+    bool "PIN17_FUNC_PDM0CLK"
+endchoice
+config PIN17_MUX
+    int
+    default 0 if PIN17_FUNC_GPIO17
+    default 1 if PIN17_FUNC_I2C0SDA
+    default 2 if PIN17_FUNC_DSP_JTAG_TMS
+    default 3 if PIN17_FUNC_PDM0CLK
+
+choice PIN18_MUX
+    prompt "PIN18_MUX"
+    optional
+config PIN18_FUNC_GPIO18
+    bool "PIN18_FUNC_GPIO18"
+config PIN18_FUNC_I2C0SCK
+    bool "PIN18_FUNC_I2C0SCK"
+config PIN18_FUNC_DSP_JTAG_TDI
+    bool "PIN18_FUNC_DSP_JTAG_TDI"
+config PIN18_FUNC_PDM0DATA
+    bool "PIN18_FUNC_PDM0DATA"
+endchoice
+config PIN18_MUX
+    int
+    default 0 if PIN18_FUNC_GPIO18
+    default 1 if PIN18_FUNC_I2C0SCK
+    default 2 if PIN18_FUNC_DSP_JTAG_TDI
+    default 3 if PIN18_FUNC_PDM0DATA
+
+choice PIN19_MUX
+     prompt "PIN19_MUX"
+     default PIN19_FUNC_UART1RX if UART1_RX_PIN19
+     optional
+config PIN19_FUNC_GPIO19
+    bool "PIN19_FUNC_GPIO19"
+config PIN19_FUNC_UART1RX
+    bool "PIN19_FUNC_UART1RX"
+config PIN19_FUNC_DSP_JTAG_TRST_N
+    bool "PIN19_FUNC_DSP_JTAG_TRST_N"
+endchoice
+config PIN19_MUX
+    int
+    default 0 if PIN19_FUNC_GPIO19
+    default 1 if PIN19_FUNC_UART1RX
+    default 2 if PIN19_FUNC_DSP_JTAG_TRST_N
+
+choice PIN20_MUX
+    prompt "PIN20_MUX"
+    default PIN20_FUNC_DSP_UART_TX if RPC
+config PIN20_FUNC_GPIO20
+    bool "PIN20_FUNC_GPIO20"
+config PIN20_FUNC_UART1TX
+    bool "PIN20_FUNC_UART1TX"
+config PIN20_FUNC_DSP_UART_TX
+    bool "PIN20_FUNC_DSP_UART_TX"
+config PIN20_FUNC_FPANEL
+    bool "PIN20_FUNC_FPANEL"
+endchoice
+config PIN20_MUX
+    int
+    default 0 if PIN20_FUNC_GPIO20
+    default 1 if PIN20_FUNC_UART1TX
+    default 2 if PIN20_FUNC_DSP_UART_TX
+    default 3 if PIN20_FUNC_FPANEL
+
+choice PIN21_MUX
+    prompt "PIN21_MUX"
+    optional
+config PIN21_FUNC_GPIO21
+    bool "PIN21_FUNC_GPIO21"
+config PIN21_FUNC_UART1CTS
+    bool "PIN21_FUNC_UART1CTS"
+config PIN21_FUNC_DSP_JTAG_TCLK
+    bool "PIN21_FUNC_DSP_JTAG_TCLK"
+endchoice
+config PIN21_MUX
+    int
+    default 0 if PIN21_FUNC_GPIO21
+    default 1 if PIN21_FUNC_UART1CTS
+    default 2 if PIN21_FUNC_DSP_JTAG_TCLK
+
+choice PIN22_MUX
+    prompt "PIN22_MUX"
+    optional
+config PIN22_FUNC_GPIO22
+    bool "PIN22_FUNC_GPIO22"
+config PIN22_FUNC_UART1RTS
+    bool "PIN22_FUNC_UART1RTS"
+config PIN22_FUNC_DSP_JTAG_TDO
+    bool "PIN22_FUNC_DSP_JTAG_TDO"
+config PIN22_FUNC_CLKOUT
+    bool "PIN22_FUNC_CLKOUT"
+endchoice
+config PIN22_MUX
+    int
+    default 0 if PIN22_FUNC_GPIO22
+    default 1 if PIN22_FUNC_UART1RTS
+    default 2 if PIN22_FUNC_DSP_JTAG_TDO
+    default 3 if PIN22_FUNC_CLKOUT
+
+choice PIN23_MUX
+    prompt "PIN23_MUX"
+    optional
+config PIN23_FUNC_GPIO23
+    bool "PIN23_FUNC_GPIO23"
+config PIN23_FUNC_SPI0CS0
+    bool "PIN23_FUNC_SPI0CS0"
+config PIN23_FUNC_SPISLV0CS
+    bool "PIN23_FUNC_SPISLV0CS"
+endchoice
+config PIN23_MUX
+    int
+    default 0 if PIN23_FUNC_GPIO23
+    default 1 if PIN23_FUNC_SPI0CS0
+    default 2 if PIN23_FUNC_SPISLV0CS
+
+choice PIN24_MUX
+    prompt "PIN24_MUX"
+    optional
+config PIN24_FUNC_GPIO24
+    bool "PIN24_FUNC_GPIO24"
+config PIN24_FUNC_SPI0CS1
+    bool "PIN24_FUNC_SPI0CS1"
+endchoice
+config PIN24_MUX
+    int
+    default 0 if PIN24_FUNC_GPIO24
+    default 1 if PIN24_FUNC_SPI0CS1
+
+choice PIN25_MUX
+    prompt "PIN25_MUX"
+    optional
+config PIN25_FUNC_GPIO25
+    bool "PIN25_FUNC_GPIO25"
+config PIN25_FUNC_SPI0CS2
+    bool "PIN25_FUNC_SPI0CS2"
+endchoice
+config PIN25_MUX
+    int
+    default 0 if PIN25_FUNC_GPIO25
+    default 1 if PIN25_FUNC_SPI0CS2
+
+choice PIN26_MUX
+    prompt "PIN26_MUX"
+    optional
+config PIN26_FUNC_GPIO26
+    bool "PIN26_FUNC_GPIO26"
+config PIN26_FUNC_SPI0CS3
+    bool "PIN26_FUNC_SPI0CS3"
+config PIN26_FUNC_SPI0RDY
+    bool "PIN26_FUNC_SPI0RDY"
+endchoice
+config PIN26_MUX
+    int
+    default 0 if PIN26_FUNC_GPIO26
+    default 1 if PIN26_FUNC_SPI0CS3
+    default 2 if PIN26_FUNC_SPI0RDY
+
+choice PIN27_MUX
+    prompt "PIN27_MUX"
+    default PIN27_FUNC_SPI1MISO if SPI_1_MASTER
+    default PIN27_FUNC_SPI2MISO if SPI_2_MASTER
+config PIN27_FUNC_GPIO27
+    bool "PIN27_FUNC_GPIO27"
+config PIN27_FUNC_SPI1MISO
+    bool "PIN27_FUNC_SPI1MISO"
+config PIN27_FUNC_SPI2MISO
+    bool "PIN27_FUNC_SPI2MISO"
+config PIN27_FUNC_SPISLV1MOSI
+    bool "PIN27_FUNC_SPISLV1MOSI"
+config PIN27_FUNC_SPISLV2MOSI
+    bool "PIN27_FUNC_SPISLV2MOSI"
+endchoice
+config PIN27_MUX
+    int
+    default 1 if PIN27_FUNC_SPI1MISO
+    default 2 if PIN27_FUNC_SPI2MISO
+    default 3 if PIN27_FUNC_SPISLV1MOSI
+    default 4 if PIN27_FUNC_SPISLV2MOSI
+    default 0 if PIN27_FUNC_GPIO27
+
+choice PIN28_MUX
+    prompt "PIN28_MUX"
+    default PIN28_FUNC_SPI1MOSI if SPI_1_MASTER
+    default PIN28_FUNC_SPI2MOSI if SPI_2_MASTER
+config PIN28_FUNC_GPIO28
+    bool "PIN28_FUNC_GPIO28"
+config PIN28_FUNC_SPI1MOSI
+    bool "PIN28_FUNC_SPI1MOSI"
+config PIN28_FUNC_I2C1SDA
+    bool "PIN28_FUNC_I2C1SDA"
+config PIN28_FUNC_SPI2MOSI
+    bool "PIN28_FUNC_SPI2MOSI"
+config PIN28_FUNC_SPISLV1MISO
+    bool "PIN28_FUNC_SPISLV1MISO"
+config PIN28_FUNC_SPISLV2MISO
+    bool "PIN28_FUNC_SPISLV2MISO"
+endchoice
+config PIN28_MUX
+    int
+    default 0 if PIN28_FUNC_GPIO28
+    default 1 if PIN28_FUNC_SPI1MOSI
+    default 2 if PIN28_FUNC_I2C1SDA
+    default 3 if PIN28_FUNC_SPI2MOSI
+    default 4 if PIN28_FUNC_SPISLV1MISO
+    default 5 if PIN28_FUNC_SPISLV2MISO
+
+choice PIN29_MUX
+    prompt "PIN29_MUX"
+    default PIN29_FUNC_SPI1CLK if SPI_1_MASTER
+    default PIN29_FUNC_SPI2CLK if SPI_2_MASTER
+config PIN29_FUNC_GPIO29
+    bool "PIN29_FUNC_GPIO29"
+config PIN29_FUNC_SPI1CLK
+    bool "PIN29_FUNC_SPI1CLK"
+config PIN29_FUNC_I2C1SCK
+    bool "PIN29_FUNC_I2C1SCK"
+config PIN29_FUNC_SPI2CLK
+    bool "PIN29_FUNC_SPI2CLK"
+config PIN29_FUNC_SPISLV1CLK
+    bool "PIN29_FUNC_SPISLV2CLK"
+endchoice
+config PIN29_MUX
+    int
+    default 0 if PIN29_FUNC_GPIO29
+    default 1 if PIN29_FUNC_SPI1CLK
+    default 2 if PIN29_FUNC_I2C1SCK
+    default 3 if PIN29_FUNC_SPI2CLK
+    default 4 if PIN29_FUNC_SPISLV1CLK
+    default 5 if PIN29_FUNC_SPISLV2CLK
+
+choice PIN30_MUX
+    bool "PIN30_MUX"
+    default PIN30_FUNC_GPIO30 if SPI_1_MASTER
+    default PIN30_FUNC_SPI2CS0 if SPI_2_MASTER
+config PIN30_FUNC_GPIO30
+    bool "PIN30_FUNC_GPIO30"
+config PIN30_FUNC_SPI1CS0
+    bool "PIN30_FUNC_SPI1CS0"
+config PIN30_FUNC_SPI2RDY
+    bool "PIN30_FUNC_SPI2RDY"
+config PIN30_FUNC_SPI2CS0
+    bool "PIN30_FUNC_SPI2CS0"
+config PIN30_FUNC_SPISLV1CS
+    bool "PIN30_FUNC_SPISLV1CS"
+config PIN30_FUNC_SPISLV2CS
+    bool "PIN30_FUNC_SPISLV2CS"
+endchoice
+config PIN30_MUX
+    int
+    default 0 if PIN30_FUNC_GPIO30
+    default 1 if PIN30_FUNC_SPI1CS0
+    default 2 if PIN30_FUNC_SPI2RDY
+    default 3 if PIN30_FUNC_SPI2CS0
+    default 4 if PIN30_FUNC_SPISLV1CS
+    default 5 if PIN30_FUNC_SPISLV2CS
+
+choice PIN31_MUX
+    prompt "PIN31_MUX"
+    default PIN31_FUNC_GPIO31 if SPI_1_MASTER
+    default PIN31_FUNC_SPI2CS1 if SPI_2_MASTER
+config PIN31_FUNC_GPIO31
+    bool "PIN31_FUNC_GPIO31"
+config PIN31_FUNC_SPI1CS1
+    bool "PIN31_FUNC_SPI1CS1"
+config PIN31_FUNC_SPI1RDY
+    bool "PIN31_FUNC_SPI1RDY"
+config PIN31_FUNC_SPI2CS1
+    bool "PIN31_FUNC_SPI2CS1"
+endchoice
+config PIN31_MUX
+    int
+    default 0 if PIN31_FUNC_GPIO31
+    default 1 if PIN31_FUNC_SPI1CS1
+    default 2 if PIN31_FUNC_SPI1RDY
+    default 3 if PIN31_FUNC_SPI2CS1
+
+choice PIN_SPI0CLK
+    prompt "PIN_SPI0CLK"
+    default PIN_SPI0CLK_FUNC_SPI0CLK if SPI_0_MASTER
+    default PIN_SPI0CLK_FUNC_I2C0CLK if I2C_0
+    default PIN_SPI0CLK_FUNC_SPISLV0SCK if SPI_0_SLAVE
+config PIN_SPI0CLK_FUNC_SPI0CLK
+    bool "PIN_SPI0CLK_FUNC_SPI0CLK"
+    depends on SPI_0_MASTER
+config PIN_SPI0CLK_FUNC_I2C0CLK
+    bool "PIN_SPI0CLK_FUNC_I2C0CLK"
+    depends on I2C_0
+config PIN_SPI0CLK_FUNC_SPISLV0SCK
+    bool "PIN_SPI0CLK_FUNC_SPISLV0SCK"
+    depends on SPI_0_SLAVE
+endchoice
+config PIN_SPI0CLK
+    int
+    default 0 if PIN_SPI0CLK_FUNC_SPI0CLK
+    default 1 if PIN_SPI0CLK_FUNC_I2C0CLK
+    default 2 if PIN_SPI0CLK_FUNC_SPISLV0SCK
+
+choice PIN_SPI0MOSI
+    prompt "PIN_SPI0MOSI"
+    default PIN_SPI0MOSI_FUNC_MOSI if SPI_0_MASTER
+    default PIN_SPI0MOSI_FUNC_I2C0SDA if I2C_0
+config PIN_SPI0MOSI_FUNC_MOSI
+    bool "PIN_SPI0M0SI_FUNC_MOSI"
+    depends on SPI_0_MASTER
+config PIN_SPI0MOSI_FUNC_I2C0SDA
+    bool "PIN_SPI0MOSI_FUNC_I2C0SDA"
+    depends on I2C_0
+config PIN_SPI0MOSI_FUNC_SPISLV0MISO
+    bool "PIN_SPI0MOSI_FUNC_SPISLV0MISO"
+endchoice
+config PIN_SPI0MOSI
+    int
+    default 0 if PIN_SPI0MOSI_FUNC_MOSI
+    default 1 if PIN_SPI0MOSI_FUNC_I2C0SDA
+    default 2 if PIN_SPI0MOSI_FUNC_SPISLV0MISO
+
+choice PIN_SPI0MISO
+    prompt "PIN_SPI0MISO"
+    default PIN_SPI0MISO_FUNC_MISO if SPI_0_MASTER
+config PIN_SPI0MISO_FUNC_MISO
+    bool "PIN_SPI0MISO_FUNC_MISO"
+    depends on SPI_0_MASTER
+config PIN_SPI0MISO_FUNC_SPISLV0MOSI
+    bool "PIN_SPI0MISO_FUNC_SPISLV0MOSI"
+endchoice
+config PIN_SPI0MISO
+    int
+    default 0 if PIN_SPI0MISO_FUNC_MISO
+    default 1 if PIN_SPI0MISO_FUNC_SPISLV0MOSI
+endmenu
+
+endmenu

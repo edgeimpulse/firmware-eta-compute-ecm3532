@@ -1,0 +1,9 @@
+menu "Sensor Manager"
+config SENSOR_MANAGER
+	bool "SENSOR Manager"
+    default n
+config SENSOR_DEV_COUNT
+    int "Max Sensor count that can be plugged to SM"
+    depends on SENSOR_MANAGER
+    default 5
+endmenu

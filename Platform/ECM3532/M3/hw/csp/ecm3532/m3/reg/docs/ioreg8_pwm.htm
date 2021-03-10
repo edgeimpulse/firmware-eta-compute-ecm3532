@@ -1,0 +1,2731 @@
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>IOREG FILE: CAYMAN PWM PWM Generator
+</TITLE>
+</HEAD>
+<BODY>
+<H1 align="center">On-Line Documentation for CAYMAN  :  PWM <BR>  Bus Type: PERIPHERAL BUS</H1>
+<FONT size="+2"><B><P align="center">PWM Generator</P></B><B</FONT><BR><HR>
+<FONT face="Helvetica" size="-1"><P align="center"><B> Put banner announcement here. </B></P></FONT><HR>
+<BR><B>The PWM module contains four PWM generators. The PWM generators are configured with a command FIFO which sets their config, period, pulse start, and pulse end internal registers. A channel multiplexer steers PWM signals to any of the 16 output pins. The PWM supports synchronous channel changes to avoid glitches on the output.</B><BR><BR><HR>
+<FONT face="Helvetica" size="-1"><P align="left"><B> Source File Name: ./src/ioreg8_pwm.src <BR> Source File Modification Date Wed Jul 31 17:01:36 2019 <BR> html creation date November 11, 2019</B></P></FONT>
+<H2 id="index"> PWM Register Index</H2>
+<B> <CODE>ADDRESS</CODE></B><BR>
+<B><CODE>0x50000000: </CODE></B><A id = "CTRLindex" href="#CTRL"><B>IO_PWM_CTRL</A></B><BR>
+<B><CODE>0x50000004: </CODE></B><A id = "MODEindex" href="#MODE"><B>IO_PWM_MODE</A></B><BR>
+<B><CODE>0x50000008: </CODE></B><A id = "STATindex" href="#STAT"><B>IO_PWM_STAT</A></B><BR>
+<B><CODE>0x5000000c: </CODE></B><A id = "INT_STATindex" href="#INT_STAT"><B>IO_PWM_INT_STAT</A></B><BR>
+<B><CODE>0x50000010: </CODE></B><A id = "CHAN_CFGindex" href="#CHAN_CFG"><B>IO_PWM_CHAN_CFG</A></B><BR>
+<B><CODE>0x50000014: </CODE></B><A id = "CHAN_MUXindex" href="#CHAN_MUX"><B>IO_PWM_CHAN_MUX</A></B><BR>
+<B><CODE>0x50000018: </CODE></B><A id = "CFIFOindex" href="#CFIFO"><B>IO_PWM_CFIFO</A></B><BR>
+<B><CODE>0x5000001c: </CODE></B><A id = "CFG0index" href="#CFG0"><B>IO_PWM_CFG0</A></B><BR>
+<B><CODE>0x50000020: </CODE></B><A id = "CFG1index" href="#CFG1"><B>IO_PWM_CFG1</A></B><BR>
+<B><CODE>0x50000024: </CODE></B><A id = "CFG2index" href="#CFG2"><B>IO_PWM_CFG2</A></B><BR>
+<B><CODE>0x50000028: </CODE></B><A id = "CFG3index" href="#CFG3"><B>IO_PWM_CFG3</A></B><BR>
+<B><CODE>0x5000002c: </CODE></B><A id = "PER0index" href="#PER0"><B>IO_PWM_PER0</A></B><BR>
+<B><CODE>0x50000030: </CODE></B><A id = "PER1index" href="#PER1"><B>IO_PWM_PER1</A></B><BR>
+<B><CODE>0x50000034: </CODE></B><A id = "PER2index" href="#PER2"><B>IO_PWM_PER2</A></B><BR>
+<B><CODE>0x50000038: </CODE></B><A id = "PER3index" href="#PER3"><B>IO_PWM_PER3</A></B><BR>
+<B><CODE>0x5000003c: </CODE></B><A id = "PSTRT0index" href="#PSTRT0"><B>IO_PWM_PSTRT0</A></B><BR>
+<B><CODE>0x50000040: </CODE></B><A id = "PSTRT1index" href="#PSTRT1"><B>IO_PWM_PSTRT1</A></B><BR>
+<B><CODE>0x50000044: </CODE></B><A id = "PSTRT2index" href="#PSTRT2"><B>IO_PWM_PSTRT2</A></B><BR>
+<B><CODE>0x50000048: </CODE></B><A id = "PSTRT3index" href="#PSTRT3"><B>IO_PWM_PSTRT3</A></B><BR>
+<B><CODE>0x5000004c: </CODE></B><A id = "PEND0index" href="#PEND0"><B>IO_PWM_PEND0</A></B><BR>
+<B><CODE>0x50000050: </CODE></B><A id = "PEND1index" href="#PEND1"><B>IO_PWM_PEND1</A></B><BR>
+<B><CODE>0x50000054: </CODE></B><A id = "PEND2index" href="#PEND2"><B>IO_PWM_PEND2</A></B><BR>
+<B><CODE>0x50000058: </CODE></B><A id = "PEND3index" href="#PEND3"><B>IO_PWM_PEND3</A></B><BR>
+<B><CODE>0x5000005c: </CODE></B><A id = "DBG_READ_ONLYindex" href="#DBG_READ_ONLY"><B>IO_PWM_DBG_READ_ONLY</A></B><BR>
+<BR><HR>
+<H2 id="CTRL"><A href="#index">
+IO_PWM_CTRL</A></H2>
+<P><FONT size="+1"><B>PWM PERIPHERAL CONTROL REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PWM_CTRL ADDRESS:</B></TD>
+<TD><CODE>0x50000000</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="1">SFTRST<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="6">RSVD3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CLKSRC<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CLK_EN_OVR<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="10">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">CFIFO_INT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="4">CFIFO_LOW<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DFLT3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DFLT2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DFLT1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DFLT0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="4">RSVD1<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:31</TD>
+<TD nowrap>SFTRST</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>PWM SOFT RESET</TD>
+<TD>Soft reset which resets the entire PWM to its POR state.
+<BR>RST = 1 Reset.
+<TR align="left">
+<TD nowrap>30:25</TD>
+<TD nowrap>RSVD3</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>24:24</TD>
+<TD nowrap>CLKSRC</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>PWM CLOCK REFERENCE SELECTOR</TD>
+<TD>Counter reference for the PWM generators. The registers always run on the 2MHz clock.
+<BR>32KHZ = 0 32KHz oscillator.
+<BR>2MHZ = 1 2MHz oscillator.
+<TR align="left">
+<TD nowrap>23:23</TD>
+<TD nowrap>CLK_EN_OVR</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CLOCK ENABLE OVERRIDE</TD>
+<TD>Force the clock enable for this module ON to prevent clock gating at the HFO. Intended for debug purposes.
+<BR>ENABLE = 1 Prevent HFO clock gating.
+<BR>DISABLE = 0 Allow HFO clock gating when block is inactive.
+<TR align="left">
+<TD nowrap>22:13</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>CFIFO_INT</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CFIFO INTERRUPT ENABLE</TD>
+<TD>The Command FIFO low interrupt enable.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>11:8</TD>
+<TD nowrap>CFIFO_LOW</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CFIFO LOW INTERRUPT LEVEL</TD>
+<TD>If enabled, the Command FIFO will trigger an interrupt at a level less than or equal to this value.
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>DFLT3</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>PWM DEFAULT DRIVE</TD>
+<TD>PWM3s default drive when idle.
+<BR>HI = 1 High.
+<BR>LO = 0 Low.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>DFLT2</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>PWM DEFAULT DRIVE</TD>
+<TD>PWM2s default drive when idle.
+<BR>HI = 1 High.
+<BR>LO = 0 Low.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>DFLT1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>PWM DEFAULT DRIVE</TD>
+<TD>PWM1s default drive when idle.
+<BR>HI = 1 High.
+<BR>LO = 0 Low.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>DFLT0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>PWM DEFAULT DRIVE</TD>
+<TD>PWM0s default drive when idle.
+<BR>HI = 1 High.
+<BR>LO = 0 Low.
+<TR align="left">
+<TD nowrap>3:0</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Control register for the PWM peripheral.</P>
+<BR><HR>
+<H2 id="MODE"><A href="#index">
+IO_PWM_MODE</A></H2>
+<P><FONT size="+1"><B>PWM MODE REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PWM_MODE ADDRESS:</B></TD>
+<TD><CODE>0x50000004</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="20">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SET3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SET2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SET1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SET0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">MODE3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">MODE2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">MODE1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">MODE0<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:12</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>SET3</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>PWM3 MODE SET</TD>
+<TD>Apply PWM mode.
+<BR>SET = 1 Set PWM to MODE.
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>SET2</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>PWM2 MODE SET</TD>
+<TD>Apply PWM mode.
+<BR>SET = 1 Set PWM to MODE.
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>SET1</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>PWM1 MODE SET</TD>
+<TD>Apply PWM mode.
+<BR>SET = 1 Set PWM to MODE.
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>SET0</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>PWM0 MODE SET</TD>
+<TD>Apply PWM mode.
+<BR>SET = 1 Set PWM to MODE.
+<TR align="left">
+<TD nowrap>7:6</TD>
+<TD nowrap>MODE3</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>PWM3 MODE</TD>
+<TD>Set PWM mode.
+<BR>START = 3 Start PWM.
+<BR>PSTOP = 2 Stop PWM after the current program.
+<BR>CSTOP = 1 Stop PWM after the current cycle.
+<BR>ISTOP = 0 Stop PWM immediately.
+<TR align="left">
+<TD nowrap>5:4</TD>
+<TD nowrap>MODE2</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>PWM2 MODE</TD>
+<TD>Set PWM mode.
+<BR>START = 3 Start PWM.
+<BR>PSTOP = 2 Stop PWM after the current program.
+<BR>CSTOP = 1 Stop PWM after the current cycle.
+<BR>ISTOP = 0 Stop PWM immediately.
+<TR align="left">
+<TD nowrap>3:2</TD>
+<TD nowrap>MODE1</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>PWM1 MODE</TD>
+<TD>Set PWM mode.
+<BR>START = 3 Start PWM.
+<BR>PSTOP = 2 Stop PWM after the current program.
+<BR>CSTOP = 1 Stop PWM after the current cycle.
+<BR>ISTOP = 0 Stop PWM immediately.
+<TR align="left">
+<TD nowrap>1:0</TD>
+<TD nowrap>MODE0</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>PWM0 MODE</TD>
+<TD>Set PWM mode.
+<BR>START = 3 Start PWM.
+<BR>PSTOP = 2 Stop PWM after the current program.
+<BR>CSTOP = 1 Stop PWM after the current cycle.
+<BR>ISTOP = 0 Stop PWM immediately.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Start/stop register for PWM. Simultaneously write multiple fields to start PWMs in lockstep.</P>
+<BR><HR>
+<H2 id="STAT"><A href="#index">
+IO_PWM_STAT</A></H2>
+<P><FONT size="+1"><B>PWM STATUS REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PWM_STAT ADDRESS:</B></TD>
+<TD><CODE>0x50000008</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="10">RSVD2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">CFIFO_EMPTY<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">CFIFO_FULL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="4">CFIFO_SIZE<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="2">STATE3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="2">STATE2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="2">STATE1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="2">STATE0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="4">RSVD1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">VAL3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">VAL2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">VAL1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">VAL0<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:22</TD>
+<TD nowrap>RSVD2</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>21:21</TD>
+<TD nowrap>CFIFO_EMPTY</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>COMMAND FIFO EMPTY</TD>
+<TD>Indicates if the Command FIFO is empty.
+<BR>EMPTY = 1 Empty.
+<TR align="left">
+<TD nowrap>20:20</TD>
+<TD nowrap>CFIFO_FULL</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>COMMAND FIFO FULL</TD>
+<TD>Indicates if the Command FIFO is full.
+<BR>FULL = 1 Full.
+<TR align="left">
+<TD nowrap>19:16</TD>
+<TD nowrap>CFIFO_SIZE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>COMMAND FIFO SIZE</TD>
+<TD>Current consumption of the Command FIFO from 0 -> 15. Check CFIFO_FULL to see if consumption is 16.
+<TR align="left">
+<TD nowrap>15:14</TD>
+<TD nowrap>STATE3</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>CURRENT PWM STATE</TD>
+<TD>Current running state of the PWMs.
+<BR>RUN = 3 PWM Running.
+<BR>PSTOP = 2 PWM will stop after the current program.
+<BR>CSTOP = 1 PWM will stop after the current cycle.
+<BR>STOP = 0 PWM stopped.
+<TR align="left">
+<TD nowrap>13:12</TD>
+<TD nowrap>STATE2</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>CURRENT PWM STATE</TD>
+<TD>Current running state of the PWMs.
+<BR>RUN = 3 PWM Running.
+<BR>PSTOP = 2 PWM will stop after the current program.
+<BR>CSTOP = 1 PWM will stop after the current cycle.
+<BR>STOP = 0 PWM stopped.
+<TR align="left">
+<TD nowrap>11:10</TD>
+<TD nowrap>STATE1</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>CURRENT PWM STATE</TD>
+<TD>Current running state of the PWMs.
+<BR>RUN = 3 PWM Running.
+<BR>PSTOP = 2 PWM will stop after the current program.
+<BR>CSTOP = 1 PWM will stop after the current cycle.
+<BR>STOP = 0 PWM stopped.
+<TR align="left">
+<TD nowrap>9:8</TD>
+<TD nowrap>STATE0</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>CURRENT PWM STATE</TD>
+<TD>Current running state of the PWMs.
+<BR>RUN = 3 PWM Running.
+<BR>PSTOP = 2 PWM will stop after the current program.
+<BR>CSTOP = 1 PWM will stop after the current cycle.
+<BR>STOP = 0 PWM stopped.
+<TR align="left">
+<TD nowrap>7:4</TD>
+<TD nowrap>RSVD1</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>VAL3</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PWM3 OUTPUT VALUE</TD>
+<TD>Current value driven by the PWM3 module.
+<BR>HI = 1 High.
+<BR>LO = 0 Low.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>VAL2</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PWM2 OUTPUT VALUE</TD>
+<TD>Current value driven by the PWM2 module.
+<BR>HI = 1 High.
+<BR>LO = 0 Low.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>VAL1</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PWM1 OUTPUT VALUE</TD>
+<TD>Current value driven by the PWM1 module.
+<BR>HI = 1 High.
+<BR>LO = 0 Low.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>VAL0</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PWM0 OUTPUT VALUE</TD>
+<TD>Current value driven by the PWM0 module.
+<BR>HI = 1 High.
+<BR>LO = 0 Low.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>PWM status register.</P>
+<BR><HR>
+<H2 id="INT_STAT"><A href="#index">
+IO_PWM_INT_STAT</A></H2>
+<P><FONT size="+1"><B>PWM INTERRUPT STATUS REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PWM_INT_STAT ADDRESS:</B></TD>
+<TD><CODE>0x5000000c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="23">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">CFIFO_INT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">CYCLE_INT3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">CYCLE_INT2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">CYCLE_INT1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">CYCLE_INT0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">PROG_INT3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">PROG_INT2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">PROG_INT1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">PROG_INT0<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:9</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>CFIFO_INT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>COMMAND FIFO INTERRUPT STATUS</TD>
+<TD>Indicates if the Command FIFO has triggered a low interrupt.
+<BR>INT = 1 Interrupt asserted.
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>CYCLE_INT3</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>CYCLE3 INTERRUPT STATUS</TD>
+<TD>Indicates if PWM3 has triggered a cycle interrupt.
+<BR>INT = 1 Interrupt asserted.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>CYCLE_INT2</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>CYCLE2 INTERRUPT STATUS</TD>
+<TD>Indicates if PWM2 has triggered a cycle interrupt.
+<BR>INT = 1 Interrupt asserted.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>CYCLE_INT1</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>CYCLE1 INTERRUPT STATUS</TD>
+<TD>Indicates if PWM1 has triggered a cycle interrupt.
+<BR>INT = 1 Interrupt asserted.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>CYCLE_INT0</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>CYCLE0 INTERRUPT STATUS</TD>
+<TD>Indicates if PWM0 has triggered a cycle interrupt.
+<BR>INT = 1 Interrupt asserted.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>PROG_INT3</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PROGRAM3 INTERRUPT STATUS</TD>
+<TD>Indicates if PWM3 has triggered a program interrupt.
+<BR>INT = 1 Interrupt asserted.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>PROG_INT2</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PROGRAM2 INTERRUPT STATUS</TD>
+<TD>Indicates if PWM2 has triggered a program interrupt.
+<BR>INT = 1 Interrupt asserted.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>PROG_INT1</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PROGRAM1 INTERRUPT STATUS</TD>
+<TD>Indicates if PWM1 has triggered a program interrupt.
+<BR>INT = 1 Interrupt asserted.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>PROG_INT0</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PROGRAM0 INTERRUPT STATUS</TD>
+<TD>Indicates if PWM0 has triggered a program interrupt.
+<BR>INT = 1 Interrupt asserted.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>WARNING: READ SIDE EFFECT.  Interrupt status register. Reading interrupt status resets any pending interrupt requests.</P>
+<BR><HR>
+<H2 id="CHAN_CFG"><A href="#index">
+IO_PWM_CHAN_CFG</A></H2>
+<P><FONT size="+1"><B>PWM CHANNEL CONFIG</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PWM_CHAN_CFG ADDRESS:</B></TD>
+<TD><CODE>0x50000010</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="16">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SYNC7<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SYNC6<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SYNC5<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SYNC4<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SYNC3<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SYNC2<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SYNC1<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">SYNC0<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DFLT7<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DFLT6<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DFLT5<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DFLT4<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DFLT3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DFLT2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DFLT1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">DFLT0<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:16</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>15:15</TD>
+<TD nowrap>SYNC7</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL7 SYNC</TD>
+<TD>Synchronous transition bit. Disable for instantaneous MUX changes, otherwise the MUX will wait for current cycle to end, disable, then wait for next cycle to end before enabling.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>14:14</TD>
+<TD nowrap>SYNC6</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL6 SYNC</TD>
+<TD>Synchronous transition bit. Disable for instantaneous MUX changes, otherwise the MUX will wait for current cycle to end, disable, then wait for next cycle to end before enabling.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>13:13</TD>
+<TD nowrap>SYNC5</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL5 SYNC</TD>
+<TD>Synchronous transition bit. Disable for instantaneous MUX changes, otherwise the MUX will wait for current cycle to end, disable, then wait for next cycle to end before enabling.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>12:12</TD>
+<TD nowrap>SYNC4</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL4 SYNC</TD>
+<TD>Synchronous transition bit. Disable for instantaneous MUX changes, otherwise the MUX will wait for current cycle to end, disable, then wait for next cycle to end before enabling.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>11:11</TD>
+<TD nowrap>SYNC3</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL3 SYNC</TD>
+<TD>Synchronous transition bit. Disable for instantaneous MUX changes, otherwise the MUX will wait for current cycle to end, disable, then wait for next cycle to end before enabling.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>10:10</TD>
+<TD nowrap>SYNC2</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL2 SYNC</TD>
+<TD>Synchronous transition bit. Disable for instantaneous MUX changes, otherwise the MUX will wait for current cycle to end, disable, then wait for next cycle to end before enabling.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>9:9</TD>
+<TD nowrap>SYNC1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL1 SYNC</TD>
+<TD>Synchronous transition bit. Disable for instantaneous MUX changes, otherwise the MUX will wait for current cycle to end, disable, then wait for next cycle to end before enabling.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>8:8</TD>
+<TD nowrap>SYNC0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL0 SYNC</TD>
+<TD>Synchronous transition bit. Disable for instantaneous MUX changes, otherwise the MUX will wait for current cycle to end, disable, then wait for next cycle to end before enabling.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>7:7</TD>
+<TD nowrap>DFLT7</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL7 DEFAULT DRIVE</TD>
+<TD>Default drive value when channel is disabled.
+<BR>HI = 1 High.
+<BR>LO = 0 Low.
+<TR align="left">
+<TD nowrap>6:6</TD>
+<TD nowrap>DFLT6</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL6 DEFAULT DRIVE</TD>
+<TD>Default drive value when channel is disabled.
+<BR>HI = 1 High.
+<BR>LO = 0 Low.
+<TR align="left">
+<TD nowrap>5:5</TD>
+<TD nowrap>DFLT5</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL5 DEFAULT DRIVE</TD>
+<TD>Default drive value when channel is disabled.
+<BR>HI = 1 High.
+<BR>LO = 0 Low.
+<TR align="left">
+<TD nowrap>4:4</TD>
+<TD nowrap>DFLT4</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL4 DEFAULT DRIVE</TD>
+<TD>Default drive value when channel is disabled.
+<BR>HI = 1 High.
+<BR>LO = 0 Low.
+<TR align="left">
+<TD nowrap>3:3</TD>
+<TD nowrap>DFLT3</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL3 DEFAULT DRIVE</TD>
+<TD>Default drive value when channel is disabled.
+<BR>HI = 1 High.
+<BR>LO = 0 Low.
+<TR align="left">
+<TD nowrap>2:2</TD>
+<TD nowrap>DFLT2</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL2 DEFAULT DRIVE</TD>
+<TD>Default drive value when channel is disabled.
+<BR>HI = 1 High.
+<BR>LO = 0 Low.
+<TR align="left">
+<TD nowrap>1:1</TD>
+<TD nowrap>DFLT1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL1 DEFAULT DRIVE</TD>
+<TD>Default drive value when channel is disabled.
+<BR>HI = 1 High.
+<BR>LO = 0 Low.
+<TR align="left">
+<TD nowrap>0:0</TD>
+<TD nowrap>DFLT0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL0 DEFAULT DRIVE</TD>
+<TD>Default drive value when channel is disabled.
+<BR>HI = 1 High.
+<BR>LO = 0 Low.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>PWM channel configuration register.</P>
+<BR><HR>
+<H2 id="CHAN_MUX"><A href="#index">
+IO_PWM_CHAN_MUX</A></H2>
+<P><FONT size="+1"><B>PWM CHANNEL MUX CONTROL</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PWM_CHAN_MUX ADDRESS:</B></TD>
+<TD><CODE>0x50000014</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="8">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">EN7<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">EN6<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">EN5<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">EN4<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">EN3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">EN2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">EN1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">EN0<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">SEL7<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">SEL6<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">SEL5<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">SEL4<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">SEL3<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">SEL2<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">SEL1<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">SEL0<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:24</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>23:23</TD>
+<TD nowrap>EN7</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL7 ENABLE</TD>
+<TD>Channel enable bit.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>22:22</TD>
+<TD nowrap>EN6</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL6 ENABLE</TD>
+<TD>Channel enable bit.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>21:21</TD>
+<TD nowrap>EN5</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL5 ENABLE</TD>
+<TD>Channel enable bit.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>20:20</TD>
+<TD nowrap>EN4</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL4 ENABLE</TD>
+<TD>Channel enable bit.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>19:19</TD>
+<TD nowrap>EN3</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL3 ENABLE</TD>
+<TD>Channel enable bit.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>18:18</TD>
+<TD nowrap>EN2</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL2 ENABLE</TD>
+<TD>Channel enable bit.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>17:17</TD>
+<TD nowrap>EN1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL1 ENABLE</TD>
+<TD>Channel enable bit.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>16:16</TD>
+<TD nowrap>EN0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL0 ENABLE</TD>
+<TD>Channel enable bit.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>15:14</TD>
+<TD nowrap>SEL7</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL7 PWM SELECTOR</TD>
+<TD>PWM to assign to channel #7.
+<BR>PWM3 = 3 Assign PWM3 to channel.
+<BR>PWM2 = 2 Assign PWM2 to channel.
+<BR>PWM1 = 1 Assign PWM1 to channel.
+<BR>PWM0 = 0 Assign PWM0 to channel.
+<TR align="left">
+<TD nowrap>13:12</TD>
+<TD nowrap>SEL6</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL6 PWM SELECTOR</TD>
+<TD>PWM to assign to channel #6.
+<BR>PWM3 = 3 Assign PWM3 to channel.
+<BR>PWM2 = 2 Assign PWM2 to channel.
+<BR>PWM1 = 1 Assign PWM1 to channel.
+<BR>PWM0 = 0 Assign PWM0 to channel.
+<TR align="left">
+<TD nowrap>11:10</TD>
+<TD nowrap>SEL5</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL5 PWM SELECTOR</TD>
+<TD>PWM to assign to channel #5.
+<BR>PWM3 = 3 Assign PWM3 to channel.
+<BR>PWM2 = 2 Assign PWM2 to channel.
+<BR>PWM1 = 1 Assign PWM1 to channel.
+<BR>PWM0 = 0 Assign PWM0 to channel.
+<TR align="left">
+<TD nowrap>9:8</TD>
+<TD nowrap>SEL4</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL4 PWM SELECTOR</TD>
+<TD>PWM to assign to channel #4.
+<BR>PWM3 = 3 Assign PWM3 to channel.
+<BR>PWM2 = 2 Assign PWM2 to channel.
+<BR>PWM1 = 1 Assign PWM1 to channel.
+<BR>PWM0 = 0 Assign PWM0 to channel.
+<TR align="left">
+<TD nowrap>7:6</TD>
+<TD nowrap>SEL3</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL3 PWM SELECTOR</TD>
+<TD>PWM to assign to channel #3.
+<BR>PWM3 = 3 Assign PWM3 to channel.
+<BR>PWM2 = 2 Assign PWM2 to channel.
+<BR>PWM1 = 1 Assign PWM1 to channel.
+<BR>PWM0 = 0 Assign PWM0 to channel.
+<TR align="left">
+<TD nowrap>5:4</TD>
+<TD nowrap>SEL2</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL2 PWM SELECTOR</TD>
+<TD>PWM to assign to channel #2.
+<BR>PWM3 = 3 Assign PWM3 to channel.
+<BR>PWM2 = 2 Assign PWM2 to channel.
+<BR>PWM1 = 1 Assign PWM1 to channel.
+<BR>PWM0 = 0 Assign PWM0 to channel.
+<TR align="left">
+<TD nowrap>3:2</TD>
+<TD nowrap>SEL1</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL1 PWM SELECTOR</TD>
+<TD>PWM to assign to channel #1.
+<BR>PWM3 = 3 Assign PWM3 to channel.
+<BR>PWM2 = 2 Assign PWM2 to channel.
+<BR>PWM1 = 1 Assign PWM1 to channel.
+<BR>PWM0 = 0 Assign PWM0 to channel.
+<TR align="left">
+<TD nowrap>1:0</TD>
+<TD nowrap>SEL0</TD>
+<TD nowrap>RW</TD>
+<TD nowrap>CHANNEL0 PWM SELECTOR</TD>
+<TD>PWM to assign to channel #0.
+<BR>PWM3 = 3 Assign PWM3 to channel.
+<BR>PWM2 = 2 Assign PWM2 to channel.
+<BR>PWM1 = 1 Assign PWM1 to channel.
+<BR>PWM0 = 0 Assign PWM0 to channel.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Selects which PWM to assign to the output channels.</P>
+<BR><HR>
+<H2 id="CFIFO"><A href="#index">
+IO_PWM_CFIFO</A></H2>
+<P><FONT size="+1"><B>PWM COMMAND FIFO REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PWM_CFIFO ADDRESS:</B></TD>
+<TD><CODE>0x50000018</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#ffffff" colspan="2">SEL<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="2">REG<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#e0e0e0" colspan="3">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="1">WAIT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#ffffff" colspan="24">DATA<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:30</TD>
+<TD nowrap>SEL</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>SELECTED PWM</TD>
+<TD>PWM generator selected for this command.
+<BR>PWM0 = 0 Write to PWM0.
+<BR>PWM1 = 1 Write to PWM1.
+<BR>PWM2 = 2 Write to PWM2.
+<BR>PWM3 = 3 Write to PWM3.
+<TR align="left">
+<TD nowrap>29:28</TD>
+<TD nowrap>REG</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>SELECTED PWM REGISTER</TD>
+<TD>PWM register selected for this command.
+<BR>CFG = 0 Write to CFG register.
+<BR>PER = 1 Write to PER register.
+<BR>PSTRT = 2 Write to PSTRT register.
+<BR>PEND = 3 Write to PEND register.
+<TR align="left">
+<TD nowrap>27:25</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>24:24</TD>
+<TD nowrap>WAIT</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>WAIT FOR PROGRAM</TD>
+<TD>Write this command after the currently running program has finished.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>23:0</TD>
+<TD nowrap>DATA</TD>
+<TD nowrap>WO</TD>
+<TD nowrap>FIFO DATA</TD>
+<TD>PWM register data. Derive format from the relevant CFG, PER, PSTRT, and PEND registers. There are helper enumerations below for setting bits in a CFG command.
+<BR>CYCLE_INT = 524288 (For CFG command) Set bit-19 to trigger interrupt at the end of each PWM cycle.
+<BR>PROG_INT = 262144 (For CFG command) Set bit-18 bit to trigger interrupt at the end of this program.
+<BR>PULSE_DRIVE = 131072 (For CFG command) Set bit-17 for standard pulse output drive (Pulse is high), otherwise pulse is inverted (Pulse is low).
+<BR>ONESHOT = 65536 (For CFG command) Set bit-16 to do only COUNT pulses and then stop. Disable this bit to run forever. CFIFO WAIT command will always load after COUNT pulses regardless of oneshot state.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>Writes a command into the command FIFO. Writing the MSbyte commits all four bytes to the FIFO. Reading this register returns the next command waiting to come out of the FIFO. The WAIT field prevents the command at the top of the FIFO from being popped until the end of the currently running PWM program.</P>
+<BR><HR>
+<H2 id="CFG0"><A href="#index">
+IO_PWM_CFG0</A></H2>
+<P><FONT size="+1"><B>PWM #0 COUNT/CONFIG REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PWM_CFG0 ADDRESS:</B></TD>
+<TD><CODE>0x5000001c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="12">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">CYCLE_INT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">PROG_INT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">PULSE_DRIVE<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">ONESHOT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="16">COUNT<BR><TT>0xffff</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:20</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>19:19</TD>
+<TD nowrap>CYCLE_INT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>CYCLE INTERRUPT ENABLE</TD>
+<TD>Trigger interrupt at the end of each PWM cycle.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>18:18</TD>
+<TD nowrap>PROG_INT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PROGRAM INTERRUPT ENABLE</TD>
+<TD>Trigger interrupt at the end of each program.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>17:17</TD>
+<TD nowrap>PULSE_DRIVE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PWM PULSE DRIVE</TD>
+<TD>PWM pulse drive polarity.
+<BR>HI = 1 High.
+<BR>LO = 0 Low.
+<TR align="left">
+<TD nowrap>16:16</TD>
+<TD nowrap>ONESHOT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PWM ONESHOT MODE</TD>
+<TD>Enable to do only COUNT pulses and then stop. Disable to run forever. CFIFO WAIT command will always load after COUNT pulses regardless of oneshot state.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>15:0</TD>
+<TD nowrap>COUNT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PWM CYCLE COUNT</TD>
+<TD>Number of PWM cycles (N-1 PWM cycles).
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>PWM count and configuration register.</P>
+<BR><HR>
+<H2 id="CFG1"><A href="#index">
+IO_PWM_CFG1</A></H2>
+<P><FONT size="+1"><B>PWM #1 COUNT/CONFIG REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PWM_CFG1 ADDRESS:</B></TD>
+<TD><CODE>0x50000020</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="12">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">CYCLE_INT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">PROG_INT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">PULSE_DRIVE<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">ONESHOT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="16">COUNT<BR><TT>0xffff</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:20</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>19:19</TD>
+<TD nowrap>CYCLE_INT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>CYCLE INTERRUPT ENABLE</TD>
+<TD>Trigger interrupt at the end of each PWM cycle.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>18:18</TD>
+<TD nowrap>PROG_INT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PROGRAM INTERRUPT ENABLE</TD>
+<TD>Trigger interrupt at the end of each program.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>17:17</TD>
+<TD nowrap>PULSE_DRIVE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PWM PULSE DRIVE</TD>
+<TD>PWM pulse drive polarity.
+<BR>HI = 1 High.
+<BR>LO = 0 Low.
+<TR align="left">
+<TD nowrap>16:16</TD>
+<TD nowrap>ONESHOT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PWM ONESHOT MODE</TD>
+<TD>Enable to do only COUNT pulses and then stop. Disable to run forever. CFIFO WAIT command will always load after COUNT pulses regardless of oneshot state.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>15:0</TD>
+<TD nowrap>COUNT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PWM CYCLE COUNT</TD>
+<TD>Number of PWM cycles (N-1 PWM cycles).
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>PWM count and configuration register.</P>
+<BR><HR>
+<H2 id="CFG2"><A href="#index">
+IO_PWM_CFG2</A></H2>
+<P><FONT size="+1"><B>PWM #2 COUNT/CONFIG REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PWM_CFG2 ADDRESS:</B></TD>
+<TD><CODE>0x50000024</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="12">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">CYCLE_INT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">PROG_INT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">PULSE_DRIVE<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">ONESHOT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="16">COUNT<BR><TT>0xffff</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:20</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>19:19</TD>
+<TD nowrap>CYCLE_INT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>CYCLE INTERRUPT ENABLE</TD>
+<TD>Trigger interrupt at the end of each PWM cycle.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>18:18</TD>
+<TD nowrap>PROG_INT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PROGRAM INTERRUPT ENABLE</TD>
+<TD>Trigger interrupt at the end of each program.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>17:17</TD>
+<TD nowrap>PULSE_DRIVE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PWM PULSE DRIVE</TD>
+<TD>PWM pulse drive polarity.
+<BR>HI = 1 High.
+<BR>LO = 0 Low.
+<TR align="left">
+<TD nowrap>16:16</TD>
+<TD nowrap>ONESHOT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PWM ONESHOT MODE</TD>
+<TD>Enable to do only COUNT pulses and then stop. Disable to run forever. CFIFO WAIT command will always load after COUNT pulses regardless of oneshot state.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>15:0</TD>
+<TD nowrap>COUNT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PWM CYCLE COUNT</TD>
+<TD>Number of PWM cycles (N-1 PWM cycles).
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>PWM count and configuration register.</P>
+<BR><HR>
+<H2 id="CFG3"><A href="#index">
+IO_PWM_CFG3</A></H2>
+<P><FONT size="+1"><B>PWM #3 COUNT/CONFIG REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PWM_CFG3 ADDRESS:</B></TD>
+<TD><CODE>0x50000028</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="12">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">CYCLE_INT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">PROG_INT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">PULSE_DRIVE<BR><TT>0x1</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="1">ONESHOT<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="16">COUNT<BR><TT>0xffff</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:20</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>19:19</TD>
+<TD nowrap>CYCLE_INT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>CYCLE INTERRUPT ENABLE</TD>
+<TD>Trigger interrupt at the end of each PWM cycle.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>18:18</TD>
+<TD nowrap>PROG_INT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PROGRAM INTERRUPT ENABLE</TD>
+<TD>Trigger interrupt at the end of each program.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>17:17</TD>
+<TD nowrap>PULSE_DRIVE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PWM PULSE DRIVE</TD>
+<TD>PWM pulse drive polarity.
+<BR>HI = 1 High.
+<BR>LO = 0 Low.
+<TR align="left">
+<TD nowrap>16:16</TD>
+<TD nowrap>ONESHOT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PWM ONESHOT MODE</TD>
+<TD>Enable to do only COUNT pulses and then stop. Disable to run forever. CFIFO WAIT command will always load after COUNT pulses regardless of oneshot state.
+<BR>EN = 1 Enable.
+<BR>DIS = 0 Disable.
+<TR align="left">
+<TD nowrap>15:0</TD>
+<TD nowrap>COUNT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PWM CYCLE COUNT</TD>
+<TD>Number of PWM cycles (N-1 PWM cycles).
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>PWM count and configuration register.</P>
+<BR><HR>
+<H2 id="PER0"><A href="#index">
+IO_PWM_PER0</A></H2>
+<P><FONT size="+1"><B>PWM #0 PERIOD REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PWM_PER0 ADDRESS:</B></TD>
+<TD><CODE>0x5000002c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="8">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="24">PER<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:24</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>23:0</TD>
+<TD nowrap>PER</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PWM PERIOD</TD>
+<TD>Period of PWM (N-1 clock cycles).
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>PWM period register.</P>
+<BR><HR>
+<H2 id="PER1"><A href="#index">
+IO_PWM_PER1</A></H2>
+<P><FONT size="+1"><B>PWM #1 PERIOD REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PWM_PER1 ADDRESS:</B></TD>
+<TD><CODE>0x50000030</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="8">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="24">PER<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:24</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>23:0</TD>
+<TD nowrap>PER</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PWM PERIOD</TD>
+<TD>Period of PWM (N-1 clock cycles).
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>PWM period register.</P>
+<BR><HR>
+<H2 id="PER2"><A href="#index">
+IO_PWM_PER2</A></H2>
+<P><FONT size="+1"><B>PWM #2 PERIOD REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PWM_PER2 ADDRESS:</B></TD>
+<TD><CODE>0x50000034</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="8">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="24">PER<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:24</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>23:0</TD>
+<TD nowrap>PER</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PWM PERIOD</TD>
+<TD>Period of PWM (N-1 clock cycles).
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>PWM period register.</P>
+<BR><HR>
+<H2 id="PER3"><A href="#index">
+IO_PWM_PER3</A></H2>
+<P><FONT size="+1"><B>PWM #3 PERIOD REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PWM_PER3 ADDRESS:</B></TD>
+<TD><CODE>0x50000038</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="8">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="24">PER<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:24</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>23:0</TD>
+<TD nowrap>PER</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PWM PERIOD</TD>
+<TD>Period of PWM (N-1 clock cycles).
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>PWM period register.</P>
+<BR><HR>
+<H2 id="PSTRT0"><A href="#index">
+IO_PWM_PSTRT0</A></H2>
+<P><FONT size="+1"><B>PWM #0 PULSE START REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PWM_PSTRT0 ADDRESS:</B></TD>
+<TD><CODE>0x5000003c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="8">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="24">PSTRT<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:24</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>23:0</TD>
+<TD nowrap>PSTRT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PWM PULSE START</TD>
+<TD>Pulse start of PWM period.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>PWM pulse start register.</P>
+<BR><HR>
+<H2 id="PSTRT1"><A href="#index">
+IO_PWM_PSTRT1</A></H2>
+<P><FONT size="+1"><B>PWM #1 PULSE START REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PWM_PSTRT1 ADDRESS:</B></TD>
+<TD><CODE>0x50000040</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="8">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="24">PSTRT<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:24</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>23:0</TD>
+<TD nowrap>PSTRT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PWM PULSE START</TD>
+<TD>Pulse start of PWM period.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>PWM pulse start register.</P>
+<BR><HR>
+<H2 id="PSTRT2"><A href="#index">
+IO_PWM_PSTRT2</A></H2>
+<P><FONT size="+1"><B>PWM #2 PULSE START REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PWM_PSTRT2 ADDRESS:</B></TD>
+<TD><CODE>0x50000044</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="8">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="24">PSTRT<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:24</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>23:0</TD>
+<TD nowrap>PSTRT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PWM PULSE START</TD>
+<TD>Pulse start of PWM period.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>PWM pulse start register.</P>
+<BR><HR>
+<H2 id="PSTRT3"><A href="#index">
+IO_PWM_PSTRT3</A></H2>
+<P><FONT size="+1"><B>PWM #3 PULSE START REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PWM_PSTRT3 ADDRESS:</B></TD>
+<TD><CODE>0x50000048</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="8">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="24">PSTRT<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:24</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>23:0</TD>
+<TD nowrap>PSTRT</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PWM PULSE START</TD>
+<TD>Pulse start of PWM period.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>PWM pulse start register.</P>
+<BR><HR>
+<H2 id="PEND0"><A href="#index">
+IO_PWM_PEND0</A></H2>
+<P><FONT size="+1"><B>PWM #0 PULSE END REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PWM_PEND0 ADDRESS:</B></TD>
+<TD><CODE>0x5000004c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="8">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="24">PEND<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:24</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>23:0</TD>
+<TD nowrap>PEND</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PWM PULSE END</TD>
+<TD>Pulse end of PWM period.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>PWM pulse end register.</P>
+<BR><HR>
+<H2 id="PEND1"><A href="#index">
+IO_PWM_PEND1</A></H2>
+<P><FONT size="+1"><B>PWM #1 PULSE END REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PWM_PEND1 ADDRESS:</B></TD>
+<TD><CODE>0x50000050</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="8">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="24">PEND<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:24</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>23:0</TD>
+<TD nowrap>PEND</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PWM PULSE END</TD>
+<TD>Pulse end of PWM period.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>PWM pulse end register.</P>
+<BR><HR>
+<H2 id="PEND2"><A href="#index">
+IO_PWM_PEND2</A></H2>
+<P><FONT size="+1"><B>PWM #2 PULSE END REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PWM_PEND2 ADDRESS:</B></TD>
+<TD><CODE>0x50000054</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="8">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="24">PEND<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:24</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>23:0</TD>
+<TD nowrap>PEND</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PWM PULSE END</TD>
+<TD>Pulse end of PWM period.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>PWM pulse end register.</P>
+<BR><HR>
+<H2 id="PEND3"><A href="#index">
+IO_PWM_PEND3</A></H2>
+<P><FONT size="+1"><B>PWM #3 PULSE END REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PWM_PEND3 ADDRESS:</B></TD>
+<TD><CODE>0x50000058</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#e0e0e0" colspan="8">RSVD<BR><TT>0x0</TT>
+</TD>
+<TD align="center" bgcolor="#c0c0c0" colspan="24">PEND<BR><TT>0x0</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:24</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>RSVD</TD>
+<TD nowrap>Reserved</TD>
+<TD>Always write zero to reserved bit fields.
+<TR align="left">
+<TD nowrap>23:0</TD>
+<TD nowrap>PEND</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>PWM PULSE END</TD>
+<TD>Pulse end of PWM period.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>PWM pulse end register.</P>
+<BR><HR>
+<H2 id="DBG_READ_ONLY"><A href="#index">
+IO_PWM_DBG_READ_ONLY</A></H2>
+<P><FONT size="+1"><B>DEBUG READ ONLY REGISTER</B></FONT></P>
+<P>
+<TABLE>
+<TR><TD><B> IO_PWM_DBG_READ_ONLY ADDRESS:</B></TD>
+<TD><CODE>0x5000005c</CODE></TD></TR>
+</TABLE>
+<TABLE border="1" cellpadding="1" cellspacing="0">
+<TR align="top" bgcolor="#888888">
+<TD><SMALL><B>31</B></SMALL></TD>
+<TD><SMALL><B>30</B></SMALL></TD>
+<TD><SMALL><B>29</B></SMALL></TD>
+<TD><SMALL><B>28</B></SMALL></TD>
+<TD><SMALL><B>27</B></SMALL></TD>
+<TD><SMALL><B>26</B></SMALL></TD>
+<TD><SMALL><B>25</B></SMALL></TD>
+<TD><SMALL><B>24</B></SMALL></TD>
+<TD><SMALL><B>23</B></SMALL></TD>
+<TD><SMALL><B>22</B></SMALL></TD>
+<TD><SMALL><B>21</B></SMALL></TD>
+<TD><SMALL><B>20</B></SMALL></TD>
+<TD><SMALL><B>19</B></SMALL></TD>
+<TD><SMALL><B>18</B></SMALL></TD>
+<TD><SMALL><B>17</B></SMALL></TD>
+<TD><SMALL><B>16</B></SMALL></TD>
+<TD><SMALL><B>15</B></SMALL></TD>
+<TD><SMALL><B>14</B></SMALL></TD>
+<TD><SMALL><B>13</B></SMALL></TD>
+<TD><SMALL><B>12</B></SMALL></TD>
+<TD><SMALL><B>11</B></SMALL></TD>
+<TD><SMALL><B>10</B></SMALL></TD>
+<TD><SMALL><B>9</B></SMALL></TD>
+<TD><SMALL><B>8</B></SMALL></TD>
+<TD><SMALL><B>7</B></SMALL></TD>
+<TD><SMALL><B>6</B></SMALL></TD>
+<TD><SMALL><B>5</B></SMALL></TD>
+<TD><SMALL><B>4</B></SMALL></TD>
+<TD><SMALL><B>3</B></SMALL></TD>
+<TD><SMALL><B>2</B></SMALL></TD>
+<TD><SMALL><B>1</B></SMALL></TD>
+<TD><SMALL><B>0</B></SMALL></TD>
+</TR>
+<TR>
+<TD align="center" bgcolor="#c0c0c0" colspan="32">VALUE<BR><TT>0x8532110</TT>
+</TD>
+</TR>
+</TABLE>
+</p>
+<BR/>
+<TABLE border="1" cellpadding="3" cellspacing="0">
+<TR align="left" bgcolor="#888888">
+<TH><U><SMALL>Bits</SMALL></U></TH><TH><U><SMALL>Name</SMALL></U></TH><TH><U><SMALL>RW</SMALL></U></TH><TH><U><SMALL>Title</SMALL></U></TH><TH><U><SMALL>Description</SMALL></U></TH>
+</TR>
+<TR align="left">
+<TD nowrap>31:0</TD>
+<TD nowrap>VALUE</TD>
+<TD nowrap>RO</TD>
+<TD nowrap>DEBUG VALUE</TD>
+<TD>First 7 numbers in the fibonacci sequence.
+</TD></TABLE>
+</TD></TR></TABLE>
+
+
+
+<P>
+<B>Description:</B><BR>This register provides a read only test value for checking IP connectivity to AHB.</P>
+

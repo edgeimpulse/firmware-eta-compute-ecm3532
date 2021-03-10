@@ -1,0 +1,10 @@
+GETCONFIG(icmen "ICM20602_M3")
+string(COMPARE EQUAL "${icmen}" y _cmp)
+if (_cmp)
+file (GLOB icm20602 "${CMAKE_CURRENT_LIST_DIR}/*.c")
+foreach (gsrc ${icm20602})
+    target_sources(${PROJECT_NAME}.elf PRIVATE ${gsrc})
+endforeach()
+target_include_directories(${PROJECT_NAME}.elf PUBLIC "${CMAKE_CURRENT_LIST_DIR}")
+endif()
+
