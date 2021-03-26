@@ -36,6 +36,7 @@ static int acc_sample_count = 0;
 
 extern int base64_encode(const char *input, size_t input_size, char *output, size_t output_size);
 
+#if (CONFIG_AI_SENSOR_BOARD == 1)
 /**
  * @brief      Called by the inertial sensor module when a sample is received.
  *             Stores sample data in acc_buf
@@ -62,6 +63,11 @@ static bool acc_data_callback(const void *sample_buf, uint32_t byteLength)
 void run_nn(bool debug) {
 
     bool stop_inferencing = false;
+#if (CONFIG_BLE_A31R118 == 1)
+    uint8_t prev_classification = EI_CLASSIFIER_LABEL_COUNT;
+    ei_printf_ble("Start inference\r\n");
+#endif
+
     // summary of inferencing settings (from model_metadata.h)
     ei_printf("Inferencing settings:\n");
     ei_printf("\tInterval: %.4f ms\n", (float)EI_CLASSIFIER_INTERVAL_MS);
@@ -117,6 +123,13 @@ void run_nn(bool debug) {
                   result.timing.dsp, result.timing.classification, result.timing.anomaly);
         for (size_t ix = 0; ix < EI_CLASSIFIER_LABEL_COUNT; ix++) {
             ei_printf("    %s: \t%f\r\n", result.classification[ix].label, result.classification[ix].value);
+
+#if (CONFIG_BLE_A31R118 == 1)
+            if(result.classification[ix].value > 0.8 && prev_classification != ix) {
+                ei_printf_ble(result.classification[ix].label);
+                prev_classification = ix;
+            }
+#endif
         }
 #if EI_CLASSIFIER_HAS_ANOMALY == 1
         ei_printf("    anomaly score: %f\r\n", result.anomaly);
@@ -128,10 +141,21 @@ void run_nn(bool debug) {
         }
     }
 }
+#else
+void run_nn(bool debug) {
+    ei_printf("Motion classification is not supported on Eta Compute AI Vision board\r\n");
+}
+#endif
+
 #elif defined(EI_CLASSIFIER_SENSOR) && EI_CLASSIFIER_SENSOR == EI_CLASSIFIER_SENSOR_MICROPHONE
 void run_nn(bool debug) {
 
     bool stop_inferencing = false;
+#if (CONFIG_BLE_A31R118 == 1)
+    uint8_t prev_classification = EI_CLASSIFIER_LABEL_COUNT;
+    ei_printf_ble("Start inference\r\n");
+#endif
+
     // summary of inferencing settings (from model_metadata.h)
     ei_printf("Inferencing settings:\n");
     ei_printf("\tInterval: %.4f ms.\n", (float)EI_CLASSIFIER_INTERVAL_MS);
@@ -187,6 +211,13 @@ void run_nn(bool debug) {
                   result.timing.dsp, result.timing.classification, result.timing.anomaly);
         for (size_t ix = 0; ix < EI_CLASSIFIER_LABEL_COUNT; ix++) {
             ei_printf("    %s: \t%f\r\n", result.classification[ix].label, result.classification[ix].value);
+
+#if (CONFIG_BLE_A31R118 == 1)
+            if(result.classification[ix].value > 0.8 && prev_classification != ix) {
+                ei_printf_ble(result.classification[ix].label);
+                prev_classification = ix;
+            }
+#endif
         }
 #if EI_CLASSIFIER_HAS_ANOMALY == 1
         ei_printf("    anomaly score: %f\r\n", result.anomaly);
@@ -212,6 +243,10 @@ void run_nn(bool debug) {
 
     // static uint8_t image_buffer[EI_CLASSIFIER_INPUT_WIDTH * EI_CLASSIFIER_INPUT_HEIGHT];
     bool stop_inferencing = false;
+#if (CONFIG_BLE_A31R118 == 1)
+    uint8_t prev_classification = EI_CLASSIFIER_LABEL_COUNT;
+    ei_printf_ble("Start inference\r\n");
+#endif
 
     // summary of inferencing settings (from model_metadata.h)
     ei_printf("Inferencing settings:\n");
@@ -367,6 +402,13 @@ void run_nn(bool debug) {
                   result.timing.dsp, result.timing.classification, result.timing.anomaly);
         for (size_t ix = 0; ix < EI_CLASSIFIER_LABEL_COUNT; ix++) {
             ei_printf("    %s: \t%f\r\n", result.classification[ix].label, result.classification[ix].value);
+
+#if (CONFIG_BLE_A31R118 == 1)
+            if(result.classification[ix].value > 0.8 && prev_classification != ix) {
+                ei_printf_ble(result.classification[ix].label);
+                prev_classification = ix;
+            }
+#endif
         }
 #if EI_CLASSIFIER_HAS_ANOMALY == 1
         ei_printf("    anomaly score: %f\r\n", result.anomaly);

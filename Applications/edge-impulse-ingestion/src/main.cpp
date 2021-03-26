@@ -29,6 +29,9 @@
 extern "C" {
 #include "eta_bsp.h"
 #include "eta_devices_icm20602.h"
+#if (CONFIG_BLE_A31R118 == 1)
+#include "eta_devices_a31r118.h"
+#endif
 }
 
 #include "ei_device_eta_ecm3532.h"
@@ -48,9 +51,15 @@ static void init_ai_hardware(void);
 int main(void)
 {
 
-    EtaCspTimerDelayMs(2000);
+    EtaCspTimerDelayMs(1000);
 
     init_ai_hardware();
+
+#if (CONFIG_BLE_A31R118 == 1)
+    bleEnable();
+    EtaCspTimerDelayMs(500);
+    bleInit();
+#endif
 
     ei_serial_setup();
 

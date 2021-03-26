@@ -419,15 +419,56 @@ c_callback_read_sample_buffer EiDeviceEtaEcm3532::get_read_sample_buffer_functio
     return &read_sample_buffer;
 }
 
+#if (CONFIG_BLE_A31R118 == 1)
+/**
+ * @brief      Read in characters from BLE and parse to repl handler
+ */
+static void ei_ble_command_line(void)
+{
+    static char bl_msg = 0;
+
+    while (EtaCspUartRxFifoDepthGet(CONFIG_BLE_UART)) {
+
+        rx_callback(EtaCspUartGetc(CONFIG_BLE_UART, 1));
+        bl_msg = 1;
+    }
+
+    /* Use character rx timeout to append carriage return */
+    if (bl_msg) {
+        if (++bl_msg > 100) {
+            rx_callback('\r');
+            bl_msg = 0;
+        }
+    }
+}
+
+/**
+ * @brief      Print over Uart BLE
+ *
+ * @param[in]  format     Text string
+ * @param[in]  Variable argument list
+ */
+void ei_printf_ble(const char *format, ...)
+{
+    char print_buf[64] = { 0 };
+
+    va_list args;
+    va_start(args, format);
+    int r = vsnprintf(print_buf, sizeof(print_buf), format, args);
+    va_end(args);
+
+    if (r > 0) {
+        EtaCspUartPuts(CONFIG_BLE_UART, print_buf);
+    }
+}
+
+#endif
+
 /**
  * @brief      Get characters for uart pheripheral and send to repl
  */
 void ei_command_line_handle(void *args)
 {
-
-    // #if (EI_CLASSIFIER_INFERENCING_ENGINE == EI_CLASSIFIER_TENSAIFLOW)
-    //     ExecInit();
-    // #endif
 
     ei_microphone_init();
 
@@ -435,6 +476,9 @@ void ei_command_line_handle(void *args)
         while (EtaCspUartRxFifoDepthGet(EI_USED_UART)) {
             rx_callback(EtaCspUartGetc(EI_USED_UART, 1));
         }        
+#if (CONFIG_BLE_A31R118 == 1)
+        ei_ble_command_line();
+#endif
     }
 }
 
@@ -454,6 +498,16 @@ bool ei_user_invoke_stop(void)
             break;
         }
     }
+
+/* Listen for stop trigger on BLE */
+#if (CONFIG_BLE_A31R118 == 1)
+    while (EtaCspUartRxFifoDepthGet(CONFIG_BLE_UART)) {
+        if (EtaCspUartGetc(CONFIG_BLE_UART, 1) == 'b') {
+            stop_found = true;
+            break;
+        }
+    }
+#endif
 
     return stop_found;
 }

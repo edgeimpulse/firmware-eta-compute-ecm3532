@@ -93,6 +93,16 @@ The available configurations are:
 * ai-vision-config - AI Vision without bootloader offset.
 * ai-vision-boot-config - AI Vision with bootloader offset.
 
+## Inference over Bluetooth
+
+Classification output can be send over Uart BLE. Both boards have the Abov A31R118 Bluetooth processor which advertises as a Uart over BLE device with the name `aBLE UART`. Once connected you can start and stop inference with the usual commands: `AT+RUNIMPULSE` to start, `b` to stop.
+
+To build for the Vision board, use one of these configuration files:
+* ai-vision-ble-config
+* ai-vision-ble-boot-config
+* ai-sensor-ble-config
+* ai-sensor-ble-boot-config
+
 ## License
 
 This repository contains code from the Eta Compute TensaiFlow SDK Alpa v2-0.2, which is licensed under the Apache 2.0 license.
