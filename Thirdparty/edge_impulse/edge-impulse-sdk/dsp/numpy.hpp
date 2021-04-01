@@ -1460,7 +1460,7 @@ public:
 
         // declare input and output arrays
         EI_DSP_i32_MATRIX(fft_input, 1, n_fft << 1);
-        
+
         if (!fft_input.buffer) {
             EIDSP_ERR(EIDSP_OUT_OF_MEM);
         }
@@ -2056,7 +2056,7 @@ private:
             EIDSP_ERR(EIDSP_OUT_OF_MEM);
         }
 
-        ei_dsp_register_alloc(kiss_fftr_mem_length);
+        ei_dsp_register_alloc(kiss_fftr_mem_length, cfg);
 
         // execute the rfft operation
         kiss_fftr(cfg, fft_input, fft_output);
@@ -2082,7 +2082,7 @@ private:
             EIDSP_ERR(EIDSP_OUT_OF_MEM);
         }
 
-        ei_dsp_register_alloc(kiss_fftr_mem_length);
+        ei_dsp_register_alloc(kiss_fftr_mem_length, cfg);
 
         // execute the rfft operation
         kiss_fftr(cfg, fft_input, (kiss_fft_cpx*)output);
