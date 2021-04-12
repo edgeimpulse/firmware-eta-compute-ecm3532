@@ -775,8 +775,6 @@ extern "C" EI_IMPULSE_ERROR run_inference(
             return EI_IMPULSE_OUTPUT_TENSOR_WAS_NULL;
         }
 
-        debug = true;
-
         if (debug) {
             ei_printf("Predictions (time: %d ms.):\n", result->timing.classification);
         }
@@ -1020,6 +1018,8 @@ extern "C" EI_IMPULSE_ERROR run_classifier(
     // printf("\n");
     // }
 
+    memset(result, 0, sizeof(ei_impulse_result_t));
+
     ei::matrix_t features_matrix(1, EI_CLASSIFIER_NN_INPUT_FRAME_SIZE);
 
     uint64_t dsp_start_ms = ei_read_timer_ms();
@@ -1076,6 +1076,8 @@ extern "C" EI_IMPULSE_ERROR run_classifier_i16(
     ei_impulse_result_t *result,
     bool debug = false)
 {
+
+    memset(result, 0, sizeof(ei_impulse_result_t));
 
     ei::matrix_i32_t features_matrix(1, EI_CLASSIFIER_NN_INPUT_FRAME_SIZE);
 
@@ -1245,6 +1247,8 @@ extern "C" EI_IMPULSE_ERROR run_classifier_image_quantized(
     if (verify_res != EI_IMPULSE_OK) {
         return verify_res;
     }
+
+    memset(result, 0, sizeof(ei_impulse_result_t));
 
 #if (EI_CLASSIFIER_INFERENCING_ENGINE != EI_CLASSIFIER_TFLITE)
     return EI_IMPULSE_UNSUPPORTED_INFERENCING_ENGINE;
