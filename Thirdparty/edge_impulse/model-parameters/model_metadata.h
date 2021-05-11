@@ -30,6 +30,7 @@
 #define EI_CLASSIFIER_CUBEAI                     3
 #define EI_CLASSIFIER_TFLITE_FULL                4
 #define EI_CLASSIFIER_TENSAIFLOW                 5
+#define EI_CLASSIFIER_TENSORRT                   6
 
 #define EI_CLASSIFIER_SENSOR_UNKNOWN             -1
 #define EI_CLASSIFIER_SENSOR_MICROPHONE          1

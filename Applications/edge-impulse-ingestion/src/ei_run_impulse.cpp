@@ -347,8 +347,6 @@ void run_nn(bool debug) {
                         }
 
                         int r = base64_encode((const char*)per_pixel_buffer, per_pixel_buffer_ix, base64_buffer, base64_output_size);
-                        ei_free(base64_buffer);
-
                         if (r < 0) {
                             ei_printf("ERR: Failed to base64 encode (%d)\n", r);
                             ei_free(signal_buf);
@@ -358,6 +356,7 @@ void run_nn(bool debug) {
 
                         ei_write_string(base64_buffer, r);
                         per_pixel_buffer_ix = 0;
+                        ei_free(base64_buffer);
                     }
                     EiDevice.set_state(eiStateUploading);
                 }
@@ -373,7 +372,6 @@ void run_nn(bool debug) {
             }
 
             int r = base64_encode((const char*)per_pixel_buffer, per_pixel_buffer_ix, base64_buffer, new_base64_buffer_output_size);
-            ei_free(base64_buffer);
             if (r < 0) {
                 ei_free(signal_buf);
                 ei_free(per_pixel_buffer);
@@ -386,6 +384,7 @@ void run_nn(bool debug) {
 
             ei_free(signal_buf);
             ei_free(per_pixel_buffer);
+            ei_free(base64_buffer);
         }
 
         // run the impulse: DSP, neural network and the Anomaly algorithm
