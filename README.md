@@ -40,7 +40,7 @@ Edge Impulse enables developers to create the next generation of intelligent dev
     **AI Sensor board**
 
     ```
-    $ cd Applications/edge-impulse-standalone
+    $ cd Applications/edge-impulse-ingestion
     $ mkdir build
     $ cd build
     $ cmake ..
@@ -51,7 +51,7 @@ Edge Impulse enables developers to create the next generation of intelligent dev
     **AI Vision board**
 
     ```
-    $ cd Applications/edge-impulse-standalone
+    $ cd Applications/edge-impulse-ingestion
     $ mkdir build
     $ cd build
     $ cmake ..
