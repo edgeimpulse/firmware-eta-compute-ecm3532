@@ -44,7 +44,7 @@
 #define EI_CLASSIFIER_PROJECT_ID                 1
 #define EI_CLASSIFIER_PROJECT_OWNER              "EdgeImpulse Inc."
 #define EI_CLASSIFIER_PROJECT_NAME               "Continuous gestures"
-#define EI_CLASSIFIER_PROJECT_DEPLOY_VERSION     256
+#define EI_CLASSIFIER_PROJECT_DEPLOY_VERSION     309
 #define EI_CLASSIFIER_NN_INPUT_FRAME_SIZE        33
 #define EI_CLASSIFIER_RAW_SAMPLE_COUNT           125
 #define EI_CLASSIFIER_RAW_SAMPLES_PER_FRAME      3
@@ -52,16 +52,19 @@
 #define EI_CLASSIFIER_INPUT_WIDTH                0
 #define EI_CLASSIFIER_INPUT_HEIGHT               0
 #define EI_CLASSIFIER_INTERVAL_MS                16
-#define EI_CLASSIFIER_OUT_TENSOR_NAME            "y_pred/Softmax_1:0"
 #define EI_CLASSIFIER_LABEL_COUNT                4
 #define EI_CLASSIFIER_HAS_ANOMALY                1
 #define EI_CLASSIFIER_FREQUENCY                  62.5
 #define EI_CLASSIFIER_USE_QUANTIZED_DSP_BLOCK    0
 
+
+#define EI_CLASSIFIER_OBJECT_DETECTION           0
+
+
 #define EI_CLASSIFIER_TFLITE_ARENA_SIZE          3673
 #define EI_CLASSIFIER_TFLITE_INPUT_DATATYPE      EI_CLASSIFIER_DATATYPE_INT8
 #define EI_CLASSIFIER_TFLITE_INPUT_QUANTIZED     1
-#define EI_CLASSIFIER_TFLITE_INPUT_SCALE         0.011671335436403751
+#define EI_CLASSIFIER_TFLITE_INPUT_SCALE         0.0992123931646347
 #define EI_CLASSIFIER_TFLITE_INPUT_ZEROPOINT     -128
 #define EI_CLASSIFIER_TFLITE_OUTPUT_DATATYPE     EI_CLASSIFIER_DATATYPE_INT8
 #define EI_CLASSIFIER_TFLITE_OUTPUT_QUANTIZED    1
@@ -72,10 +75,10 @@
 #define EI_CLASSIFIER_HAS_TFLITE_OPS_RESOLVER    1
 
 #define EI_CLASSIFIER_SENSOR                     EI_CLASSIFIER_SENSOR_ACCELEROMETER
-#define EI_CLASSIFIER_SLICE_SIZE                 (EI_CLASSIFIER_RAW_SAMPLE_COUNT / EI_CLASSIFIER_SLICES_PER_MODEL_WINDOW)
 #ifndef EI_CLASSIFIER_SLICES_PER_MODEL_WINDOW
 #define EI_CLASSIFIER_SLICES_PER_MODEL_WINDOW    4
 #endif // EI_CLASSIFIER_SLICES_PER_MODEL_WINDOW
+#define EI_CLASSIFIER_SLICE_SIZE                 (EI_CLASSIFIER_RAW_SAMPLE_COUNT / EI_CLASSIFIER_SLICES_PER_MODEL_WINDOW)
 
 #if EI_CLASSIFIER_INFERENCING_ENGINE == EI_CLASSIFIER_TFLITE && EI_CLASSIFIER_USE_FULL_TFLITE == 1
 #undef EI_CLASSIFIER_INFERENCING_ENGINE
@@ -173,12 +176,16 @@ typedef struct {
     int low_frequency;
     int high_frequency;
     float pre_cof;
+    bool invert_features;
 } ei_dsp_config_audio_syntiant_t;
 
-ei_dsp_config_spectral_analysis_t ei_dsp_config_384 = {
+
+uint8_t ei_dsp_config_506_axes[] = { 0, 1, 2 };
+const uint32_t ei_dsp_config_506_axes_size = 3;
+ei_dsp_config_spectral_analysis_t ei_dsp_config_506 = {
     1,
     3,
-    0.05097f,
+    1.00000f,
     "low",
     3.00000f,
     6,

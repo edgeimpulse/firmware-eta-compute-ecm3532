@@ -19,13 +19,15 @@ file(GLOB CMSIS "${CMAKE_CURRENT_LIST_DIR}/edge-impulse-sdk/CMSIS/DSP/Source/Sup
                 "${CMAKE_CURRENT_LIST_DIR}/edge-impulse-sdk/CMSIS/DSP/Source/MatrixFunctions/*.c"
                 "${CMAKE_CURRENT_LIST_DIR}/edge-impulse-sdk/CMSIS/DSP/Source/StatisticsFunctions/*.c"
                 "${CMAKE_CURRENT_LIST_DIR}/edge-impulse-sdk/CMSIS/DSP/Source/TransformFunctions/*.c"
-                "${CMAKE_CURRENT_LIST_DIR}/edge-impulse-sdk/CMSIS/DSP/Source/CommonTables/*.c")
+                "${CMAKE_CURRENT_LIST_DIR}/edge-impulse-sdk/CMSIS/DSP/Source/CommonTables/*.c"
+                "${CMAKE_CURRENT_LIST_DIR}/edge-impulse-sdk/CMSIS/DSP/Source/FastMathFunctions/*.c")
 file(GLOB TENSAIMODEL "${CMAKE_CURRENT_LIST_DIR}/tensaiflow-model/*.c")
-
 foreach (ei_sdk ${EI_SDK})
     target_sources(edgeimpulse PRIVATE ${ei_sdk})
 endforeach()
 
+target_include_directories(edgeimpulse PUBLIC
+    "${CMAKE_CURRENT_LIST_DIR}")
 target_include_directories(edgeimpulse PUBLIC
     "${CMAKE_CURRENT_LIST_DIR}/edge-impulse-sdk")
 
@@ -62,7 +64,7 @@ foreach (ei_mbedtls ${MBEDTLS})
 endforeach()
 
 target_include_directories(edgeimpulse PUBLIC
-    "${CMAKE_CURRENT_LIST_DIR}/mbedtls_hmac_sha256_sw/")    
+    "${CMAKE_CURRENT_LIST_DIR}/mbedtls_hmac_sha256_sw/")
 
 target_include_directories(edgeimpulse PUBLIC
     "${CMAKE_CURRENT_LIST_DIR}/model-parameters")
