@@ -31,6 +31,9 @@ target_include_directories(edgeimpulse PUBLIC
 target_include_directories(edgeimpulse PUBLIC
     "${CMAKE_CURRENT_LIST_DIR}/edge-impulse-sdk")
 
+target_include_directories(edgeimpulse PUBLIC
+    "${CMAKE_CURRENT_LIST_DIR}")
+
 foreach (ei_platform ${PLATFORM})
     target_sources(edgeimpulse PRIVATE ${ei_platform})
 endforeach()

@@ -27,7 +27,7 @@
       build_treat_warnings_as_errors="Yes"
       c_additional_options="-mthumb -fno-exceptions -Wno-unused-variable -nostartfiles -Wno-unused-parameter -Wno-parentheses -Wno-unused-function -ggdb -fno-common -fmessage-length=0 -std=gnu99"
       c_preprocessor_definitions="SRAM;PROJ_NAME=&quot;edge-impulse-ingestion&quot;;ECM3532"
-      c_user_include_directories="../../Thirdparty/edge_impulse;../../Thirdparty/edge_impulse/ingestion-sdk-platform/eta-compute;../../Thirdparty/edge_impulse/repl;../../Thirdparty/edge_impulse/edge-impulse-sdk/CMSIS/DSP/Include;../../Thirdparty/edge_impulse/edge-impulse-sdk/CMSIS/Core/Include;../../Platform/ECM3532/M3/hw/hal/common/include;../../Platform/ECM3532/Common/framework/inc;../../eta_ai_bsp/inc;src/sensors;../../Platform/ECM3532/M3/framework/executor/include/pub;../../Platform/ECM3532/M3/NN_kernels/include;.;../../Platform/ECM3532/M3;../../Platform/ECM3532/M3/util/include;../../Platform/ECM3532/M3/hw/include;../../Platform/ECM3532/M3/hw/include/ecm3532;../../Platform/ECM3532/M3/hw/board/ecm3532/ai_vision/include;../../Platform/ECM3532/M3/hw/drivers/hm0360;../../Platform/ECM3532/M3/util/dsp_helper/include;include;../../Platform/ECM3532/M3/hw/csp/ecm3532/common/csp/inc;../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/reg/inc;../../Platform/ECM3532/M3/hw/csp/common/inc;../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/csp/inc;../../Thirdparty/FreeRTOS/Source/include;../../Thirdparty/FreeRTOS/Source/portable/GCC/ARM_CM3;../../Platform/ECM3532/M3/hw/hal/common/include;../../Platform/ECM3532/M3/hw/hal/ecm3532/include;../../Platform/ECM3532/Common/audio/inc;../../Platform/ECM3532/M3/hw/drivers/spi_flash/common;../../Platform/ECM3532/M3/hw/drivers/spi_flash/maxim;../../Platform/ECM3532/M3/framework/rpc/src;../../Platform/ECM3532/M3/framework/rpc/include;../../Platform/ECM3532/Common/framework/inc;../../Platform/ECM3532/M3/hw/ipc/common/include;"
+      c_user_include_directories="../../Thirdparty/edge_impulse;../../Thirdparty/edge_impulse/ingestion-sdk-platform/eta-compute;../../Thirdparty/edge_impulse/repl;../../Thirdparty/edge_impulse/edge-impulse-sdk/CMSIS/DSP/Include;../../Thirdparty/edge_impulse/edge-impulse-sdk/CMSIS/Core/Include;../../Platform/ECM3532/M3/hw/hal/common/include;../../Platform/ECM3532/Common/framework/inc;../../eta_ai_bsp/inc;src/sensors;../../Platform/ECM3532/M3/framework/executor/include/pub;../../Platform/ECM3532/M3/NN_kernels/include;.;../../Platform/ECM3532/M3;../../Platform/ECM3532/M3/util/include;../../Platform/ECM3532/M3/hw/include;../../Platform/ECM3532/M3/hw/include/ecm3532;../../Platform/ECM3532/M3/hw/board/ecm3532/ai_sensor/include;../../Platform/ECM3532/M3/util/dsp_helper/include;include;../../Platform/ECM3532/M3/hw/csp/ecm3532/common/csp/inc;../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/reg/inc;../../Platform/ECM3532/M3/hw/csp/common/inc;../../Platform/ECM3532/M3/hw/csp/ecm3532/m3/csp/inc;../../Thirdparty/FreeRTOS/Source/include;../../Thirdparty/FreeRTOS/Source/portable/GCC/ARM_CM3;../../Platform/ECM3532/M3/hw/hal/common/include;../../Platform/ECM3532/M3/hw/hal/ecm3532/include;../../Platform/ECM3532/Common/audio/inc;../../Platform/ECM3532/M3/hw/drivers/spi_flash/common;../../Platform/ECM3532/M3/hw/drivers/spi_flash/maxim;../../Platform/ECM3532/M3/framework/rpc/src;../../Platform/ECM3532/M3/framework/rpc/include;../../Platform/ECM3532/Common/framework/inc;../../Platform/ECM3532/M3/hw/ipc/common/include;"
       debug_RTTCB=""
       debug_enable_RTT="No"
       debug_register_definition_file="../../Platform/ECM3532/M3/cmake/SEGGER/ECM3532.svd"
@@ -96,7 +96,7 @@
 
     </folder>
     <folder Name="HW">
-      <file file_name="../../Platform/ECM3532/M3/hw/board/ecm3532/ai_vision/src/board_config.c" />
+      <file file_name="../../Platform/ECM3532/M3/hw/board/ecm3532/ai_sensor/src/board_config.c" />
       <file file_name="../../Platform/ECM3532/M3/hw/ipc/common/src/dsp_ipc.c" />
       <file file_name="../../Platform/ECM3532/M3/hw/system/ecm3532/src/ecm3532_pinconfig.c" />
       <file file_name="../../Platform/ECM3532/M3/hw/system/ecm3532/src/os_systick.c" />
@@ -109,7 +109,6 @@
       <file file_name="../../Platform/ECM3532/M3/hw/hal/common/timer/src/timer_hal.c" />
       <file file_name="../../Platform/ECM3532/M3/hw/hal/common/uart/src/uart_hal.c" />
       <file file_name="../../Platform/ECM3532/M3/hw/hal/ecm3532/pdm/src/pdm_hal.c" />
-      <file file_name="../../Platform/ECM3532/M3/hw/drivers/hm0360/eta_devices_hm0360.c" />
       <file file_name="../../Platform/ECM3532/M3/hw/drivers/spi_flash/common/spi_flash.c" />
 
     </folder>

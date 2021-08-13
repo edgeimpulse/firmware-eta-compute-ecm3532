@@ -178,7 +178,6 @@ typedef struct {
     int low_frequency;
     int high_frequency;
     float pre_cof;
-    bool invert_features;
 } ei_dsp_config_audio_syntiant_t;
 
 

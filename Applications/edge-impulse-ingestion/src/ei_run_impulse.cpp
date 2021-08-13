@@ -20,6 +20,9 @@
  * SOFTWARE.
  */
 
+/* Eta compute supports up to 2 slices per window */
+#define EI_CLASSIFIER_SLICES_PER_MODEL_WINDOW 2
+
 /* Include ----------------------------------------------------------------- */
 #include "ei_device_eta_ecm3532.h"
 #include "edge-impulse-sdk/classifier/ei_run_classifier.h"
@@ -51,7 +54,7 @@ static bool acc_data_callback(const void *sample_buf, uint32_t byteLength)
     for(uint32_t i = 0; i < (byteLength / sizeof(float)); i++) {
         acc_buf[acc_sample_count + i] = buffer[i];
     }
-    
+
     return true;
 }
 
@@ -107,7 +110,7 @@ void run_nn(bool debug) {
         signal_t signal;
         int err = numpy::signal_from_buffer(acc_buf, EI_CLASSIFIER_DSP_INPUT_FRAME_SIZE, &signal);
         if (err != 0) {
-            ei_printf("ERR: signal_from_buffer failed (%d)\n", err); 
+            ei_printf("ERR: signal_from_buffer failed (%d)\n", err);
         }
 
         // run the impulse: DSP, neural network and the Anomaly algorithm
@@ -177,17 +180,17 @@ void run_nn(bool debug) {
         if (ei_sleep(2000) != EI_IMPULSE_OK) {
             break;
         }
-        
+
         if(ei_user_invoke_stop()) {
             ei_printf("Inferencing stopped by user\r\n");
             EiDevice.set_state(eiStateIdle);
             break;
         }
-        
+
         ei_printf("Recording...\n");
 
         ei_microphone_inference_reset_buffers();
-        bool m = ei_microphone_inference_record();
+        bool m = ei_microphone_inference_record(false);
         if (!m) {
             ei_printf("ERR: Failed to record audio...\n");
             break;
@@ -226,6 +229,71 @@ void run_nn(bool debug) {
         if(ei_user_invoke_stop()) {
             ei_printf("Inferencing stopped by user\r\n");
             EiDevice.set_state(eiStateIdle);
+            break;
+        }
+    }
+
+    ei_microphone_inference_end();
+}
+
+void run_nn_continuous(bool debug)
+{
+    bool stop_inferencing = false;
+    int print_results = -(EI_CLASSIFIER_SLICES_PER_MODEL_WINDOW);
+    // summary of inferencing settings (from model_metadata.h)
+    ei_printf("Inferencing settings:\n");
+    ei_printf("\tInterval: ");
+    ei_printf_float((float)EI_CLASSIFIER_INTERVAL_MS);
+    ei_printf("ms.\n");
+    ei_printf("\tFrame size: %d\n", EI_CLASSIFIER_DSP_INPUT_FRAME_SIZE);
+    ei_printf("\tSample length: %d ms.\n", EI_CLASSIFIER_RAW_SAMPLE_COUNT / 16);
+    ei_printf("\tNo. of classes: %d\n", sizeof(ei_classifier_inferencing_categories) /
+                                            sizeof(ei_classifier_inferencing_categories[0]));
+
+    ei_printf("Starting inferencing, press 'b' to break\n");
+
+    run_classifier_init();
+    ei_microphone_inference_start(EI_CLASSIFIER_SLICE_SIZE);
+
+    while (stop_inferencing == false) {
+
+        bool m = ei_microphone_inference_record(true);
+        if (!m) {
+            ei_printf("ERR: Failed to record audio...\n");
+            break;
+        }
+
+        signal_t signal;
+        signal.total_length = EI_CLASSIFIER_SLICE_SIZE;
+        signal.get_data = &ei_microphone_audio_signal_get_data;
+        ei_impulse_result_t result = {0};
+
+        EI_IMPULSE_ERROR r = run_classifier_continuous(&signal, &result, debug, false);
+        if (r != EI_IMPULSE_OK) {
+            ei_printf("ERR: Failed to run classifier (%d)\n", r);
+            break;
+        }
+
+        if (++print_results >= 0) {
+            // print the predictions
+            ei_printf("Predictions (DSP: %d ms., Classification: %d ms., Anomaly: %d ms.): \n",
+                result.timing.dsp, result.timing.classification, result.timing.anomaly);
+            for (size_t ix = 0; ix < EI_CLASSIFIER_LABEL_COUNT; ix++) {
+                ei_printf("    %s: \t", result.classification[ix].label);
+                ei_printf_float(result.classification[ix].value);
+                ei_printf("\r\n");
+            }
+#if EI_CLASSIFIER_HAS_ANOMALY == 1
+            ei_printf("    anomaly score: ");
+            ei_printf_float(result.anomaly);
+            ei_printf("\r\n");
+#endif
+
+            print_results = 0;
+        }
+
+        if(ei_user_invoke_stop()) {
+            ei_printf("Inferencing stopped by user\r\n");
             break;
         }
     }
@@ -436,4 +504,13 @@ void run_nn_normal(void) {
 
 void run_nn_debug(void) {
     run_nn(true);
+}
+
+void run_nn_continuous_normal()
+{
+#if defined(EI_CLASSIFIER_SENSOR) && EI_CLASSIFIER_SENSOR == EI_CLASSIFIER_SENSOR_MICROPHONE
+    run_nn_continuous(false);
+#else
+    ei_printf("Error no continuous classification available for current model\r\n");
+#endif
 }

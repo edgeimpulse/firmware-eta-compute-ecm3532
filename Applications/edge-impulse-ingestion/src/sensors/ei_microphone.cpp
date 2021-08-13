@@ -66,8 +66,9 @@ typedef struct {
 }tPdmcfg;
 
 struct frameEvarg {
-    int fptr;
-    int flen;
+    int32_t flen;
+    int32_t num;
+    int16_t fbuf[512];
 };
 
 /* Extern prototypes declerations ------------------------------------------ */
@@ -80,12 +81,12 @@ extern ei_config_t *ei_config_get_config();
 
 /* Dummy functions for sensor_aq_ctx type */
 static size_t ei_write(const void*, size_t size, size_t count, EI_SENSOR_AQ_STREAM*)
-{    
+{
     return count;
 }
 
 static int ei_seek(EI_SENSOR_AQ_STREAM*, long int offset, int origin)
-{    
+{
     return 0;
 }
 
@@ -109,7 +110,7 @@ static sensor_aq_ctx ei_mic_ctx = {
 };
 
 static QueueHandle_t frameEv = NULL;
-static int16_t audio_buffer[AUDIO_DSP_SAMPLE_BUFFER_SIZE];
+// static int16_t audio_buffer[AUDIO_DSP_SAMPLE_BUFFER_SIZE];
 static tPdmcfg sPdmcfg;
 
 
@@ -153,7 +154,7 @@ static void audio_buffer_inference_callback(void *buffer, uint32_t n_bytes)
         }
     }
 }
-
+static int max_msg_ready = 0;
 /**
  * @brief      Check DSP semaphores, when ready get sample buffer that belongs
  *             to the semaphore.
@@ -162,20 +163,23 @@ static void audio_buffer_inference_callback(void *buffer, uint32_t n_bytes)
 static void get_dsp_data(void (*callback)(void *buffer, uint32_t n_bytes))
 {
     struct frameEvarg evArg;
+    int n_msg_ready;
+    do {
+        xQueueReceive(frameEv, &evArg, portMAX_DELAY);
 
-    xQueueReceive(frameEv, &evArg, portMAX_DELAY);
-    
-    /* Copy data in local buf and gain 6dB */
-    for(int i = 0; i < (evArg.flen >> 1); i++) {
-        // audio_buffer[i] = *((int16_t *)evArg.fptr + i) << 1;
-        audio_buffer[i] = *((int16_t *)evArg.fptr + i) << 1;
-    }
-    // ei_printf("dsp: %d\r\n", evArg.flen);
-    callback((void *)&audio_buffer[0], evArg.flen);
+        callback((void *)&evArg.fbuf[0], evArg.flen);
+
+        n_msg_ready = uxQueueMessagesWaiting(frameEv);
+
+        if(n_msg_ready > max_msg_ready) {
+            max_msg_ready = n_msg_ready;
+        }
+
+    }while(n_msg_ready);
 }
 
 
-static void finish_and_upload(char *filename, uint32_t sample_length_ms) {    
+static void finish_and_upload(char *filename, uint32_t sample_length_ms) {
 
     ei_printf("Done sampling, total bytes collected: %u\n", current_sample);
 
@@ -189,7 +193,7 @@ static void finish_and_upload(char *filename, uint32_t sample_length_ms) {
 
     ei_printf("OK\n");
 
-    EiDevice.set_state(eiStateIdle);    
+    EiDevice.set_state(eiStateIdle);
 }
 
 static int insert_ref(char *buffer, int hdrLength)
@@ -278,9 +282,13 @@ static void FrameCb(void *ptr, void *buf, uint16_t blen)
 {
     if (record_ready == true) {
         struct frameEvarg evArg;
-        evArg.fptr = (int)buf;
+
         evArg.flen = blen;
-        xQueueSendToFront(frameEv, &evArg, portMAX_DELAY);
+
+        for(int i = 0; i < (blen >> 1); i++) {
+            evArg.fbuf[i] = *((int16_t *)buf + i) << 1;
+        }
+        xQueueSendToBack(frameEv, &evArg, portMAX_DELAY);
     }
 }
 
@@ -301,7 +309,7 @@ void ei_microphone_init(void)
     *(pdm0_core_conf) |= ((GAIN_34_5dB << PGA_R) | (GAIN_34_5dB << PGA_L));
     *(pdm1_core_conf) |= ((GAIN_34_5dB << PGA_R) | (GAIN_34_5dB << PGA_L));
 
-    frameEv = xQueueCreate(2, sizeof(struct frameEvarg));
+    frameEv = xQueueCreate(32, sizeof(struct frameEvarg));
 
     sPdmcfg.pdmNum = 1;
     sPdmcfg.sRate = AUDIO_SAMPLES_PER_MS;
@@ -365,22 +373,35 @@ bool ei_microphone_inference_start(uint32_t n_samples)
     inference.buf_ready = 0;
 
     ecm3532_start_pdm_stream(sPdmcfg.pdmNum);
+    record_ready = true;
 
     return true;
 }
 
-bool ei_microphone_inference_record(void)
-{
-    inference.buf_ready = 0;
-    inference.buf_count = 0;
 
-    while (inference.buf_ready == 0) {
+bool ei_microphone_inference_record(bool continuous)
+{
+    bool ret = true;
+
+    while(inference.buf_ready == 0) {
         get_dsp_data(&audio_buffer_inference_callback);
     };
-    record_ready = false;
+
+    if (continuous == false) {
+        record_ready = false;
+    }
+
+    if (continuous && max_msg_ready == 32) {
+        ei_printf(
+            "Error sample buffer overrun. Decrease the number of slices per model window "
+            "(EI_CLASSIFIER_SLICES_PER_MODEL_WINDOW)\n");
+        ret = false;
+    }
+
+    max_msg_ready = 0;
     inference.buf_ready = 0;
 
-    return true;
+    return ret;
 }
 
 /**
@@ -391,6 +412,7 @@ void ei_microphone_inference_reset_buffers(void)
     inference.buf_ready = 0;
     inference.buf_count = 0;
     record_ready = true;
+    xQueueReset(frameEv);
 }
 
 /**
@@ -406,6 +428,9 @@ int ei_microphone_audio_signal_get_data(size_t offset, size_t length, float *out
 bool ei_microphone_inference_end(void)
 {
     record_ready = false;
+
+    /* Empty queue before stopping stream */
+    xQueueReset(frameEv);
     ecm3532_stop_pdm_stream(sPdmcfg.pdmNum);
 
     ei_free(inference.buffers[0]);
