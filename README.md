@@ -105,4 +105,4 @@ To build for the Vision board, use one of these configuration files:
 
 ## License
 
-This repository contains code from the Eta Compute TensaiFlow SDK Alpa v2-0.2, which is listed in [LICENSE-TENSAIFLOW.docx]. The application code is licensed under the Apache 2.0 license (see LICENSE-APPLICATION)
+This repository contains code from the Eta Compute TensaiFlow SDK Alpa v2-0.2, which is listed in [LICENSE-TENSAIFLOW.docx]. The application code is licensed under the BSD 3 Clause license (see LICENSE)
